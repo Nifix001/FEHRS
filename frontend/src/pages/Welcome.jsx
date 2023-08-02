@@ -10,7 +10,7 @@ const Welcome = () => {
         <img className="w-36 h-13" src={logo} alt="logo" />
       </header>
       <section>
-      <h2 className="welcome">Welcome to <br /><span className="span">FEHRS</span></h2>
+      <h2 className="welcome">Welcome to <br /><span className="span text-inherit">FEHRS</span></h2>
       <h4>FUTA Electronic Health Record System</h4>
       <div>
         <Link>Login</Link>
