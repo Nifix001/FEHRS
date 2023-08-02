@@ -6,7 +6,11 @@ export default {
     "./src/pages/Login.jsx"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'background' : "url('../assets/unsplash_SZJoYW4eLHE.png')",
+      }
+    },
   },
   plugins: [],
 }
