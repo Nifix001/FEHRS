@@ -7,7 +7,7 @@ const Welcome = () => {
     <React.Fragment>
       <div className="bg-background object-cover w-screen h-screen">
       <header>
-        <img  src={logo} alt="" />
+        <img className="w-36 h-13" src={logo} alt="" />
       </header>
       <section>
       <h2>Welcome to <br /><span>FEHRS</span></h2>
