@@ -5,8 +5,8 @@ import { Form } from 'react-router-dom';
 
 export default function BasicCard() {
   return (
-    <div className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 login-card rounded-lg'>
-        <header><img src={logo} alt="" /></header>
+    <div className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 login-card rounded-lg pt-10'>
+        <header><img src={logo} alt="FEHRS logo"  className='h-10 w-28 ml-auto mr-auto mb-10'/></header>
         <Form>
             <header>Welcome Back</header>
             <h3>Welcome back, please login with the required information</h3>
