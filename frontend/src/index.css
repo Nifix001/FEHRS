@@ -23,10 +23,11 @@
 .span{
     font-family: Mukta;
     font-size: 96px;
-    font-weight: 600;
     line-height: 110px;
     letter-spacing: 0.0025em;
     text-align: center;
+    color: transparent;
+    border: 1px solid #ffffff;
 }
 
 
