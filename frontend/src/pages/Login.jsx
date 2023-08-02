@@ -7,7 +7,7 @@ import BasicCard from '../components/BasicCard'
 const Login = () => {
   return (
     <React.Fragment>
-      <section className='grid ml-auto mr-auto'>
+      <section className='w-screen h-screen'>
         <BasicCard />
       </section>
     </React.Fragment>
