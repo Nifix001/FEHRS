@@ -18,7 +18,6 @@ export default {
       width: {
         '104': '26rem',
         '151': '37.75rem',
-        '36' : '9rem',
       },
       height: {
         '13' : '3.3rem',
