@@ -9,6 +9,10 @@ export default {
     extend: {
       backgroundImage: {
         'background' : "url('./assets/unsplash_SZJoYW4eLHE.png')",
+      },
+      colors: {
+        'primary': "#7F00AC",
+        'secondary': "#601384"
       }
     },
   },
