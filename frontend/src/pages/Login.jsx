@@ -5,7 +5,7 @@ import { Form } from 'react-router-dom'
 const Login = () => {
   return (
     <React.Fragment>
-      <section className='grid'>
+      <section className='grid w-screen h-screen'>
         <header><img src={logo} alt="" /></header>
         <Form>
             <header>FUTA Electronic Health Record System</header>
