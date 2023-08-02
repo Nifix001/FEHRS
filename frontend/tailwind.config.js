@@ -3,7 +3,8 @@ export default {
   content: [
     "./index.html",
     "./src/pages/Welcome.jsx",
-    "./src/pages/Login.jsx"
+    "./src/pages/Login.jsx",
+    "./src/components/BasicCard.jsx"
   ],
   theme: {
     extend: {
@@ -13,6 +14,13 @@ export default {
       colors: {
         'primary': "#7F00AC",
         'secondary': "#601384"
+      },
+      width: {
+        '151': '37.75rem',
+      },
+      height: {
+        '160.5': '40.13rem',
+        '178.25': '44.56rem'
       }
     },
   },
