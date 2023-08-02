@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.login-card{
+    box-shadow: 0px 0px 25px 0px #1118272E;
+}
