@@ -19,7 +19,7 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Card className='w-151 h-160.5'>
+    <Card className='w-151 h-124'>
       <CardContent>
         {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
