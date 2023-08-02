@@ -1,12 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import logo from "../assets/Frames.png"
+import logo from "../assets/Frame 46.png"
 
 const Welcome = () => {
   return (
     <React.Fragment>
       <div className="bg-background object-cover w-screen h-screen">
-        
       <header>
         <img src={logo} alt="" />
       </header>
