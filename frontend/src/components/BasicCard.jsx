@@ -19,7 +19,7 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Card className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20'>
+    <Card className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 shadow-2xl grid'>
       <CardContent>
         <header><img src={logo} alt="" /></header>
         <Form>
