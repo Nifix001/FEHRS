@@ -23,7 +23,8 @@ export default function BasicCard() {
       <CardContent>
         <header><img src={logo} alt="" /></header>
         <Form>
-            <header>FUTA Electronic Health Record System</header>
+            <header>Welcome Back</header>
+            <h3>Welcome back, please login with the required information</h3>
             <input type="text" name='uniqueId' placeholder='Unique ID' />
             <input type="text" name='password' placeholder='Password' />
             <button type='submit' className='bg-primary'>Login</button>
