@@ -19,7 +19,7 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Card className='w-151 h-124'>
+    <Card className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25'>
       <CardContent>
         {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
@@ -40,12 +40,12 @@ export default function BasicCard() {
             <header>FUTA Electronic Health Record System</header>
             <input type="text" name='uniqueId' placeholder='Unique ID' />
             <input type="text" name='password' placeholder='Password' />
-            {/* <button type='submit' className='bg-primary'>Login</button> */}
+            <button type='submit' className='bg-primary'>Login</button>
         </Form>
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" className='bg-primary' >Login</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

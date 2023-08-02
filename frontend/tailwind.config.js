@@ -16,6 +16,7 @@ export default {
         'secondary': "#601384"
       },
       width: {
+        '104': '26rem',
         '151': '37.75rem',
       },
       height: {
