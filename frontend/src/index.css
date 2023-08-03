@@ -10,7 +10,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.welcome{
+/* .welcome{
     font-family: Work Sans;
     font-size: 96px;
     font-weight: 700;
@@ -28,7 +28,7 @@
     text-align: center;
     color: transparent;
     border: 1px solid #ffffff;
-}
+} */
 
 
 .login-card{
