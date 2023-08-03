@@ -10,25 +10,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.welcome{
-    font-family: Work Sans;
-    font-size: 96px;
-    font-weight: 700;
-    line-height: 110px;
-    letter-spacing: 0.0025em;
-    text-align: center;
-    color: #ffffff
-}
-
-.span{
-    font-family: Mukta;
-    font-size: 96px;
-    font-weight: 600;
-    line-height: 110px;
-    letter-spacing: 0.0025em;
-    text-align: center;
-}
-
 
 .login-card{
     box-shadow: 0px 0px 25px 0px #1118272E;
