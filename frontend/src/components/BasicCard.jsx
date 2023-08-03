@@ -10,8 +10,8 @@ export default function BasicCard() {
         <Form className='grid'>
             <header>Welcome Back</header>
             <h3>Welcome back, please login with the required information</h3>
-            <input type="text" name='uniqueId' placeholder='Unique ID' />
-            <input type="text" name='password' placeholder='Password' />
+            <input type="text" name='uniqueId' placeholder='Unique ID'  className='bg-secondary2' />
+            <input type="text" name='password' placeholder='Password' className='bg-secondary2' />
             <button type='submit' className='bg-primary text-white'>Login</button>
         </Form>
     </div>
