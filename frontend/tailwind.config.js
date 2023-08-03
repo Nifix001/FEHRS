@@ -14,9 +14,13 @@ export default {
       colors: {
         'primary': "#7F00AC",
         'secondary': "#601384",
-        'secondary2': '#FCF2FC'
+        'secondary2': '#FCF2FC',
+        'gray':{
+          '750': "#212121"
+      }
       },
       width: {
+        '90' : '22.5rem',
         '104': '26rem',
         '151': '37.75rem',
       },

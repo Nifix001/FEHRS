@@ -8,11 +8,11 @@ export default function BasicCard() {
     <div className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 login-card rounded-lg pt-10 basic-card'>
         <header><img src={logo} alt="FEHRS logo"  className='h-10 w-28 ml-auto mr-auto mb-10'/></header>
         <Form className='grid'>
-            <header>Welcome Back</header>
-            <h3>Welcome back, please login with the required information</h3>
-            <input type="text" name='uniqueId' placeholder='Unique ID'  className='bg-secondary2 border border-primary' />
-            <input type="text" name='password' placeholder='Password' className='bg-secondary2 border border-primary' />
-            <button type='submit' className='bg-primary text-white'>Login</button>
+            <header className='text-primary'>Welcome Back</header>
+            <h3 className='text-gray-750'>Welcome back, please login with the required information</h3>
+            <input type="text" name='uniqueId' placeholder='Unique ID'  className='bg-secondary2 border border-primary rounded w-90 h-10' />
+            <input type="text" name='password' placeholder='Password' className='bg-secondary2 border border-primary rounded w-90 h-10' />
+            <button type='submit' className='bg-primary text-white w-90 rounded h-9'>Login</button>
         </Form>
     </div>
   );
