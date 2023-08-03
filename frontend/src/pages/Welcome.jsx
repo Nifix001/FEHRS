@@ -6,8 +6,8 @@ const Welcome = () => {
   return (
     <React.Fragment>
       <div className="bg-background object-cover w-screen h-screen">
-      <header>
-        <img className="w-36 h-13 pt-6 " src={logo} alt="logo" />
+      <header className="pt-8 ">
+        <img className="w-36 h-13" src={logo} alt="logo" />
       </header>
       <section>
       <h2 className="text-center mt-28"><span className="font-welcome text-8xl text-white font-bold tracking-wide">Welcome to</span> <br /><span className="font-span text-8xl text-gray-300 opacity-70  font-semibold tracking-wide">FEHRS</span></h2>
