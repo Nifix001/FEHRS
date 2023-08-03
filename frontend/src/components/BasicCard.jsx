@@ -15,7 +15,7 @@ export default function BasicCard() {
             <header className='text-primary mb-1'>Welcome Back</header>
             <h3 className='text-gray-750'>Welcome back, please login with the required information</h3>
             <input type="text" name='uniqueId' placeholder='Unique ID' value={id}  onChange={(e)=> setId(e.target.value)} className='bg-secondary2 border border-primary rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ' required/>
-            <input type="text" name='password' placeholder='Password' value={password} onChange={(e)=> setPassword(e.target.value)} className='bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' required />
+            <input type="password" name='password' placeholder='Password' value={password} onChange={(e)=> setPassword(e.target.value)} className='bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' required />
             <button type='submit' className='bg-primary text-white w-90 rounded h-9 mt-16 '><span className='ml-40' >Login</span></button>
         </Form>
     </div>
