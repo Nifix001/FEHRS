@@ -53,12 +53,12 @@
 
 /* TextWithStroke.css */
 .text-stroke {
-    -webkit-text-stroke: 1px White; /* For Safari */
-    text-stroke: 1px White; /* For other browsers */
+    -webkit-text-stroke: 0.6px white; /* For Safari */
+    text-stroke: 0.6px white; /* For other browsers */
     font-family: Mukta;
     font-size: 96px;
-    font-weight: 600;
-    line-height: 110px;
+    font-weight: 700;
+    line-height: 90px;
     letter-spacing: 0.0025em;
     text-align: center;
   }
