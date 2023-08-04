@@ -50,3 +50,18 @@
     letter-spacing: -0.02em;
     text-align: left;
 }
+
+/* TextWithStroke.css */
+.text-stroke {
+    -webkit-text-stroke: 1px White; /* For Safari */
+    text-stroke: 1px White; /* For other browsers */
+    font-family: Mukta;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 110px;
+    letter-spacing: 0.0025em;
+    text-align: center;
+  }
+  
+
+
