@@ -1,2 +1,2 @@
 # FIHMS
-FUTA Integral Health Medical System
+FUTA Integrated Health Medical System
