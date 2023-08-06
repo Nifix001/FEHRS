@@ -1,6 +1,7 @@
 import * as React from 'react';
 import logo from '../assets/Frames.png';
 import { Form } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function BasicCard() {
@@ -10,7 +11,7 @@ export default function BasicCard() {
 
   return (
     <div className='xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 login-card rounded-lg pt-10 basic-card'>
-        <header><img src={logo} alt="FEHRS logo"  className='h-10 w-28 ml-auto mr-auto mb-10'/></header>
+        <header><Link to="/"> <img src={logo} alt="FEHRS logo"  className='h-10 w-28 ml-auto mr-auto mb-10'/></Link></header>
         <Form className='grid justify-center'>
             <header className='text-primary mb-1'>Welcome Back</header>
             <h3 className='text-gray-750'>Welcome back, please login with the required information</h3>
