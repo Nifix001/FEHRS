@@ -54,7 +54,7 @@
 /* TextWithStroke.css */
 .text-stroke {
     -webkit-text-stroke: 0.6px white; /* For Safari */
-    text-stroke: 0.6px white; /* For other browsers */
+    /* text-stroke: 0.6px white; For other browsers */
     font-family: Mukta;
     font-size: 96px;
     font-weight: 700;
