@@ -18,9 +18,9 @@ const Nav = () => {
                 <p className='font-span font-normal text-base text-black'>Dave Olumuyiwa</p>
                 <p className='font-span font-normal text-base text-black'>Admin</p>
             </div>
-            <div className='flex'>
-                <NavLink><img src={notify} alt="notification" /></NavLink>
-                <NavLink><img src={direct} alt="direct" /></NavLink>
+            <div className='flex pr-4'>
+                <NavLink className='mr-4'><img src={notify} alt="notification" /></NavLink>
+                <NavLink className='ml-4'><img src={direct} alt="direct" /></NavLink>
             </div>
         </nav>
     </React.Fragment>
