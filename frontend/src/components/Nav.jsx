@@ -7,8 +7,8 @@ import direct from '../assets/ic_baseline-log-out.png'
 const Nav = () => {
   return (
     <React.Fragment>
-        <header className='flex absolute top-0 justify-between '>
-            <div>
+        <div className='flex absolute top-0 space-x-4 px-2 py-2 border-gray-600'>
+            <div className='border-gray-600'>
                 <img src={logo} alt="" />
             </div>
             <div>
@@ -22,7 +22,7 @@ const Nav = () => {
                 <NavLink><img src={notify} alt="notification" /></NavLink>
                 <NavLink><img src={direct} alt="direct" /></NavLink>
             </div>
-        </header>
+        </div>
     </React.Fragment>
   )
 }
