@@ -73,4 +73,10 @@
     line-height: normal;
   }
 
+.sidebar div a h3, .sidebar div a img{
+    color: #828282;
+} 
 
+.sidebar div a.active h3, .sidebar div a.active img{
+    color: #7F00AC;
+} 
