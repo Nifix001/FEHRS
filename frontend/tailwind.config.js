@@ -16,6 +16,7 @@ export default {
     extend: {
       backgroundImage: {
         'background' : "url('./assets/unsplash_SZJoYW4eLHE.png')",
+        'dashIcon' : "url('./assets/sidebar/element-1.svg')"
       },
       colors: {
         'primary': "#7F00AC",
