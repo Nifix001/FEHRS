@@ -8,11 +8,11 @@ const Nav = () => {
   return (
     <React.Fragment>
         <nav className='flex absolute h-20 w-screen top-0 border border-gray-300 justify-between px-2 items-center'>
-            <div className='border-solid border-gray-300 border-r h-20 pt-4 pr-12 pl-9'>
+            <div className='border-solid border-gray-300 border-r h-20 pt-4 pr-16 pl-6'>
                 <img src={logo} alt="" />
             </div>
             <div>
-                <input type="text" placeholder='Search' className='border border-solid border-gray-300 w-182 h-10 p-2' />
+                <input type="text" placeholder='Search' className='border font-span font-normal text-base border-solid text-gray-300 border-gray-300 w-182 h-10 p-2' />
             </div>
             <div>
                 <p className='font-span font-normal text-base text-black'>Dave Olumuyiwa</p>
