@@ -7,7 +7,7 @@ import dept from '../assets/Dashboard/Group (1).svg'
 const SummaryCard = () => {
   return (
     <React.Fragment>
-        <div className='grid grid-cols-3 gap-1'>
+        <div className='flex gap-4'>
             <div>
                 <div className='flex'>
                     <p>Total Patients</p>
