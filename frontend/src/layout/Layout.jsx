@@ -6,11 +6,13 @@ import { Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <React.Fragment>
-      <Nav />
-      <div className="flex">
-        <SideBar />
-        <Outlet />
-      </div>
+     <div className="grid">
+        <Nav />
+        <div className="flex">
+            <SideBar />
+            <Outlet />
+        </div>
+     </div>
     </React.Fragment>
   )
 }

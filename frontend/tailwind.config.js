@@ -7,7 +7,8 @@ export default {
     ".src/layout/Layout.jsx",
     "./src/components/BasicCard.jsx",
     "./src/components/Nav.jsx",
-    "./src/components/Sidebar.jsx"
+    "./src/components/Sidebar.jsx",
+    "./src/Subpages/Patients.jsx",
   ],
   theme: {
     extend: {
@@ -27,6 +28,9 @@ export default {
         '104': '26rem',
         '151': '37.75rem',
         '182': '45.5rem',
+        '280': '70rem',
+        '281': '70.25rem',
+        '282': '70.5rem'
       },
       height: {
         '13' : '3.3rem',
