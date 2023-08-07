@@ -3,6 +3,7 @@ import Welcome from './pages/Welcome'
 import Login from "./pages/Login"
 import Layout from "./layout/Layout"
 import Patients from "./Subpages/Patients"
+import Dashboard from "./Subpages/Dashboard"
 
 function App() {
 
@@ -13,6 +14,9 @@ const router = createBrowserRouter(
             <Route path="login" element={<Login />} />
             <Route path="user" element={<Layout />}>
               <Route path="patient" element={<Patients />}>
+
+              </Route>
+              <Route path="dashboard" element={<Dashboard />}>
 
               </Route>
             </Route>
