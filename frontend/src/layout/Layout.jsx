@@ -7,8 +7,10 @@ const Layout = () => {
   return (
     <React.Fragment>
       <Nav />
-      <SideBar />
-      <Outlet />
+      <div className="flex">
+        <SideBar />
+        <Outlet />
+      </div>
     </React.Fragment>
   )
 }
