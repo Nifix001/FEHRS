@@ -15,8 +15,8 @@ const Nav = () => {
                 <input type="text" placeholder='Search' className='border border-solid border-gray-300 w-182 h-10 p-2' />
             </div>
             <div>
-                <p>Dave Olumuyiwa</p>
-                <p>Admin</p>
+                <p className='font-span font-normal text-base text-black'>Dave Olumuyiwa</p>
+                <p className='font-span font-normal text-base text-black'>Admin</p>
             </div>
             <div className='flex'>
                 <NavLink><img src={notify} alt="notification" /></NavLink>
