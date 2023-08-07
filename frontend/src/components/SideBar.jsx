@@ -12,29 +12,29 @@ const SideBar = () => {
     <React.Fragment>
       <div className='w-60 h-143 bg-white absolute left-0 top-20 '>
         <header>Menu</header>
-        <div className="grid gap-0">
+        <div className="grid gap-3">
             <div className='flex'>
-                <img className='w-5 h-5' src={dashIcon} alt="dashboard icon" />
+                <img className='w-5 h-5 mr-2' src={dashIcon} alt="dashboard icon" />
                 <h3>Dashboard</h3>
             </div>
             <div className='flex'>
-                <img className='w-5 h-5' src={PatientIcon} alt="patient icon" />
+                <img className='w-5 h-5 mr-2' src={PatientIcon} alt="patient icon" />
                 <h3>Patients</h3>
             </div>
             <div className='flex'>
-                <img className='w-5 h-5' src={doctorIcon}alt="doctor icon" />
+                <img className='w-5 h-5 mr-2' src={doctorIcon}alt="doctor icon" />
                 <h3>Doctor</h3>
             </div>
             <div className='flex'>
-                <img className='w-5 h-5' src={PharmacyIcon} alt="pharmacy icon" />
+                <img className='w-5 h-5 mr-2' src={PharmacyIcon} alt="pharmacy icon" />
                 <h3>Pharmacy</h3>
             </div>
             <div className='flex'>
-                <img className='w-5 h-5' src={ReportsIcon} alt="reports icon" />
+                <img className='w-5 h-5 mr-2' src={ReportsIcon} alt="reports icon" />
                 <h3>Reports</h3>
             </div>
             <div className='flex'>
-                <img className='w-5 h-5' src={SettingsIcon} alt="settings icon" />
+                <img className='w-5 h-5 mr-2' src={SettingsIcon} alt="settings icon" />
                 <h3>Settings</h3>
             </div>
         </div>
@@ -42,7 +42,7 @@ const SideBar = () => {
             <hr className='w-60' />
             <h3>General</h3>
             <div>
-                <img className='w-5 h-5' src="" alt="" />
+                <img className='w-5 h-5 mr-2' src="" alt="" />
                 <h3>Support</h3>
             </div>
         </div>
