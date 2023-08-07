@@ -30,6 +30,7 @@ export default {
         '148': '37rem',
         '160.5': '40.13rem',
         '178.25': '44.56rem',
+        '224' : '56rem',
       },
       fontFamily:{
          welcome: ['Work Sans'],
