@@ -10,7 +10,7 @@ import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.png';
 const SideBar = () => {
   return (
     <React.Fragment>
-      <div className='w-60 h-224 bg-gray-750 absolute left-0 grid'>
+      <div className='w-60 h-143 bg-gray-750 absolute left-0 grid top-20 '>
         <header>Menu</header>
         <div className='flex'>
             <img src={dashIcon} alt="dashboard icon" />

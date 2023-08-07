@@ -6,9 +6,11 @@ import { Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <React.Fragment>
+    <div className="grid">
       <Nav />
       <SideBar />
       <Outlet />
+    </div>
     </React.Fragment>
   )
 }
