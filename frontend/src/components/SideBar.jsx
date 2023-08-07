@@ -10,7 +10,7 @@ import SupportIcon from '../assets/sidebar/ic_outline-contact-support.png'
 const SideBar = () => {
   return (
     <React.Fragment>
-      <div className='w-60 h-143 bg-white absolute left-0 top-20 pl-4 '>
+      <div className='w-60 h-143 bg-white absolute left-0 top-20 pl-4 sidebar'>
         <header className='mt-7 mb-3'>Menu</header>
         <div className="grid gap-3">
             <div className='flex'>
