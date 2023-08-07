@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Welcome from './pages/Welcome'
 import Login from "./pages/Login"
 import Layout from "./layout/Layout"
+import Patients from "./Subpages/Patients"
 
 function App() {
 
@@ -11,7 +12,9 @@ const router = createBrowserRouter(
             <Route index element={<Welcome />} />
             <Route path="login" element={<Login />} />
             <Route path="user" element={<Layout />}>
-              
+              <Route path="patient" element={<Patients />}>
+
+              </Route>
             </Route>
           </Route>
              
