@@ -12,9 +12,9 @@ const Nav = () => {
             <div className='border-solid border-gray-300 border-r h-20 pt-4 pr-16 pl-6'>
                 <img src={logo} alt="logo" />
             </div>
-            <div>
+            <div className='flex'>
                 <input type="text" placeholder='Search' className='border font-span font-normal text-base border-solid text-gray-300 border-gray-300 w-182 h-10 p-2' />
-                <img className='absolute top-3 left-72' src={search} alt="search" />
+                <img className='relative right-8' src={search} alt="search" />
             </div>
             <div>
                 <p className='font-span font-normal text-base text-black'>Dave Olumuyiwa</p>
