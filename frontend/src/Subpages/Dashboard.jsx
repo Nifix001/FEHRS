@@ -1,4 +1,5 @@
 import React from 'react'
+import SummaryCard from '../components/SummaryCard'
 
 const Dashboard = () => {
   return (
@@ -7,7 +8,7 @@ const Dashboard = () => {
             <header>
                 <p>Dashboard &gt; Summary</p>
             </header>
-
+            <SummaryCard />
         </div>
     </React.Fragment>
   )
