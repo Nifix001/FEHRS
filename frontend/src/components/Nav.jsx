@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <React.Fragment>
         <div className='flex absolute top-0 space-x-4 px-2 py-2 border-gray-600'>
-            <div>
+            <div className='border-gray-600'>
                 <img src={logo} alt="" />
             </div>
             <div>
