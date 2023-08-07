@@ -1,11 +1,11 @@
 import React from 'react'
-import dashIcon from '../assets/sidebar/element-1.png';
-import PatientIcon from '../assets/sidebar/bi_people.png';
-import doctorIcon from '../assets/sidebar/hospital.png';
-import PharmacyIcon from '../assets/sidebar/building-3.png';
-import ReportsIcon from '../assets/sidebar/chart.png';
-import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.png';
-import SupportIcon from '../assets/sidebar/ic_outline-contact-support.png'
+import dashIcon from '../assets/sidebar/element-1.svg';
+import PatientIcon from '../assets/sidebar/bi_people.svg';
+import doctorIcon from '../assets/sidebar/hospital.svg';
+import PharmacyIcon from '../assets/sidebar/building-3.svg';
+import ReportsIcon from '../assets/sidebar/chart.svg';
+import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.svg';
+import SupportIcon from '../assets/sidebar/ic_outline-contact-support.svg'
 import { NavLink } from 'react-router-dom';
 
 const SideBar = () => {
