@@ -9,6 +9,7 @@ export default {
     "./src/components/Nav.jsx",
     "./src/components/Sidebar.jsx",
     "./src/Subpages/Patients.jsx",
+    "./src/Subpages/Dashboard.jsx",
   ],
   theme: {
     extend: {
