@@ -7,7 +7,7 @@ import direct from '../assets/ic_baseline-log-out.png'
 const Nav = () => {
   return (
     <React.Fragment>
-        <nav className='absolute h-20 top-0 border-gray-600'>
+        <nav className='flex absolute h-20 top-0 border-gray-600'>
             <div className='border-gray-600'>
                 <img src={logo} alt="" />
             </div>
