@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import logo from '../assets/Frames.png'
 import notify from '../assets/mi_notification.png'
 import direct from '../assets/ic_baseline-log-out.png'
+import search from '../assets/akar-icons_search.svg'
 
 const Nav = () => {
   return (
