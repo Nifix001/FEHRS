@@ -6,8 +6,6 @@ export default {
     "./src/pages/Login.jsx",
     ".src/layout/Layout.jsx",
     "./src/components/BasicCard.jsx",
-    "./src/components/Nav.jsx",
-    "./src/components/Sidebar.jsx"
   ],
   theme: {
     extend: {
