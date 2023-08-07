@@ -11,6 +11,8 @@ const router = createBrowserRouter(
             <Route index element={<Welcome />} />
             <Route path="login" element={<Login />} />
             <Route path="user" element={<Layout />}>
+              <Route path="patient">
+              </Route>
             </Route>
           </Route>
              
