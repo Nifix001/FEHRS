@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 const SideBar = () => {
   return (
     <React.Fragment>
-      <div className='w-60 h-143 bg-white absolute left-0 top-20 pl-4 sidebar'>
+      <div className='w-60 h-142 bg-gray-750 absolute left-0 top-20 px-4 sidebar'>
         <header className='mt-7 mb-3'>Menu</header>
         <div className="grid">
             <NavLink className='flex hover:bg-primary hover:text-white p-1.5 -ml-1.5' to="">
