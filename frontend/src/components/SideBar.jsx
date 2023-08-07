@@ -30,7 +30,7 @@ const SideBar = () => {
             <h3>Settings</h3>
         </div>
         <div className='grid absolute bottom-0'>
-            <hr />
+            <hr className='w-60' />
             <h3>General</h3>
             <div>
                 <img src="" alt="" />
