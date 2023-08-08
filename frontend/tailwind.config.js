@@ -10,7 +10,7 @@ export default {
     "./src/components/Sidebar.jsx",
     "./src/Subpages/Patients.jsx",
     "./src/Subpages/Dashboard.jsx",
-
+    "./src/components/SummaryCard.jsx",
   ],
   theme: {
     extend: {
@@ -22,21 +22,33 @@ export default {
         'primary': "#7F00AC",
         'secondary': "#601384",
         'secondary2': '#FCF2FC',
+        'secondary3': '#796EFC',
+        'secondary4': '#27AE60',
+        'secondary5': '#26A6FA',
+        'tertiary': {
+          '1': '#9585FE',
+          '2': '#78C994',
+          '3': '#1899EE'
+        },
         'gray':{
           '750': "#212121"
       }
       },
       width: {
+        '21.5': '5.37rem',
+        '87.25': '21.81rem',
         '90' : '22.5rem',
         '104': '26rem',
         '151': '37.75rem',
         '182': '45.5rem',
         '280': '70rem',
         '281': '70.25rem',
-        '282': '70.5rem'
+        '282': '70.5rem',
       },
       height: {
         '13' : '3.3rem',
+        '21.5': '5.37rem',
+        '46.5': '11.65rem',
         '124': '31rem',
         '136' : '34rem',
         '140': '35rem',
