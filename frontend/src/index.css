@@ -83,6 +83,35 @@
     font-size: 0.969rem;
 } 
 
-/* .sidebar div a.active div{
-   color: #7F00AC;
-} */
+.patients Form input{
+    border-radius: 0.4375rem;
+    border: 1px solid #7F00AC;
+    background: #FFF;
+    text-indent: 1rem;
+    padding: 0.2rem;
+    color:  #4B492B;
+    font-family: Mukta;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; /* 142.857% */
+    padding-top: 0.4rem;
+}
+
+.patients Form label{
+    color: #7F00AC;
+    font-family: Mukta;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 150% */ 
+    position: relative;
+    top: 0.58rem;
+    left: 0.6rem;
+    background-color: #fff;
+    /* max-width: 10rem; */
+    padding: 0.2rem;
+    padding-bottom: 0rem;
+    outline: #7F00AC;
+    border: none;
+}

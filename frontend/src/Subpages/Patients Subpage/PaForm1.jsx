@@ -6,40 +6,40 @@ const PaForm1 = () => {
     <React.Fragment>
         <div className="grid grid-cols-3 grid-rows-2">
           <div className="grid">
-            <label htmlFor="">First Name</label>
+            <label htmlFor="" className='w-16'>First Name</label>
             <input type="text" placeholder='Ayomide' />
           </div>
           <div className="grid">
-            <label htmlFor="">Last Name</label>
+            <label htmlFor="" className='w-16'>Last Name</label>
             <input type="text" placeholder='Kanayo' />
           </div>
           <div className="grid">
-            <label htmlFor="">Other Name</label>
+            <label htmlFor="" className='w-20'>Other Name</label>
             <input type="text" placeholder='Festus' />
           </div>
           <div className="grid">
-            <label htmlFor="">Matric Number</label>
+            <label htmlFor="" className='w-24'>Matric Number</label>
             <input type="text" placeholder='___ /__ /_____' />
           </div>
           <div className="grid">
-            <label htmlFor="">Date of Birth</label>
+            <label htmlFor="" className='w-24'>Date of Birth</label>
             <input type="text" placeholder='__ /__ /____' />
           </div>
           <div className="grid">
-            <label htmlFor="">Phone Number</label>
+            <label htmlFor="" className='w-24'>Phone Number</label>
             <div className="flex">
-              <div>
+              {/* <div>
                 <img src="" alt="" />
                 <h4>+234</h4>
                 <img src="" alt="" />
-              </div>
-              <input type="text" placeholder='Festus' />
+              </div> */}
+              <input type="text" placeholder='' />
             </div>
           </div>
         </div>
         <div className="flex">
           <div className="grid">
-            <label htmlFor="">Gender</label>
+            <label htmlFor="" className='w-16'>Gender</label>
             <div className="flex">
               <div className="flex">
                 <input type="radio" name="" id="" />
@@ -52,7 +52,7 @@ const PaForm1 = () => {
             </div>
           </div>
           <div className="grid">
-            <label htmlFor="">Home Address</label>
+            <label htmlFor="" className='w-24'>Home Address</label>
             <input type="text" placeholder='Enter Text Here' />
           </div>
         </div>
@@ -60,27 +60,27 @@ const PaForm1 = () => {
         <header>Next of Kin</header>
         <div className="grid grid-cols-3 grid-rows-2">
           <div className="grid">
-            <label htmlFor="">First Name</label>
+            <label htmlFor="" className='w-16'>First Name</label>
             <input type="text" placeholder='Ayomide' />
           </div>
           <div className="grid">
-            <label htmlFor="">Last Name</label>
+            <label htmlFor="" className='w-16'>Last Name</label>
             <input type="text" placeholder='Kanayo' />
           </div>
           <div className="grid">
-            <label htmlFor="">Other Name</label>
+            <label htmlFor="" className='w-20'>Other Name</label>
             <input type="text" placeholder='Festus' />
           </div>
           <div className="grid">
-            <label htmlFor="">Relationship</label>
+            <label htmlFor="" className='w-20'>Relationship</label>
             <input type="text" placeholder='' />
           </div>
           <div className="grid">
-            <label htmlFor="">Gender</label>
+            <label htmlFor="" className='w-16'>Gender</label>
             <input type="text" placeholder='' />
           </div>
           <div className="grid">
-            <label htmlFor="">Date of Birth</label>
+            <label htmlFor="" className='w-20'>Date of Birth</label>
             <input type="text" placeholder='__ / __ / ____' />
           </div>
         </div>
