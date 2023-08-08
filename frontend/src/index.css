@@ -83,7 +83,7 @@
     font-size: 0.969rem;
 } 
 
-.patients Form input{
+.patients Form input, .patients Form textarea{
     border-radius: 0.4375rem;
     border: 1px solid #7F00AC;
     background: #FFF;

@@ -18,7 +18,7 @@ const PaForm3 = () => {
         </div>
       </div>
       <div className="grid">
-        <label htmlFor="">Comment</label>
+        <label htmlFor="" className='w-16'>Comment</label>
         <textarea name="" id="" cols="30" rows="10" placeholder='Enter text here' ></textarea>
       </div>
     </React.Fragment>
