@@ -3,39 +3,42 @@ import dots from '../assets/Dashboard/Group 11.svg'
 import profile from '../assets/Dashboard/Group.svg'
 import comm from '../assets/Dashboard/noun-community-5666932 1.svg'
 import dept from '../assets/Dashboard/Group (1).svg'
+import { Link } from 'react-router-dom'
 
 const SummaryCard = () => {
   return (
     <React.Fragment>
-        <div className='flex gap-4'>
-            <div>
-                <div className='flex'>
-                    <p>Total Patients</p>
-                    <img src={dots} alt="..." />
+        <div className='flex gap-4 ml-5 mt-2'>
+            <div className='w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5'>
+                <div className='flex items-center'>
+                    <p className='font-welcome text-xl text-white font-medium mr-auto'>Total Patients</p>
+                    <Link><img className='ml-auto' src={dots} alt="..." /></Link>
                 </div>
-                <div className='flex'>
-                    <p>2387</p>
-                    <img src={profile} alt="profile" />
-                </div>
-            </div>
-            <div>
-                <div className='flex'>
-                    <p>Total Departments</p>
-                    <img src={dots} alt="..." />
-                </div>
-                <div className='flex'>
-                    <p>30</p>
-                    <img src={comm} alt="profile" />
+                <div className='flex pt-8'>
+                    <p className='font-welcome text-3xl text-white font-bold'>2387</p>
+                   <div className='bg-tertiary-1  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-36'><img src={profile} alt="profile" /></div>
                 </div>
             </div>
-            <div>
-                <div className='flex'>
-                    <p>Total diagnosis</p>
-                    <img src={dots} alt="..." />
+
+            <div className='w-87.25 h-46.5 bg-secondary4 rounded-md px-5 py-5'>
+                <div className='flex items-center'>
+                    <p className='font-welcome text-xl text-white font-medium mr-auto'>Total Departments</p>
+                    <Link><img className='ml-auto' src={dots} alt="..." /></Link>
                 </div>
-                <div className='flex'>
-                    <p>456</p>
-                    <img src={dept} alt="profile" />
+                <div className='flex pt-8'>
+                    <p className='font-welcome text-3xl text-white font-bold '>30</p>
+                    <div className='bg-tertiary-2  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-44'><img src={comm} alt="profile" /></div>
+                </div>
+            </div>
+
+            <div className='w-87.25 h-46.5 bg-secondary5 rounded-md px-5 py-5'>
+                <div className='flex items-center'>
+                    <p className='font-welcome text-xl text-white font-medium mr-auto'>Total diagnosis</p>
+                    <Link><img className='ml-auto' src={dots} alt="..." /></Link>
+                </div>
+                <div className='flex pt-8'>
+                    <p className='font-welcome text-3xl text-white font-bold'>456</p>
+                    <div className='bg-tertiary-3  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-36'><img src={dept} alt="profile" /></div>
                 </div>
             </div>
         </div>
