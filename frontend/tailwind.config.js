@@ -10,6 +10,9 @@ export default {
     "./src/components/Sidebar.jsx",
     "./src/Subpages/Patients.jsx",
     "./src/Subpages/Dashboard.jsx",
+    "./src/Subpages/Patients Subpage/PaForm1.jsx",
+    "./src/Subpages/Patients Subpage/PaForm2.jsx",
+    "./src/Subpages/Patients Subpage/PaForm3.jsx",
 
   ],
   theme: {

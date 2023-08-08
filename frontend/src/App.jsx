@@ -8,6 +8,9 @@ import Doctor from "./Subpages/Doctor"
 import Pharmacy from "./Subpages/Pharmacy"
 import Reports from "./Subpages/Reports"
 import Settings from "./Subpages/Settings"
+import PaForm1 from "./Subpages/Patients Subpage/PaForm1"
+import PaForm2 from "./Subpages/Patients Subpage/PaForm2"
+import PaForm3 from "./Subpages/Patients Subpage/PaForm3"
 
 function App() {
 
@@ -20,6 +23,9 @@ const router = createBrowserRouter(
               <Route path="dashboard" index element={<Dashboard />}>
               </Route>
               <Route path="patient" element={<Patients />}>
+                <Route path="personal" element={<PaForm1 />} />
+                <Route path="info" element={<PaForm2 />} />
+                <Route path="test" element={<PaForm3 />} />
               </Route>
               <Route path="doctor" element={<Doctor />}></Route>
               <Route path="pharmacy" element={<Pharmacy />}>
