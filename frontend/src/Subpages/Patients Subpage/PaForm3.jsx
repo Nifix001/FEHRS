@@ -5,7 +5,7 @@ const PaForm3 = () => {
     <React.Fragment>
       <div className="flex">
         <div className="grid">
-          <label htmlFor="">Test Typr</label>
+          <label htmlFor="">Test Type</label>
           <input type="text" />
         </div>
         <div className="grid">
