@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Form, NavLink, Outlet } from 'react-router-dom'
 
 const Patients = () => {
   return (
@@ -11,7 +11,13 @@ const Patients = () => {
           <NavLink to="info">Medical information</NavLink>
           <NavLink to="test">Medical Test</NavLink>
         </div>
-        <Outlet />
+        <Form>
+          <Outlet />
+          <div className="flex">
+            <button type='submit'>Save and Continue</button>
+            <button type='submit'>Previous</button>
+        </div>
+        </Form>
      </div>
     </React.Fragment>
   )
