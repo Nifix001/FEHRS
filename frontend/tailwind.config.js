@@ -14,6 +14,7 @@ export default {
     "./src/Subpages/Patients Subpage/PaForm2.jsx",
     "./src/Subpages/Patients Subpage/PaForm3.jsx",
     "./src/components/SummaryCard.jsx",
+    "./src/components/Graph.jsx",
   ],
   theme: {
     extend: {
