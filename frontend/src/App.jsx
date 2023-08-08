@@ -17,7 +17,7 @@ const router = createBrowserRouter(
             <Route index element={<Welcome />} />
             <Route path="login" element={<Login />} />
             <Route path="user" element={<Layout />}>
-              <Route path="dashboard" element={<Dashboard />}>
+              <Route path="dashboard" index element={<Dashboard />}>
               </Route>
               <Route path="patient" element={<Patients />}>
               </Route>
