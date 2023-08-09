@@ -115,3 +115,13 @@
     outline: #7F00AC;
     border: none;
 }
+
+.patients header{
+    color: #1D1D1D;
+    font-family: Mukta;
+    font-size: 1.45rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 1rem;
+}
