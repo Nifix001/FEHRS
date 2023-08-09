@@ -38,26 +38,26 @@ const PaForm1 = () => {
           </div>
         </div>
         <div className="flex gap-x-6 mb-4">
-          <div className="grid">
+          <div className="grid gap-y-1">
             <label htmlFor="" className='w-16'>Gender</label>
-            <div className="flex">
-              <div className="flex">
-                <input type="radio" name="" id="" />
-                <h4>Male</h4>
+            <div className="flex gap-x-2">
+              <div className="flex gap-x-1">
+                <input type="radio" name="" id="" className='-mt-2'  />
+                <h4>Male</h4> 
               </div>
-              <div className="flex">
-                <input type="radio" name="" id="" />
+              <div className="flex gap-x-1">
+                <input type="radio" name="" id=""  className='-mt-2' />
                 <h4>Female</h4>
               </div>
             </div>
           </div>
           <div className="grid">
             <label htmlFor="" className='w-24'>Home Address</label>
-            <input type="text" placeholder='Enter Text Here' />
+            <input type="text" placeholder='Enter Text Here' className='w-182 h-12' />
           </div>
         </div>
         <hr />
-        <header>Next of Kin</header>
+        <header className='-mt-1 -mb-1'>Next of Kin</header>
         <div className="grid grid-cols-3 grid-rows-2 gap-x-6">
           <div className="grid">
             <label htmlFor="" className='w-16'>First Name</label>
