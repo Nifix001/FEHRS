@@ -13,9 +13,9 @@ const Patients = () => {
         </div>
         <Form>
           <Outlet />
-          <div className="flex">
-            <button type='submit'>Save and Continue</button>
-            <button type='submit'>Previous</button>
+          <div className="flex absolute bottom-4 ml-56 mr-auto gap-12">
+            <button type='submit' className='bg-primary text-white py-3 px-20'>Save and Continue</button>
+            <button type='submit' className='bg-white text-primary border-2 border-primary py-3 px-20'>Previous</button>
         </div>
         </Form>
      </div>
