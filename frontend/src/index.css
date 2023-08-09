@@ -126,8 +126,16 @@
     margin-top: 1rem;
 }
 
+.palinks a{
+    color:  #828282;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 .palinks a.active{
     color: #fff;
     background-color: #7F00AC;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
 }
