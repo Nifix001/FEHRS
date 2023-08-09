@@ -3,7 +3,7 @@ import React from 'react'
 const PaForm3 = () => {
   return (
     <React.Fragment>
-      <div className="flex">
+      <div className="flex gap-6">
         <div className="grid">
           <label htmlFor="" className='w-16'>Test Type</label>
           <input type="text" />

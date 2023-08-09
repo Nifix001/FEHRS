@@ -3,7 +3,7 @@ import React from 'react'
 const PaForm2 = () => {
   return (
     <React.Fragment>
-      <div className="grid grid-cols-3 grid-rows-2">
+      <div className="grid grid-cols-3 grid-rows-2 gap-x-6">
         <div className="grid">
           <label htmlFor="" className='w-20'>Blood Group</label>
           <input type="text" />
@@ -23,7 +23,7 @@ const PaForm2 = () => {
       </div>
       <hr />
       <header>Previous illness 0r Test</header>
-      <div className="grid grid-cols-2 grid-rows-2">
+      <div className="grid grid-cols-2 grid-rows-2 gap-x-6">
         <div className="grid">
           <label htmlFor="" className='w-40'>Previous illness or surgeries </label>
           <input type="text" />
