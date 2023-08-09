@@ -4,7 +4,7 @@ import { Form } from 'react-router-dom'
 const PaForm1 = () => {
   return (
     <React.Fragment>
-        <div className="grid grid-cols-3 grid-rows-2">
+        <div className="grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-3">
           <div className="grid">
             <label htmlFor="" className='w-16'>First Name</label>
             <input type="text" placeholder='Ayomide' />
@@ -37,7 +37,7 @@ const PaForm1 = () => {
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex gap-x-6 mb-4">
           <div className="grid">
             <label htmlFor="" className='w-16'>Gender</label>
             <div className="flex">
@@ -58,7 +58,7 @@ const PaForm1 = () => {
         </div>
         <hr />
         <header>Next of Kin</header>
-        <div className="grid grid-cols-3 grid-rows-2">
+        <div className="grid grid-cols-3 grid-rows-2 gap-x-6">
           <div className="grid">
             <label htmlFor="" className='w-16'>First Name</label>
             <input type="text" placeholder='Ayomide' />
