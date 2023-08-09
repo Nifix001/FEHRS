@@ -125,3 +125,9 @@
     line-height: normal;
     margin-top: 1rem;
 }
+
+.palinks a.active{
+    color: #fff;
+    background-color: #7F00AC;
+    padding: 0.25rem 0.5rem;
+}
