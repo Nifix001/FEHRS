@@ -5,25 +5,23 @@ import graph from '../assets/Dashboard/Frame 486.svg'
 const Graph = () => {
   return (
     <React.Fragment>
-        <div className='flex pt-6  gap-4'>
+        <div className='flex pt-6  pl-6 gap-4'>
+                <img className='-mt-20 scale-y-70' src={graph} alt="graph" />
             <div>
-                <img className='w-171.25 h-103.75' src={graph} alt="graph" />
-            </div>
-            <div>
-                <div className='flex justify-between items-center'>
-                    <h5 className='font-welcome text'>Recent Patients</h5>
-                    <p className='font-span '><Link>see more</Link></p>
+                <div className='flex justify-between items-center mb-4'>
+                    <h5 className='font-welcome text-2xl font-medium'>Recent Patients</h5>
+                    <p className='font-span text-lg font-normal hover:text-primary '><Link>See more</Link></p>
                 </div>
                 <div>
-                <table className="w-94 h-140 bg-white rounded-md table-auto">
-                    <thead>
-                        <tr>
+                <table className="w-94 h-80 bg-white rounded-md table-auto  text-center">
+                    <thead className='border-b text-primary'>
+                        <tr className='p-3'>
                         <th>SN</th>
                         <th>Name</th>
                         <th>Matric Number</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="font-span text-lg font-normal">
                         <tr>
                         <td>1.</td>
                         <td>Mary Joseph</td>
