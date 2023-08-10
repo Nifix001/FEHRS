@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import search from '../assets/akar-icons_search.svg'
+import filter from '../assets/cil_filter.svg'
 
 const Pharmacy = () => {
   return (
@@ -14,6 +16,13 @@ const Pharmacy = () => {
         <div className='flex gap-4 items-center'>
         <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Add New</NavLink>
         <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Import</NavLink>
+        <div className='flex gap-4'>
+        <img className='relative left-12' src={search} alt="search" />
+        <input type="text"  className='border rounded-md font-span font-normal text-base border-solid text-gray-300 border-gray-300 w-56 h-10 p-2'/>
+        <div className='border rounded-md items-center border-gray-300 p-1'>
+          <img src={filter} alt="filter" />
+        </div>
+        </div>
         </div>
         </nav>
       <Outlet />
