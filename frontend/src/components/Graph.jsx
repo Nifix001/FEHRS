@@ -5,8 +5,8 @@ import graph from '../assets/Dashboard/Frame 486.svg'
 const Graph = () => {
   return (
     <React.Fragment>
-        <div className='flex pt-6  pl-6 gap-4'>
-                <img className='-mt-16 scale-y-70' src={graph} alt="graph" />
+        <div className='flex pt-6 pl-6 gap-4'>
+                <img className='scale-y-70 scale-x-80 -mt-16' src={graph} alt="graph" />
             <div>
                 <div className='flex justify-between items-center mb-4'>
                     <h5 className='font-welcome text-2xl font-medium'>Recent Patients</h5>
