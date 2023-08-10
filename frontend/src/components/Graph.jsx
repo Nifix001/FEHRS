@@ -5,10 +5,10 @@ import graph from '../assets/Dashboard/Frame 486.svg'
 const Graph = () => {
   return (
     <React.Fragment>
-        <div className='flex pt-6 pl-6 gap-4'>
-                <img className='scale-y-70 scale-x-85 -mt-16' src={graph} alt="graph" />
-            <div>
-                <div className='flex justify-between items-center mb-4'>
+        <div className='flex pt-6 pl-6'>
+                <img className='scale-y-70 scale-x-90 -mt-16 -ml-5' src={graph} alt="graph" />
+            <div className='ml-12'>
+                <div className='flex justify-between items-center mb-3'>
                     <h5 className='font-welcome text-2xl font-medium'>Recent Patients</h5>
                     <p className='font-span text-lg font-normal hover:text-primary '><Link>See more</Link></p>
                 </div>
