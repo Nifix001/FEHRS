@@ -11,6 +11,9 @@ import Settings from "./Subpages/Settings"
 import PaForm1 from "./Subpages/Patients Subpage/PaForm1"
 import PaForm2 from "./Subpages/Patients Subpage/PaForm2"
 import PaForm3 from "./Subpages/Patients Subpage/PaForm3"
+import Drugs from "./Subpages/Pharmacy Subpages/Drugs"
+import Prescriptions from "./Subpages/Pharmacy Subpages/Prescriptions"
+import History from "./Subpages/Pharmacy Subpages/History"
 
 function App() {
 
@@ -29,6 +32,9 @@ const router = createBrowserRouter(
               </Route>
               <Route path="doctor" element={<Doctor />}></Route>
               <Route path="pharmacy" element={<Pharmacy />}>
+                <Route path="drugs" element={<Drugs />}/>
+                <Route path="prescriptions" element={<Prescriptions />}/>
+                <Route path="history" element={<History />}/>
               </Route>
               <Route path="reports" element={<Reports />}></Route>
               <Route path="settings" element={<Settings />}></Route>
