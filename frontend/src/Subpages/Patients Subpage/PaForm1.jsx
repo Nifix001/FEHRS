@@ -57,7 +57,7 @@ const PaForm1 = () => {
           </div>
         </div>
         <hr />
-        <header className='-mt-1 -mb-1'>Next of Kin</header>
+        <header className='-mt-0.5 -mb-0.5'>Next of Kin</header>
         <div className="grid grid-cols-3 grid-rows-2 gap-x-6">
           <div className="grid">
             <label htmlFor="" className='w-16'>First Name</label>
