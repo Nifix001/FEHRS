@@ -1,5 +1,5 @@
 
-const Drugs = [
+const Drugsdata = [
     {
         id: 1,
         sn: 1.,
