@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import search from '../assets/akar-icons_search.svg'
 import filter from '../assets/cil_filter.svg'
 
 const Pharmacy = () => {
+
+  const [file, setFile] = useState(false)
+  const [disabled, setDisabled] = useState(true)
+
+  const handleFile = (e) => {
+    e.preventDefault();
+    setFile(!file);
+  }
+
   return (
     <React.Fragment>
       <div className='w-281 h-142.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
@@ -15,9 +24,9 @@ const Pharmacy = () => {
         </div>
         <div className='flex gap-4 items-center'>
         <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Add New</NavLink>
-        <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Import
+        <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'  onClick={handleFile}>Import
         </NavLink>
-          <input type="file" className='hidden' accept='.xlsx' />
+          {file && <input type="file" className='flex' accept='.xlsx' disabled={disabled} onChange={() => setDisabled(!disabled)}  />}
         <div className='flex gap-4'>
         <img className='relative left-12' src={search} alt="search" />
         <input type="text"  className='border rounded-md font-span font-normal text-base border-solid text-gray-300 border-gray-300 w-56 h-10 p-2'/>
