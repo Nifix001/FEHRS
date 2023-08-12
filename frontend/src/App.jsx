@@ -30,7 +30,7 @@ const router = createBrowserRouter(
                 <Route path="info" element={<PaForm2 />} />
                 <Route path="test" element={<PaForm3 />} />
               </Route>
-              <Route path="doctor" element={<Doctor />}></Route>
+              {/* <Route path="doctor" element={<Doctor />}></Route> */}
               <Route path="pharmacy" element={<Pharmacy />}>
                 <Route path="drugs" element={<Drugs />}/>
                 <Route path="prescriptions" element={<Prescriptions />}/>
