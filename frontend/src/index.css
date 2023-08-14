@@ -83,6 +83,10 @@
     font-size: 0.969rem;
 } 
 
+.sidebar div a:hover h3{
+    color: #fff;
+}
+
 .patients Form input, .patients Form textarea{
     border-radius: 0.4375rem;
     border: 1px solid #7F00AC;
@@ -139,3 +143,7 @@
     background-color: #7F00AC;
     padding: 0.5rem 0.75rem;
 }
+/* .paform1 input{
+    height: 2.5rem;
+    font-size: 0.1rem;
+} */
