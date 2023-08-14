@@ -20,7 +20,7 @@ const SideBar = () => (
                     <h3 className='-mt-0.5'>Dashboard</h3>
                 </NavLink>
                 <NavLink className='flex hover:bg-primary hover:text-white p-1.5 -ml-1.5' to="patient/personal">
-                    <img className='w-5 h-5 mr-2  fill-white' src={PatientIcon} alt="patient icon" />
+                    <img className='w-5 h-5 mr-2  stroke-white' src={PatientIcon} alt="patient icon" />
                     <h3 className='-mt-0.5'>Patients</h3>
                 </NavLink>
                 {/* <NavLink className='flex hover:bg-primary hover:text-white p-1.5 -ml-1.5' to="doctor">
