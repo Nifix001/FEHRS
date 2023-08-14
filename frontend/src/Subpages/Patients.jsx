@@ -1,7 +1,11 @@
 import React from 'react'
-import { Form, NavLink, Outlet } from 'react-router-dom'
+import { Form, NavLink, Outlet, useNavigate } from 'react-router-dom'
 
 const Patients = () => {
+
+
+  const redirect = useNavigate();
+
   return (
     <React.Fragment>
      <div className='w-281 h-142.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
