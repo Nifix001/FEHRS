@@ -1,26 +1,28 @@
 import React from 'react'
-import DrugTable from '../../Tables/DrugTable'
-import Drugsdata from '../database/Drugsdata.js'
+import DrugTable from'../../Tables/DrugTable.jsx'
+import Drugsdata from '../../database/Drugsdata.js'
 
-export default function Drugs() {
-
+const Drugs = () => {
+  
   const drugs = Drugsdata.map(dd => {
     return(
-      <DrugTable 
-      key={dd.id}
-      sn={dd.sn}
-      drug={dd.drug}
-      quantity={dd.quantity}
-      mfgd={dd.mfgd}
-      expd={dd.expd}
-      />
+      <tr key={dd.id}>
+        <td className='py-4'>{dd.sn}</td>
+        <td className='text-left pl-6 '>{dd.drug}</td>
+        <td className=''>{dd.quantity}</td>
+        <td>{dd.mfgd}</td>
+        <td>{dd.expd}</td>
+      </tr>
     )
   })
 
   return (
     <React.Fragment>
-      {drugs}
+      <DrugTable drugs={drugs} />
     </React.Fragment>
   )
 }
+
+export default Drugs
+
 

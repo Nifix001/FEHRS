@@ -14,8 +14,12 @@ export default {
     "./src/Subpages/Patients Subpage/PaForm1.jsx",
     "./src/Subpages/Patients Subpage/PaForm2.jsx",
     "./src/Subpages/Patients Subpage/PaForm3.jsx",
+    "./src/Subpages/Pharmacy Subpage/Drugs.jsx",
+    "./src/Subpages/Pharmacy Subpage/History.jsx",
+    "./src/Subpages/Pharmacy Subpage/Prescriptons.jsx",
     "./src/components/SummaryCard.jsx",
     "./src/components/Graph.jsx",
+    "./src/Tables/DrugTable.jsx",
   ],
   theme: {
     extend: {
@@ -55,6 +59,8 @@ export default {
         '151': '37.75rem',
         '171.25': '42.81rem',
         '182': '45.5rem',
+        '260': '65rem',
+        '272': '68rem',
         '280': '70rem',
         '281': '70.25rem',
         '282': '70.5rem',

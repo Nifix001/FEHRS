@@ -13,12 +13,12 @@ const Pharmacy = () => {
 
   return (
     <React.Fragment>
-      <div className='w-281 h-142.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
+      <div className='w-281 h-142.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients overflow-x-hidden'>
         <nav className='flex justify-between items-center'>
-        <div className=' bg-white gap-2 rounded-md shadow-2xl shadow-gray-900 p-1 w-12'>
-        <NavLink to="drugs" className='text-primary font-span text-xl font-normal py-2 px-5 hover:text-white hover:bg-primary'>Drugs</NavLink>
-          <NavLink to="prescriptions" className='text-primary py-2 px-5 font-span text-xl font-normal hover:text-white hover:bg-primary'>Prescriptions</NavLink>
-          <NavLink to="History" className='text-primary py-2 px-5 font-span text-xl font-normal hover:text-white hover:bg-primary'>History</NavLink>
+        <div className=' bg-white gap-2 rounded-md p-1 w-12'>
+        <NavLink to="drugs" className='text-primary font-span text-lg font-normal py-2 px-4 focus:text-white  focus:bg-primary rounded-md'>Drugs</NavLink>
+          <NavLink to="prescriptions" className='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'>Prescriptions</NavLink>
+          <NavLink to="History" className='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'>History</NavLink>
         </div>
         <div className='flex gap-4 items-center'>
         <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Add New</NavLink>

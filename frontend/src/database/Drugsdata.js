@@ -72,4 +72,30 @@ const Drugsdata = [
         mfgd: "12/04/2023",
         expd: "12/04/2024"
     },
+    {
+        id: 10,
+        sn: 9.,
+        drug: "Gabapentin",
+        quantity: 285,
+        mfgd: "12/04/2023",
+        expd: "12/04/2024"
+    },
+    {
+        id: 11,
+        sn: 9.,
+        drug: "Gabapentin",
+        quantity: 285,
+        mfgd: "12/04/2023",
+        expd: "12/04/2024"
+    },
+    {
+        id: 12,
+        sn: 9.,
+        drug: "Gabapentin",
+        quantity: 285,
+        mfgd: "12/04/2023",
+        expd: "12/04/2024"
+    },
 ]
+
+export default Drugsdata
