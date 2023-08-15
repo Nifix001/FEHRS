@@ -17,6 +17,7 @@ export default {
     "./src/Subpages/Pharmacy Subpage/Drugs.jsx",
     "./src/Subpages/Pharmacy Subpage/History.jsx",
     "./src/Subpages/Pharmacy Subpage/Prescriptons.jsx",
+    "./src/Subpages/Pharmacy Subpage/AddNew.jsx",
     "./src/components/SummaryCard.jsx",
     "./src/components/Graph.jsx",
     "./src/Tables/DrugTable.jsx",

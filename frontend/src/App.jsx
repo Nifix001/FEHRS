@@ -14,6 +14,7 @@ import PaForm3 from "./Subpages/Patients Subpage/PaForm3"
 import Drugs from "./Subpages/Pharmacy Subpages/Drugs"
 import Prescriptions from "./Subpages/Pharmacy Subpages/Prescriptions"
 import History from "./Subpages/Pharmacy Subpages/History"
+import AddNew from "./Subpages/Pharmacy Subpages/AddNew"
 
 function App() {
 
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
                 <Route path="drugs" element={<Drugs />}/>
                 <Route path="prescriptions" element={<Prescriptions />}/>
                 <Route path="history" element={<History />}/>
+                <Route path="addnew" element={<AddNew />}/>
               </Route>
               <Route path="reports" element={<Reports />}></Route>
               <Route path="settings" element={<Settings />}></Route>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import search from '../assets/akar-icons_search.svg'
 import filter from '../assets/cil_filter.svg'
 
@@ -18,10 +18,10 @@ const Pharmacy = () => {
         <div className=' bg-white gap-2 rounded-md p-1 w-12'>
         <NavLink to="drugs" className='text-primary font-span text-lg font-normal py-2 px-4 focus:text-white  focus:bg-primary rounded-md'>Drugs</NavLink>
           <NavLink to="prescriptions" className='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'>Prescriptions</NavLink>
-          <NavLink to="History" className='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'>History</NavLink>
+          <NavLink to="history" className='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'>History</NavLink>
         </div>
         <div className='flex gap-4 items-center'>
-        <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Add New</NavLink>
+        <Link to="addnew" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'>Add New</Link>
         <NavLink to="" className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'  onClick={handleFile}>Import
         </NavLink>
          <input type="file" id='file' className='hidden' accept='.xlsx'  />

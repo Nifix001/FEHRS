@@ -5,8 +5,8 @@ const DrugTable = ({drugs}) => {
     <React.Fragment>
         <table className=" w-260 bg-white rounded-md  text-center mt-6 table-auto">
             <thead className='border-b '>
-                <tr className='p-3 table-row'>
-                <td className='text-tertiary-5 font-span text-lg font-thin'>S/N</td>
+                <tr className='table-row'>
+                <td className='text-tertiary-5 font-span text-lg font-thin py-3'>S/N</td>
                 <td className='text-tertiary-5 font-span text-lg font-thin text-left pl-6'>Drug Name</td>
                 <td className='text-tertiary-5 font-span text-lg font-thin text-left pl-4'>Quantity (pcs)</td>
                 <td className='text-tertiary-5 font-span text-lg font-thin text-left pl-8'>MFG date</td>
