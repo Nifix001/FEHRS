@@ -20,6 +20,8 @@ export default {
     "./src/components/SummaryCard.jsx",
     "./src/components/Graph.jsx",
     "./src/Tables/DrugTable.jsx",
+    "./src/Tables/PrescriptionTable.jsx",
+    "./src/Tables/HistoryTable.jsx",
   ],
   theme: {
     extend: {
