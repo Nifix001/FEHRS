@@ -1,5 +1,5 @@
 
-const History = [
+const Historydata = [
     {
         id: 1,
         name: "Mary Joseph",
@@ -64,3 +64,5 @@ const History = [
         diagnosis: "Syphilis"
     },
 ]
+
+export default Historydata

@@ -14,8 +14,15 @@ export default {
     "./src/Subpages/Patients Subpage/PaForm1.jsx",
     "./src/Subpages/Patients Subpage/PaForm2.jsx",
     "./src/Subpages/Patients Subpage/PaForm3.jsx",
+    "./src/Subpages/Pharmacy Subpage/Drugs.jsx",
+    "./src/Subpages/Pharmacy Subpage/History.jsx",
+    "./src/Subpages/Pharmacy Subpage/Prescriptons.jsx",
+    "./src/Subpages/Pharmacy Subpage/AddNew.jsx",
     "./src/components/SummaryCard.jsx",
     "./src/components/Graph.jsx",
+    "./src/Tables/DrugTable.jsx",
+    "./src/Tables/PrescriptionTable.jsx",
+    "./src/Tables/HistoryTable.jsx",
   ],
   theme: {
     extend: {
@@ -35,9 +42,10 @@ export default {
           '2': '#78C994',
           '3': '#1899EE',
           '4': '#F9F9F9',
+          '5': '#828282'
         },
         'gray':{
-          '750': "#212121"
+          '750': "#212121",
       }
       },
       scale: {
@@ -54,9 +62,12 @@ export default {
         '151': '37.75rem',
         '171.25': '42.81rem',
         '182': '45.5rem',
+        '260': '65rem',
+        '272': '68rem',
         '280': '70rem',
         '281': '70.25rem',
         '282': '70.5rem',
+        '287.25': '71.81rem'
       },
       height: {
         '13' : '3.3rem',
@@ -74,6 +85,7 @@ export default {
         '148': '37rem',
         '160.5': '40.13rem',
         '178.25': '44.56rem',
+        '192.25': '48.06rem',
         '224' : '56rem',
       },
       fontFamily:{

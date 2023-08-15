@@ -1,5 +1,5 @@
 
-const Drugs = [
+const Drugsdata = [
     {
         id: 1,
         sn: 1.,
@@ -27,7 +27,7 @@ const Drugs = [
     {
         id: 4,
         sn: 4.,
-        drug: "Acetaminophen and Codeine (Tylenol with Codeine)",
+        drug: "Acetaminophen and Codeine...",
         quantity: 234,
         mfgd: "12/04/2023",
         expd: "12/04/2024"
@@ -73,3 +73,5 @@ const Drugs = [
         expd: "12/04/2024"
     },
 ]
+
+export default Drugsdata
