@@ -27,7 +27,7 @@ const Drugsdata = [
     {
         id: 4,
         sn: 4.,
-        drug: "Acetaminophen and Codeine (Tylenol with Codeine)",
+        drug: "Acetaminophen and Codeine...",
         quantity: 234,
         mfgd: "12/04/2023",
         expd: "12/04/2024"
@@ -66,30 +66,6 @@ const Drugsdata = [
     },
     {
         id: 9,
-        sn: 9.,
-        drug: "Gabapentin",
-        quantity: 285,
-        mfgd: "12/04/2023",
-        expd: "12/04/2024"
-    },
-    {
-        id: 10,
-        sn: 9.,
-        drug: "Gabapentin",
-        quantity: 285,
-        mfgd: "12/04/2023",
-        expd: "12/04/2024"
-    },
-    {
-        id: 11,
-        sn: 9.,
-        drug: "Gabapentin",
-        quantity: 285,
-        mfgd: "12/04/2023",
-        expd: "12/04/2024"
-    },
-    {
-        id: 12,
         sn: 9.,
         drug: "Gabapentin",
         quantity: 285,

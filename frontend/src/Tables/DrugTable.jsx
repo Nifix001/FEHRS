@@ -8,9 +8,9 @@ const DrugTable = ({drugs}) => {
                 <tr className='p-3 table-row'>
                 <td className='text-tertiary-5 font-span text-lg font-thin'>S/N</td>
                 <td className='text-gray-222 font-span text-lg font-thin text-left pl-6'>Drug Name</td>
-                <td className='text-gray-222 font-span text-lg font-thin'>Quantity (pcs)</td>
-                <td className='text-gray-222 font-span text-lg font-thin'>MFG date</td>
-                <td className='text-gray-222 font-span text-lg font-thin'>EXP date</td>
+                <td className='text-gray-222 font-span text-lg font-thin text-left pl-4'>Quantity (pcs)</td>
+                <td className='text-gray-222 font-span text-lg font-thin text-left pl-8'>MFG date</td>
+                <td className='text-gray-222 font-span text-lg font-thin text-left pl-8'>EXP date</td>
                 <td className='text-gray-222 font-span text-lg font-thin'>Options</td>
                 </tr>
             </thead>

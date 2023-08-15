@@ -9,9 +9,13 @@ const Drugs = () => {
       <tr key={dd.id}>
         <td className='py-4'>{dd.sn}</td>
         <td className='text-left pl-6 '>{dd.drug}</td>
-        <td className=''>{dd.quantity}</td>
-        <td>{dd.mfgd}</td>
-        <td>{dd.expd}</td>
+        <td className='text-left pl-8'>{dd.quantity}</td>
+        <td className='text-left pl-6'>{dd.mfgd}</td>
+        <td className='text-left pl-6'>{dd.expd}</td>
+        <td className='flex'>
+          <button><img src="" alt="" /></button>
+          <button><img src="" alt="" /></button>
+        </td>
       </tr>
     )
   })
