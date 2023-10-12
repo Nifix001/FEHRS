@@ -3,11 +3,12 @@ import dashIcon from '../assets/sidebar/element-1.svg';
 import PatientIcon from '../assets/sidebar/bi_people.svg';
 import doctorIcon from '../assets/sidebar/hospital.svg';
 import PharmacyIcon from '../assets/sidebar/building-3.svg';
-import ReportsIcon from '../assets/sidebar/chart.svg';
+import ReportsIcon from '../assets/sidebar/chart.svg?react';
+// import { ReactComponent as ReportsIcon } from '../assets/sidebar/chart.svg';
 import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.svg';
 import SupportIcon from '../assets/sidebar/ic_outline-contact-support.svg'
 import { NavLink } from 'react-router-dom';
-import chartSVG from '../assets/sidebar/chartSVG';
+
 
 
 const SideBar = () => (
@@ -79,12 +80,13 @@ const SideBar = () => (
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
                     to = "reports"
                 >
-                    <img 
+                    {/* <img 
                         className = 'w-5 h-5 mr-2' 
                         src = { ReportsIcon } 
                         alt = "reports icon" 
-                    />
-                    {/* <chartSVG className="w-5 h-5 mr-2 stroke-slate-400 border" /> */}
+                    /> */}
+
+                    <ReportsIcon className={`w-5 h-5 mr-2`} />
 
                     <h3 className = '-mt-0.5'> Reports </h3>
                 </NavLink>

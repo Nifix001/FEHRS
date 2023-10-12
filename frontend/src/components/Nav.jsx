@@ -20,12 +20,13 @@ const Nav = () => {
                 <input 
                     type = "text" 
                     placeholder = 'Search' 
-                    className = 'border rounded-md font-span font-normal text-base border-solid text-gray-300 border-gray-300 w-182 h-10 p-2' 
+                    className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-182 h-10 p-2 outline-0' 
                 />
                 <img 
-                    className = 'relative right-12' 
+                    className = 'relative right-12 cursor-pointer' 
                     src = { search } 
-                    alt = "search" />
+                    alt = "search" 
+                />
             </div>
 
             <div>
