@@ -9,6 +9,10 @@ import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.svg';
 import SupportIcon from '../assets/sidebar/ic_outline-contact-support.svg'
 import { NavLink } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// chart-tree-map
+
 
 
 const SideBar = () => (
@@ -26,84 +30,73 @@ const SideBar = () => (
                     to = 'dashboard' 
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center'
                 >
-                    <img 
+                    {/* <img 
                         className = 'w-5 h-5 mr-2' 
                         src = { dashIcon } 
                         alt = "dashboard icon" 
-                    />
-
-                    {/* <div className = 'w-5 h-5 mr-2 bg-dashIcon object-contain '></div> */}
-
-                    <h3 className = '-mt-0.5'> Dashboard </h3>
+                    /> */}
+                    <div className = 'flex justify-content-space-between align-items-center'>
+                    </div>
+                    <FontAwesomeIcon icon = "fa-solid fa-table-list" className = 'w-5 h-5'  />
+                    <h3 className = '-mt-0.5 ml-2'> Dashboard </h3>
                 </NavLink>
 
                 <NavLink 
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
                     to = "patient"
                 >
-                    <img 
+                    {/* <img 
                         className = 'w-5 h-5 mr-2  stroke-white' 
                         src = { PatientIcon } 
                         alt = "patient icon" 
-                    />
-
-                    <h3 className = '-mt-0.5'> Patients </h3>
+                    /> */}
+                    <div className = 'flex justify-content-space-between align-items-center'>
+                        <FontAwesomeIcon icon = "fa-solid fa-user-group" className = 'w-5 h-5' />
+                        <h3 className = '-mt-0.5 ml-2'> Patients </h3>
+                    </div>
                 </NavLink>
 
-                {/* <NavLink 
-                        className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
-                        to = "doctor"
-                    >
-                    <img 
-                        className = 'w-5 h-5 mr-2' 
-                        src = { doctorIcon } 
-                        alt = "doctor icon" 
-                    />
-
-                    <h3 className = '-mt-0.5'>Doctor</h3>
-                </NavLink> */}
 
                 <NavLink 
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
                     to = "pharmacy"
                 >
-                    <img 
+                    {/* <img 
                         className = 'w-5 h-5 mr-2' 
                         src = { PharmacyIcon } 
                         alt = "pharmacy icon" 
-                    />
-
-                    <h3 className = '-mt-0.5'> Pharmacy </h3>
+                    /> */}
+                    <div className = 'flex justify-content-space-between align-items-center'>
+                     <FontAwesomeIcon icon = "fa-solid fa-hospital" className = 'w-5 h-5' />   
+                     <h3 className = 'ml-2 -mt-0.5'> Pharmacy </h3>
+                    </div>
                 </NavLink>
 
                 <NavLink 
-                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
+                    className = 'flex hover:bg-primary text-side hover:text-white p-1.5 -ml-1.5 items-center hover:stroke-white' 
                     to = "reports"
+                    title = "Reports page"
                 >
-                    {/* <img 
-                        className = 'w-5 h-5 mr-2' 
-                        src = { ReportsIcon } 
-                        alt = "reports icon" 
-                    /> */}
-
-                    <ReportsIcon className={`w-5 h-5 mr-2`} />
-
-                    <h3 className = '-mt-0.5'> Reports </h3>
+                    <div className="flex justify-content-space-between align-items-center">
+                        <FontAwesomeIcon icon = "fa-solid fa-chart-simple" className = 'w-5 h-5' />
+                        <h3 className = 'ml-2 -mt-0.5'> Reports </h3>
+                    </div>
                 </NavLink>
 
                 <NavLink 
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
                     to = "settings"
                 >
-                    <img 
+                    {/* <img 
                         className = 'w-5 h-5 mr-2' 
                         src = { SettingsIcon } 
                         alt = "settings icon" 
-                    />
-
-                    <h3 className = '-mt-0.5'> Settings </h3>
+                    /> */}
+                    <div className = 'flex justify-content-space-between align-items-center'>
+                        <FontAwesomeIcon icon = "fa-solid fa-gear" className = 'w-5 h-5' />
+                        <h3 className = '-mt-0.5 ml-2'> Settings </h3>
+                    </div>
                 </NavLink>
-
             </div>
 
             <div className = 'grid absolute bottom-20'>
@@ -114,13 +107,13 @@ const SideBar = () => (
                 
                 <div className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5'>
                     
-                    <img 
+                    {/* <img 
                         className = 'w-5 h-5 mr-2' 
                         src = { SupportIcon } 
                         alt = "" 
-                    />
-                    
-                    <h3 className = '-mt-0.5'> Support </h3>
+                    /> */}
+                    <FontAwesomeIcon icon = "fa-regular fa-circle-question" className='w-5 h-5' />
+                    <h3 className = '-mt-0.5 ml-2'> Support </h3>
                 
                 </div>
             </div>

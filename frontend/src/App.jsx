@@ -16,6 +16,13 @@ import Prescriptions from "./Subpages/Pharmacy Subpages/Prescriptions"
 import History from "./Subpages/Pharmacy Subpages/History"
 import AddNew from "./Subpages/Pharmacy Subpages/AddNew"
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas, fab, far);
+
 function App() {
 
 const router = createBrowserRouter(

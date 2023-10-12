@@ -73,19 +73,52 @@
     line-height: normal;
   }
 
-.sidebar div a h3{
+/* .sidebar div a h3{
+    color: #828282;
+}  */
+
+.sidebar div a {
     color: #828282;
 } 
 
-.sidebar div a.active h3{
+/* .sidebar div a.active h3{
+    color: #7F00AC;
+    font-weight: 400;
+    font-size: 0.969rem;
+}  */
+
+.sidebar div a.active {
     color: #7F00AC;
     font-weight: 400;
     font-size: 0.969rem;
 } 
 
-.sidebar div a:hover h3{
+
+/* .sidebar div a:hover h3{
     color: #fff;
+} */
+
+
+.sidebar div a:hover{
+    color: #fff;
+    fill: #fff;
 }
+/* #cpath1:hover{
+    stroke: #fff;
+}
+#cpath2:hover{
+    stroke: #fff;
+}
+#cpath3:hover{
+    stroke: #fff;
+}
+#cpath4:hover{
+    stroke: #fff;
+} */
+/* 
+#cpath:hover{
+    fill: #fff;
+} */
 
 .patients Form input, .patients Form textarea{
     border-radius: 0.4375rem;
