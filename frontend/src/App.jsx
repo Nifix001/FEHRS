@@ -21,25 +21,74 @@ function App() {
 const router = createBrowserRouter(
   createRoutesFromElements(
           <Route>
-            <Route index element={<Welcome />} />
-            <Route path="login" element={<Login />} />
-            <Route path="user" element={<Layout />}>
-              <Route path="dashboard" index element={<Dashboard />}>
+            <Route index element = { <Welcome /> } />
+            
+            <Route 
+              path = "login" 
+              element = { <Login /> } 
+            />
+
+            <Route 
+              path = "user" 
+              element = { <Layout /> }
+            >
+              <Route 
+                path = "dashboard" 
+                index 
+                element = { <Dashboard /> } 
+              >
               </Route>
-              <Route path="patient" element={<Patients />}>
-                <Route path="personal" element={<PaForm1 />} />
-                <Route path="info" element={<PaForm2 />} />
-                <Route path="test" element={<PaForm3 />} />
+              <Route 
+                path = "patient" 
+                element = { <Patients /> }
+              >
+                <Route 
+                  path = "personal" 
+                  element = { <PaForm1 /> } 
+                />
+                <Route 
+                  path = "info" 
+                  element = { <PaForm2 /> } 
+                />
+                <Route 
+                  path = "test" 
+                  element = { <PaForm3 /> }  
+                />
               </Route>
-              {/* <Route path="doctor" element={<Doctor />}></Route> */}
-              <Route path="pharmacy" element={<Pharmacy />}>
-                <Route path="drugs" element={<Drugs />}/>
-                <Route path="prescriptions" element={<Prescriptions />}/>
-                <Route path="history" element={<History />}/>
-                <Route path="addnew" element={<AddNew />}/>
+              {/* <Route 
+                path = "doctor" 
+                element = { <Doctor /> }
+              >
+              </Route> */}
+              <Route 
+                path = "pharmacy" 
+                element = { <Pharmacy /> } 
+              >
+                <Route 
+                  path = "drugs" 
+                  element = { <Drugs /> }
+                />
+                <Route 
+                  path = "prescriptions" 
+                  element = { <Prescriptions /> }
+                />
+                <Route 
+                  path = "history" 
+                  element = { <History /> }
+                />
+                <Route 
+                  path = "addnew" 
+                  element = { <AddNew /> }
+                />
               </Route>
-              <Route path="reports" element={<Reports />}></Route>
-              <Route path="settings" element={<Settings />}></Route>
+              <Route 
+                path = "reports" 
+                element = { <Reports /> }>
+              </Route>
+              <Route 
+                path = "settings" 
+                element = { <Settings /> }>
+              </Route>
             </Route>
           </Route>
              
@@ -48,7 +97,7 @@ const router = createBrowserRouter(
 
   return (
     <>
-      <RouterProvider router={router} />
+      <RouterProvider router = { router } />
     </>
   )
 }
