@@ -7,6 +7,7 @@ import ReportsIcon from '../assets/sidebar/chart.svg';
 import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.svg';
 import SupportIcon from '../assets/sidebar/ic_outline-contact-support.svg'
 import { NavLink } from 'react-router-dom';
+import chartSVG from '../assets/sidebar/chartSVG';
 
 
 const SideBar = () => (
@@ -83,6 +84,7 @@ const SideBar = () => (
                         src = { ReportsIcon } 
                         alt = "reports icon" 
                     />
+                    {/* <chartSVG className="w-5 h-5 mr-2 stroke-slate-400 border" /> */}
 
                     <h3 className = '-mt-0.5'> Reports </h3>
                 </NavLink>
