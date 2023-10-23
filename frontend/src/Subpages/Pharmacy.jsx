@@ -28,21 +28,21 @@ const Pharmacy = () => {
 
         <NavLink 
           to = "drugs" 
-          className ='text-primary font-span text-lg font-normal py-2 px-4 focus:text-white  focus:bg-primary rounded-md'
+          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md'
         >
           Drugs
         </NavLink>
 
         <NavLink 
           to = "prescriptions" 
-          className ='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'
+          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md'
         >
           Prescriptions
         </NavLink>
 
         <NavLink 
           to = "history" 
-          className ='text-primary py-2 px-4 font-span text-lg font-normal focus:text-white focus:bg-primary rounded-md'
+          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md'
         >
           History
         </NavLink>  

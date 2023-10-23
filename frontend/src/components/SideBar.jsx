@@ -59,7 +59,7 @@ const SideBar = () => (
 
                 <NavLink 
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center rounded-md my-1' 
-                    to = "pharmacy"
+                    to = "pharmacy/drugs"
                 >
                     {/* <img 
                         className = 'w-5 h-5 mr-2' 
