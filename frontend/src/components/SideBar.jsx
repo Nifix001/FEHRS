@@ -19,7 +19,7 @@ const SideBar = () => (
     
     <React.Fragment>
 
-        <div className = 'w-60 h-142.5 bg-white absolute left-0 top-20 px-4 sidebar'>
+        <div className = 'w-60 h-full bg-white absolute left-0 top-20 px-4 sidebar'>
             
             <header> 
                 <h1 className = 'mt-7 mb-3'> Menu </h1>
@@ -28,7 +28,7 @@ const SideBar = () => (
             <div className = "grid">               
                 <NavLink 
                     to = 'dashboard' 
-                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center'
+                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center rounded-md my-1'
                 >
                     {/* <img 
                         className = 'w-5 h-5 mr-2' 
@@ -38,11 +38,11 @@ const SideBar = () => (
                     <div className = 'flex justify-content-space-between align-items-center'>
                     </div>
                     <FontAwesomeIcon icon = "fa-solid fa-table-list" className = 'w-5 h-5'  />
-                    <h3 className = '-mt-0.5 ml-2'> Dashboard </h3>
+                    <h3 className = ' ml-2'> Dashboard </h3>
                 </NavLink>
 
                 <NavLink 
-                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
+                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center rounded-md my-1' 
                     to = "patient"
                 >
                     {/* <img 
@@ -52,13 +52,13 @@ const SideBar = () => (
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
                         <FontAwesomeIcon icon = "fa-solid fa-user-group" className = 'w-5 h-5' />
-                        <h3 className = '-mt-0.5 ml-2'> Patients </h3>
+                        <h3 className = ' ml-2'> Patients </h3>
                     </div>
                 </NavLink>
 
 
                 <NavLink 
-                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
+                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center rounded-md my-1' 
                     to = "pharmacy"
                 >
                     {/* <img 
@@ -68,7 +68,7 @@ const SideBar = () => (
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
                      <FontAwesomeIcon icon = "fa-solid fa-hospital" className = 'w-5 h-5' />   
-                     <h3 className = 'ml-2 -mt-0.5'> Pharmacy </h3>
+                     <h3 className = 'ml-2'> Pharmacy </h3>
                     </div>
                 </NavLink>
 
@@ -79,12 +79,12 @@ const SideBar = () => (
                 >
                     <div className="flex justify-content-space-between align-items-center">
                         <FontAwesomeIcon icon = "fa-solid fa-chart-simple" className = 'w-5 h-5' />
-                        <h3 className = 'ml-2 -mt-0.5'> Reports </h3>
+                        <h3 className = 'ml-2 '> Reports </h3>
                     </div>
                 </NavLink>
 
                 <NavLink 
-                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center' 
+                    className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center rounded-md my-1' 
                     to = "settings"
                 >
                     {/* <img 
@@ -94,7 +94,7 @@ const SideBar = () => (
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
                         <FontAwesomeIcon icon = "fa-solid fa-gear" className = 'w-5 h-5' />
-                        <h3 className = '-mt-0.5 ml-2'> Settings </h3>
+                        <h3 className = 'ml-2'> Settings </h3>
                     </div>
                 </NavLink>
             </div>
@@ -113,7 +113,7 @@ const SideBar = () => (
                         alt = "" 
                     /> */}
                     <FontAwesomeIcon icon = "fa-regular fa-circle-question" className='w-5 h-5' />
-                    <h3 className = '-mt-0.5 ml-2'> Support </h3>
+                    <h3 className = ' ml-2'> Support </h3>
                 
                 </div>
             </div>

@@ -18,23 +18,23 @@ const Graph = () => {
             <div className = 'ml-12'>
                 
                 <div className = 'flex justify-between items-center mb-3'>
-                    <h5 className = 'font-welcome text-2xl font-medium'> Recent Patients </h5>
-                    <p className = 'font-span text-lg font-normal hover:text-primary '>
+                    <h5 className = 'font-welcome text-xl font-medium'> Recent Patients </h5>
+                    <p className = 'font-span text-base font-normal hover:text-primary '>
                         <Link> See more </Link>
                     </p>
                 </div>
 
                 <div>
                     <table className = "w-94 h-80 bg-white rounded-md table-auto  text-center">                 
-                        <thead className = 'border-b text-primary'>
-                            <tr className = 'p-3'>
+                        <thead className = 'border-b text-primary text-sm'>
+                            <tr className = 'p-4'>
                                 <th> SN </th>
                                 <th> Name </th>
                                 <th> Matric Number </th>
                             </tr>
                         </thead>
                         
-                        <tbody className = "font-span text-lg font-normal">     
+                        <tbody className = "font-span text-base font-normal">     
                             <tr>
                                 <td> 1. </td>
                                 <td> Mary Joseph </td>

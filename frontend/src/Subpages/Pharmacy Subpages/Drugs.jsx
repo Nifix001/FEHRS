@@ -11,13 +11,13 @@ const Drugs = () => {
   const drugs = Drugsdata.map( dd  => {
     return (
         <tr key = { dd.id } >
-          <td className = 'py-4'> { dd.sn } </td>
-          <td className = 'text-left pl-6 '> { dd.drug } </td>
-          <td className = 'text-left pl-8'> { dd.quantity } </td>
-          <td className = 'text-left pl-6'> { dd.mfgd } </td>
-          <td className = 'text-left pl-6'> { dd.expd } </td>
+          <td className = 'py-4 text-base'> { dd.sn } </td>
+          <td className = 'text-left pl-6 text-base '> { dd.drug } </td>
+          <td className = 'text-left pl-8 text-base'> { dd.quantity } </td>
+          <td className = 'text-left pl-6 text-base'> { dd.mfgd } </td>
+          <td className = 'text-left pl-6 text-base'> { dd.expd } </td>
           <td className = 'pl-8'>
-            <div className ='flex gap-2'> 
+            <div className ='flex gap-2 items-center justify-start pl-8'> 
               <Link>
                 <img 
                   src = { edit } 

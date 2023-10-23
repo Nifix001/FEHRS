@@ -11,12 +11,12 @@ const Prescriptions = () => {
     return(
 
         <tr key = { p.id } >
-          <td className = 'py-4 text-left pl-6'> { p.name } </td>
-          <td className = 'text-left pl-6'> { p.matricno } </td>
-          <td className = 'text-left pl-16'> { p.drug } </td>
-          <td className = 'text-left pl-4'> 1 satchet </td>
+          <td className = 'py-4 text-left pl-6 text-base'> { p.name } </td>
+          <td className = 'text-left pl-6 text-base'> { p.matricno } </td>
+          <td className = 'text-left pl-16 text-base'> { p.drug } </td>
+          <td className = 'text-left pl-4 text-base'> 1 satchet </td>
           <td className = 'pl-8'>
-            <div className = 'items-center'> 
+            <div className = 'flex items-center justify-start pl-6 '> 
               <Link>
                 <img 
                   src = { dot }  

@@ -9,13 +9,13 @@ const History = () => {
   const history = Historydata.map( h  => {
     return(
         <tr key = { h.id } >
-          <td className = 'py-4 text-left pl-6'> { h.name } </td>
-          <td className = 'text-left pl-6'> { h.drug } </td>
-          <td className = 'text-left pl-4'> 1 satchet </td>
-          <td className = 'text-left pl-16'> { h.date } </td>
-          <td className = 'text-left pl-16'> { h.diagnosis } </td>
+          <td className = 'py-4 text-left pl-6 text-base'> { h.name } </td>
+          <td className = 'text-left pl-6 text-base'> { h.drug } </td>
+          <td className = 'text-left pl-4 text-base'> 1 satchet </td>
+          <td className = 'text-left pl-16 text-base'> { h.date } </td>
+          <td className = 'text-left pl-16 text-base'> { h.diagnosis } </td>
           <td className = 'pl-8'>
-            <div className = 'items-center'> 
+            <div className = 'flex items-center justify-start pl-6'> 
               <Link>
                 <img 
                   src = { dot } 

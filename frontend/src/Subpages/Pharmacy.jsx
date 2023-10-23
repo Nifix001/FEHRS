@@ -20,7 +20,7 @@ const Pharmacy = () => {
     <React.Fragment>
      
       <div 
-        className = 'w-281 h-142.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients overflow-x-hidden'
+        className = 'w-281 h-full bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients overflow-x-hidden'
       >
         <nav className = 'flex justify-between items-center'>
 
@@ -53,14 +53,14 @@ const Pharmacy = () => {
 
         <Link 
           to = "addnew" 
-          className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'
+          className=' font-span text-base font-normal py-2 px-5 text-white  bg-primary border border-primary rounded-md'
         >
           Add New
         </Link>
         
         <NavLink 
           to = "" 
-          className='text-primary font-span text-base font-normal py-2 px-5 hover:text-white hover:bg-primary border border-primary rounded-md'  
+          className='text-primary font-span text-base font-normal py-2 px-5 border border-primary rounded-md'  
           onClick = { handleFile }
         >
           Import

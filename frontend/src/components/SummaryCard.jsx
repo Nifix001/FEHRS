@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const SummaryCard = () => {
   return (
     <React.Fragment>
-        <div className = 'flex gap-4 ml-8 mt-3'>
+        <div className = 'flex gap-4 ml-8 my-3'>
             <div className = 'w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Patients </p>

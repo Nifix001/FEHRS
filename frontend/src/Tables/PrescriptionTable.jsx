@@ -6,11 +6,11 @@ const PrescriptionTable = ( { prescriptions } ) => {
       <table className = " w-260 bg-white rounded-md  text-center mt-6 table-auto">
             <thead className = 'border-b '>
                 <tr className = 'table-row'>
-                  <td className = 'text-tertiary-5 font-span text-lg font-thin text-left pl-6 py-3'> Name </td>
-                  <td className = 'text-tertiary-5 font-span text-lg font-thin  text-left pl-6'> Matric Number </td>
-                  <td className = 'text-tertiary-5 font-span text-lg font-thin text-left pl-20'> Drug </td>
-                  <td className = 'text-tertiary-5 font-span text-lg font-thin text-left pl-6'> Qty </td>
-                  <td className = 'text-tertiary-5 font-span text-lg font-thin'> Options </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6 py-2'> Name </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal  text-left pl-6'> Matric Number </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-20'> Drug </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6'> Qty </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal'> Options </td>
                 </tr>
             </thead>
 
