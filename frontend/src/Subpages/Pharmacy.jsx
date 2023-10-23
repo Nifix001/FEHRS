@@ -1,18 +1,23 @@
 import React, { useState } from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, redirect, useLocation, useNavigate } from 'react-router-dom'
 import search from '../assets/akar-icons_search.svg'
 import filter from '../assets/cil_filter.svg'
+import { useEffect } from 'react'
 
 const Pharmacy = () => {
-
-  
   
   const handleFile = ( e ) => {
     e.preventDefault();
     const input = document.getElementById( 'file' );
     input.click();
   }
+  
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    // Redirect to the "drugs" route when this component is mounted
+    navigate('/user/pharmacy/drugs');
+  }, [navigate]);
   
   
   return (
@@ -28,7 +33,7 @@ const Pharmacy = () => {
 
         <NavLink 
           to = "drugs" 
-          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md'
+          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md active'
         >
           Drugs
         </NavLink>

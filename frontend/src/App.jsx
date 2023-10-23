@@ -72,6 +72,7 @@ const router = createBrowserRouter(
                 element = { <Pharmacy /> } 
               >
                 <Route 
+                  index
                   path = "drugs" 
                   element = { <Drugs /> }
                 />
