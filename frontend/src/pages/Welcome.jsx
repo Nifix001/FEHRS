@@ -12,7 +12,7 @@ const Welcome = () => {
             src = { logo } 
             alt = "logo" 
           />
-          <h1 className = "text-white text-2xl font-extrabold opacity-90" > FIHMS </h1>
+          <h1 className = "text-white text-2xl font-extrabold opacity-90" > FEHRS </h1>
         </header>
 
         <section>
@@ -22,10 +22,10 @@ const Welcome = () => {
             </span> 
             <br />
            {/* <span className = "font-span text-8xl text-gray-300 opacity-70  font-semibold tracking-wide bg-clip-text"> FEHRS </span> */}
-            <h2 className = "text-stroke text-8xl bg-clip-text text-transparent"> FIHMS </h2>
+            <h2 className = "text-stroke text-8xl bg-clip-text text-transparent"> FEHRS </h2>
           </h2>
 
-          <h4 className = "text-center font-welcome font-normal text-white text-3xl mt-6 leading-8"> FUTA Integrated Health Medical System </h4>
+          <h4 className = "text-center font-welcome font-normal text-white text-3xl mt-6 leading-8"> FUTA Electronic Health Record System </h4>
 
           <div className = "flex justify-center items-center mt-20">
             <Link 

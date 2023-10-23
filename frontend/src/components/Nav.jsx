@@ -14,7 +14,7 @@ const Nav = () => {
                     src = { logo } 
                     alt = "logo" 
                 />
-                <h1 className = 'text-primary text-3xl font-extrabold'> FIHMS </h1>
+                <h1 className = 'text-primary text-3xl font-extrabold'> FEHRS </h1>
             </div>
 
             <div className = 'flex'>

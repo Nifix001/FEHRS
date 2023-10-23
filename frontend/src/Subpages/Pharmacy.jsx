@@ -6,19 +6,27 @@ import { useEffect } from 'react'
 
 const Pharmacy = () => {
   
-  const handleFile = ( e ) => {
+  const [key, setKey] = useState(0); // Add a unique key
+
+  const handleFile = (e) => {
     e.preventDefault();
-    const input = document.getElementById( 'file' );
+    const input = document.getElementById('file');
     input.click();
   }
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
     // Redirect to the "drugs" route when this component is mounted
     navigate('/user/pharmacy/drugs');
-  }, []);
-  
+  }, [navigate]);
+
+  const location = useLocation();
+
+  // Whenever the location changes, increase the key to trigger remount
+  useEffect(() => {
+    setKey(key + 1);
+  }, [location]);
   
   return (
 

@@ -18,7 +18,7 @@ export default function BasicCard() {
               alt = "FUTA logo"  
               className = 'h-10 w-10 object-contain'
             />
-            <h1 className = 'text-primary text-2xl font-extrabold pt-2' > FIHMS </h1>
+            <h1 className = 'text-primary text-2xl font-extrabold pt-2' > FEHRS </h1>
           </Link>
         </header>
 
