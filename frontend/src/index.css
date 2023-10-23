@@ -123,6 +123,7 @@
 .patients Form input, .patients Form textarea{
     border-radius: 0.4375rem;
     border: 1px solid #7F00AC;
+    outline-color: #7F00AC;
     background: #FFF;
     text-indent: 1rem;
     padding: 0.2rem;
@@ -132,7 +133,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.25rem; /* 142.857% */
-    padding-top: 0.4rem;
+    padding-top: 0.65rem;
+    padding-bottom: 0.4rem;
 }
 
 .patients Form label{

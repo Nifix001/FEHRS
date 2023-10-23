@@ -9,7 +9,7 @@ const Patients = () => {
   return (
     
     <React.Fragment>
-       <div className = 'w-281 h-142.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
+       <div className = 'w-281 h-160.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
           <header> 
             <h1 className = 'mb-3'> Add New Patient (Students) </h1>
           </header>
@@ -40,7 +40,7 @@ const Patients = () => {
           <Form>
             <Outlet />
             
-            <div className = "flex absolute bottom-4 ml-56 mr-auto gap-12">
+            <div className = "flex absolute bottom-0 ml-56 mr-auto gap-12">
               <button 
                 type = 'submit' 
                 className = 'bg-primary text-white py-3 px-20 rounded-md'
