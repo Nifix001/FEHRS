@@ -1,5 +1,5 @@
 import * as React from 'react';
-import logo from '../assets/Frames.png';
+import logo from '../assets/futa logo.png';
 import { Form } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -12,12 +12,13 @@ export default function BasicCard() {
   return (
     <div className = 'xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 login-card rounded-lg pt-10 basic-card'>
         <header>
-          <Link to = "/"> 
+          <Link to = "/" className = 'flex gap-2 items-center justify-center mb-6' > 
             <img 
               src = { logo } 
-              alt = "FEHRS logo"  
-              className = 'h-10 w-28 ml-auto mr-auto mb-10'
+              alt = "FUTA logo"  
+              className = 'h-10 w-10 object-contain'
             />
+            <h1 className = 'text-primary text-2xl font-extrabold pt-2' > FIHMS </h1>
           </Link>
         </header>
 

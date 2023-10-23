@@ -1,17 +1,18 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import logo from "../assets/Frame 46.png"
+import logo from "../assets/futa logo.png"
 
 const Welcome = () => {
   return (
     <React.Fragment>
       <div className = "bg-background object-cover w-screen h-screen">
-        <header className = "pt-8 pl-6">
+        <header className = "pt-8 pl-8 flex gap-3 items-center justify-start ">
           <img 
-            className = "w-36 h-13" 
+            className = "w-10 h-10 object-contain rounded-full " 
             src = { logo } 
             alt = "logo" 
           />
+          <h1 className = "text-white text-2xl font-extrabold opacity-90" > FIHMS </h1>
         </header>
 
         <section>
