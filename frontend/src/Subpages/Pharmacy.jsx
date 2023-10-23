@@ -17,7 +17,7 @@ const Pharmacy = () => {
   useEffect(() => {
     // Redirect to the "drugs" route when this component is mounted
     navigate('/user/pharmacy/drugs');
-  }, [navigate]);
+  }, []);
   
   
   return (
