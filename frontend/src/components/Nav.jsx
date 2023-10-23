@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/Frames.png'
+import logo from '../assets/futa logo.png'
 import notify from '../assets/mi_notification.svg'
 import direct from '../assets/ic_baseline-log-out.svg'
 import search from '../assets/akar-icons_search.svg'
@@ -9,11 +9,12 @@ const Nav = () => {
   return (
     <React.Fragment>
         <nav className = 'flex absolute h-20 w-screen top-0 border border-gray-300 justify-between px-2 items-center'>
-            <div className = 'border-solid border-gray-300 border-r h-20 pt-4 pr-16 pl-6'>
+            <div className = 'border-solid border-gray-300 border-r h-20  pr-16 pl-4 flex items-center gap-3 '>
                 <img 
                     src = { logo } 
                     alt = "logo" 
                 />
+                <h1 className = 'text-primary text-3xl font-extrabold'> FIHMS </h1>
             </div>
 
             <div className = 'flex'>
