@@ -13,12 +13,20 @@ const Pharmacy = () => {
     input.click();
   }
 
-  const drugsLink = useRef(null);
+  const location = useLocation();
 
-  useEffect(() => {
-    // Focus the drugs link element when the component mounts
-    drugsLink.current?.focus();
-  }, []);
+  const drugsLink = useRef( null );
+  const preLink = useRef( null );
+  const historyLink = useRef( null );
+
+  if ( location.pathname === '/user/pharmacy/drugs' ){
+      // Focus the drugs link element when the component mounts
+      drugsLink.current?.focus();
+    } else if ( location.pathname === '/user/pharmacy/prescription' ){
+      preLink.current?.focus();
+    } else if ( location.pathname === '/user/pharmacy/history' ){
+      historyLink.current?.focus();
+    }
 
   
   return (
@@ -44,6 +52,7 @@ const Pharmacy = () => {
         <NavLink 
           to = "prescriptions" 
           className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md outline-none '
+          ref = { preLink }
         >
           Prescriptions
         </NavLink>
@@ -51,6 +60,7 @@ const Pharmacy = () => {
         <NavLink 
           to = "history" 
           className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md outline-none '
+          ref = { historyLink }
         >
           History
         </NavLink>  
