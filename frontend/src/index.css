@@ -180,7 +180,7 @@
     background-color: #7F00AC;
     padding: 0.5rem 0.75rem;
 }
-.phaLinks a.active{
+.phaLinks a.active, .plinks a.active{
     color: #fff;
     background-color: #7F00AC;    
 }
