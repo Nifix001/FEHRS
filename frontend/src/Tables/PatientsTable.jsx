@@ -11,7 +11,7 @@ const PatientsTable = ( { patients } ) => {
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-10'> Phone </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-10'> Email </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6'> Diagnosis </td>
-                  <td className = 'text-tertiary-5 font-span text-sm font-normal'> Options </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal pl-4'> Options </td>
                 </tr>
             </thead>
 
