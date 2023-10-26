@@ -21,6 +21,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import PharmacyRedirect from "./Subpages/PharmacyRedirect"
+import PatientsPage from "./Subpages/Patients Subpage/PatientsPage"
+import NewPatients from "./Subpages/Patients Subpage/NewPatients"
 
 library.add(fas, fab, far);
 
@@ -47,21 +49,30 @@ const router = createBrowserRouter(
               >
               </Route>
               <Route 
-                path = "patient" 
+                path = "patients" 
                 element = { <Patients /> }
               >
-                <Route 
-                  path = "personal" 
-                  element = { <PaForm1 /> } 
+                <Route
+                  index
+                  element = { <PatientsPage /> } 
                 />
-                <Route 
-                  path = "info" 
-                  element = { <PaForm2 /> } 
-                />
-                <Route 
-                  path = "test" 
-                  element = { <PaForm3 /> }  
-                />
+                <Route
+                  path = "new"
+                  element = { <NewPatients /> } 
+                >
+                  <Route 
+                    path = "personal" 
+                    element = { <PaForm1 /> } 
+                  />
+                  <Route 
+                    path = "info" 
+                    element = { <PaForm2 /> } 
+                  />
+                  <Route 
+                    path = "test" 
+                    element = { <PaForm3 /> }  
+                  />
+                </Route>
               </Route>
               {/* <Route 
                 path = "doctor" 

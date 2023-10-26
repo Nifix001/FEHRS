@@ -43,7 +43,7 @@ const SideBar = () => (
 
                 <NavLink 
                     className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 items-center rounded-md my-1 text-[14.3px]' 
-                    to = "patient"
+                    to = "patients"
                 >
                     {/* <img 
                         className = 'w-5 h-5 mr-2  stroke-white' 

@@ -8,8 +8,8 @@ const PatientsTable = ( { patients } ) => {
                 <tr className = 'table-row'>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6 py-2'> Name </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal  text-left pl-6'> Matric Number </td>
-                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-20'> Phone </td>
-                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6'> Email </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-10'> Phone </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-10'> Email </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6'> Diagnosis </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal'> Options </td>
                 </tr>
