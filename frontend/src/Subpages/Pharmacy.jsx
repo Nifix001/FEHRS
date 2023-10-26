@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link, NavLink, Outlet, redirect, useLocation, useNavigate } from 'react-router-dom'
 import search from '../assets/akar-icons_search.svg'
 import filter from '../assets/cil_filter.svg'
@@ -6,27 +6,20 @@ import { useEffect } from 'react'
 
 const Pharmacy = () => {
   
-  const [key, setKey] = useState(0); // Add a unique key
-
+  
   const handleFile = (e) => {
     e.preventDefault();
     const input = document.getElementById('file');
     input.click();
   }
 
-  const navigate = useNavigate();
+  const drugsLink = useRef(null);
 
   useEffect(() => {
-    // Redirect to the "drugs" route when this component is mounted
-    navigate('/user/pharmacy/drugs');
-  }, [navigate]);
+    // Focus the drugs link element when the component mounts
+    drugsLink.current?.focus();
+  }, []);
 
-  const location = useLocation();
-
-  // Whenever the location changes, increase the key to trigger remount
-  useEffect(() => {
-    setKey(key + 1);
-  }, [location]);
   
   return (
 
@@ -41,21 +34,23 @@ const Pharmacy = () => {
 
         <NavLink 
           to = "drugs" 
-          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md active'
+          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md active outline-none '
+          ref = { drugsLink }
+          autoFocus
         >
           Drugs
         </NavLink>
 
         <NavLink 
           to = "prescriptions" 
-          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md'
+          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md outline-none '
         >
           Prescriptions
         </NavLink>
 
         <NavLink 
           to = "history" 
-          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md'
+          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md outline-none '
         >
           History
         </NavLink>  
