@@ -43,8 +43,9 @@ const Pharmacy = () => {
 
         <NavLink 
           to = "drugs" 
-          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md active outline-none '
+          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md active:text-white active:bg-primary outline-none '
           ref = { drugsLink }
+          isActive = { location.pathname === '/user/pharmacy/drugs' }
           autoFocus
         >
           Drugs
