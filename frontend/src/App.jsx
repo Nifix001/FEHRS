@@ -24,6 +24,7 @@ import PharmacyRedirect from "./Subpages/PharmacyRedirect"
 import PatientsPage from "./Subpages/Patients Subpage/PatientsPage"
 import NewPatients from "./Subpages/Patients Subpage/NewPatients"
 import SignUp from "./pages/SignUp"
+import UserRedirect from "./Subpages/UserRedirect"
 
 library.add(fas, fab, far);
 
@@ -47,9 +48,12 @@ const router = createBrowserRouter(
               path = "user" 
               element = { <Layout /> }
             >
+              <Route
+                index
+                element = { <UserRedirect /> }
+               />
               <Route 
                 path = "dashboard" 
-                index 
                 element = { <Dashboard /> } 
               >
               </Route>
