@@ -9,7 +9,7 @@ const Patients = () => {
   return (
     
     <React.Fragment>
-       <div className = 'w-281 h-160.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
+       <div className = 'w-full h-160.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
           <header> 
             <h1 className = 'mb-3'> Add New Patient (Students) </h1>
           </header>
@@ -17,21 +17,21 @@ const Patients = () => {
           <div className = "flex mb-3 palinks">
             <NavLink 
               to = "personal" 
-              className = 'text-primary py-2 px-3 rounded-md'
+              className = 'text-primary py-2 px-3 rounded-md text-sm font-normal '
             > 
               Personal information 
             </NavLink>
 
             <NavLink 
               to = "info"   
-              className = 'text-primary py-2 px-3 rounded-md'
+              className = 'text-primary py-2 px-3 rounded-md text-sm font-normal '
               > 
                 Medical information 
               </NavLink>
 
             <NavLink 
               to = "test" 
-              className = 'text-primary py-2 px-3 rounded-md'
+              className = 'text-primary py-2 px-3 rounded-md text-sm font-normal '
             >
               Medical Test
             </NavLink> 

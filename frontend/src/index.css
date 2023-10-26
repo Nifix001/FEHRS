@@ -11,6 +11,10 @@
 @tailwind utilities;
 
 
+*{
+    font-family: 'Work Sans', sans-serif;
+}
+
 .login-card{
     box-shadow: 0px 0px 25px 0px #1118272E;
 }
@@ -167,10 +171,8 @@
 
 .palinks a{
     color:  #828282;
-    font-family: Inter;
-    font-size: 0.75rem;
+    font-family: 'Work Sans';
     font-style: normal;
-    font-weight: 500;
     line-height: normal;
 }
 .palinks a.active{
