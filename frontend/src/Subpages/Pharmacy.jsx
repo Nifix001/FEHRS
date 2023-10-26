@@ -13,22 +13,6 @@ const Pharmacy = () => {
     input.click();
   }
 
-  const location = useLocation();
-
-  const drugsLink = useRef( null );
-  const preLink = useRef( null );
-  const historyLink = useRef( null );
-
-  if ( location.pathname === '/user/pharmacy/drugs' ){
-      // Focus the drugs link element when the component mounts
-      drugsLink.current?.focus();
-  }
-  //  else if ( location.pathname === '/user/pharmacy/prescriptions' ){
-  //   preLink.current?.focus();
-  // } else if ( location.pathname === '/user/pharmacy/history' ){
-  //   historyLink.current?.focus();
-  // } else throw Error
-
   
   return (
 
@@ -39,30 +23,25 @@ const Pharmacy = () => {
       >
         <nav className = 'flex justify-between items-center'>
 
-        <div className = ' bg-white gap-2 rounded-md p-1 w-12'>
+        <div className = ' bg-white gap-2 rounded-md p-1 w-12 phaLinks'>
 
         <NavLink 
           to = "drugs" 
-          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1 focus:text-white  focus:bg-primary rounded-md active:text-white active:bg-primary outline-none '
-          ref = { drugsLink }
-          isActive = { location.pathname === '/user/pharmacy/drugs' }
-          autoFocus
+          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1  rounded-md outline-none '
         >
           Drugs
         </NavLink>
 
         <NavLink 
           to = "prescriptions" 
-          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md outline-none '
-          ref = { preLink }
+          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal rounded-md outline-none '
         >
           Prescriptions
         </NavLink>
 
         <NavLink 
           to = "history" 
-          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal focus:text-white focus:bg-primary rounded-md outline-none '
-          ref = { historyLink }
+          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal rounded-md outline-none '
         >
           History
         </NavLink>  

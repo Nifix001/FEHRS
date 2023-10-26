@@ -180,7 +180,7 @@
     background-color: #7F00AC;
     padding: 0.5rem 0.75rem;
 }
-/* .paform1 input{
-    height: 2.5rem;
-    font-size: 0.1rem;
-} */
+.phaLinks a.active{
+    color: #fff;
+    background-color: #7F00AC;    
+}

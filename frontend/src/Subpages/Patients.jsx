@@ -9,7 +9,7 @@ const Patients = () => {
   return (
     
     <React.Fragment>
-       <div className = 'w-full h-160.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
+       <div className = 'w-[80vw] h-160.5 bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients'>
           <header> 
             <h1 className = 'mb-3'> Add New Patient (Students) </h1>
           </header>

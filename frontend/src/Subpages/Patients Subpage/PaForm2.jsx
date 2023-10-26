@@ -45,7 +45,7 @@ const PaForm2 = () => {
         </div>
       </div>
       
-      <hr />
+      <hr className = 'my-10' />
 
       <header> 
         <h1> Previous illness or Test </h1> 
