@@ -23,25 +23,29 @@ const Pharmacy = () => {
       >
         <nav className = 'flex justify-between items-center'>
 
-        <div className = ' bg-white gap-2 rounded-md p-1 w-12 phaLinks'>
+        <div className = ' bg-white rounded-md phaLinks shadow-md flex items-center'>
 
         <NavLink 
           to = "drugs" 
-          className ='text-primary font-span text-base font-normal py-[4px] px-3 mx-1  rounded-md outline-none '
+          className ='text-primary font-span text-base font-normal py-2 px-3  rounded-s-md outline-none '
         >
           Drugs
         </NavLink>
+        
+        <div className = 'w-[1px] h-5 bg-primary' ></div>
 
         <NavLink 
           to = "prescriptions" 
-          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal rounded-md outline-none '
+          className ='text-primary py-2 px-3 font-span text-base font-normal outline-none '
         >
           Prescriptions
         </NavLink>
 
+        <div className = 'w-[1px] h-5 bg-primary' ></div>
+
         <NavLink 
           to = "history" 
-          className ='text-primary py-[4px] px-3 mx-1 font-span text-base font-normal rounded-md outline-none '
+          className ='text-primary py-2 px-3 font-span text-base font-normal rounded-e-md outline-none '
         >
           History
         </NavLink>  
