@@ -23,6 +23,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import PharmacyRedirect from "./Subpages/PharmacyRedirect"
 import PatientsPage from "./Subpages/Patients Subpage/PatientsPage"
 import NewPatients from "./Subpages/Patients Subpage/NewPatients"
+import SignUp from "./pages/SignUp"
 
 library.add(fas, fab, far);
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter(
             <Route 
               path = "login" 
               element = { <Login /> } 
+            />
+            <Route
+              path = "signup"
+              element = { <SignUp /> } 
             />
 
             <Route 

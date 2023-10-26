@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/pages/Welcome.jsx",
     "./src/pages/Login.jsx",
+    "./src/pages/SignUp.jsx",
     ".src/layout/Layout.jsx",
     "./src/components/BasicCard.jsx",
     "./src/components/Nav.jsx",

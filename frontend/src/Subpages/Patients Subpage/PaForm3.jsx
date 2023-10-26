@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const PaForm3 = () => {
   return (
@@ -54,7 +55,24 @@ const PaForm3 = () => {
           placeholder = 'Enter text here' >  
         </textarea>
       </div>
-      
+      <div className = "flex absolute bottom-0 ml-56 mr-auto gap-12">
+              <NavLink 
+                type = 'submit' 
+                className = 'bg-primary text-white py-3 px-20 rounded-md'
+                to = '/user/patients/new/confirm'
+              >
+                  Save and Continue
+              </NavLink>
+
+
+              <NavLink 
+                type = 'submit' 
+                className = 'bg-white text-primary border-2 border-primary py-3 px-20 rounded-md'
+                to = '/user/patients/new/info'
+              >
+                Previous
+              </NavLink>
+        </div>
     </React.Fragment>
   )
 }

@@ -4,14 +4,17 @@ import { Form } from 'react-router-dom'
 import BasicCard from '../components/BasicCard'
 
 
-const Login = () => {
+const SignUp = () => {
+
+    const signUp = Boolean(true);
+
   return (
     <React.Fragment>
       <section className = 'w-full h-full'>
-        <BasicCard  signUp = { false } />
+        <BasicCard signUp = { signUp }  />
       </section>
     </React.Fragment>
   )
 }
 
-export default Login
+export default SignUp

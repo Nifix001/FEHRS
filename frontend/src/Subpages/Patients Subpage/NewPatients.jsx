@@ -17,21 +17,21 @@ const NewPatients = () => {
           <div className = "flex mb-3 palinks">
             <NavLink 
               to = "personal" 
-              className = 'text-primary py-2 px-3 rounded-md text-sm font-normal '
+              className = 'text-primary py-2 px-3 rounded-s-md text-sm font-normal '
             > 
               Personal information 
             </NavLink>
 
             <NavLink 
               to = "info"   
-              className = 'text-primary py-2 px-3 rounded-md text-sm font-normal '
+              className = 'text-primary py-2 px-3 text-sm font-normal '
               > 
                 Medical information 
               </NavLink>
 
             <NavLink 
               to = "test" 
-              className = 'text-primary py-2 px-3 rounded-md text-sm font-normal '
+              className = 'text-primary py-2 px-3 rounded-e-md text-sm font-normal '
             >
               Medical Test
             </NavLink> 
@@ -39,22 +39,6 @@ const NewPatients = () => {
 
           <Form>
             <Outlet />
-            
-            <div className = "flex absolute bottom-0 ml-56 mr-auto gap-12">
-              <button 
-                type = 'submit' 
-                className = 'bg-primary text-white py-3 px-20 rounded-md'
-              >
-                  Save and Continue
-              </button>
-
-              <button 
-                type = 'submit' 
-                className = 'bg-white text-primary border-2 border-primary py-3 px-20 rounded-md'
-              >
-                Previous
-              </button>
-           </div>
           </Form>
        </div>
     </React.Fragment>

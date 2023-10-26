@@ -46,13 +46,13 @@ const PatientsPage = () => {
     <React.Fragment>
       <div className = 'mt-2 mb-4 flex rounded-md gap-0 plinks' >
         <NavLink 
-          className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-s-md font-bold shadow-sm text-gray-500 '
+          className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-s-md font-semibold shadow-sm text-gray-500 '
           to = '/user/patients' 
         >
           Patients
         </NavLink>
         <NavLink 
-          className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-e-md font-bold shadow-sm text-gray-500 '
+          className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-e-md font-semibold shadow-sm text-gray-500 '
           to = '/user/patiens/admin' 
         >
           Admin
