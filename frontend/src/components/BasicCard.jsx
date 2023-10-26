@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 export default function BasicCard( { signUp } ) {
 
-  const [id, setId] = React.useState('');
   const [ name, setName ] = React.useState('');
   const [ email, setEmail ] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -33,10 +32,10 @@ export default function BasicCard( { signUp } ) {
             <h3 className = 'text-gray-750'> Welcome back, please login with the required information </h3>
             <input 
               type = "text" 
-              name = 'UniqueId' 
-              placeholder = 'UniqueId' 
-              value = { id }  
-              onChange = { (e) => setId( e.target.value ) } 
+              name = 'Email' 
+              placeholder = 'Email' 
+              value = { email }  
+              onChange = { (e) => setEmail( e.target.value ) } 
               className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ' 
               required
             />
@@ -101,7 +100,7 @@ export default function BasicCard( { signUp } ) {
                 type = 'submit' 
                 className = 'bg-primary text-white w-90 rounded h-9  '
               >
-                <span className = 'ml-40' > Login </span>
+                <span className = 'ml-40' > Sign Up </span>
               </button>
             </div>
             </>
