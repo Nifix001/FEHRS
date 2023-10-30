@@ -140,7 +140,7 @@ const AddNew = () => {
             />
           </div>
 
-          <div className = "grid">
+          <div className = "grid mb-8">
             <label 
               htmlFor = "" 
               className = 'w-24'
@@ -157,10 +157,10 @@ const AddNew = () => {
         </textarea>
           </div>
           </div>
-          
+
         </div>
 
-        <div className = "flex absolute -bottom-20 ml-56 mr-auto  gap-12">
+        <div className = "flex absolute -bottom-0 ml-56 mr-auto gap-12">
               <NavLink 
                 type = 'submit' 
                 className = 'bg-primary text-white py-3 px-20 rounded-md'
@@ -177,6 +177,7 @@ const AddNew = () => {
                 Previous
               </NavLink>
         </div>
+        
       </Form>
     </React.Fragment>
   )
