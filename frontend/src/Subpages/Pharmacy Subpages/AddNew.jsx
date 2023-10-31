@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form } from 'react-router-dom'
+import { Form, NavLink } from 'react-router-dom'
 
 const AddNew = () => {
   return (
@@ -14,7 +14,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-16'
+              className = 'w-10 text-center'
             >
               Drug Name
             </label>
@@ -27,7 +27,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-16'
+              className = 'w-24 text-center'
             >
               Brand Name(optional)
             </label>
@@ -40,7 +40,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-16'
+              className = 'w-10 text-center'
             >
               Package Size
             </label>
@@ -49,8 +49,135 @@ const AddNew = () => {
               placeholder = '30 tablets per bottle ' 
             />
           </div>
-          
+
+          <div className = "grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-16 text-center'
+            >
+              Manufacturer/<br />Supplier
+            </label>
+            <input 
+              type = "text" 
+              placeholder = '' 
+            />
+          </div>
+
+          <div className = "grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-16 text-center'
+            >
+              Bactch/Lot Number
+            </label>
+            <input 
+              type = "text" 
+              placeholder = '___ /__ /_____' 
+            />
+          </div>
+          <div className = "grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-16 text-center'
+            >
+              Manufacturing Date
+            </label>
+            <input 
+              type = "text" 
+              placeholder = '___ /__ /_____' 
+            />
+          </div>
+          <div className = "grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-16 text-center'
+            >
+              Expiration Date
+            </label>
+            <input 
+              type = "text" 
+              placeholder = '___ /__ /_____' 
+            />
+          </div>
+
+          <div className = "grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-16 text-center'
+            >
+              NAFDAC Number
+            </label>
+            <input 
+              type = "text" 
+              placeholder = '' 
+            />
+          </div>
+
+          <div className='grid'>
+            <label className='mb-4'>
+              Dosage Form
+            </label>
+            <div className='grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-2'>
+            <h6><input type="radio" name="" id="" /> Tablet</h6>
+            <h6><input type="radio" name="" id="" /> Capsules</h6>
+            <h6><input type="radio" name="" id="" /> Injection</h6>
+            <h6><input type="radio" name="" id="" /> Syrup</h6>
+            </div>
+          </div>
+
+          <div className=''>
+          <div className = "grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-20 text-center'
+            >
+              Concentration
+            </label>
+            <input 
+              className='w-182'
+              type = "text" 
+              placeholder = '500 mg, 5mg/ml, etc.' 
+            />
+          </div>
+
+          <div className = "grid mb-8">
+            <label 
+              htmlFor = "" 
+              className = 'w-20 text-center'
+            >
+              Drug Description
+            </label>
+            <textarea 
+              className='w-182'
+              name = "" 
+              id = "" 
+              cols = "30" 
+              rows = "10" 
+              placeholder = 'Enter text here' >  
+        </textarea>
+          </div>
+          </div>
+
         </div>
+
+        <div className = "flex absolute -bottom-0 ml-56 mr-auto gap-12">
+              <NavLink 
+                type = 'submit' 
+                className = 'bg-primary text-white py-3 px-20 rounded-md'
+                to = "/user/patients/new/info"
+              >
+                  Save and Continue
+              </NavLink>
+
+              <NavLink 
+                type = 'submit' 
+                className = 'bg-white text-primary border-2 border-primary py-3 px-20 rounded-md'
+                to = '/user/patients'
+              >
+                Previous
+              </NavLink>
+        </div>
+        
       </Form>
     </React.Fragment>
   )
