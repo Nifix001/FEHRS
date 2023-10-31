@@ -14,7 +14,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-10 text-center'
             >
               Drug Name
             </label>
@@ -27,7 +27,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-24 text-center'
             >
               Brand Name(optional)
             </label>
@@ -40,7 +40,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-10 text-center'
             >
               Package Size
             </label>
@@ -53,9 +53,9 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-16 text-center'
             >
-              Manufacturer/Supplier
+              Manufacturer/<br />Supplier
             </label>
             <input 
               type = "text" 
@@ -66,7 +66,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-16 text-center'
             >
               Bactch/Lot Number
             </label>
@@ -78,7 +78,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-16 text-center'
             >
               Manufacturing Date
             </label>
@@ -90,7 +90,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-16 text-center'
             >
               Expiration Date
             </label>
@@ -103,7 +103,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-16 text-center'
             >
               NAFDAC Number
             </label>
@@ -129,7 +129,7 @@ const AddNew = () => {
           <div className = "grid">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-20 text-center'
             >
               Concentration
             </label>
@@ -143,7 +143,7 @@ const AddNew = () => {
           <div className = "grid mb-8">
             <label 
               htmlFor = "" 
-              className = 'w-24'
+              className = 'w-20 text-center'
             >
               Drug Description
             </label>
