@@ -1,12 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import calendar from "../assets/Calendar.png";
+import graph from "../assets/reportgraph.png";
+
+
 const Reports = () => {
   return (
     <React.Fragment>
       <div div className = 'w-fit h-160.5 bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 patients bg-opacity-60 grid '>
         <div className = 'flex gap-7 ' >
-          <div className = ' bg-white h-52 w-[36vw] rounded-md grid px-2 py-8 ' >
+          <div className = ' bg-white h-52 w-[36vw] rounded-md grid px-2 py-8  shadow-sm' >
             <h1> Overview </h1>
             <div className="flex justify-around items-center "> 
               <div className="grid">
@@ -42,7 +46,7 @@ const Reports = () => {
               </div>
             </div>
           </div>
-          <div className = ' bg-white h-52 w-[36vw] rounded-md  grid px-2 py-8 ' >
+          <div className = ' bg-white h-52 w-[36vw] rounded-md  grid px-2 py-8 shadow-sm ' >
             <div className = " flex justify-between " >
               <h1> Doctors on Duty </h1>
               <Link to = "/user" > see more </Link>
@@ -75,7 +79,26 @@ const Reports = () => {
             </table>
           </div>
         </div>
-        <div className = 'bg-white h-52 w-[74vw] rounded-md ' ></div>
+        <div className = 'bg-white h-[370px] w-[74vw] rounded-md shadow-sm p-3 flex flex-col' >
+          <div className = 'flex justify-between w-full ' >
+            <h1> Patient Overview </h1>
+            <button className = ' flex items-center gap-2 justify-center text-sm p-2 border rounded-md' >
+              <img src = { calendar } alt="" /> 
+              Monthly 
+            </button>
+          </div>
+          <img src = { graph } alt="" className = 'p-4'  />
+          <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
+            <div className = 'flex justify-around items-center gap-2 ' >
+              <div className = ' rounded-full border w-3 h-3 ' > </div>
+              <h3> Non-admitted </h3>
+            </div>
+            <div className = 'flex justify-around items-center gap-2 ' >
+              <div className = ' rounded-full border w-3 h-3 ' > </div>
+              <h3> Admitted </h3>
+            </div>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   )
