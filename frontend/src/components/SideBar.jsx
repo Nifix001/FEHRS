@@ -10,6 +10,7 @@ import SupportIcon from '../assets/sidebar/ic_outline-contact-support.svg'
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Building3, Chart1, Element, Profile2User, Setting2 } from 'iconsax-react'
 
 // chart-tree-map
 
@@ -37,7 +38,8 @@ const SideBar = () => (
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
                     </div>
-                    <FontAwesomeIcon icon = "fa-solid fa-table-list" className = 'w-5 h-5'  />
+                    {/* <FontAwesomeIcon icon = "fa-solid fa-table-list" className = 'w-5 h-5'  /> */}
+                    <Element size="20" />
                     <h3 className = ' ml-2'> Dashboard </h3>
                 </NavLink>
 
@@ -51,7 +53,8 @@ const SideBar = () => (
                         alt = "patient icon" 
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
-                        <FontAwesomeIcon icon = "fa-solid fa-user-group" className = 'w-5 h-5' />
+                        {/* <FontAwesomeIcon icon = "fa-solid fa-user-group" className = 'w-5 h-5' /> */}
+                        <Profile2User size="20" />
                         <h3 className = ' ml-2'> Patients </h3>
                     </div>
                 </NavLink>
@@ -67,7 +70,8 @@ const SideBar = () => (
                         alt = "pharmacy icon" 
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
-                     <FontAwesomeIcon icon = "fa-solid fa-hospital" className = 'w-5 h-5' />   
+                     {/* <FontAwesomeIcon icon = "fa-solid fa-hospital" className = 'w-5 h-5' />    */}
+                     <Building3 size="20" />
                      <h3 className = 'ml-2'> Pharmacy </h3>
                     </div>
                 </NavLink>
@@ -78,7 +82,8 @@ const SideBar = () => (
                     title = "Reports page"
                 >
                     <div className="flex justify-content-space-between align-items-center">
-                        <FontAwesomeIcon icon = "fa-solid fa-chart-simple" className = 'w-5 h-5' />
+                        {/* <FontAwesomeIcon icon = "fa-solid fa-chart-simple" className = 'w-5 h-5' /> */}
+                        <Chart1 size="20" />
                         <h3 className = 'ml-2 '> Reports </h3>
                     </div>
                 </NavLink>
@@ -93,7 +98,8 @@ const SideBar = () => (
                         alt = "settings icon" 
                     /> */}
                     <div className = 'flex justify-content-space-between align-items-center'>
-                        <FontAwesomeIcon icon = "fa-solid fa-gear" className = 'w-5 h-5' />
+                        {/* <FontAwesomeIcon icon = "fa-solid fa-gear" className = 'w-5 h-5' /> */}
+                        <Setting2 size="20" />
                         <h3 className = 'ml-2'> Settings </h3>
                     </div>
                 </NavLink>
