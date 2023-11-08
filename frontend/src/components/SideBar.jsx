@@ -77,7 +77,7 @@ const SideBar = () => (
                 </NavLink>
 
                 <NavLink 
-                    className = 'flex hover:bg-primary text-side hover:text-white p-1.5 -ml-1.5 items-center hover:stroke-white' 
+                    className = 'flex hover:bg-primary text-side rounded-md hover:text-white p-1.5 -ml-1.5 items-center hover:stroke-white' 
                     to = "reports"
                     title = "Reports page"
                 >
