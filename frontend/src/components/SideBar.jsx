@@ -119,7 +119,7 @@ const SideBar = () => (
                         alt = "" 
                     /> */}
                     <FontAwesomeIcon icon = "fa-regular fa-circle-question" className='w-5 h-5' />
-                    <h3 className = ' ml-2'> Support </h3>
+                    <h3 className = ' ml-2'> Logout </h3>
                 
                 </div>
             </div>

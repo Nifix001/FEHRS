@@ -20,7 +20,7 @@ const Graph = () => {
                 <div className = 'flex justify-between items-center mb-3'>
                     <h5 className = 'font-welcome text-xl font-medium'> Recent Patients </h5>
                     <p className = 'font-span text-base font-normal hover:text-primary '>
-                        <Link> See more </Link>
+                        <Link to="/user/patients"> See more </Link>
                     </p>
                 </div>
 

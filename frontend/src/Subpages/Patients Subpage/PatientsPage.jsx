@@ -44,7 +44,7 @@ const PatientsPage = () => {
 
   return (
     <React.Fragment>
-      <div className = 'mt-2 mb-4 flex rounded-md gap-0 plinks ' >
+      {/* <div className = 'mt-2 mb-4 flex rounded-md gap-0 plinks ' >
         <NavLink 
           className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-s-md font-semibold shadow-sm text-gray-500 '
           to = '/user/patients' 
@@ -57,7 +57,7 @@ const PatientsPage = () => {
         >
           Admin
         </NavLink>
-      </div>
+      </div> */}
       <div className = 'flex w-[76.3vw] justify-between items-center px-3 py-4 bg-white ' > 
         <header>
           <h1 className = 'pl-2 -mt-2 font-semibold' > Patients (Students) </h1>

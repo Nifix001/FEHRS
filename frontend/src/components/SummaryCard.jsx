@@ -3,21 +3,21 @@ import dots from '../assets/Dashboard/Group 11.svg'
 import profile from '../assets/Dashboard/Group.svg'
 import comm from '../assets/Dashboard/noun-community-5666932 1.svg'
 import dept from '../assets/Dashboard/Group (1).svg'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const SummaryCard = () => {
   return (
     <React.Fragment>
         <div className = 'flex gap-4 ml-8 my-3'>
-            <div className = 'w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5'>
+            <NavLink to="/user/patients" className = 'w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Patients </p>
                     <Link> 
-                        <img 
+                        {/* <img 
                             className = 'ml-auto' 
                             src = { dots } 
                             alt = "..." 
-                        />
+                        /> */}
                     </Link>
                 </div>
 
@@ -30,17 +30,17 @@ const SummaryCard = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </NavLink>
 
-            <div className = 'w-87.25 h-46.5 bg-secondary4 rounded-md px-5 py-5'>
+            <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary4 rounded-md px-5 py-5'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Departments </p>
                     <Link>
-                        <img 
+                        {/* <img 
                             className = 'ml-auto' 
                             src = { dots } 
                             alt = "..." 
-                        />
+                        /> */}
                     </Link>
                 </div>
                 <div className = 'flex pt-8'>
@@ -52,17 +52,17 @@ const SummaryCard = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </NavLink>
 
-            <div className = 'w-87.25 h-46.5 bg-secondary5 rounded-md px-5 py-5'>
+            <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary5 rounded-md px-5 py-5'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total diagnosis </p>
                     <Link>
-                        <img 
+                        {/* <img 
                             className = 'ml-auto' 
                             src = { dots } 
                             alt = "..." 
-                        />
+                        /> */}
                     </Link>
                 </div>
                 <div className = 'flex pt-8'>
@@ -74,7 +74,7 @@ const SummaryCard = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </NavLink>
         </div>
     </React.Fragment>
   )
