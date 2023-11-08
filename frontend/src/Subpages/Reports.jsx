@@ -3,12 +3,43 @@ import { Link } from 'react-router-dom'
 
 import calendar from "../assets/Calendar.png";
 import graph from "../assets/reportgraph.png";
+import dot from '../assets/carbon_overflow-menu-horizontal.svg'
+
+import PatientsTable from '../Tables/PatientsTable';
+import Patientsdata from '../database/Patientsdata';
 
 
 const Reports = () => {
+
+
+  const patients = Patientsdata.map( p  =>  {
+    
+    return(
+
+        <tr key = { p.id } >
+          <td className = 'py-4 text-left pl-6 text-base'> { p.name } </td>
+          <td className = 'text-left pl-6 text-base'> { p.matricno } </td>
+          <td className = 'text-left pl-6 text-base'> 0{ p.phone } </td>
+          <td className = 'text-left text-base'> { p.email } </td>
+          <td className = 'text-left pl-3 text-base'> { p.drug } </td>
+          <td className = 'pl-8'>
+            <div className = 'flex items-center justify-start pl-1 '> 
+              <Link>
+                <img 
+                  src = { dot }  
+                  alt ="dot" 
+                />
+              </Link>
+            </div>
+          </td>
+        </tr>
+      )
+    }
+  )
+
   return (
     <React.Fragment>
-      <div div className = 'w-fit h-160.5 bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 patients bg-opacity-60 grid '>
+      <div div className = 'w-fit h-fit bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 patients bg-opacity-60 grid gap-6 '>
         <div className = 'flex gap-7 ' >
           <div className = ' bg-white h-52 w-[36vw] rounded-md grid px-2 py-8  shadow-sm' >
             <h1> Overview </h1>
@@ -90,13 +121,18 @@ const Reports = () => {
           <img src = { graph } alt="" className = 'p-4'  />
           <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
             <div className = 'flex justify-around items-center gap-1 ' >
-              <div className = ' rounded-full border-2 w-3 h-3 ' > </div>
+              <div className = ' rounded-full border-2 w-[14px] h-[14px] ' > </div>
               <h3> Non-admitted </h3>
             </div>
             <div className = 'flex justify-around items-center gap-1 ' >
-              <div className = ' rounded-full border-2 w-3 h-3 ' > </div>
+              <div className = ' rounded-full border-2 w-[14px] h-[14px] ' > </div>
               <h3> Admitted </h3>
             </div>
+          </div>
+        </div>
+        <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm ' >
+          <div className = 'scale-95 -ml-4 ' >
+            <PatientsTable patients = { patients } />
           </div>
         </div>
       </div>
