@@ -82,19 +82,19 @@ const Reports = () => {
         <div className = 'bg-white h-[370px] w-[74vw] rounded-md shadow-sm p-3 flex flex-col' >
           <div className = 'flex justify-between w-full ' >
             <h1> Patient Overview </h1>
-            <button className = ' flex items-center gap-2 justify-center text-sm p-2 border rounded-md' >
+            <button className = ' flex items-center gap-2 justify-center text-sm p-2 border-2 rounded-md' >
               <img src = { calendar } alt="" /> 
               Monthly 
             </button>
           </div>
           <img src = { graph } alt="" className = 'p-4'  />
           <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
-            <div className = 'flex justify-around items-center gap-2 ' >
-              <div className = ' rounded-full border w-3 h-3 ' > </div>
+            <div className = 'flex justify-around items-center gap-1 ' >
+              <div className = ' rounded-full border-2 w-3 h-3 ' > </div>
               <h3> Non-admitted </h3>
             </div>
-            <div className = 'flex justify-around items-center gap-2 ' >
-              <div className = ' rounded-full border w-3 h-3 ' > </div>
+            <div className = 'flex justify-around items-center gap-1 ' >
+              <div className = ' rounded-full border-2 w-3 h-3 ' > </div>
               <h3> Admitted </h3>
             </div>
           </div>
