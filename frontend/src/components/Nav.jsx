@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import logo from '../assets/futa logo.png'
 import search from '../assets/akar-icons_search.svg'
@@ -10,6 +10,9 @@ import { Notification } from 'iconsax-react'
 // import direct from '../assets/ic_baseline-log-out.svg'
 
 const Nav = () => {
+
+    const [ openNotification, setOpenNotification ] = useState(false);
+
   return (
     <React.Fragment>
         <nav className = 'flex absolute h-20 w-full top-0 border border-gray-300 justify-between px-2 items-center'>
@@ -38,7 +41,7 @@ const Nav = () => {
                 <p className = 'font-span font-normal text-base text-black'> Dave Olumuyiwa </p>
                 <p className = 'font-span font-normal text-base text-black'> Admin </p>
             </div>
-            <div className = 'flex pr-4'>
+            <div className = 'flex pr-4 relative '>
                 {/* <NavLink className = 'mr-4'>
                     <img 
                         src = { notify } 
@@ -52,7 +55,22 @@ const Nav = () => {
                         alt = "direct" 
                     />
                 </NavLink> */}
-                <Notification size="32" color="#212121" className = 'mr-4 cursor-pointer opacity-50' />
+                <Notification 
+                    size="32" 
+                    color="#212121" 
+                    className = 'mr-4 cursor-pointer opacity-50' 
+                    onClick = { () => setOpenNotification( !openNotification ) } 
+                    onMouseEnter = { () => setOpenNotification( true ) }
+                />
+                {
+                    openNotification && 
+                    <div 
+                        className = ' absolute bg-white shadow-2xl w-fit h-fit top-10 right-8 z-10 p-10 '
+                        onMouseLeave = { () => setOpenNotification( false ) } 
+                    >
+                            Hello
+                    </div>
+                }
             </div>
         </nav>
     </React.Fragment>
