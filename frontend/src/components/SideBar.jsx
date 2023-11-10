@@ -109,7 +109,7 @@ const SideBar = () => (
 
             <div className = 'grid absolute bottom-20'>
                 
-                <hr className = 'w-48' />
+                <hr className = 'w-48 my-4' />
                 
                 {/* <h3 className = 'my-4'> General </h3> */}
                 
