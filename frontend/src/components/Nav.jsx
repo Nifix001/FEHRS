@@ -4,6 +4,7 @@ import logo from '../assets/futa logo.png'
 import notify from '../assets/mi_notification.svg'
 import direct from '../assets/ic_baseline-log-out.svg'
 import search from '../assets/akar-icons_search.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
   return (
@@ -35,18 +36,19 @@ const Nav = () => {
                 <p className = 'font-span font-normal text-base text-black'> Admin </p>
             </div>
             <div className = 'flex pr-4'>
-                <NavLink className = 'mr-4'>
+                {/* <NavLink className = 'mr-4'>
                     <img 
                         src = { notify } 
                         alt = "notification" 
                     />
-                </NavLink>
-                <NavLink className = 'ml-4'>
+                </NavLink> */}
+                <FontAwesomeIcon icon="fa-regular fa-bell" className = 'mr-4 w-7 h-7 opacity-50 '  />
+                {/* <NavLink className = 'ml-4'>
                     <img 
                         src = { direct } 
                         alt = "direct" 
                     />
-                </NavLink>
+                </NavLink> */}
             </div>
         </nav>
     </React.Fragment>

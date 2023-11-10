@@ -1,4 +1,5 @@
 import React from 'react'
+
 import dashIcon from '../assets/sidebar/element-1.svg';
 import PatientIcon from '../assets/sidebar/bi_people.svg';
 import doctorIcon from '../assets/sidebar/hospital.svg';
@@ -7,12 +8,13 @@ import ReportsIcon from '../assets/sidebar/chart.svg?react';
 // import { ReactComponent as ReportsIcon } from '../assets/sidebar/chart.svg';
 import SettingsIcon from '../assets/sidebar/ant-design_setting-outlined.svg';
 import SupportIcon from '../assets/sidebar/ic_outline-contact-support.svg'
+import direct from '../assets/ic_baseline-log-out.svg'
+
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Building3, Chart1, Element, Profile2User, Setting2 } from 'iconsax-react'
 
-// chart-tree-map
 
 
 
@@ -118,7 +120,12 @@ const SideBar = () => (
                         src = { SupportIcon } 
                         alt = "" 
                     /> */}
-                    <FontAwesomeIcon icon = "fa-regular fa-circle-question" className='w-5 h-5' />
+                    <img 
+                        src = { direct } 
+                        alt = "log out" 
+                        className = 'w-5 h-5 mr-2'
+                    />
+                    {/* <FontAwesomeIcon icon = "fa-regular fa-circle-question" className='w-5 h-5' /> */}
                     <h3 className = ' ml-2'> Logout </h3>
                 
                 </div>
