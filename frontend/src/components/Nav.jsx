@@ -28,7 +28,7 @@ const Nav = () => {
                     className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-182 h-10 p-2 outline-0' 
                 />
                 <img 
-                    className = 'relative right-12 cursor-pointer' 
+                    className = 'relative right-12 cursor-pointer opacity-50' 
                     src = { search } 
                     alt = "search" 
                 />
@@ -52,7 +52,7 @@ const Nav = () => {
                         alt = "direct" 
                     />
                 </NavLink> */}
-                <Notification size="32" color="#212121" className = 'mr-4' />
+                <Notification size="32" color="#212121" className = 'mr-4 cursor-pointer opacity-50' />
             </div>
         </nav>
     </React.Fragment>
