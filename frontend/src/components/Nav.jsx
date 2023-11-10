@@ -65,7 +65,7 @@ const Nav = () => {
                 {
                     openNotification && 
                     <div 
-                        className = ' absolute bg-white shadow-2xl w-fit h-fit top-10 right-8 z-10 p-10 '
+                        className = ' absolute bg-white shadow-2xl w-fit h-fit top-10 right-6 z-10 p-10 '
                         onMouseLeave = { () => setOpenNotification( false ) } 
                     >
                             Hello

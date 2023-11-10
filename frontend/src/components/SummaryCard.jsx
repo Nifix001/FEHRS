@@ -9,7 +9,7 @@ const SummaryCard = () => {
   return (
     <React.Fragment>
         <div className = 'flex gap-4 ml-8 my-3'>
-            <NavLink to="/user/patients" className = 'w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5  hover:scale-105'>
+            <NavLink to="/user/patients" className = 'w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5  hover:scale-[1.03]'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Patients </p>
                     <Link> 
@@ -32,7 +32,7 @@ const SummaryCard = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary4 rounded-md px-5 py-5 hover:scale-105'>
+            <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary4 rounded-md px-5 py-5 hover:scale-[1.03]'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Departments </p>
                     <Link>
@@ -54,7 +54,7 @@ const SummaryCard = () => {
                 </div>
             </NavLink>
 
-            <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary5 rounded-md px-5 py-5 hover:scale-105'>
+            <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary5 rounded-md px-5 py-5 hover:scale-[1.03]'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total diagnosis </p>
                     <Link>
