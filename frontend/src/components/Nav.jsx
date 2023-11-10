@@ -2,8 +2,9 @@ import React from 'react'
 
 import logo from '../assets/futa logo.png'
 import search from '../assets/akar-icons_search.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Notification } from 'iconsax-react'
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { NavLink } from 'react-router-dom'
 // import notify from '../assets/mi_notification.svg'
 // import direct from '../assets/ic_baseline-log-out.svg'
@@ -11,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Nav = () => {
   return (
     <React.Fragment>
-        <nav className = 'flex absolute h-20 w-screen top-0 border border-gray-300 justify-between px-2 items-center'>
+        <nav className = 'flex absolute h-20 w-full top-0 border border-gray-300 justify-between px-2 items-center'>
             <div className = 'border-solid border-gray-300 border-r h-20  pr-16 pl-[14px] flex items-center gap-3 '>
                 <img 
                     src = { logo } 
@@ -44,13 +45,14 @@ const Nav = () => {
                         alt = "notification" 
                     />
                 </NavLink> */}
-                <FontAwesomeIcon icon="fa-regular fa-bell" className = 'mr-4 w-7 h-7 opacity-50 '  />
+                {/* <FontAwesomeIcon icon="fa-regular fa-bell" className = 'mr-4 w-7 h-7 opacity-50 '  /> */}
                 {/* <NavLink className = 'ml-4'>
                     <img 
                         src = { direct } 
                         alt = "direct" 
                     />
                 </NavLink> */}
+                <Notification size="32" color="#212121" className = 'mr-4' />
             </div>
         </nav>
     </React.Fragment>

@@ -39,7 +39,7 @@ const Reports = () => {
 
   return (
     <React.Fragment>
-      <div div className = 'w-fit h-fit bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 patients bg-opacity-60 grid gap-6 '>
+      <div div className = 'w-[1111px] h-fit bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 patients bg-opacity-60 grid gap-6 '>
         <div className = 'flex gap-7 ' >
           <div className = ' bg-white h-52 w-[36vw] rounded-md grid px-2 py-8  shadow-sm' >
             <h1> Overview </h1>
