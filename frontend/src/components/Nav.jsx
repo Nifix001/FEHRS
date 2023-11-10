@@ -1,10 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+
 import logo from '../assets/futa logo.png'
-import notify from '../assets/mi_notification.svg'
-import direct from '../assets/ic_baseline-log-out.svg'
 import search from '../assets/akar-icons_search.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// import { NavLink } from 'react-router-dom'
+// import notify from '../assets/mi_notification.svg'
+// import direct from '../assets/ic_baseline-log-out.svg'
 
 const Nav = () => {
   return (
