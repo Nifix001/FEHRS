@@ -83,11 +83,11 @@ const router = createBrowserRouter(
                   />
                 </Route>
               </Route>
-              {/* <Route 
+              <Route 
                 path = "doctor" 
                 element = { <Doctor /> }
               >
-              </Route> */}
+              </Route>
               <Route 
                 path = "pharmacy" 
                 element = { <Pharmacy /> } 

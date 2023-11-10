@@ -13,7 +13,7 @@ import direct from '../assets/ic_baseline-log-out.svg'
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Building3, Chart1, Element, Profile2User, Setting2 } from 'iconsax-react'
+import { Building3, Chart1, Element, Hospital, Profile2User, Setting2 } from 'iconsax-react'
 
 
 
@@ -79,7 +79,7 @@ const SideBar = () => (
                 </NavLink>
 
                 <NavLink 
-                    className = 'flex hover:bg-primary text-side rounded-md hover:text-white p-1.5 -ml-1.5 items-center hover:stroke-white' 
+                    className = 'flex hover:bg-primary text-side rounded-md hover:text-white p-1.5 -ml-1.5 items-center text-[14.3px] my-1 ' 
                     to = "reports"
                     title = "Reports page"
                 >
@@ -87,6 +87,18 @@ const SideBar = () => (
                         {/* <FontAwesomeIcon icon = "fa-solid fa-chart-simple" className = 'w-5 h-5' /> */}
                         <Chart1 size="20" />
                         <h3 className = 'ml-2 '> Reports </h3>
+                    </div>
+                </NavLink>
+
+                <NavLink 
+                    className = 'flex hover:bg-primary text-side rounded-md hover:text-white p-1.5 -ml-1.5 items-center text-[14.3px] my-1' 
+                    to = "doctor"
+                    title = "Doctors page"
+                >
+                    <div className="flex justify-content-space-between align-items-center">
+                        {/* <FontAwesomeIcon icon = "fa-solid fa-chart-simple" className = 'w-5 h-5' /> */}
+                        <Hospital size="20" />
+                        <h3 className = 'ml-2 '> Doctor </h3>
                     </div>
                 </NavLink>
 
