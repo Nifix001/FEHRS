@@ -111,7 +111,7 @@ const SideBar = () => (
                 
                 <hr className = 'w-48' />
                 
-                <h3 className = 'my-4'> General </h3>
+                {/* <h3 className = 'my-4'> General </h3> */}
                 
                 <div className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5'>
                     
