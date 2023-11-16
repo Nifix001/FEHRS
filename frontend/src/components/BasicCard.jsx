@@ -73,8 +73,8 @@ export default function BasicCard( { signUp } ) {
               />
               <input 
                 type = "text" 
-                name = 'Email' 
-                placeholder = 'Email' 
+                name = 'email' 
+                placeholder = 'email' 
                 value = { email }  
                 onChange = { (e) => setEmail( e.target.value ) } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary   indent-3.5 outline-0 ' 
