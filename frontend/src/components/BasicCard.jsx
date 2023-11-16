@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import  axios  from 'axios'
 
 
-const csrfToken = process.env.REACT_APP_TOKEN;
-const code = process.env.REACT_APP_BACK
+
+// const csrfToken = process.env.REACT_APP_TOKEN;
+// const code = process.env.REACT_APP_BACK
 
 
 
