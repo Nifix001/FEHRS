@@ -67,8 +67,14 @@ const Graph = () => {
                            
                             <tr>
                                 <td> 6. </td>
-                                <td> Adekunle Gold </td>
+                                <td> Adekunle Ishola </td>
                                 <td> CPE/17/6520 </td>
+                            </tr>
+
+                            <tr>
+                                <td> 7. </td>
+                                <td> David Olawale </td>
+                                <td> CPE/19/6520 </td>
                             </tr>
                         </tbody>
                     </table>
