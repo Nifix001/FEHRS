@@ -1,7 +1,13 @@
 import * as React from 'react';
 import logo from '../assets/futa logo.png';
-import { Form } from 'react-router-dom';
+// import { Form } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import  axios  from 'axios'
+
+
+const csrfToken = process.env.REACT_APP_TOKEN;
+const code = process.env.REACT_APP_BACK
+
 
 
 export default function BasicCard( { signUp } ) {
@@ -9,6 +15,34 @@ export default function BasicCard( { signUp } ) {
   const [ name, setName ] = React.useState('');
   const [ email, setEmail ] = React.useState('');
   const [password, setPassword] = React.useState('');
+  
+  const [loading, setLoading] = React.useState(false);
+
+  const handleLogin = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.post('https://127.0.0.1:8000/f/login', {
+        "email": email,
+        "password": password
+      }, {
+        headers: {
+          'Accept': 'application/json',
+          'X-XSRF-TOKEN':  csrfToken ,
+          'Referer': code
+        }
+      });
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+
+  const handleSignup = () => {
+
+  }
 
   return (
     <div className = 'xl:w-104 2xl:w-151 xl:h-124 2xl:h-178.25 ml-auto mr-auto mt-20 login-card rounded-lg pt-10 basic-card'>
@@ -23,7 +57,7 @@ export default function BasicCard( { signUp } ) {
           </Link>
         </header>
 
-        <Form className = 'grid justify-center'>
+        <form className = 'grid justify-center'>
             { !signUp ? <>
             <header> 
               <h1 className = 'text-primary mb-1'> Welcome Back </h1>
@@ -50,6 +84,7 @@ export default function BasicCard( { signUp } ) {
             <button 
               type = 'submit' 
               className = 'bg-primary text-white w-90 rounded h-9 mt-16 '
+              onClick = { handleLogin }
             >
               <span className = 'ml-40' > Login </span>
             </button>
@@ -99,13 +134,14 @@ export default function BasicCard( { signUp } ) {
               <button 
                 type = 'submit' 
                 className = 'bg-primary text-white w-90 rounded h-9  '
+                onClick = { handleSignup }
               >
                 <span className = 'ml-40' > Sign Up </span>
               </button>
             </div>
             </>
             }
-        </Form>
+        </form>
     </div>
   );
 }
