@@ -3,11 +3,11 @@ import logo from '../assets/futa logo.png';
 // import { Form } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import  axios  from 'axios'
+import processLogin from '../helpers/helpers';
 
 
-
-// const csrfToken = process.env.REACT_APP_TOKEN;
-// const code = process.env.REACT_APP_BACK
+const csrfToken = import.meta.env.VITE_REACT_APP_TOKEN;
+const code = import.meta.env.VITE_REACT_APP_BACK;
 
 
 
@@ -18,26 +18,28 @@ export default function BasicCard( { signUp } ) {
   const [password, setPassword] = React.useState('');
   
   const [loading, setLoading] = React.useState(false);
+  const [ token, setToken]  = React.useState('');
 
-  const handleLogin = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.post('https://127.0.0.1:8000/f/login', {
-        "email": email,
-        "password": password
-      }, {
-        headers: {
-          'Accept': 'application/json',
-          'X-XSRF-TOKEN':  csrfToken ,
-          'Referer': code
-        }
-      });
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
+  const handleLogin = (e) => {
+    // try {
+    //   setLoading(true);
+    //   const response = await axios.post('https://127.0.0.1:8000/f/login', {
+    //     "email": email,
+    //     "password": password
+    //   }, {
+    //     headers: {
+    //       Accept: 'application/json',
+    //       'X-XSRF-TOKEN':  csrfToken ,
+    //       Referer: code
+    //     }
+    //   });
+    //   console.log(response);
+    // } catch (error) {
+    //   console.error(error);
+    // } finally {
+    //   setLoading(false);
+    // }
+    processLogin(email, password, setLoading, setToken, e)
   };
   
 
@@ -72,6 +74,7 @@ export default function BasicCard( { signUp } ) {
               value = { email }  
               onChange = { (e) => setEmail( e.target.value ) } 
               className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ' 
+              autoComplete='true'
               required
             />
             <input 
@@ -80,7 +83,9 @@ export default function BasicCard( { signUp } ) {
               placeholder = 'Password' 
               value = { password } 
               onChange = { (e) => setPassword( e.target.value ) } 
-              className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' required 
+              className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
+              autoComplete='true'
+              required 
             />
             <button 
               type = 'submit' 
@@ -105,6 +110,7 @@ export default function BasicCard( { signUp } ) {
                 value = { name }  
                 onChange = { (e) => setName( e.target.value ) } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary   indent-3.5 outline-0 ' 
+                autoComplete='true'
                 required
               />
               <input 
@@ -114,6 +120,7 @@ export default function BasicCard( { signUp } ) {
                 value = { email }  
                 onChange = { (e) => setEmail( e.target.value ) } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary   indent-3.5 outline-0 ' 
+                autoComplete='true'
                 required
               />
               <input 
@@ -122,7 +129,9 @@ export default function BasicCard( { signUp } ) {
                 placeholder = 'Password' 
                 value = { password } 
                 onChange = { (e) => setPassword( e.target.value ) } 
-                className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' required 
+                className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
+                autoComplete='true'
+                required 
               />
               <input 
                 type = "password" 
@@ -130,7 +139,9 @@ export default function BasicCard( { signUp } ) {
                 placeholder = 'Confirm Password' 
                 value = { password } 
                 onChange = { (e) => setPassword( e.target.value ) } 
-                className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' required 
+                className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
+                autoComplete='true'
+                required 
               />
               <button 
                 type = 'submit' 
