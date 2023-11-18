@@ -16,7 +16,12 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $user = $request->user();
-        if($user->role->id === 1 ){
+        // if($user->role->id === 1 ){
+            // $user = $request->user();
+            if($user->role->id === 1){
+                return response()->json("Unverified");
+            }
+            if($user->role->id === 2 ){
             return $next($request);
         }
         return response()->json("Unauthorized");
