@@ -11,24 +11,11 @@ export default async function processLogin(email, password, setLoading, setToken
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
-        console.log(response);
+        // console.log(response);
         
-    //   // Check if 'set-cookie' is present in the response headers
-    //   if (response.headers && response.headers['set-cookie']) {
-    //     // Find the 'XSRF-TOKEN' cookie
-    //     const xsrfCookie = response.headers['set-cookie']
-    //         .find(cookie => cookie.startsWith('XSRF-TOKEN'));
-
-    //     if (xsrfCookie) {
-    //         // Extract the CSRF token value
-    //         const csrfToken = xsrfCookie.split('=')[1].split(';')[0];
-
-    //         console.log(csrfToken);
-        
-            // Check if the CSRF request was successful (status 200)
             if (response) {
                 // Get the CSRF token from the cookies
-                console.log(document.cookie);
+                // console.log(document.cookie);
                 const csrfToken = document.cookie.split('; ')
                                     .find(row => row.startsWith('XSRF-TOKEN='))
                                     .split('=')[1];
@@ -50,15 +37,11 @@ export default async function processLogin(email, password, setLoading, setToken
                 }
             }
             );
-
-
             console.log(loginResponse);
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
-    // } else {
-    //     console.error('No set-cookie header found in response');
-    // }
+
 } catch (error) {
     console.error(error);
 } finally {
