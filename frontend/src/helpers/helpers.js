@@ -10,16 +10,14 @@ export default async function processLogin(email, password, setLoading, setToken
 
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-
-        // console.log(response);
-        
+        // console.log(response);      
             if (response) {
                 // Get the CSRF token from the cookies
                 // console.log(document.cookie);
                 const csrfToken = document.cookie.split('; ')
                                     .find(row => row.startsWith('XSRF-TOKEN='))
                                     .split('=')[1];
-                console.log('CSRF Token:', csrfToken);
+                // console.log('CSRF Token:', csrfToken);
   
             // Set the CSRF token in state or wherever you need it
             setToken(csrfToken);

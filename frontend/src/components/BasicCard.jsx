@@ -21,24 +21,6 @@ export default function BasicCard( { signUp } ) {
   const [ token, setToken]  = React.useState('');
 
   const handleLogin = (e) => {
-    // try {
-    //   setLoading(true);
-    //   const response = await axios.post('https://127.0.0.1:8000/f/login', {
-    //     "email": email,
-    //     "password": password
-    //   }, {
-    //     headers: {
-    //       Accept: 'application/json',
-    //       'X-XSRF-TOKEN':  csrfToken ,
-    //       Referer: code
-    //     }
-    //   });
-    //   console.log(response);
-    // } catch (error) {
-    //   console.error(error);
-    // } finally {
-    //   setLoading(false);
-    // }
     processLogin(email, password, setLoading, setToken, e)
   };
   
@@ -60,7 +42,10 @@ export default function BasicCard( { signUp } ) {
           </Link>
         </header>
 
-        <form className = 'grid justify-center'>
+        <form 
+            className = 'grid justify-center'
+            onSubmit = { handleLogin }
+            >
             { !signUp ? <>
             <header> 
               <h1 className = 'text-primary mb-1'> Welcome Back </h1>
@@ -90,7 +75,7 @@ export default function BasicCard( { signUp } ) {
             <button 
               type = 'submit' 
               className = 'bg-primary text-white w-90 rounded h-9 mt-16 '
-              onClick = { handleLogin }
+              // onClick = { handleLogin }
             >
               <span className = 'ml-40' > Login </span>
             </button>
