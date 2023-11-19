@@ -1,12 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { useUser } from "../context/UserContext";
+import { redirect, useLocation } from "react-router-dom";
 
 // axios.defaults.baseURL = 'http://127.0.0.1:8000'
 axios.defaults.withCredentials = true;
 
-
-export default async function processLogin(email, password, setLoading, setToken, e) {
+export default async function processLogin(email, password, setLoading, setToken, e, history) {
     e.preventDefault();
+
 
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
@@ -36,13 +39,15 @@ export default async function processLogin(email, password, setLoading, setToken
             }
             );
             console.log(loginResponse);
+            localStorage.setItem('user', JSON.stringify(loginResponse.data));
+            history('/user');
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
-
-} catch (error) {
-    console.error(error);
-} finally {
-    setLoading(false);
-}
+        
+    } catch (error) {
+        console.error(error);
+    } finally {
+        setLoading(false);
+    }
 }

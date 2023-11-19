@@ -25,10 +25,13 @@ import PatientsPage from "./Subpages/Patients Subpage/PatientsPage"
 import NewPatients from "./Subpages/Patients Subpage/NewPatients"
 import SignUp from "./pages/SignUp"
 import UserRedirect from "./Subpages/UserRedirect"
+import UserProvider from "./context/UserContext"
+// import { useState } from "react"
 
 library.add(fas, fab, far);
 
 function App() {
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -128,9 +131,9 @@ const router = createBrowserRouter(
          )
 
   return (
-    <>
+    <UserProvider>
       <RouterProvider router = { router } />
-    </>
+    </UserProvider>
   )
 }
 

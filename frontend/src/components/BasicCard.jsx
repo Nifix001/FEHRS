@@ -1,7 +1,7 @@
 import * as React from 'react';
 import logo from '../assets/futa logo.png';
 // import { Form } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import  axios  from 'axios'
 import processLogin from '../helpers/helpers';
 
@@ -20,8 +20,12 @@ export default function BasicCard( { signUp } ) {
   const [loading, setLoading] = React.useState(false);
   const [ token, setToken]  = React.useState('');
 
+  // const [data, setData] = React.useState();
+  const history = useNavigate();
+
+
   const handleLogin = (e) => {
-    processLogin(email, password, setLoading, setToken, e)
+    processLogin(email, password, setLoading, setToken, e, history)
   };
   
 
