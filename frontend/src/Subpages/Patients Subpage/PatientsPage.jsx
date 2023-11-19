@@ -28,7 +28,14 @@ const PatientsPage = () => {
               <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
               <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
               <td className = 'text-left text-base'> { p.email } </td>
-              <td className = 'text-left pl-3 text-base'> { p.drug } </td>
+              <td className = 'text-left pl-3 text-base'> 
+              { p.prescriptions.map(d => {
+                return (
+                  <span key = { d.id } > { d.diagnosis } </span>
+                  )
+                }) }
+                </td>
+              {/* <td className = 'text-left pl-3 text-base'> { p.drug } </td> */}
               <td className = 'pl-8'>
                 <div className = 'flex items-center justify-start pl-1 '> 
                   <Link>
