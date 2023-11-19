@@ -37,8 +37,8 @@ const Nav = () => {
             </div>
 
             <div>
-                <p className = 'font-normal text-base text-black'> { user.name } </p>
-                <p className = 'font-normal text-base text-black'> { roles[user.role_id - 1] } </p>
+                <p className = 'font-bold text-base text-black'> { user.name } </p>
+                <p className = 'font-normal text-xs text-black'> { roles[user.role_id - 1] } </p>
             </div>
             <div className = 'flex pr-4 relative '>
                 <Notification 
