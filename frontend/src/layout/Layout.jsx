@@ -16,7 +16,7 @@ const Layout = () => {
       if (isMounted && !user) {
         navigate('/login');
       }
-    }, 2000); // Set the desired delay in milliseconds
+    }, 1000); // Set the desired delay in milliseconds
 
     // Clear the timer if the component unmounts
     return () => {
