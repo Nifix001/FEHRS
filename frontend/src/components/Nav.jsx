@@ -10,7 +10,7 @@ const Nav = () => {
 
     const [ openNotification, setOpenNotification ] = useState(false);
     const { user } = useUser();
-    const roles = ["Admin", "Pharmacy", "Doctor"]
+    const roles = ["Unverified", "Admin", "Pharmacy", "Doctor"]
 
   return (
     <React.Fragment>
