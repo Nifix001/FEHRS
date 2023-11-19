@@ -47,7 +47,6 @@ export default async function processLogin(email, password, setLoading, token, s
 
 export async function getPatients( csrfToken) {
     // e.preventDefault();
-    console.log(csrfToken);
 
     try {
         const response = await axios.get('http://localhost:8000/api/patient', {
@@ -58,7 +57,6 @@ export async function getPatients( csrfToken) {
             }
         })
         const patients = response.data.patient_record;
-        console.log( patients );
         localStorage.setItem("patients", JSON.stringify(patients))
     } catch( error ){
         console.error( error );
