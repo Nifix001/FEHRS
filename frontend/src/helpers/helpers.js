@@ -57,7 +57,9 @@ export async function getPatients( csrfToken) {
                 // 'Referer': '127.0.0.1:8000'
             }
         })
-        console.log( response );
+        const patients = response.data.patient_record;
+        console.log( patients );
+        localStorage.setItem("patients", JSON.stringify(patients))
     } catch( error ){
         console.error( error );
     }

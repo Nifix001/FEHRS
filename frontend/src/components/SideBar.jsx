@@ -22,6 +22,7 @@ const SideBar = () => {
    
     const handleLogout = () => {
         localStorage.removeItem('user');
+        localStorage.removeItem('patients');
         // Reset any relevant state variables
         window.location.reload();
       };
