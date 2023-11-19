@@ -3,7 +3,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser) {
+export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients) {
     e.preventDefault();
 
     try {
@@ -33,7 +33,7 @@ export default async function processLogin(email, password, setLoading, token, s
             // console.log(loginResponse);
             !user && setUser(loginResponse.data);
             history('/user');
-            getPatients( csrfToken);
+            getPatients( csrfToken, setPatients);
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
@@ -45,7 +45,7 @@ export default async function processLogin(email, password, setLoading, token, s
     }
 }
 
-export async function getPatients( csrfToken) {
+export async function getPatients( csrfToken, setPatients) {
     // e.preventDefault();
 
     try {
@@ -57,7 +57,8 @@ export async function getPatients( csrfToken) {
             }
         })
         const patients = response.data.patient_record;
-        localStorage.setItem("patients", JSON.stringify(patients))
+        // localStorage.setItem("patients", JSON.stringify(patients))
+        setPatients(patients)
     } catch( error ){
         console.error( error );
     }

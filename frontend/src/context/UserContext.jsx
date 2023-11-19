@@ -11,11 +11,14 @@ export function useUser(){
 function UserProvider({children}){
     
     const [ user, setUser] = useLocalStorage('user', null);
+    const [ patients, setPatients ] = useLocalStorage('patients', null);
     
     return (
         <UserContext.Provider value={{
             user,
-            setUser
+            setUser,
+            patients,
+            setPatients
         }} >
             { children }
         </UserContext.Provider>
