@@ -30,7 +30,7 @@ export default async function processLogin(email, password, setLoading, setToken
                 }
             }
             );
-            console.log(loginResponse);
+            // console.log(loginResponse);
             !user && setUser(loginResponse.data);
             history('/user');
         } else {

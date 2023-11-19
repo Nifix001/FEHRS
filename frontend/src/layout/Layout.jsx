@@ -9,7 +9,7 @@ const Layout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(user);
+    // console.log(user);
     let isMounted = true;
     const redirectTimer = setTimeout(() => {
       // Redirect to login if the user is not logged in after a delay (e.g., 2000 milliseconds)

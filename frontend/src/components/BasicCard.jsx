@@ -1,15 +1,8 @@
 import * as React from 'react';
 import logo from '../assets/futa logo.png';
-// import { Form } from 'react-router-dom';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import  axios  from 'axios'
+import { Link, useNavigate } from 'react-router-dom';
 import processLogin from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
-
-
-const csrfToken = import.meta.env.VITE_REACT_APP_TOKEN;
-const code = import.meta.env.VITE_REACT_APP_BACK;
-
 
 
 export default function BasicCard( { signUp } ) {
@@ -21,7 +14,6 @@ export default function BasicCard( { signUp } ) {
   const [loading, setLoading] = React.useState(false);
   const [ token, setToken]  = React.useState('');
 
-  // const [data, setData] = React.useState();
   const history = useNavigate();
   const { user, setUser } = useUser();
 
@@ -79,8 +71,7 @@ export default function BasicCard( { signUp } ) {
             />
             <button 
               type = 'submit' 
-              className = 'bg-primary text-white w-90 rounded h-9 mt-16 '
-              // onClick = { handleLogin }
+              className = {`bg-primary text-white w-90 rounded h-9 mt-16 ${loading && 'opacity-70'} `}
             >
               <span className = 'ml-40' > Login </span>
             </button>
