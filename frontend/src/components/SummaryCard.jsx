@@ -12,13 +12,13 @@ const SummaryCard = () => {
             <NavLink to="/user/patients" className = 'w-87.25 h-46.5 bg-secondary3 rounded-md px-5 py-5  hover:scale-[1.03]'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Patients </p>
-                    <Link> 
-                        {/* <img 
+                    {/* <Link> 
+                        <img 
                             className = 'ml-auto' 
                             src = { dots } 
                             alt = "..." 
-                        /> */}
-                    </Link>
+                        />
+                    </Link> */}
                 </div>
 
                 <div className = 'flex pt-8'>
@@ -35,13 +35,13 @@ const SummaryCard = () => {
             <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary4 rounded-md px-5 py-5 hover:scale-[1.03]'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total Departments </p>
-                    <Link>
-                        {/* <img 
+                    {/* <Link>
+                        <img 
                             className = 'ml-auto' 
                             src = { dots } 
                             alt = "..." 
-                        /> */}
-                    </Link>
+                        />
+                    </Link> */}
                 </div>
                 <div className = 'flex pt-8'>
                     <p className = 'font-welcome text-3xl text-white font-bold '> 30 </p>
@@ -57,13 +57,13 @@ const SummaryCard = () => {
             <NavLink to="/user/reports" className = 'w-87.25 h-46.5 bg-secondary5 rounded-md px-5 py-5 hover:scale-[1.03]'>
                 <div className = 'flex items-center'>
                     <p className = 'font-welcome text-xl text-white font-medium mr-auto'> Total diagnosis </p>
-                    <Link>
-                        {/* <img 
+                    {/* <Link>
+                        <img 
                             className = 'ml-auto' 
                             src = { dots } 
                             alt = "..." 
-                        /> */}
-                    </Link>
+                        />
+                    </Link> */}
                 </div>
                 <div className = 'flex pt-8'>
                     <p className = 'font-welcome text-3xl text-white font-bold'> 456 </p>
