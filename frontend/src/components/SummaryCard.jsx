@@ -4,8 +4,10 @@ import profile from '../assets/Dashboard/Group.svg'
 import comm from '../assets/Dashboard/noun-community-5666932 1.svg'
 import dept from '../assets/Dashboard/Group (1).svg'
 import { Link, NavLink } from 'react-router-dom'
+import { useUser } from '../context/UserContext'
 
 const SummaryCard = () => {
+    const { patients } = useUser();
   return (
     <React.Fragment>
         <div className = 'flex gap-4 ml-8 my-3'>
@@ -22,7 +24,7 @@ const SummaryCard = () => {
                 </div>
 
                 <div className = 'flex pt-8'>
-                    <p className = 'font-welcome text-3xl text-white font-bold'> 2387 </p>
+                    <p className = 'font-welcome text-3xl text-white font-bold'>  { patients.length } </p>
                     <div className = 'bg-tertiary-1  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-36'>
                         <img 
                             src = { profile } 

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import graph from '../assets/Dashboard/Frame 486.svg'
+import { useUser } from '../context/UserContext'
 
 const Graph = () => {
-
-    return (
+    const { patients } = useUser();
+     return (
       
       <React.Fragment>
        
@@ -35,13 +36,26 @@ const Graph = () => {
                         </thead>
                         
                         <tbody className = "font-span text-base font-normal">     
-                            <tr>
+                            {/* <tr>
                                 <td> 1. </td>
                                 <td> Mary Joseph </td>
                                 <td> MEE/10/6554 </td>
-                            </tr>
+                            </tr> */}
+                            {
+                                patients.map(p => {
+                                    return (
+                                        <>
+                                            <tr>
+                                                <td> { p.id }. </td>
+                                                <td> { p.lastname } { p.firstname } </td>
+                                                <td> { p.matric_no } </td>
+                                            </tr>      
+                                        </>
+                                    )
+                                } )
+                            }
                            
-                            <tr>
+                            {/* <tr>
                                 <td> 2. </td>
                                 <td> Amala Jones </td>
                                 <td> STS/10/4325 </td>
@@ -75,7 +89,7 @@ const Graph = () => {
                                 <td> 7. </td>
                                 <td> David Olawale </td>
                                 <td> CPE/19/6520 </td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </table>
                 </div>    

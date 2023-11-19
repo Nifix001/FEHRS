@@ -6,9 +6,11 @@ import { Link, NavLink } from 'react-router-dom'
 import dot from '../../assets/carbon_overflow-menu-horizontal.svg'
 import search from '../../assets/akar-icons_search.svg'
 import filter from '../../assets/cil_filter.svg'
+import { useUser } from '../../context/UserContext'
 
 const PatientsPage = () => {
 
+  const { patients } = useUser()
 
   const handleFile = (e) => {
     e.preventDefault();
@@ -17,14 +19,14 @@ const PatientsPage = () => {
   }
 
 
-    const patients = Patientsdata.map( p  =>  {
+    const patient = patients.map( p  =>  {
     
         return(
     
             <tr key = { p.id } >
-              <td className = 'py-4 text-left pl-6 text-base'> { p.name } </td>
-              <td className = 'text-left pl-6 text-base'> { p.matricno } </td>
-              <td className = 'text-left pl-6 text-base'> 0{ p.phone } </td>
+              <td className = 'py-4 text-left pl-6 text-base'> { p.lastname } { p.firstname } </td>
+              <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
+              <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
               <td className = 'text-left text-base'> { p.email } </td>
               <td className = 'text-left pl-3 text-base'> { p.drug } </td>
               <td className = 'pl-8'>
@@ -108,7 +110,7 @@ const PatientsPage = () => {
           </div>
         </div>
       </div>
-      <PatientsTable  patients = { patients } />
+      <PatientsTable  patients = { patient } />
     </React.Fragment>
   )
 }
