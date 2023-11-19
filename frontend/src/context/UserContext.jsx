@@ -1,20 +1,21 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import useLocalStorage from "../hooks/useLocalStorage";
 
-const user = localStorage.getItem('user');
+// const user = localStorage.getItem('user');
 const UserContext = createContext();
-// const [ user, setUser] = useLocalStorage('user', {});
 
 export function useUser(){
     return useContext(UserContext);
 }
 
 function UserProvider({children}){
-
+    
+    const [ user, setUser] = useLocalStorage('user', null);
     
     return (
         <UserContext.Provider value={{
-            user
+            user,
+            setUser
         }} >
             { children }
         </UserContext.Provider>

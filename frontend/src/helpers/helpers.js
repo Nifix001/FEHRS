@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { useUser } from "../context/UserContext";
@@ -7,8 +7,9 @@ import { redirect, useLocation } from "react-router-dom";
 // axios.defaults.baseURL = 'http://127.0.0.1:8000'
 axios.defaults.withCredentials = true;
 
-export default async function processLogin(email, password, setLoading, setToken, e, history) {
+export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser) {
     e.preventDefault();
+    // const { user } = useUser();
 
 
     try {
@@ -39,7 +40,8 @@ export default async function processLogin(email, password, setLoading, setToken
             }
             );
             console.log(loginResponse);
-            localStorage.setItem('user', JSON.stringify(loginResponse.data));
+            // localStorage.setItem('user', JSON.stringify(loginResponse.data));
+            !user && setUser(loginResponse.data);
             history('/user');
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');

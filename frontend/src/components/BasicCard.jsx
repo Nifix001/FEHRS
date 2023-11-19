@@ -4,6 +4,7 @@ import logo from '../assets/futa logo.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import  axios  from 'axios'
 import processLogin from '../helpers/helpers';
+import { useUser } from '../context/UserContext';
 
 
 const csrfToken = import.meta.env.VITE_REACT_APP_TOKEN;
@@ -22,10 +23,11 @@ export default function BasicCard( { signUp } ) {
 
   // const [data, setData] = React.useState();
   const history = useNavigate();
+  const { user, setUser } = useUser();
 
 
   const handleLogin = (e) => {
-    processLogin(email, password, setLoading, setToken, e, history)
+    processLogin(email, password, setLoading, setToken, e, history, user, setUser)
   };
   
 
