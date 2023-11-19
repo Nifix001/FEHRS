@@ -23,9 +23,9 @@ const SummaryCard = () => {
                     </Link> */}
                 </div>
 
-                <div className = 'flex pt-8'>
+                <div className = 'flex justify-between items-center px-2'>
                     <p className = 'font-welcome text-3xl text-white font-bold'>  { patients.length } </p>
-                    <div className = 'bg-tertiary-1  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-36'>
+                    <div className = 'bg-tertiary-1  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center '>
                         <img 
                             src = { profile } 
                             alt = "profile" 
