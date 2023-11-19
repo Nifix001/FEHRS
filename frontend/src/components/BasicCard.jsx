@@ -75,7 +75,6 @@ export default function BasicCard( { signUp } ) {
               value = { password } 
               onChange = { (e) => setPassword( e.target.value ) } 
               className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
-              autoComplete='true'
               required 
             />
             <button 
@@ -121,7 +120,6 @@ export default function BasicCard( { signUp } ) {
                 value = { password } 
                 onChange = { (e) => setPassword( e.target.value ) } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
-                autoComplete='true'
                 required 
               />
               <input 
@@ -131,7 +129,6 @@ export default function BasicCard( { signUp } ) {
                 value = { password } 
                 onChange = { (e) => setPassword( e.target.value ) } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
-                autoComplete='true'
                 required 
               />
               <button 

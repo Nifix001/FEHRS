@@ -3,15 +3,14 @@ import React, { useState } from 'react'
 import logo from '../assets/futa logo.png'
 import search from '../assets/akar-icons_search.svg'
 import { Notification } from 'iconsax-react'
+import { useUser } from '../context/UserContext'
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { NavLink } from 'react-router-dom'
-// import notify from '../assets/mi_notification.svg'
-// import direct from '../assets/ic_baseline-log-out.svg'
 
 const Nav = () => {
 
     const [ openNotification, setOpenNotification ] = useState(false);
+    const { user } = useUser();
+    const roles = ["Admin", "Pharmacy", "Doctor"]
 
   return (
     <React.Fragment>
@@ -38,23 +37,10 @@ const Nav = () => {
             </div>
 
             <div>
-                <p className = 'font-span font-normal text-base text-black'> Dave Olumuyiwa </p>
-                <p className = 'font-span font-normal text-base text-black'> Admin </p>
+                <p className = 'font-span font-normal text-base text-black'> { user.name } </p>
+                <p className = 'font-span font-normal text-base text-black'> { roles[user.role_id - 1] } </p>
             </div>
             <div className = 'flex pr-4 relative '>
-                {/* <NavLink className = 'mr-4'>
-                    <img 
-                        src = { notify } 
-                        alt = "notification" 
-                    />
-                </NavLink> */}
-                {/* <FontAwesomeIcon icon="fa-regular fa-bell" className = 'mr-4 w-7 h-7 opacity-50 '  /> */}
-                {/* <NavLink className = 'ml-4'>
-                    <img 
-                        src = { direct } 
-                        alt = "direct" 
-                    />
-                </NavLink> */}
                 <Notification 
                     size="32" 
                     color="#212121" 
