@@ -3,7 +3,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients) {
+export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients, setDrugs ) {
     e.preventDefault();
 
     try {
@@ -34,6 +34,7 @@ export default async function processLogin(email, password, setLoading, token, s
             !user && setUser(loginResponse.data);
             history('/user');
             getPatients( csrfToken, setPatients);
+            getDrugs( csrfToken, setDrugs  )
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
@@ -50,6 +51,25 @@ export async function getPatients( csrfToken, setPatients) {
 
     try {
         const response = await axios.get('http://localhost:8000/api/patient', {
+            headers: {
+                Accept: 'application/json',
+                'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+                // 'Referer': '127.0.0.1:8000'
+            }
+        })
+        const patients = response.data.patient_record;
+        // localStorage.setItem("patients", JSON.stringify(patients))
+        setPatients(patients)
+    } catch( error ){
+        console.error( error );
+    }
+}
+
+export async function getDrugs( csrfToken, setPatients) {
+    // e.preventDefault();
+
+    try {
+        const response = await axios.get('http://localhost:8000/api/drugs', {
             headers: {
                 Accept: 'application/json',
                 'X-XSRF-TOKEN': decodeURIComponent(csrfToken),

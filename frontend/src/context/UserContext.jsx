@@ -12,13 +12,16 @@ function UserProvider({children}){
     
     const [ user, setUser] = useLocalStorage('user', null);
     const [ patients, setPatients ] = useLocalStorage('patients', null);
+    const [ drugs, setDrugs ] = useLocalStorage('drugs', null)
     
     return (
         <UserContext.Provider value={{
             user,
             setUser,
             patients,
-            setPatients
+            setPatients, 
+            drugs, 
+            setDrugs
         }} >
             { children }
         </UserContext.Provider>
