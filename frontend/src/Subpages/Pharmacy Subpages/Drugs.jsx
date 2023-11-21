@@ -4,18 +4,19 @@ import Drugsdata from '../../database/Drugsdata.js'
 import del from '../../assets/delete.svg'
 import edit from '../../assets/edit.svg'
 import { Link } from 'react-router-dom'
+import { useUser } from '../../context/UserContext.jsx'
 
 
 const Drugs = () => {
-  
-  const drugs = Drugsdata.map( dd  => {
+  const { drugs } = useUser();
+  const drug = drugs.map( dd  => {
     return (
         <tr key = { dd.id } >
-          <td className = 'py-4 text-base'> { dd.sn } </td>
-          <td className = 'text-left pl-6 text-base '> { dd.drug } </td>
-          <td className = 'text-left pl-8 text-base'> { dd.quantity } </td>
-          <td className = 'text-left pl-6 text-base'> { dd.mfgd } </td>
-          <td className = 'text-left pl-6 text-base'> { dd.expd } </td>
+          <td className = 'py-4 text-base'> { dd.id } </td>
+          <td className = 'text-left pl-6 text-base '> { dd.drug_name } </td>
+          <td className = 'text-left pl-8 text-base'> { dd.drug_quantity } </td>
+          <td className = 'text-left pl-6 text-base'> { dd.manufacturing_date } </td>
+          <td className = 'text-left pl-6 text-base'> { dd.expiration_date } </td>
           <td className = 'pl-8'>
             <div className ='flex gap-2 items-center justify-start pl-8'> 
               <Link>
@@ -40,7 +41,7 @@ const Drugs = () => {
 
   return (
     <React.Fragment>
-      <DrugTable drugs = { drugs } />
+      <DrugTable drugs = { drug } />
     </React.Fragment>
   )
 }
