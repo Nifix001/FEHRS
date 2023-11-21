@@ -42,15 +42,15 @@ const Graph = () => {
                                 <td> MEE/10/6554 </td>
                             </tr> */}
                             {
-                                patients.map(p => {
+                               patients && patients.map(p => {
                                     return (
-                                        <>
+                                        <React.Fragment key = { p.id } >
                                             <tr>
                                                 <td> { p.id }. </td>
                                                 <td> { p.lastname } { p.firstname } </td>
                                                 <td> { p.matric_no } </td>
                                             </tr>      
-                                        </>
+                                        </React.Fragment>
                                     )
                                 } )
                             }

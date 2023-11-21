@@ -23,6 +23,7 @@ const SideBar = () => {
     const handleLogout = () => {
         localStorage.removeItem('user');
         localStorage.removeItem('patients');
+        localStorage.removeItem('drugs');
         // Reset any relevant state variables
         window.location.reload();
       };

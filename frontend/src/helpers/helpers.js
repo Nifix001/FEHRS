@@ -32,7 +32,6 @@ export default async function processLogin(email, password, setLoading, token, s
             );
             // console.log(loginResponse);
             !user && setUser(loginResponse.data);
-            history('/user');
             getPatients( csrfToken, setPatients);
             getDrugs( csrfToken, setDrugs  )
         } else {
@@ -42,7 +41,10 @@ export default async function processLogin(email, password, setLoading, token, s
     } catch (error) {
         console.error(error);
     } finally {
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false);
+            history('/user');
+        }, 3000);
     }
 }
 
@@ -65,7 +67,7 @@ export async function getPatients( csrfToken, setPatients) {
     }
 }
 
-export async function getDrugs( csrfToken, setPatients) {
+export async function getDrugs( csrfToken, setDrugs) {
     // e.preventDefault();
 
     try {
@@ -76,9 +78,10 @@ export async function getDrugs( csrfToken, setPatients) {
                 // 'Referer': '127.0.0.1:8000'
             }
         })
-        const patients = response.data.patient_record;
+        console.log(response);
+        const drugs = response.data.details;
         // localStorage.setItem("patients", JSON.stringify(patients))
-        setPatients(patients)
+        setDrugs(drugs)
     } catch( error ){
         console.error( error );
     }
