@@ -20,8 +20,12 @@ const Prescriptions = () => {
         <tr key = { p.id } >
           <td className = 'py-4 text-left pl-6 text-base'> { name } </td>
           <td className = 'text-left pl-6 text-base'> { p.patient.matric_no } </td>
-          <td className = 'text-left pl-16 text-base'> { p.drug } </td>
-          <td className = 'text-left pl-4 text-base'> 1 satchet </td>
+          <td className = 'text-left pl-16 text-base'> {
+              p.drugs.map(d => (
+                <span key = { d.id } > { d.drug_name } </span>
+              ))
+            } </td>
+          <td className = 'text-left pl-4 text-base'> { p.drug_quantity } </td>
           <td className = 'pl-8'>
             <div className = 'flex items-center justify-start pl-6 '> 
               <Link>
