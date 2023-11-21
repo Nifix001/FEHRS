@@ -3,16 +3,23 @@ import PrescriptionTable from '../../Tables/PrescriptionTable'
 import Prescriptionsdata from '../../database/Prescriptionsdata.js'
 import { Link } from 'react-router-dom'
 import dot from '../../assets/carbon_overflow-menu-horizontal.svg'
+import { useUser } from '../../context/UserContext.jsx'
 
 const Prescriptions = () => {
 
-  const prescriptions = Prescriptionsdata.map( p  =>  {
-    
+  const { patients, prescriptions } = useUser();
+  const prescription = prescriptions.map( p  =>  {
+     
+    const patient = patients.find(patient => patient.matric_no === p.patient.matric_no);
+    // console.log(patient);
+    const name = patient.firstname + ' ' + patient.lastname;
+
+
     return(
 
         <tr key = { p.id } >
-          <td className = 'py-4 text-left pl-6 text-base'> { p.name } </td>
-          <td className = 'text-left pl-6 text-base'> { p.matricno } </td>
+          <td className = 'py-4 text-left pl-6 text-base'> { name } </td>
+          <td className = 'text-left pl-6 text-base'> { p.patient.matric_no } </td>
           <td className = 'text-left pl-16 text-base'> { p.drug } </td>
           <td className = 'text-left pl-4 text-base'> 1 satchet </td>
           <td className = 'pl-8'>
@@ -32,7 +39,7 @@ const Prescriptions = () => {
 
   return (
     <React.Fragment>
-      <PrescriptionTable  prescriptions = { prescriptions } />
+      <PrescriptionTable  prescriptions = { prescription } />
     </React.Fragment>
   )
 }

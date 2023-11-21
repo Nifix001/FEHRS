@@ -3,7 +3,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients, setDrugs ) {
+export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions ) {
     e.preventDefault();
 
     try {
@@ -33,7 +33,8 @@ export default async function processLogin(email, password, setLoading, token, s
             // console.log(loginResponse);
             !user && setUser(loginResponse.data);
             getPatients( csrfToken, setPatients);
-            getDrugs( csrfToken, setDrugs  )
+            getDrugs( csrfToken, setDrugs  );
+            getPrescriptions( csrfToken, setPrescriptions  );
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
@@ -49,8 +50,6 @@ export default async function processLogin(email, password, setLoading, token, s
 }
 
 export async function getPatients( csrfToken, setPatients) {
-    // e.preventDefault();
-
     try {
         const response = await axios.get('http://localhost:8000/api/patient', {
             headers: {
@@ -60,16 +59,13 @@ export async function getPatients( csrfToken, setPatients) {
             }
         })
         const patients = response.data.patient_record;
-        // localStorage.setItem("patients", JSON.stringify(patients))
-        setPatients(patients)
+        setPatients(patients);
     } catch( error ){
         console.error( error );
     }
 }
 
 export async function getDrugs( csrfToken, setDrugs) {
-    // e.preventDefault();
-
     try {
         const response = await axios.get('http://localhost:8000/api/drugs', {
             headers: {
@@ -78,10 +74,23 @@ export async function getDrugs( csrfToken, setDrugs) {
                 // 'Referer': '127.0.0.1:8000'
             }
         })
-        console.log(response);
         const drugs = response.data.details;
-        // localStorage.setItem("patients", JSON.stringify(patients))
-        setDrugs(drugs)
+        setDrugs(drugs);
+    } catch( error ){
+        console.error( error );
+    }
+}
+
+export async function getPrescriptions( csrfToken, setPrescriptions) {
+    try {
+        const response = await axios.get('http://localhost:8000/api/prescription', {
+            headers: {
+                Accept: 'application/json',
+                'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+                // 'Referer': '127.0.0.1:8000'
+            }
+        })
+        setPrescriptions(response.data.records);
     } catch( error ){
         console.error( error );
     }
