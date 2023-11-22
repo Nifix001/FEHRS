@@ -16,7 +16,7 @@ const Settings = () => {
                 className='flex hover:bg-primary hover:text-white items-center rounded-md my-1 py-2 px-3 text-[15px]'
             > Admin Management </NavLink>
             <NavLink
-                to='personal'
+                to='passwords'
                 className='flex hover:bg-primary hover:text-white items-center rounded-md my-1 py-2 px-3 text-[15px]'
             > Change Password </NavLink>
         </div>
