@@ -20,11 +20,17 @@ const Reports = () => {
     return(
 
         <tr key = { p.id } >
-          <td className = 'py-4 text-left pl-6 text-base'> { p.name } </td>
-          <td className = 'text-left pl-6 text-base'> { p.matricno } </td>
-          <td className = 'text-left pl-6 text-base'> 0{ p.phone } </td>
+          <td className = 'py-4 text-left pl-6 text-base'> {`${p.firstname} ${p.lastname}`} </td>
+          <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
+          <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
           <td className = 'text-left text-base'> { p.email } </td>
-          <td className = 'text-left pl-3 text-base'> { p.drug } </td>
+          <td className = 'text-left pl-3 text-base'> 
+              { p.prescriptions.map(d => {
+                    return (
+                      <span key = { d.id } > { d.diagnosis } </span>
+                      )
+                    }) }
+          </td>
           <td className = 'pl-8'>
             <div className = 'flex items-center justify-start pl-1 '> 
               <Link>
