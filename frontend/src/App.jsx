@@ -26,6 +26,9 @@ import NewPatients from "./Subpages/Patients Subpage/NewPatients"
 import SignUp from "./pages/SignUp"
 import UserRedirect from "./Subpages/UserRedirect"
 import UserProvider from "./context/UserContext"
+import Personal from "./Subpages/Settings Subpage/Personal"
+import Admin from "./Subpages/Settings Subpage/Admin"
+import Password from "./Subpages/Settings Subpage/Password"
 // import { useState } from "react"
 
 library.add(fas, fab, far);
@@ -123,6 +126,18 @@ const router = createBrowserRouter(
               <Route 
                 path = "settings" 
                 element = { <Settings /> }>
+                  <Route
+                    path = "personal"
+                    element = { <Personal /> }
+                  />
+                  <Route
+                    path = "admin"
+                    element = { <Admin /> } 
+                  />
+                  <Route
+                    path = "passwords"
+                    element = { <Password /> } 
+                  />
               </Route>
             </Route>
           </Route>
