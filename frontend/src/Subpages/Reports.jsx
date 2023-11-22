@@ -7,12 +7,15 @@ import dot from '../assets/carbon_overflow-menu-horizontal.svg'
 
 import PatientsTable from '../Tables/PatientsTable';
 import Patientsdata from '../database/Patientsdata';
+import { useUser } from '../context/UserContext';
 
 
 const Reports = () => {
+  
+  const { patients } = useUser();
 
 
-  const patients = Patientsdata.map( p  =>  {
+  const patient = patients.map( p  =>  {
     
     return(
 
@@ -132,7 +135,7 @@ const Reports = () => {
         </div>
         <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm ' >
           <div className = 'scale-95 -ml-4 ' >
-            <PatientsTable patients = { patients } />
+            <PatientsTable patients = { patient } />
           </div>
         </div>
       </div>
