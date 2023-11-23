@@ -40,11 +40,12 @@ const PatientsPage = () => {
               <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
               <td className = 'text-left text-base'> { p.email } </td>
               <td className = 'text-left pl-3 text-base'> 
-              { p.prescriptions.map(d => {
+              {/* { p.prescriptions.map(d => {
                 return (
                   <span key = { d.id } > { d.diagnosis } </span>
                   )
-                }) }
+                }) } */}
+                {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
                 </td>
               {/* <td className = 'text-left pl-3 text-base'> { p.drug } </td> */}
               <td className = 'pl-8'>
@@ -64,7 +65,7 @@ const PatientsPage = () => {
                       />
                     </button>
                     <div 
-                      className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-0 mt-0 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
+                      className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
                       onMouseLeave={() => toggleOptions(p.id)}
                     >
                       {/* <!-- Options for Item 1 --> */}
