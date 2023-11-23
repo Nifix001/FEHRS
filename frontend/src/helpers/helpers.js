@@ -45,7 +45,7 @@ export default async function processLogin(email, password, setLoading, token, s
         setTimeout(() => {
             setLoading(false);
             history('/user');
-        }, 3000);
+        }, 5000);
     }
 }
 
