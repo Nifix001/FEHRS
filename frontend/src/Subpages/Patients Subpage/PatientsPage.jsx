@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PatientsTable from '../../Tables/PatientsTable'
 import Patientsdata from '../../database/Patientsdata'
 import { Link, NavLink } from 'react-router-dom'
@@ -6,11 +6,22 @@ import { Link, NavLink } from 'react-router-dom'
 import dot from '../../assets/carbon_overflow-menu-horizontal.svg'
 import search from '../../assets/akar-icons_search.svg'
 import filter from '../../assets/cil_filter.svg'
+import del from '../../assets/delete.svg'
+import edit from '../../assets/edit.svg'
 import { useUser } from '../../context/UserContext'
 
 const PatientsPage = () => {
 
-  const { patients } = useUser()
+  const { patients } = useUser();
+  const [patientOptions, setPatientOptions] = useState({});
+
+  const toggleOptions = (patientId) => {
+    setPatientOptions((prevOptions) => ({
+      ...prevOptions,
+      [patientId]: !prevOptions[patientId],
+    }));
+  };
+
 
   const handleFile = (e) => {
     e.preventDefault();
@@ -39,10 +50,33 @@ const PatientsPage = () => {
               <td className = 'pl-8'>
                 <div className = 'flex items-center justify-start pl-1 '> 
                   <Link>
-                    <img 
+                    {/*  */}
+                    {/* ... */}
+                    <button 
+                      className = "flex-shrink-0"
+                      onClick = {() => toggleOptions(p.id)}
+                      // onMouseEnter={() => toggleOptions(p.id)}
+                      // onMouseLeave={() => toggleOptions(p.id)}
+                    >
+                      <img 
                       src = { dot }  
                       alt ="dot" 
-                    />
+                      />
+                    </button>
+                    <div 
+                      className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-0 mt-0 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
+                      onMouseLeave={() => toggleOptions(p.id)}
+                    >
+                      {/* <!-- Options for Item 1 --> */}
+                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                        <img src = { edit } alt="" className = 'text-black filter grayscale' />
+                        Edit
+                      </button>
+                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                        <img src = { del } alt="" className = 'text-black filter grayscale' />
+                        Delete
+                      </button>
+                    </div>
                   </Link>
                 </div>
               </td>

@@ -50,49 +50,49 @@ const Reports = () => {
     <React.Fragment>
       <div div className = 'w-[1111px] h-fit bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 reports bg-opacity-60 grid gap-6 '>
         <div className = 'flex gap-7 ' >
-          <div className = ' bg-white h-52 w-[36vw] rounded-md grid px-2 py-8  shadow-sm' >
-            <h1> Overview </h1>
+          <div className = ' bg-white h-52 w-[36vw] rounded-md flex flex-col gap-4 px-2 py-4  shadow-sm' >
+            <h1 className = ' text-[18px] font-semibold ' > Overview </h1>
             <div className="flex justify-around items-center "> 
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 2190 </h3>
                 <h4> Total Patients </h4>
               </div>
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 1830 </h3>
                 <h4> Visited Patients </h4>
               </div>
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 432 </h3>
                 <h4> Admitted Patients </h4>
               </div>
             </div>
-            <hr className = 'p-2'  />
+            <hr className = ' p-0.5'  />
             <div className="flex justify-around items-center "> 
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 439 </h3>
                 <h4> Tests done </h4>
               </div>
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 1490 </h3>
                 <h4> Treated Patients </h4>
               </div>
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 1432 </h3>
                 <h4> Prescribed Drugs </h4>
               </div>
-              <div className="grid">
+              <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 0 </h3>
                 <h4> Death </h4>
               </div>
             </div>
           </div>
           <div className = ' bg-white h-52 w-[36vw] rounded-md  grid px-2 py-8 shadow-sm ' >
-            <div className = " flex justify-between " >
-              <h1> Doctors on Duty </h1>
-              <Link to = "/user" > see more </Link>
+            <div className = " flex justify-between px-2 " >
+              <h1 className = ' text-[18px] font-semibold '> Doctors on Duty </h1>
+              <Link to = "/user" className = ' text-[14px] '  > See All </Link>
             </div>
-            <table>
-              <thead>
+            <table className = ' text-[14px]' >
+              <thead className = ' border-b'>
                 <tr>
                   <td> Name </td>
                   <td> Date </td>
@@ -100,17 +100,17 @@ const Reports = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr className = ' border-b ' >
                   <td> Dr. Kayode </td>
                   <td> 23/05/23 </td>
                   <td> 07:00  </td>
                 </tr> 
-                <tr>
+                <tr className = ' border-b ' >
                   <td> Dr. Shola </td>
                   <td> 23/05/23 </td>
                   <td> 15:00 </td>
                 </tr> 
-                <tr>
+                <tr className = '' >
                   <td> Dr. Oluwamuyiwa </td>
                   <td> 23/05/23 </td>
                   <td> 20:00 </td>
