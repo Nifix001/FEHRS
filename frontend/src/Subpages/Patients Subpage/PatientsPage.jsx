@@ -12,7 +12,7 @@ import { useUser } from '../../context/UserContext'
 
 const PatientsPage = () => {
 
-  const { patients } = useUser();
+  const { patients, deletePatient } = useUser();
   const [patientOptions, setPatientOptions] = useState({});
 
   const toggleOptions = (patientId) => {
@@ -70,7 +70,7 @@ const PatientsPage = () => {
                     >
                       {/* <!-- Options for Item 1 --> */}
                       <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
-                        <img src = { edit } alt="" className = 'text-black filter grayscale' />
+                        <img src = { edit } alt="" className = 'text-black filter grayscale' onClick={deletePatient(p.id)} />
                         Edit
                       </button>
                       <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">

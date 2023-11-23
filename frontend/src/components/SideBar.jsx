@@ -24,6 +24,7 @@ const SideBar = () => {
         localStorage.removeItem('user');
         localStorage.removeItem('patients');
         localStorage.removeItem('drugs');
+        localStorage.removeItem('prescriptions');
         // Reset any relevant state variables
         window.location.reload();
       };

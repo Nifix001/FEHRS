@@ -12,10 +12,10 @@ export default function BasicCard( { signUp } ) {
   const [password, setPassword] = React.useState('');
   
   const [loading, setLoading] = React.useState(false);
-  const [ token , setToken]  = React.useState('');
+
 
   const history = useNavigate();
-  const { user, setUser, setPatients, setDrugs, setPrescriptions } = useUser();
+  const { user, setUser, token, setToken, setPatients, setDrugs, setPrescriptions } = useUser();
 
 
   const handleLogin = (e) => {
