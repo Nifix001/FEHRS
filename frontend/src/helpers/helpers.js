@@ -95,3 +95,21 @@ export async function getPrescriptions( csrfToken, setPrescriptions) {
         console.error( error );
     }
 }
+
+
+export async function deletePatient(setPatients ,id, token){
+    try{
+        const list = JSON.parse(localStorage.getItem('patients'));
+        const filteredList = list.filter(item => item.id !== id);
+    
+        setPatients(filteredList)
+        await axios.delete(`http://localhost:8000/api/patient/${id}`,{
+            headers: {
+                Accept: 'application/json',
+                'X-XSRF-TOKEN': decodeURIComponent(token),
+            }})
+    }
+    catch(error){
+        console.error(error);
+    }
+}

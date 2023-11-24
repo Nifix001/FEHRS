@@ -9,10 +9,11 @@ import filter from '../../assets/cil_filter.svg'
 import del from '../../assets/delete.svg'
 import edit from '../../assets/edit.svg'
 import { useUser } from '../../context/UserContext'
+import { deletePatient } from '../../helpers/helpers'
 
 const PatientsPage = () => {
 
-  const { patients, deletePatient } = useUser();
+  const { patients, setPatients, token } = useUser();
   const [patientOptions, setPatientOptions] = useState({});
 
   const toggleOptions = (patientId) => {
@@ -70,10 +71,10 @@ const PatientsPage = () => {
                     >
                       {/* <!-- Options for Item 1 --> */}
                       <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
-                        <img src = { edit } alt="" className = 'text-black filter grayscale' onClick={deletePatient(p.id)} />
+                        <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                         Edit
                       </button>
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePatient(setPatients, p.id, token)}>
                         <img src = { del } alt="" className = 'text-black filter grayscale' />
                         Delete
                       </button>

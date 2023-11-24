@@ -17,16 +17,7 @@ function UserProvider({children}){
     const [ prescriptions, setPrescriptions ] = useLocalStorage('prescriptions', null);
     const [ token , setToken]  = useState('');
 
-    async function deletePatient(id){
-        // setPatients(list => {
-        //     return list.filter(item => item.id !== id)
-        // })
-        // await axios.post(`http://localhost:8000/api/patient/${id}`,{
-        //     headers: {
-        //         Accept: 'application/json',
-        //         'X-XSRF-TOKEN': decodeURIComponent(token),
-        //     }})
-    }
+
 
     
     return (
@@ -41,7 +32,6 @@ function UserProvider({children}){
             setDrugs,
             prescriptions,
             setPrescriptions,
-            deletePatient
         }} >
             { children }
         </UserContext.Provider>
