@@ -102,7 +102,7 @@ export async function deletePatient(setPatients ,id, token){
         const list = JSON.parse(localStorage.getItem('patients'));
         const filteredList = list.filter(item => item.id !== id);
     
-        setPatients(filteredList)
+        setPatients(filteredList);
         await axios.delete(`http://localhost:8000/api/patient/${id}`,{
             headers: {
                 Accept: 'application/json',

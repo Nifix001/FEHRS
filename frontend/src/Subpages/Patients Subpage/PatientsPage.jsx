@@ -111,6 +111,9 @@ const PatientsPage = () => {
           <Link 
             to = "new/personal" 
             className=' font-span text-base font-normal py-2 px-5 text-white  bg-primary border border-primary rounded-md'
+            onClick={()=> {
+              localStorage.setItem('new-patients', null);
+            }}
           >
             Add New
           </Link>

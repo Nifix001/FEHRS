@@ -1,26 +1,72 @@
 import React from 'react'
+import { useState } from 'react'
 import { Form, NavLink } from 'react-router-dom'
 
 const PaForm1 = () => {
+
+  const [firstName, setfirstName ] = useState();
+  const [lastName, setLastName ] = useState();
+  const [otherName, setOtherName ] = useState();
+  const [matricNumber, setMatricNumber] = useState();
+  const [dob, setDob ] = useState();
+  const [phone, setPhone] = useState();
+  const [ gender, setGender ] = useState();
+  const [ address, setAddress ] = useState();
+
+  const data = {
+    "firstname": firstName,
+    "middlename": otherName,
+    "lastname": lastName,
+    "matric_no": matricNumber,
+    "dob": dob,
+    "gender": gender,
+    "phone_no": phone,
+    "home_address": address,
+    "email":"boomed56@gmail.com",
+    "nok_firstname": "geo",
+    "nok_middlename": "coding",
+    "nok_lastname": "side",
+    "nok_relationship": "brother",
+    // "nok_dob": "8/07/2009",
+    "nok_gender": "male",
+    "nok_phone_no": "098545767" 
+  } 
+   
+  const current = localStorage.getItem('new-patients')
+  console.log(current);
+  const handleSave = (e) => {
+    e.preventDefault();
+    localStorage.setItem('new-patients', data)
+  }
+
+
+
   return (
     <React.Fragment>
         <div className = "grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-3 paform1 ">
           <div className = "grid">
             <label  
-              htmlFor = "" 
+              htmlFor = " first-name " 
               className = 'w-16'
             >
               First Name
             </label>
             <input 
               type = "text" 
-              placeholder = 'Ayomide'  
+              placeholder = 'Ayomide'
+              name = ' first-name '
+              value = { firstName }
+              onChange = { (e) => {
+                                    e.preventDefault();
+                                    setfirstName(e.target.value);
+                                  } 
+                          }  
             />
           </div>
 
           <div className = "grid">
             <label 
-              htmlFor = "" 
+              htmlFor = " last-name " 
               className = 'w-16'
             >
               Last Name
@@ -28,12 +74,19 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = 'Kanayo' 
+              name = ' last-name '
+              value = { lastName }
+              onChange = { (e) => {
+                                     e.preventDefault();
+                                     setLastName(e.target.value);
+                                  } 
+                            }   
             />
           </div>
 
           <div className = "grid">
             <label 
-              htmlFor = "" 
+              htmlFor = " other-name " 
               className = 'w-20'
             >
               Other Name 
@@ -41,12 +94,19 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = 'Festus' 
+              name = ' other-name '
+              value = { otherName }
+              onChange = { (e) => {
+                                    e.preventDefault();
+                                    setOtherName(e.target.value);
+                                  } 
+                          }  
             />
           </div>
 
           <div className = "grid">
             <label 
-              htmlFor = "" 
+              htmlFor = " matric-number " 
               className = 'w-24'
             >
               Matric Number
@@ -54,12 +114,19 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = '___ /__ /_____' 
+              name = ' matric-number '
+              value = { matricNumber }
+              onChange = { (e) => {
+                                    e.preventDefault();
+                                    setMatricNumber(e.target.value);
+                                  } 
+                          }  
             />
           </div>
 
           <div className = "grid">
             <label 
-              htmlFor = "" 
+              htmlFor = " dob " 
               className = 'w-24' 
             >
               Date of Birth
@@ -67,12 +134,19 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = '__ /__ /____' 
+              name = ' dob '
+              value = { dob }
+              onChange = { (e) => {
+                                    e.preventDefault();
+                                    setDob(e.target.value);
+                                  } 
+                          }  
             />
           </div>
 
           <div className = "grid">
             <label 
-              htmlFor = "" 
+              htmlFor = " phone " 
               className = 'w-24'
             >
               Phone Number
@@ -85,7 +159,15 @@ const PaForm1 = () => {
               </div> */}
               <input 
                 type = "text" 
-                placeholder = '' />
+                placeholder = ''
+                name = ' phone '
+                value = { phone }
+                onChange = { (e) => {
+                                      e.preventDefault();
+                                      setPhone(e.target.value);
+                                    } 
+                            }  
+              />
             </div>
           </div>
         </div>
@@ -103,9 +185,15 @@ const PaForm1 = () => {
               <div className = "flex gap-x-1">
                 <input 
                   type = "radio" 
-                  name = "" 
+                  name = "male"
+                  value = 'male' 
                   id = "" 
                   className = '-mt-2'  
+                  onClick = {(e) => {
+                                      e.preventDefault();
+                                      setGender('male')
+                                    }
+                            }
                 />
                 <h4> Male </h4> 
               </div>
@@ -113,9 +201,15 @@ const PaForm1 = () => {
               <div className = "flex gap-x-1">
                 <input 
                   type = "radio" 
-                  name = "" 
+                  name = " female "
+                  value = { female } 
                   id = ""  
-                  className = '-mt-2' 
+                  className = '-mt-2'
+                  onClick = {(e) => {
+                                      e.preventDefault();
+                                      setGender('female')
+                                    }
+                            } 
                 />
                 <h4> Female </h4>
               </div>
@@ -125,7 +219,7 @@ const PaForm1 = () => {
 
           <div className = "grid">
             <label 
-              htmlFor = "" 
+              htmlFor = " address "  
               className = 'w-24'
             >
               Home Address
@@ -134,6 +228,13 @@ const PaForm1 = () => {
               type = "text" 
               placeholder = 'Enter Text Here' 
               className = 'w-182 h-12' 
+              name = ' address ' 
+              value = { address } 
+              onChange = { (e) => {
+                                    e.preventDefault();
+                                    setAddress(e.target.value);
+                                  } 
+                          }  
             />
           </div>
 
@@ -231,6 +332,7 @@ const PaForm1 = () => {
                 type = 'submit' 
                 className = 'bg-primary text-white py-3 px-20 rounded-md'
                 to = "/user/patients/new/info"
+                onClick = { handleSave }
               >
                   Save and Continue
               </NavLink>
