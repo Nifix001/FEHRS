@@ -1,2 +1,2 @@
-# FIHMS
-FUTA Integrated Health Medical System
+# FEHRS
+FUTA Electronic Health Record System
