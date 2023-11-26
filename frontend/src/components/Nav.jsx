@@ -9,13 +9,14 @@ import { useUser } from '../context/UserContext'
 const Nav = () => {
 
     const [ openNotification, setOpenNotification ] = useState(false);
+    const [ searchActive, setSearchActive ] = useState( false );
     const { user } = useUser();
     const roles = ["Unverified", "Admin", "Pharmacy", "Doctor"]
 
   return (
     <React.Fragment>
         <nav className = 'flex absolute h-20 w-full top-0 border border-gray-300 justify-between px-2 items-center'>
-            <div className = 'border-solid border-gray-300 border-r h-20  pr-16 pl-[14px] flex items-center gap-3 '>
+            <div className = 'border-solid border-gray-300 border-r h-20  pr-[52.5px] pl-[14px] flex items-center gap-3 '>
                 <img 
                     src = { logo } 
                     alt = "logo" 
@@ -23,17 +24,26 @@ const Nav = () => {
                 <h1 className = 'text-primary text-3xl font-extrabold'> FEHRS </h1>
             </div>
 
-            <div className = 'flex'>
-                <input 
-                    type = "text" 
-                    placeholder = 'Search' 
-                    className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-182 h-10 p-2 outline-0' 
-                />
-                <img 
-                    className = 'relative right-12 cursor-pointer opacity-50' 
-                    src = { search } 
-                    alt = "search" 
-                />
+            <div className = 'relative'>
+                <div className = 'flex' >
+                    <input 
+                        type = ' search ' 
+                        placeholder = 'Search' 
+                        className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-182 h-10 p-2 outline-0' 
+                        onChange={() => setSearchActive(true)}
+                    />
+                    <img 
+                        className = 'relative right-12 cursor-pointer opacity-50' 
+                        src = { search } 
+                        alt = "search" 
+                    />
+                </div>
+                <div 
+                    className = {` bg-white border border-gray-300 w-182 h-fit px-6 py-8 absolute z-10 mt-2 rounded-b-xl shadow-lg ${ !searchActive ? 'hidden': 'block' } `}
+                    onMouseLeave = {() => setSearchActive(false)}
+                >
+                    <h3>Hello world</h3>
+                </div>
             </div>
 
             <div>

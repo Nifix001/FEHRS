@@ -163,7 +163,7 @@ const PaForm1 = () => {
                 name = ' phone '
                 value = { phone }
                 onChange = { (e) => {
-                                      e.preventDefault();
+                  e.preventDefault();
                                       setPhone(e.target.value);
                                     } 
                             }  
@@ -185,10 +185,11 @@ const PaForm1 = () => {
               <div className = "flex gap-x-1">
                 <input 
                   type = "radio" 
-                  name = "male"
+                  name = "gender"
                   value = 'male' 
                   id = "" 
                   className = '-mt-2'  
+                  checked={gender === 'male'}
                   onClick = {(e) => {
                                       e.preventDefault();
                                       setGender('male')
@@ -201,10 +202,11 @@ const PaForm1 = () => {
               <div className = "flex gap-x-1">
                 <input 
                   type = "radio" 
-                  name = " female "
-                  value = { female } 
+                  name = "gender"
+                  value = "female"  
                   id = ""  
                   className = '-mt-2'
+                  checked={gender === 'female'}
                   onClick = {(e) => {
                                       e.preventDefault();
                                       setGender('female')
@@ -265,7 +267,7 @@ const PaForm1 = () => {
             <label 
               htmlFor = "" 
               className = 'w-16'
-            >
+              >
               Last Name
             </label>
             <input 
@@ -345,7 +347,6 @@ const PaForm1 = () => {
                 Previous
               </NavLink>
         </div>
-        
     </React.Fragment>
   )
 }

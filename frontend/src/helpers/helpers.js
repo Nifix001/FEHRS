@@ -5,7 +5,7 @@ axios.defaults.withCredentials = true;
 
 export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions ) {
     e.preventDefault();
-
+    setLoading(true);
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 

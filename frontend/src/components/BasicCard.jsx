@@ -3,6 +3,7 @@ import logo from '../assets/futa logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import processLogin from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
+import  { PacmanLoader } from 'react-spinners'
 
 
 export default function BasicCard( { signUp } ) {
@@ -56,9 +57,10 @@ export default function BasicCard( { signUp } ) {
               placeholder = 'Email' 
               value = { email }  
               onChange = { (e) => setEmail( e.target.value ) } 
-              className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ' 
+              className = {`bg-secondary2 border border-primary rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ${loading ? 'cursor-not-allowed': ''}  `} 
               autoComplete='true'
               required
+              disabled = { loading }
             />
             <input 
               type = "password" 
@@ -66,14 +68,22 @@ export default function BasicCard( { signUp } ) {
               placeholder = 'Password' 
               value = { password } 
               onChange = { (e) => setPassword( e.target.value ) } 
-              className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
+              className = {` bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0  ${ loading ? 'cursor-not-allowed' : '' } `} 
               required 
+              disabled = { loading }
             />
             <button 
               type = 'submit' 
-              className = {`bg-primary text-white w-90 rounded h-9 mt-16 ${loading && 'opacity-70'} `}
+              className = {`bg-primary text-white w-90 rounded h-9 mt-16 ${loading ? 'opacity-70 cursor-not-allowed ' : ''} flex items-center gap-6 `}
+              disabled = { loading }
             >
-              <span className = 'ml-40' > Login </span>
+               {
+                  !loading ?  <span className = 'ml-40' > Login </span>    : 
+                  <>
+                    <span className = 'ml-32'> Logging in </span>
+                    <PacmanLoader color="#fff" size = { 11 }  />
+                  </>
+                }
             </button>
             </>
             : <>
