@@ -3,9 +3,11 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-export default async function processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions ) {
+export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions ) {
     e.preventDefault();
-    setLoading(true);
+    setTimeout(() => {
+        setLoading(true);
+    }, 1000);
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
@@ -106,7 +108,8 @@ export async function deletePatient(setPatients ,id, token){
         await axios.delete(`http://localhost:8000/api/patient/${id}`,{
             headers: {
                 Accept: 'application/json',
-                'X-XSRF-TOKEN': decodeURIComponent(token),
+                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                'Referer': '127.0.0.1:8000'
             }})
     }
     catch(error){

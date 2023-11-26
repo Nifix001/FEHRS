@@ -3,7 +3,7 @@ import logo from '../assets/futa logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import processLogin from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
-import  { PacmanLoader } from 'react-spinners'
+import  { DotLoader } from 'react-spinners'
 
 
 export default function BasicCard( { signUp } ) {
@@ -16,11 +16,11 @@ export default function BasicCard( { signUp } ) {
 
 
   const history = useNavigate();
-  const { user, setUser, token, setToken, setPatients, setDrugs, setPrescriptions } = useUser();
+  const { user, setUser, setToken, setPatients, setDrugs, setPrescriptions } = useUser();
 
 
   const handleLogin = (e) => {
-    processLogin(email, password, setLoading, token, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions)
+    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions)
   };
   
 
@@ -81,7 +81,7 @@ export default function BasicCard( { signUp } ) {
                   !loading ?  <span className = 'ml-40' > Login </span>    : 
                   <>
                     <span className = 'ml-32'> Logging in </span>
-                    <PacmanLoader color="#fff" size = { 11 }  />
+                    <DotLoader color="#fff" size = { 18 }  />
                   </>
                 }
             </button>

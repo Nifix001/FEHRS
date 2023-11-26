@@ -16,7 +16,7 @@ const Nav = () => {
   return (
     <React.Fragment>
         <nav className = 'flex absolute h-20 w-full top-0 border border-gray-300 justify-between px-2 items-center'>
-            <div className = 'border-solid border-gray-300 border-r h-20  pr-[52.5px] pl-[14px] flex items-center gap-3 '>
+            <div className = 'border-solid border-gray-300 border-r h-20  pr-[64px] pl-[14px] flex items-center gap-3 '>
                 <img 
                     src = { logo } 
                     alt = "logo" 
@@ -39,10 +39,10 @@ const Nav = () => {
                     />
                 </div>
                 <div 
-                    className = {` bg-white border border-gray-300 w-182 h-fit px-6 py-8 absolute z-10 mt-2 rounded-b-xl shadow-lg ${ !searchActive ? 'hidden': 'block' } `}
+                    className = {` bg-white border border-gray-300 w-182 h-fit py-2 absolute z-10 mt-1 rounded-b-xl shadow-lg ${ !searchActive ? 'hidden': 'block' } `}
                     onMouseLeave = {() => setSearchActive(false)}
                 >
-                    <h3>Hello world</h3>
+                    <h3 className = ' p-3 hover:text-white hover:bg-primary ' >Hello world</h3>
                 </div>
             </div>
 
