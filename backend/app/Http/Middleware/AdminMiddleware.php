@@ -19,7 +19,7 @@ class AdminMiddleware
         // if($user->role->id === 1 ){
             // $user = $request->user();
             if($user->role->id === 1){
-                return response()->json("Unverified");
+                return response()->json(["data"=> []]);
             }
             if($user->role->id === 2 ){
             return $next($request);
