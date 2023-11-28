@@ -34,9 +34,17 @@ export default async function processLogin(email, password, setLoading, setToken
             );
             // console.log(loginResponse);
             !user && setUser(loginResponse.data);
-            getPatients( csrfToken, setPatients);
-            getDrugs( csrfToken, setDrugs  );
-            getPrescriptions( csrfToken, setPrescriptions  );
+            if(loginResponse.data.role_id === 2 || loginResponse.data.role_id === 4 ){
+                getPatients( csrfToken, setPatients);
+                getPrescriptions( csrfToken, setPrescriptions  );
+                getDrugs( csrfToken, setDrugs  );
+            } else if(loginResponse.data.role_id === 3){
+                getDrugs( csrfToken, setDrugs  );
+                setPatients([]);
+                setPrescriptions([]);
+            } else{
+                console.log("Who be this!!!");
+            }
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
