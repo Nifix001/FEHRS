@@ -5,6 +5,7 @@ import { useUser } from '../context/UserContext'
 
 const Graph = () => {
     const { patients } = useUser();
+
      return (
       
       <React.Fragment>
@@ -20,9 +21,9 @@ const Graph = () => {
                 
                 <div className = 'flex justify-between items-center mb-3'>
                     <h5 className = 'font-welcome text-xl font-medium'> Recent Patients </h5>
-                    <p className = 'font-span text-base font-normal hover:text-primary '>
+                    { patients.length > 6 && <p className = 'font-span text-base font-normal hover:text-primary '>
                         <Link to="/user/patients"> See more </Link>
-                    </p>
+                    </p>}
                 </div>
 
                 <div>
@@ -42,7 +43,7 @@ const Graph = () => {
                                 <td> MEE/10/6554 </td>
                             </tr> */}
                             {
-                               patients && patients.map(p => {
+                               patients && patients.slice(0, 6).map(p => {
                                     return (
                                         <React.Fragment key = { p.id } >
                                             <tr>
