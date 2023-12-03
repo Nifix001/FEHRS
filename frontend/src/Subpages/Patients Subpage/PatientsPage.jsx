@@ -91,61 +91,61 @@ const PatientsPage = () => {
         }
       )
 
-      const patient = patients.map( p  =>  {
-    
-        return(
-    
-            <tr key = { p.id } >
-              <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
-              <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
-              <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
-              <td className = 'text-left text-base'> { p.email } </td>
-              <td className = 'text-left pl-3 text-base'> 
-              {/* { p.prescriptions.map(d => {
-                return (
-                  <span key = { d.id } > { d.diagnosis } </span>
-                  )
-                }) } */}
-                {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
-                </td>
-              {/* <td className = 'text-left pl-3 text-base'> { p.drug } </td> */}
-              <td className = 'pl-8'>
-                <div className = 'flex items-center justify-start pl-1 '> 
-                  <Link>
-                    {/*  */}
-                    {/* ... */}
-                    <button 
-                      className = "flex-shrink-0"
-                      onClick = {() => toggleOptions(p.id)}
-                      // onMouseEnter={() => toggleOptions(p.id)}
-                      // onMouseLeave={() => toggleOptions(p.id)}
-                    >
-                      <img 
-                      src = { dot }  
-                      alt ="dot" 
-                      />
-                    </button>
-                    <div 
-                      className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
-                      onMouseLeave={() => toggleOptions(p.id)}
-                    >
-                      {/* <!-- Options for Item 1 --> */}
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
-                        <img src = { edit } alt="" className = 'text-black filter grayscale'  />
-                        Edit
-                      </button>
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePatient(setPatients, p.id, token)}>
-                        <img src = { del } alt="" className = 'text-black filter grayscale' />
-                        Delete
-                      </button>
-                    </div>
-                  </Link>
-                </div>
+    const patient = patients.map( p  =>  {
+  
+      return(
+  
+          <tr key = { p.id } >
+            <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
+            <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
+            <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
+            <td className = 'text-left text-base'> { p.email } </td>
+            <td className = 'text-left pl-3 text-base'> 
+            {/* { p.prescriptions.map(d => {
+              return (
+                <span key = { d.id } > { d.diagnosis } </span>
+                )
+              }) } */}
+              {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
               </td>
-            </tr>
-          )
-        }
-      )
+            {/* <td className = 'text-left pl-3 text-base'> { p.drug } </td> */}
+            <td className = 'pl-8'>
+              <div className = 'flex items-center justify-start pl-1 '> 
+                <Link>
+                  {/*  */}
+                  {/* ... */}
+                  <button 
+                    className = "flex-shrink-0"
+                    onClick = {() => toggleOptions(p.id)}
+                    // onMouseEnter={() => toggleOptions(p.id)}
+                    // onMouseLeave={() => toggleOptions(p.id)}
+                  >
+                    <img 
+                    src = { dot }  
+                    alt ="dot" 
+                    />
+                  </button>
+                  <div 
+                    className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
+                    onMouseLeave={() => toggleOptions(p.id)}
+                  >
+                    {/* <!-- Options for Item 1 --> */}
+                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                      <img src = { edit } alt="" className = 'text-black filter grayscale'  />
+                      Edit
+                    </button>
+                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePatient(setPatients, p.id, token)}>
+                      <img src = { del } alt="" className = 'text-black filter grayscale' />
+                      Delete
+                    </button>
+                  </div>
+                </Link>
+              </div>
+            </td>
+          </tr>
+        )
+      }
+    )
 
   return (
     <React.Fragment>
