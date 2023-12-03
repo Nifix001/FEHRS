@@ -17,15 +17,15 @@ const Prescriptions = () => {
 
     return(
 
-        <tr key = { p.id } >
-          <td className = 'py-4 text-left pl-6 text-base'> { name } </td>
+        <tr key = { p.id } className = 'mb-16 pb-16 border-b' >
+          <td className = 'py-4 text-left pl-6 text-base w-64 '> { name } </td>
           <td className = 'text-left pl-6 text-base'> { p.patient.matric_no } </td>
-          <td className = 'text-left pl-16 text-base'> {
+          <td className = 'text-left pl-16 text-base my-16 '> {
               p.drugs.map(d => (
-                <span key = { d.id } > { d.drug_name } </span>
+                <span key = { d.id } className = 'block mb-2' > { d.drug_name } </span>
               ))
             } </td>
-          <td className = 'text-left pl-4 text-base'> { p.drug_quantity } </td>
+          <td className = 'text-left pl-4 text-base mt- 10 '> { p.drug_quantity } </td>
           <td className = 'pl-8'>
             <div className = 'flex items-center justify-start pl-6 '> 
               <Link>
@@ -36,6 +36,7 @@ const Prescriptions = () => {
               </Link>
             </div>
           </td>
+   
         </tr>
       )
     }

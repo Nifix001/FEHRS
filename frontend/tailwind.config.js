@@ -22,7 +22,7 @@ export default {
     "./src/Subpages/Patients Subpage/PaForm3.jsx",
     "./src/Subpages/Pharmacy Subpage/Drugs.jsx",
     "./src/Subpages/Pharmacy Subpage/History.jsx",
-    "./src/Subpages/Pharmacy Subpage/Prescriptons.jsx",
+    "./src/Subpages/Pharmacy Subpage/Prescriptions.jsx",
     "./src/Subpages/Pharmacy Subpage/AddNew.jsx",
     "./src/Subpages/Settings Subpage/Personal.jsx",
     "./src/Subpages/Settings Subpage/Admin.jsx",
