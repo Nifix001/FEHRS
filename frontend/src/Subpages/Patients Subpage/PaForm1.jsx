@@ -13,6 +13,14 @@ const PaForm1 = () => {
   const [ gender, setGender ] = useState();
   const [ address, setAddress ] = useState();
 
+  const [ nokFirstName, setNokFirstName ] = useState();
+  const [ nokMiddleName, setNokMiddleName ] = useState(); 
+  const [ nokLastName, setNokLastName ] = useState();
+  const [ nokRelationship, setNokRelationship ] = useState();
+  const [ nokGender, setNokGender ] = useState();
+  const [ nokDob, setNokDob ] = useState();
+  const [ nokPhone, setNokPhone ] = useState();
+
   const data = {
     "firstname": firstName,
     "middlename": otherName,
@@ -23,13 +31,13 @@ const PaForm1 = () => {
     "phone_no": phone,
     "home_address": address,
     "email":"boomed56@gmail.com",
-    "nok_firstname": "geo",
-    "nok_middlename": "coding",
-    "nok_lastname": "side",
-    "nok_relationship": "brother",
-    // "nok_dob": "8/07/2009",
-    "nok_gender": "male",
-    "nok_phone_no": "098545767" 
+    "nok_firstname": nokFirstName,
+    "nok_middlename": nokMiddleName,
+    "nok_lastname": nokLastName,
+    "nok_relationship": nokRelationship,
+    // "nok_dob": nokDob,
+    "nok_gender": nokGender,
+    "nok_phone_no": nokPhone 
   } 
    
   const current = localStorage.getItem('new-patients')
@@ -272,6 +280,13 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = 'Ayomide' 
+              value = { nokFirstName }
+              onChange = {
+                (e) => {
+                  e.preventDefault();
+                  setNokFirstName(e.target.value)
+                }
+              }
             />
           </div>
 
@@ -285,7 +300,14 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = 'Kanayo' 
-            />
+              value = { nokLastName }
+              onChange = {
+                (e) => {
+                  e.preventDefault();
+                  setNokLastName(e.target.value)
+                }
+              }
+            />  
           </div>
 
           <div className = "grid">
@@ -298,6 +320,13 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = 'Festus' 
+              value = { nokMiddleName }
+              onChange = {
+                (e) => {
+                  e.preventDefault();
+                  setNokMiddleName(e.target.value)
+                }
+              }
             />
           </div>
 
@@ -311,6 +340,13 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = '' 
+              value = { nokRelationship }
+              onChange= { 
+                (e) => {
+                  e.preventDefault();
+                  setNokRelationship(e.target.value)
+                } 
+              }
             />
           </div>
 
@@ -324,6 +360,13 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = '' 
+              value = { nokGender }
+              onChange = {
+                (e) => {
+                  e.preventDefault();
+                  setGender(e.target.value);
+                }
+              }
             />
           </div>
 
@@ -335,8 +378,15 @@ const PaForm1 = () => {
               Date of Birth
             </label>
             <input 
-              type = "text" 
+              type = "date" 
               placeholder = '__ / __ / ____' 
+              value = { nokDob }
+              onChange = {
+                (e) => {
+                  e.preventDefault();
+                  setNokDob(e.target.value)
+                }
+               }
             />
           </div>
         </div>
