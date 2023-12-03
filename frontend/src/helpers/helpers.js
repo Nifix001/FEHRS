@@ -34,10 +34,14 @@ export default async function processLogin(email, password, setLoading, setToken
             );
             // console.log(loginResponse);
             !user && setUser(loginResponse.data);
-            if(loginResponse.data.role_id === 2 || loginResponse.data.role_id === 4 ){
+            if(loginResponse.data.role_id === 2  ){
                 getPatients( csrfToken, setPatients);
                 getPrescriptions( csrfToken, setPrescriptions  );
                 getDrugs( csrfToken, setDrugs  );
+            }else if(loginResponse.data.role_id === 4){
+                getPatients( csrfToken, setPatients);
+                getPrescriptions( csrfToken, setPrescriptions  );
+                setDrugs( [] );
             } else if(loginResponse.data.role_id === 3){
                 getDrugs( csrfToken, setDrugs  );
                 setPatients([]);
@@ -117,7 +121,7 @@ export async function deletePatient(setPatients ,id, token){
             headers: {
                 Accept: 'application/json',
                 // 'X-XSRF-TOKEN': decodeURIComponent(token),
-                'Referer': '127.0.0.1:8000'
+                // 'Referer': '127.0.0.1:8000'
             }})
     }
     catch(error){
