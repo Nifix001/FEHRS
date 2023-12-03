@@ -151,10 +151,11 @@ const PaForm1 = () => {
               Date of Birth
             </label>
             <input 
-              type = "text" 
+              type = "date" 
               placeholder = '__ /__ /____' 
               name = ' dob '
               value = { dob }
+              min="11/3/2023"
               onChange = { (e) => {
                                     e.preventDefault();
                                     setDob(e.target.value);
@@ -177,10 +178,11 @@ const PaForm1 = () => {
                 <img src = "" alt = "" />
               </div> */}
               <input 
-                type = "text" 
+                type = "tel" 
                 placeholder = ''
                 name = ' phone '
                 value = { phone }
+                pattern='[0-9]{10}'
                 onChange = { (e) => {
                   e.preventDefault();
                                       setPhone(e.target.value);
@@ -391,6 +393,7 @@ const PaForm1 = () => {
             <input 
               type = "date" 
               placeholder = '__ / __ / ____' 
+              min="11/3/2023"
               value = { nokDob }
               onChange = {
                 (e) => {
