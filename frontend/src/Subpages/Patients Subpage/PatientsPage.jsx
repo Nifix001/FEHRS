@@ -141,7 +141,7 @@ const PatientsPage = () => {
             />
 
             <input 
-              type = "text"  
+              type = "search"  
               className = 'border rounded-md font-span font-normal text-base border-solid  border-gray-300 w-56 h-10 p-2 indent-8 placeholder:text-gray-300 text-gray-600 outline-none'
             />
 

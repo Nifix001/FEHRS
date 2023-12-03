@@ -27,7 +27,7 @@ const Nav = () => {
             <div className = 'relative'>
                 <div className = 'flex' >
                     <input 
-                        type = ' search ' 
+                        type = 'search' 
                         placeholder = 'Search' 
                         className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-182 h-10 p-2 outline-0' 
                         onChange={() => setSearchActive(true)}
