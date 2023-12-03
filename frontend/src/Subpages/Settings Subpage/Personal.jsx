@@ -42,7 +42,9 @@ const Personal = () => {
             <input type="text" placeholder = 'Lagos' className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '  />
           </div>
         </div>
-        <button> Update Profile </button>
+        <div className = ' flex w-full justify-center mt-[68px] ' >
+          <button className = ' bg-primary text-white px-4 py-[6px] text-sm rounded-md '  > Update Profile </button>
+        </div>
       </form>
     </div>
   )
