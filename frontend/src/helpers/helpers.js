@@ -176,3 +176,21 @@ export async function deleteDrugs(setDrugs ,id){
         console.error(error);
     }
 }
+
+export async function deletePrescription(setPrescriptions ,id){
+    try{
+        const list = JSON.parse(localStorage.getItem('prescriptions'));
+        const filteredList = list.filter(item => item.id !== id);
+    
+        setPrescriptions(filteredList);
+        await axios.delete(`http://localhost:8000/api/drugs/${id}`,{
+            headers: {
+                Accept: 'application/json',
+                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                // 'Referer': '127.0.0.1:8000'
+            }})
+    }
+    catch(error){
+        console.error(error);
+    }
+}
