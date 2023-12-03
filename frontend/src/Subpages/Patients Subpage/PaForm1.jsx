@@ -189,12 +189,18 @@ const PaForm1 = () => {
                   value = 'male' 
                   id = "" 
                   className = '-mt-2'  
-                  checked={gender === 'male'}
-                  onClick = {(e) => {
-                                      e.preventDefault();
-                                      setGender('male')
-                                    }
+                  // checked={gender === 'male'}
+                  // onClick = {(e) => {
+                  //                     e.preventDefault();
+                  //                     setGender('male')
+                  //                   }
+                  //           }
+                  onSelect={
+                    (e) => {
+                              e.preventDefault();
+                              setGender('male')
                             }
+                  }
                 />
                 <h4> Male </h4> 
               </div>
@@ -206,12 +212,18 @@ const PaForm1 = () => {
                   value = "female"  
                   id = ""  
                   className = '-mt-2'
-                  checked={gender === 'female'}
-                  onClick = {(e) => {
-                                      e.preventDefault();
-                                      setGender('female')
-                                    }
-                            } 
+                  // checked={gender === 'female'}
+                  // onClick = {(e) => {
+                  //                     e.preventDefault();
+                  //                     setGender('female')
+                  //                   }
+                  //           } 
+                  onSelect={
+                    (e) => {
+                            e.preventDefault();
+                            setGender('female')
+                          }
+                  }
                 />
                 <h4> Female </h4>
               </div>
