@@ -5,10 +5,11 @@ import del from '../../assets/delete.svg'
 import edit from '../../assets/edit.svg'
 import { Link } from 'react-router-dom'
 import { useUser } from '../../context/UserContext.jsx'
+import { deleteDrugs } from '../../helpers/helpers.js'
 
 
 const Drugs = () => {
-  const { drugs } = useUser();
+  const { drugs, setDrugs } = useUser();
   const drug = drugs.map( dd  => {
     return (
         <tr key = { dd.id } >
@@ -30,6 +31,12 @@ const Drugs = () => {
                 <img 
                   src = { del }  
                   alt = "delete" 
+                  onClick = {
+                    (e) => {
+                      e.preventDefault();
+                      deleteDrugs(setDrugs, dd.id)
+                    }
+                  }
                 />
               </Link>
             </div>
