@@ -71,6 +71,7 @@ export default function BasicCard( { signUp } ) {
               className = {` bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0  ${ loading ? 'cursor-not-allowed' : '' } `} 
               required 
               disabled = { loading }
+              autoComplete = 'false'
             />
             <button 
               type = 'submit' 

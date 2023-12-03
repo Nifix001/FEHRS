@@ -2,12 +2,14 @@ import axios from "axios";
 
 
 axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
+
 
 export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions ) {
     e.preventDefault();
     setTimeout(() => {
         setLoading(true);
-    }, 1000);
+    }, 500);
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
@@ -59,7 +61,7 @@ export default async function processLogin(email, password, setLoading, setToken
         setTimeout(() => {
             setLoading(false);
             history('/user');
-        }, 6000);
+        }, 5000);
     }
 }
 
