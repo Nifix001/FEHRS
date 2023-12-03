@@ -13,7 +13,7 @@ const Drugs = () => {
     return (
         <tr key = { dd.id } >
           <td className = 'py-4 text-base'> { dd.id } </td>
-          <td className = 'text-left pl-6 text-base '> { dd.drug_name } </td>
+          <td className = 'text-left pl-6 text-base w-94 '> { dd.drug_name } </td>
           <td className = 'text-left pl-8 text-base'> { dd.drug_quantity } </td>
           <td className = 'text-left pl-6 text-base'> { dd.manufacturing_date } </td>
           <td className = 'text-left pl-6 text-base'> { dd.expiration_date } </td>
