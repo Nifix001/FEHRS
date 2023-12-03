@@ -43,7 +43,7 @@ const Personal = () => {
           </div>
         </div>
         <div className = ' flex w-full justify-center mt-[68px] ' >
-          <button className = ' bg-primary text-white px-4 py-[6px] text-sm rounded-md '  > Update Profile </button>
+          <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md'  > Update Profile </button>
         </div>
       </form>
     </div>
