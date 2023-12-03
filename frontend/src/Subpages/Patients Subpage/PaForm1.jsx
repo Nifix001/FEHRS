@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
-import { Form, NavLink } from 'react-router-dom'
+import { Form, NavLink, useNavigate } from 'react-router-dom'
 import { addPatient } from '../../helpers/helpers';
 import { useUser } from '../../context/UserContext';
 
 const PaForm1 = () => {
 
   const { setPatients } = useUser();
+
+  const location = useNavigate();
 
   const [firstName, setfirstName ] = useState();
   const [lastName, setLastName ] = useState();
@@ -53,6 +55,7 @@ const PaForm1 = () => {
     e.preventDefault();
     localStorage.setItem('new-patients', data)
     addPatient(setPatients, rawData )
+    location("/user/patients/new/info")
   }
 
 
