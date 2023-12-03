@@ -130,3 +130,24 @@ export async function deletePatient(setPatients ,id, token){
         console.error(error);
     }
 }
+
+export async function addPatient(setPatients, data){
+    try{
+        const list = JSON.parse(localStorage.getItem('patients'));
+        const newPatient = {
+            'id': list.length + 1,
+            'firstname': data.firstname,
+            'middlename': data.middlename,
+            'lastname': data.lastname,
+            'email': 'boom@gmail.com',
+            'matric_no': data.matric_no,
+            'phone_no': data.phone_no,
+            'prescriptions': []
+        }
+        setPatients([...list, newPatient])
+        await axios.post('http://localhost:8000/api/patient', data)   
+
+    } catch(error){
+        console.error(error);
+    }
+}

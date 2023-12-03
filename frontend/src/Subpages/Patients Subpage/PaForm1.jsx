@@ -1,8 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import { Form, NavLink } from 'react-router-dom'
+import { addPatient } from '../../helpers/helpers';
+import { useUser } from '../../context/UserContext';
 
 const PaForm1 = () => {
+
+  const { setPatients } = useUser();
 
   const [firstName, setfirstName ] = useState();
   const [lastName, setLastName ] = useState();
@@ -21,30 +25,34 @@ const PaForm1 = () => {
   const [ nokDob, setNokDob ] = useState();
   const [ nokPhone, setNokPhone ] = useState();
 
-  const data = {
-    "firstname": firstName,
-    "middlename": otherName,
-    "lastname": lastName,
-    "matric_no": matricNumber,
-    "dob": dob,
-    "gender": gender,
-    "phone_no": phone,
-    "home_address": address,
-    "email":"boomed56@gmail.com",
-    "nok_firstname": nokFirstName,
-    "nok_middlename": nokMiddleName,
-    "nok_lastname": nokLastName,
-    "nok_relationship": nokRelationship,
-    // "nok_dob": nokDob,
-    "nok_gender": nokGender,
-    "nok_phone_no": nokPhone 
-  } 
-   
+  const rawData = 
+    {
+      "firstname": firstName,
+      "middlename": otherName,
+      "lastname": lastName,
+      "matric_no": matricNumber,
+      "dob": dob,
+      "gender": gender,
+      "phone_no": phone,
+      "home_address": address,
+      "email":"boomed56@gmail.com",
+      "nok_firstname": nokFirstName,
+      "nok_middlename": nokMiddleName,
+      "nok_lastname": nokLastName,
+      "nok_relationship": nokRelationship,
+      // "nok_dob": nokDob,
+      "nok_gender": nokGender,
+      "nok_phone_no": nokPhone 
+    } 
+  
+    const data = JSON.stringify(rawData)
+
   const current = localStorage.getItem('new-patients')
   console.log(current);
   const handleSave = (e) => {
     e.preventDefault();
     localStorage.setItem('new-patients', data)
+    addPatient(setPatients, rawData )
   }
 
 
