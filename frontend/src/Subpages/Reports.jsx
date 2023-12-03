@@ -141,7 +141,7 @@ const Reports = () => {
         </div>
         <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm ' >
           <div className = 'scale-95 -ml-4 ' >
-            <PatientsTable patients = { patient } />
+            <PatientsTable patients = { patient.slice(0,7) } />
           </div>
         </div>
       </div>
