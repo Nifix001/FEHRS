@@ -36,7 +36,7 @@ const PatientsPage = () => {
         return(
     
             <tr key = { p.id } >
-              <td className = 'py-4 text-left pl-6 text-base'> {`${ p.lastname } ${ p.firstname }`} </td>
+              <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
               <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
               <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
               <td className = 'text-left text-base'> { p.email } </td>
