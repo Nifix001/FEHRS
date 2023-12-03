@@ -151,3 +151,9 @@ export async function addPatient(setPatients, data){
         console.error(error);
     }
 }
+
+export function searchFunction(data, keys, query){
+    return data.filter(
+        (item) => keys.some(key => item[key].toLowerCase().includes(query))
+    )
+}

@@ -9,12 +9,13 @@ import filter from '../../assets/cil_filter.svg'
 import del from '../../assets/delete.svg'
 import edit from '../../assets/edit.svg'
 import { useUser } from '../../context/UserContext'
-import { deletePatient } from '../../helpers/helpers'
+import { deletePatient, searchFunction } from '../../helpers/helpers'
 
 const PatientsPage = () => {
 
   const { patients, setPatients, token } = useUser();
   const [patientOptions, setPatientOptions] = useState({});
+  const [ query, setQuery ] = useState();
 
   const toggleOptions = (patientId) => {
     setPatientOptions((prevOptions) => ({
@@ -30,8 +31,10 @@ const PatientsPage = () => {
     input.click();
   }
 
+  const keys = ["firstname", "lastname", "matric_no", "email" ]
 
-    const patient = patients.map( p  =>  {
+
+    const patient = searchFunction(patients, keys, query).map( p  =>  {
     
         return(
     
@@ -143,6 +146,10 @@ const PatientsPage = () => {
             <input 
               type = "search"  
               className = 'border rounded-md font-span font-normal text-base border-solid  border-gray-300 w-56 h-10 p-2 indent-8 placeholder:text-gray-300 text-gray-600 outline-none'
+              onChange = { (e) => {
+                e.preventDefault();
+                setQuery(e.target.value);
+              } }
             />
 
             <div 
