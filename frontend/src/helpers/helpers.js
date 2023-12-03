@@ -113,23 +113,7 @@ export async function getPrescriptions( csrfToken, setPrescriptions) {
 }
 
 
-export async function deletePatient(setPatients ,id, token){
-    try{
-        const list = JSON.parse(localStorage.getItem('patients'));
-        const filteredList = list.filter(item => item.id !== id);
-    
-        setPatients(filteredList);
-        await axios.delete(`http://localhost:8000/api/patient/${id}`,{
-            headers: {
-                Accept: 'application/json',
-                // 'X-XSRF-TOKEN': decodeURIComponent(token),
-                // 'Referer': '127.0.0.1:8000'
-            }})
-    }
-    catch(error){
-        console.error(error);
-    }
-}
+
 
 export async function addPatient(setPatients, data){
     try{
@@ -156,4 +140,39 @@ export function searchFunction(data, keys, query){
     return data.filter(
         (item) => keys.some(key => item[key].toLowerCase().includes(query))
     )
+}
+export async function deletePatient(setPatients ,id, token){
+    try{
+        const list = JSON.parse(localStorage.getItem('patients'));
+        const filteredList = list.filter(item => item.id !== id);
+    
+        setPatients(filteredList);
+        await axios.delete(`http://localhost:8000/api/patient/${id}`,{
+            headers: {
+                Accept: 'application/json',
+                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                // 'Referer': '127.0.0.1:8000'
+            }})
+    }
+    catch(error){
+        console.error(error);
+    }
+}
+
+export async function deleteDrugs(setDrugs ,id){
+    try{
+        const list = JSON.parse(localStorage.getItem('drugs'));
+        const filteredList = list.filter(item => item.id !== id);
+    
+        setDrugs(filteredList);
+        await axios.delete(`http://localhost:8000/api/drugs/${id}`,{
+            headers: {
+                Accept: 'application/json',
+                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                // 'Referer': '127.0.0.1:8000'
+            }})
+    }
+    catch(error){
+        console.error(error);
+    }
 }
