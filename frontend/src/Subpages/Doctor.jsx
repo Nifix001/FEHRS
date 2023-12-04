@@ -143,7 +143,7 @@ const Doctor = () => {
         </div>
          : 
          <div className = 'bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm flex items-center justify-center text-5xl opacity-50'>
-            <h1 className = ' opacity-5 text-center ' > Please input in the search box above and hit the Search button </h1>
+            <h1 className = ' opacity-5 text-center ' > Please type in the search box above and hit the Search button </h1>
         </div> }
 
       </div>
