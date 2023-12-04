@@ -25,6 +25,17 @@ const Doctor = () => {
     }));
   };
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    const trimmedQuery = String(e.target.value).trim();
+  
+    if (trimmedQuery === '') {
+      setSearchActive(false);
+    } else {
+      setQuery(trimmedQuery);
+    }
+  };
+  
 
 
 
@@ -32,7 +43,7 @@ const Doctor = () => {
     
     return(
 
-        <tr key = { p.id } >
+        <tr key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer ' >
           <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
           <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
           <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
@@ -97,7 +108,7 @@ const Doctor = () => {
                         type = 'search' 
                         placeholder = 'Search for patient...' 
                         className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-[400px] h-10 p-2 outline-0 indent-10' 
-                        onChange = { (e) => setQuery(e.target.value) }
+                        onChange = { handleChange }
                     />
                     <img 
                         className = 'absolute left-2 top-2 cursor-pointer opacity-50' 
@@ -124,11 +135,16 @@ const Doctor = () => {
 
         </div>
 
+        { searchActive ? 
         <div 
-            className = {` bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm ${ !searchActive ? 'hidden': 'block' } `}
+            className = ' bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm block '
         >
             <SearchPatient patients = { searchPatient }  />
         </div>
+         : 
+         <div className = 'bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm flex items-center justify-center text-5xl opacity-50'>
+            <h1 className = ' opacity-5 text-center ' > Please input in the search box above and hit the Search button </h1>
+        </div> }
 
       </div>
     </React.Fragment>
