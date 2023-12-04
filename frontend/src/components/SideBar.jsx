@@ -21,10 +21,11 @@ import { Building3, Chart1, Element, Hospital, Profile2User, Setting2 } from 'ic
 const SideBar = () => {
    
     const handleLogout = () => {
-        localStorage.removeItem('user');
-        localStorage.removeItem('patients');
-        localStorage.removeItem('drugs');
-        localStorage.removeItem('prescriptions');
+        // localStorage.removeItem('user');
+        // localStorage.removeItem('patients');
+        // localStorage.removeItem('drugs');
+        // localStorage.removeItem('prescriptions');
+        localStorage.clear();
         // Reset any relevant state variables
         window.location.reload();
       };
