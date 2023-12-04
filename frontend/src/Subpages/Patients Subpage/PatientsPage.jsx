@@ -32,7 +32,7 @@ const PatientsPage = () => {
     input.click();
   }
 
-  const keys = ["firstname", "lastname", "matric_no", "email" ]
+  const keys = ["firstname", "lastname", "matric_no", "email" ];
 
 
     const searchPatient = searchFunction(patients, keys, query).map( p  =>  {
