@@ -10,6 +10,7 @@ import del from '../../assets/delete.svg'
 import edit from '../../assets/edit.svg'
 import { useUser } from '../../context/UserContext'
 import { deletePatient, searchFunction } from '../../helpers/helpers'
+import EditPatient from '../../modal/EditPatient'
 
 const PatientsPage = () => {
 
@@ -17,6 +18,21 @@ const PatientsPage = () => {
   const [patientOptions, setPatientOptions] = useState({});
   const [ query, setQuery ] = useState();
   const [ searchActive, setSearchActive ] = useState(false);
+
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [selectedPatient, setSelectedPatient] = useState(null);
+
+  // Function to open the edit modal
+  const openEditModal = (patient) => {
+    setSelectedPatient(patient);
+    setEditModalOpen(true);
+  };
+
+  // Function to close the edit modal
+  const closeEditModal = () => {
+    setSelectedPatient(null);
+    setEditModalOpen(false);
+  };
 
   const toggleOptions = (patientId) => {
     setPatientOptions((prevOptions) => ({
@@ -45,24 +61,14 @@ const PatientsPage = () => {
               <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
               <td className = 'text-left text-base'> { p.email } </td>
               <td className = 'text-left pl-3 text-base'> 
-              {/* { p.prescriptions.map(d => {
-                return (
-                  <span key = { d.id } > { d.diagnosis } </span>
-                  )
-                }) } */}
                 {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
                 </td>
-              {/* <td className = 'text-left pl-3 text-base'> { p.drug } </td> */}
               <td className = 'pl-8'>
                 <div className = 'flex items-center justify-start pl-1 '> 
                   <Link>
-                    {/*  */}
-                    {/* ... */}
                     <button 
                       className = "flex-shrink-0"
                       onClick = {() => toggleOptions(p.id)}
-                      // onMouseEnter={() => toggleOptions(p.id)}
-                      // onMouseLeave={() => toggleOptions(p.id)}
                     >
                       <img 
                       src = { dot }  
@@ -74,7 +80,10 @@ const PatientsPage = () => {
                       onMouseLeave={() => toggleOptions(p.id)}
                     >
                       {/* <!-- Options for Item 1 --> */}
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                      <button 
+                        className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 "
+                        onClick = { () => openEditModal(p) }
+                      >
                         <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                         Edit
                       </button>
@@ -117,8 +126,6 @@ const PatientsPage = () => {
                   <button 
                     className = "flex-shrink-0"
                     onClick = {() => toggleOptions(p.id)}
-                    // onMouseEnter={() => toggleOptions(p.id)}
-                    // onMouseLeave={() => toggleOptions(p.id)}
                   >
                     <img 
                     src = { dot }  
@@ -130,7 +137,10 @@ const PatientsPage = () => {
                     onMouseLeave={() => toggleOptions(p.id)}
                   >
                     {/* <!-- Options for Item 1 --> */}
-                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                    <button 
+                      className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 "
+                      onClick = { () => openEditModal(p) }
+                    >
                       <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                       Edit
                     </button>
@@ -149,20 +159,6 @@ const PatientsPage = () => {
 
   return (
     <React.Fragment>
-      {/* <div className = 'mt-2 mb-4 flex rounded-md gap-0 plinks ' >
-        <NavLink 
-          className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-s-md font-semibold shadow-sm text-gray-500 '
-          to = '/user/patients' 
-        >
-          Patients
-        </NavLink>
-        <NavLink 
-          className = 'border text-xs px-4 py-2 flex items-center justify-center rounded-e-md font-semibold shadow-sm text-gray-500 bg-white '
-          to = '/user/patiens/admin' 
-        >
-          Admin
-        </NavLink>
-      </div> */}
       <div className = 'flex w-[76.3vw] justify-between items-center px-3 py-4 bg-white ' > 
         <header>
           <h1 className = 'pl-2 -mt-2 font-semibold' > Patients (Students) </h1>
@@ -222,6 +218,11 @@ const PatientsPage = () => {
         </div>
       </div>
       <PatientsTable  patients = { searchActive ? searchPatient : patient } />
+      <EditPatient
+        isOpen={editModalOpen}
+        onClose={closeEditModal}
+        patient={selectedPatient}
+      />
     </React.Fragment>
   )
 }

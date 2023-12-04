@@ -33,6 +33,7 @@ export default {
     "./src/Tables/DrugTable.jsx",
     "./src/Tables/PrescriptionTable.jsx",
     "./src/Tables/HistoryTable.jsx",
+    "./src/modal/EditPatient.jsx"
   ],
   theme: {
     extend: {
