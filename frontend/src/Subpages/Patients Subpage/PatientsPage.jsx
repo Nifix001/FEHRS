@@ -51,7 +51,7 @@ const PatientsPage = () => {
   const keys = ["firstname", "lastname", "matric_no", "email" ];
 
 
-    const searchPatient = searchFunction(patients, keys, query).map( p  =>  {
+    const searchPatient = searchFunction(patients, keys, query).sort((a, b) => a.id - b.id).map( p  =>  {
     
         return(
     
@@ -100,7 +100,7 @@ const PatientsPage = () => {
         }
       )
 
-    const patient = patients.map( p  =>  {
+    const patient = patients.sort((a, b) => a.id - b.id).map( p  =>  {
   
       return(
   
