@@ -136,12 +136,34 @@ export async function addPatient(setPatients, data){
     }
 }
 
+export async function editPatient(setPatients, data){
+    try{
+        const list = JSON.parse(localStorage.getItem('patients'));
+        const filteredList = list.filter(item => item.id !== data.id);
+        const editedPatient = {
+            'id': data.id,
+            'firstname': data.firstname,
+            'middlename': data.middlename,
+            'lastname': data.lastname,
+            'email': data.email,
+            'matric_no': data.matric_no,
+            'phone_no': data.phone_no,
+            'prescriptions': data.prescriptions
+        }
+        setPatients([...filteredList, editedPatient]);
+        await axios.put(`http://localhost:8000/api/patient/${id}`, editedPatient)   
+
+    } catch(error){
+        console.error(error);
+    }
+}
+
 export function searchFunction(data, keys, query){
     return data.filter(
         (item) => keys.some(key => item[key].toLowerCase().includes(query))
     )
 }
-export async function deletePatient(setPatients ,id, token){
+export async function deletePatient(setPatients ,id){
     try{
         const list = JSON.parse(localStorage.getItem('patients'));
         const filteredList = list.filter(item => item.id !== id);

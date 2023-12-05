@@ -1,15 +1,40 @@
 // EditModal.js
 
 import React, { useState } from 'react';
+import { useUser } from '../context/UserContext';
+import { editPatient } from '../helpers/helpers';
 
 const EditPatient = ({ isOpen, onClose, patient }) => {
   if (!isOpen) return null;
+
+  const { setPatients } = useUser();
 
   const [ firstname, setFirstname ] = useState(patient.firstname);
   const [ lastname, setLastname ] = useState(patient.lastname);  
   const [ matric_no, setMatric_no ] = useState(patient.matric_no);
   const [ phone_no, setPhone_no ] = useState(patient.phone_no);
   const [ email, setEmail ] = useState(patient.email);
+  const prescriptions = patient.prescriptions;
+  const id = patient.id;
+  const middlename = patient.middlename;
+
+  const editedPatient = {
+    'id': id,
+    'firstname': firstname,
+    'middlename': middlename,
+    'lastname': lastname,
+    'email': email,
+    'matric_no': matric_no,
+    'phone_no': phone_no,
+    'prescriptions': prescriptions
+}
+
+const handleClick = (e) => {
+  e.preventDefault();
+  editPatient(setPatients, editedPatient);
+  onClose();
+}
+
 
   return (
     <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex">
@@ -62,7 +87,7 @@ const EditPatient = ({ isOpen, onClose, patient }) => {
                                                                                     } }  />
             </div>
             <div className = "flex w-full items-center justify-center mt-20">
-               <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md'  > Update </button>                                                                     
+               <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md' onClick = { handleClick }  > Update </button>                                                                     
             </div>
         </div>
       </div>
