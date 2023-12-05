@@ -26,13 +26,13 @@ const handleClick = (e) => {
           Close
         </button>
         <h2 className="text-2xl font-semibold mb-4">Delete Patient</h2>
-        <div className="block">
+        <div className="flex">
             <p>Are you sure you want to delete patient?</p>
-             
+                                    
+            </div>
             <div className = "flex w-full items-center justify-center mt-20">
                <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md' onClick={handleClick} > Delete </button>                 
-               <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md' onClick = {onClose}  > Cancel </button>                                                                     
-            </div>
+               <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md' onClick = {onClose}  > Cancel </button>                                          
         </div>
       </div>
     </div>
