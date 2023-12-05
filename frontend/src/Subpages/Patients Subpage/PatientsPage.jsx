@@ -87,7 +87,7 @@ const PatientsPage = () => {
                         <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                         Edit
                       </button>
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePatient(setPatients, p.id, token)}>
+                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => openEditModal(p)}>
                         <img src = { del } alt="" className = 'text-black filter grayscale' />
                         Delete
                       </button>
@@ -144,7 +144,7 @@ const PatientsPage = () => {
                       <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                       Edit
                     </button>
-                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePatient(setPatients, p.id, token)}>
+                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " >
                       <img src = { del } alt="" className = 'text-black filter grayscale' />
                       Delete
                     </button>
