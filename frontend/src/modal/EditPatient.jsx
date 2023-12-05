@@ -38,7 +38,7 @@ const handleClick = (e) => {
 
   return (
     <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex">
-      <div className="relative p-8 bg-white w-fit mx-auto my-12 rounded-md shadow-lg">
+      <div className="relative p-8 bg-white w-fit mx-auto my-12 rounded-2xl shadow-lg">
         <button
           className="absolute top-8 right-5 p-2 cursor-pointer text-xs text-red-400"
           onClick={onClose}
