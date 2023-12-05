@@ -151,7 +151,7 @@ export async function editPatient(setPatients, data){
             'prescriptions': data.prescriptions
         }
         setPatients([...filteredList, editedPatient]);
-        await axios.put(`http://localhost:8000/api/patient/${id}`, editedPatient)   
+        await axios.put(`http://localhost:8000/api/patient/${data.id}`, editedPatient)   
 
     } catch(error){
         console.error(error);
