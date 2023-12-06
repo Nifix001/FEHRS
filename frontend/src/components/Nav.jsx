@@ -58,6 +58,7 @@ const Nav = () => {
                     onClick = { () => setOpenNotification( !openNotification ) } 
                     onMouseEnter = { () => setOpenNotification( true ) }
                 />
+                { notifications.length > 0 && <div className = ' p-2 w-4 h-4 absolute text-white bg-red-600 rounded-full  text-xs flex items-center justify-center left-4 ' > { notifications.length } </div>}
                 {
                     openNotification && 
                     <div 
@@ -69,7 +70,13 @@ const Nav = () => {
                                     You currently have no notifications.
                                 </div> 
                                 :<>
-                                    Opoor engineer
+                                    <ul>
+                                        {
+                                            notifications.map(item => (
+                                                <li key = { item.id } className = ' text-sm hover:bg-primary hover:text-white text-primary py-2 pl-2 ' > { item.message } </li>
+                                            ))
+                                        }
+                                    </ul>
                                 </>
                             }
                     </div>
