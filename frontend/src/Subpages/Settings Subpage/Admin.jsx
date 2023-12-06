@@ -22,21 +22,21 @@ const Admin = () => {
             <h1 className = 'text-2xl my-10' >Assign a Role</h1>
             <div className='flex flex-col gap-10 mb-24 '>
               <div className='flex items-center gap-6 '>
-                <input type="radio" name="role" id="" className = ' w-7 h-7 ' />
+                <input type="radio" name="role" id="" className = ' w-7 h-7 accent-black ' />
                 <div className='flex flex-col'>
                   <label htmlFor="" className = 'font-bold text-base' >Doctor</label>
                   <p className = 'text-sm text-gray-400' >Assign as Doctor</p>
                 </div>
               </div>
               <div className='flex items-center gap-6 '>
-                <input type="radio" name="role" id="" className = ' w-7 h-7 ' />
+                <input type="radio" name="role" id="" className = ' w-7 h-7 accent-black ' />
                 <div className='flex flex-col'>
                   <label htmlFor="" className = 'font-bold text-base' >Phamarcist</label>
                   <p className = 'text-sm text-gray-400' >Assign as Phamarcist</p>
                 </div>
               </div>
               <div className='flex items-center gap-6 '>
-                <input type="radio" name="role" id="" className = ' w-7 h-7 ' />
+                <input type="radio" name="role" id="" className = ' w-7 h-7 accent-black ' />
                 <div className='flex flex-col'>
                   <label htmlFor="" className = 'font-bold text-base' >Chief Host</label>
                   <p className = 'text-sm text-gray-400' >Assign as Chief Host</p>
