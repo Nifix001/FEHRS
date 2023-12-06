@@ -48,8 +48,8 @@ const Graph = () => {
                                         <React.Fragment key = { p.id } >
                                             <tr>
                                                 <td> { p.id }. </td>
-                                                <td> { p.lastname } { p.firstname } </td>
-                                                <td> { p.matric_no } </td>
+                                                <td className = ' text-left pl-11 '> { p.lastname } { p.firstname } </td>
+                                                <td className = ' text-left ' > { p.matric_no } </td>
                                             </tr>      
                                         </React.Fragment>
                                     )
