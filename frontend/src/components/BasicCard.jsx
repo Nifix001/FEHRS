@@ -50,7 +50,7 @@ export default function BasicCard( { signUp } ) {
               <h1 className = 'text-primary mb-1'> Welcome Back </h1>
             </header>
 
-            <h3 className = 'text-gray-750'> Welcome back, please login with the required information </h3>
+            <h3 className = 'text-gray-750 my-2'> Welcome back, please login with the required information </h3>
             <input 
               type = "text" 
               name = 'Email' 

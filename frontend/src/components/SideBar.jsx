@@ -47,7 +47,7 @@ const SideBar = () => {
     return (
         <React.Fragment>
 
-            <div className='w-60 h-[83.2vh] bg-white absolute left-0 top-20 px-4 sidebar'>
+            <div className='w-60 h-[83.2vh] bg-white left-0 top-20 px-4 sidebar fixed'>
 
                 <header>
                     <h1 className='mt-7 mb-3'> Menu </h1>

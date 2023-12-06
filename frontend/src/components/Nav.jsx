@@ -15,7 +15,7 @@ const Nav = () => {
 
   return (
     <React.Fragment>
-        <nav className = 'flex absolute h-20 w-full top-0 border border-gray-300 justify-between px-2 items-center'>
+        <nav className = 'flex fixed z-10 bg-white h-20 w-full top-0 border border-gray-300 justify-between px-2 items-center'>
             <div className = 'border-solid border-gray-300 border-r h-20  pr-[64px] pl-[14px] flex items-center gap-3 '>
                 <img 
                     src = { logo } 
