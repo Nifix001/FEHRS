@@ -72,7 +72,7 @@ const Nav = () => {
                                 :<>
                                     <ul>
                                         {
-                                            notifications.map(item => (
+                                            notifications.slice(0,3).map(item => (
                                                 <li key = { item.id } className = ' text-sm hover:bg-primary hover:text-white text-primary py-2 pl-2 ' > { item.message } </li>
                                             ))
                                         }
