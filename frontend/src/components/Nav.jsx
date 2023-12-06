@@ -10,7 +10,7 @@ const Nav = () => {
 
     const [ openNotification, setOpenNotification ] = useState(false);
     const [ searchActive, setSearchActive ] = useState( false );
-    const { user } = useUser();
+    const { user, notifications } = useUser();
     const roles = ["Unverified", "Admin", "Pharmacy", "Doctor"]
 
   return (
@@ -61,10 +61,17 @@ const Nav = () => {
                 {
                     openNotification && 
                     <div 
-                        className = ' absolute bg-white shadow-2xl w-fit h-fit top-10 right-6 z-10 p-10 '
+                        className = ' absolute bg-white shadow-2xl w-[450px] h-fit top-10 right-3 z-10 p-6 '
                         onMouseLeave = { () => setOpenNotification( false ) } 
                     >
-                            Hello
+                            {
+                                notifications === null || notifications.length === 0 ? <div className = ' flex items-center justify-center opacity-20 '>
+                                    You currently have no notifications.
+                                </div> 
+                                :<>
+                                    Opoor engineer
+                                </>
+                            }
                     </div>
                 }
             </div>

@@ -222,3 +222,26 @@ export async function deletePrescription(setPrescriptions ,id){
         console.error(error);
     }
 }
+
+export function addNotification(setNotifications, message){
+    try{
+        const list = JSON.parse(localStorage.getItem('notifications'));
+       
+        if(list === null || list.length === 0 ){
+            const newMessage = {
+                'id': 1,
+                'message': message
+            }
+            setNotifications([newMessage])
+        } else {
+            const newMessage = {
+                'id': list.length + 1,
+                'message': message
+            }
+            setNotifications([...list, newMessage])
+        }
+
+    }catch(err){
+        console.error(err);
+    }
+}

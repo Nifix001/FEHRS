@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import { Form, NavLink, useNavigate } from 'react-router-dom'
-import { addPatient } from '../../helpers/helpers';
+import { addNotification, addPatient } from '../../helpers/helpers';
 import { useUser } from '../../context/UserContext';
 
 const PaForm1 = () => {
 
-  const { setPatients } = useUser();
+  const { setPatients, setNotifications } = useUser();
 
   const location = useNavigate();
 
@@ -50,11 +50,15 @@ const PaForm1 = () => {
     const data = JSON.stringify(rawData)
 
   const current = localStorage.getItem('new-patients')
+
+  const message = `${firstName + " " + lastName} has been added to the Patients database `
+
   console.log(current);
   const handleSave = (e) => {
     e.preventDefault();
     localStorage.setItem('new-patients', data)
     addPatient(setPatients, rawData )
+    addNotification(setNotifications, message)
     location("/user/patients/new/info")
   }
 
@@ -80,6 +84,7 @@ const PaForm1 = () => {
                                     setfirstName(e.target.value);
                                   } 
                           }  
+              required
             />
           </div>
 
@@ -100,6 +105,7 @@ const PaForm1 = () => {
                                      setLastName(e.target.value);
                                   } 
                             }   
+              required
             />
           </div>
 
@@ -120,6 +126,7 @@ const PaForm1 = () => {
                                     setOtherName(e.target.value);
                                   } 
                           }  
+              required
             />
           </div>
 
@@ -140,6 +147,7 @@ const PaForm1 = () => {
                                     setMatricNumber(e.target.value);
                                   } 
                           }  
+              required
             />
           </div>
 
@@ -161,6 +169,7 @@ const PaForm1 = () => {
                                     setDob(e.target.value);
                                   } 
                           }  
+              required
             />
           </div>
 
@@ -188,6 +197,7 @@ const PaForm1 = () => {
                                       setPhone(e.target.value);
                                     } 
                             }  
+                required
               />
             </div>
           </div>
@@ -270,6 +280,7 @@ const PaForm1 = () => {
                                     setAddress(e.target.value);
                                   } 
                           }  
+              required
             />
           </div>
 
@@ -300,6 +311,7 @@ const PaForm1 = () => {
                   setNokFirstName(e.target.value)
                 }
               }
+              required
             />
           </div>
 
@@ -320,6 +332,7 @@ const PaForm1 = () => {
                   setNokLastName(e.target.value)
                 }
               }
+              required
             />  
           </div>
 
@@ -340,6 +353,7 @@ const PaForm1 = () => {
                   setNokMiddleName(e.target.value)
                 }
               }
+              required
             />
           </div>
 
@@ -360,6 +374,7 @@ const PaForm1 = () => {
                   setNokRelationship(e.target.value)
                 } 
               }
+              required
             />
           </div>
 
@@ -380,6 +395,7 @@ const PaForm1 = () => {
                   setGender(e.target.value);
                 }
               }
+              required
             />
           </div>
 
@@ -401,6 +417,7 @@ const PaForm1 = () => {
                   setNokDob(e.target.value)
                 }
                }
+               required
             />
           </div>
         </div>
