@@ -245,3 +245,15 @@ export function addNotification(setNotifications, message){
         console.error(err);
     }
 }
+
+export function deleteNotification(setNotifications ,id){
+    try{
+        const list = JSON.parse(localStorage.getItem('notifications'));
+        const filteredList = list.filter(item => item.id !== id);
+    
+        setNotifications(filteredList);
+    }
+    catch(error){
+        console.error(error);
+    }
+}

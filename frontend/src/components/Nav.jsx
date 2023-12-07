@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 
 import logo from '../assets/futa logo.png'
 import search from '../assets/akar-icons_search.svg'
-import { Notification } from 'iconsax-react'
+import { CloseCircle, Notification } from 'iconsax-react'
 import { useUser } from '../context/UserContext'
+import { deleteNotification } from '../helpers/helpers'
 
 
 const Nav = () => {
 
     const [ openNotification, setOpenNotification ] = useState(false);
     const [ searchActive, setSearchActive ] = useState( false );
-    const { user, notifications } = useUser();
+    const { user, notifications, setNotifications } = useUser();
     const roles = ["Unverified", "Admin", "Pharmacy", "Doctor"]
 
   return (
@@ -62,7 +63,7 @@ const Nav = () => {
                 {
                     openNotification && 
                     <div 
-                        className = ' absolute bg-white shadow-2xl w-[450px] h-fit top-10 right-3 z-10 p-6 '
+                        className = ' absolute bg-white shadow-2xl w-[450px] h-fit top-10 right-3 z-10 py-6 border '
                         onMouseLeave = { () => setOpenNotification( false ) } 
                     >
                             {
@@ -73,7 +74,9 @@ const Nav = () => {
                                     <ul>
                                         {
                                             notifications.slice(0,3).map(item => (
-                                                <li key = { item.id } className = ' text-sm hover:bg-primary hover:text-white text-primary py-2 pl-2 ' > { item.message } </li>
+                                                <li key = { item.id } className = ' text-sm hover:bg-primary hover:text-white text-primary py-2 px-8 flex items-center justify-between ' > <span> { item.message } </span>
+                                                <CloseCircle size={30} onClick={() => deleteNotification(setNotifications, item.id)} className = ' cursor-pointer ' />
+                                                </li>
                                             ))
                                         }
                                     </ul>
