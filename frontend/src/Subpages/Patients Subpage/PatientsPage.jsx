@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import PatientsTable from '../../Tables/PatientsTable'
 import Patientsdata from '../../database/Patientsdata'
 import { Link, NavLink } from 'react-router-dom'
+import * as XLSX from "xlsx";
+
 
 import dot from '../../assets/carbon_overflow-menu-horizontal.svg'
 import search from '../../assets/akar-icons_search.svg'
@@ -23,6 +25,8 @@ const PatientsPage = () => {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [selectedPatient, setSelectedPatient] = useState(null);
+
+  const [data, setData] = useState([]);
 
   // Function to open the edit modal
   const openEditModal = (patient) => {
