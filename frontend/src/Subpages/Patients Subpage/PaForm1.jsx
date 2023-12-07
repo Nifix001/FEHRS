@@ -64,7 +64,7 @@ const PaForm1 = () => {
 
   const message = `${firstName + " " + lastName} has been added to the Patients database `
 
-  console.log(current);
+  // console.log(current);
   const handleSave = (e) => {
     e.preventDefault();
     localStorage.setItem('new-patients', data)
