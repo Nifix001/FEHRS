@@ -1,3 +1,4 @@
+import { ArrowLeft3 } from 'iconsax-react';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ const Password = () => {
 
   return (
     <div className = '  h-[83.2vh] w-[60vw] flex flex-col gap-4 ' >
-        <div className = ' w-full h-12 rounded-md bg-white flex items-center p-3 cursor-pointer'
+        <div className = ' w-full h-12 rounded-md bg-white flex items-center p-3 cursor-pointer gap-1'
           onClick = {
             (e) => {
               e.preventDefault();
@@ -15,6 +16,7 @@ const Password = () => {
             }
           }
         >
+          <ArrowLeft3 size={12}/>
           <h3 className = 'text-xs' >Change Password</h3>
         </div>
         <div className = ' w-full h-full rounded-xl bg-white p-9 ' >
