@@ -87,7 +87,8 @@ const PatientsPage = () => {
                         <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                         Edit
                       </button>
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => openEditModal(p)}>
+                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick ={ () => openEditModal(p.id) }
+                      >
                         <img src = { del } alt="" className = 'text-black filter grayscale' />
                         Delete
                       </button>
