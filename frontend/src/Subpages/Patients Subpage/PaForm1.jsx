@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Form, NavLink, useNavigate } from 'react-router-dom'
 import { addNotification, addPatient } from '../../helpers/helpers';
 import { useUser } from '../../context/UserContext';
+import { ArrowDown2, CloseSquare } from 'iconsax-react';
 
 const PaForm1 = () => {
 
@@ -22,10 +23,20 @@ const PaForm1 = () => {
   const [ nokFirstName, setNokFirstName ] = useState();
   const [ nokMiddleName, setNokMiddleName ] = useState(); 
   const [ nokLastName, setNokLastName ] = useState();
-  const [ nokRelationship, setNokRelationship ] = useState();
-  const [ nokGender, setNokGender ] = useState();
+  const [ nokRelationship, setNokRelationship ] = useState("Father");
+  const [ nokGender, setNokGender ] = useState("Male");
   const [ nokDob, setNokDob ] = useState();
   const [ nokPhone, setNokPhone ] = useState();
+
+  const [ done, setDone ] = useState(false);
+
+  const [ other, setOther ] = useState(false);
+
+  const [relationDrop, setRelationDrop] = useState(false);
+  const [nokGendrop, setNokGendrop] = useState(false)
+
+  const relation = ["Father", "Mother", "Husband", "Wife", "Brother", "Sister"]
+  const gend = ["Male", "Female"]
 
   const rawData = 
     {
@@ -357,14 +368,36 @@ const PaForm1 = () => {
             />
           </div>
 
-          <div className = "grid">
+          <div className = "grid relative">
             <label 
               htmlFor = "" 
-              className = 'w-20'
+              className = 'w-20 z-10'
             >
               Relationship
             </label>
-            <input 
+            <button className = {` border border-primary h-11 rounded-lg text-sm ${other ? 'hidden' : 'flex'} items-center justify-between px-4 text-primary `} onClick = { () => setRelationDrop(!relationDrop) } > 
+              <span>{ nokRelationship } </span>
+              <ArrowDown2 size={20} />
+            </button>
+            {relationDrop && <div className = "absolute pr-4 w-full pl-3 bg-white py-2 top-[68px] border z-10 rounded-b-md">
+                <ul>
+                  {
+                    relation.map(item => (
+                      <li key={item} onClick = {() => {
+                        setRelationDrop(false)
+                        setNokRelationship(item)
+                      }} className = 'cursor-pointer hover:bg-primary hover:text-white text-sm py-1 rounded-md pl-2 ' > {item} </li>
+                    ))
+                  }
+                  <li onClick = {() => {
+                    setOther(true);
+                    setRelationDrop(false)
+                  }}  className = 'cursor-pointer hover:bg-primary hover:text-white text-sm py-1 rounded-md pl-2 ' > Other... </li>
+                </ul>
+              </div>}
+
+            { other && <div className = 'relative' >  
+               <input 
               type = "text" 
               placeholder = '' 
               value = { nokRelationship }
@@ -374,18 +407,29 @@ const PaForm1 = () => {
                   setNokRelationship(e.target.value)
                 } 
               }
+              className='w-full'
               required
             />
+            <CloseSquare size={16} className='absolute right-1 bottom-3 text-primary cursor-pointer' onClick={() => {
+              setOther(false);
+              setNokRelationship("Father")
+            }} />
+            </div>
+            }
           </div>
 
-          <div className = "grid">
+          <div className = "grid relative">
             <label 
               htmlFor = "" 
               className = 'w-16'
             >
               Gender
             </label>
-            <input 
+            <button className = {` border border-primary h-11 rounded-lg text-sm ${other ? 'hidden' : 'flex'} items-center justify-between px-4 text-primary `} onClick = { () => setNokGendrop(!nokGendrop) } > 
+              <span>{ nokGender } </span>
+              <ArrowDown2 size={20} />
+            </button>
+            {/* <input 
               type = "text" 
               placeholder = '' 
               value = { nokGender }
@@ -396,8 +440,21 @@ const PaForm1 = () => {
                 }
               }
               required
-            />
+            /> */}
+                 {nokGendrop && <div className = "absolute pr-4 w-full pl-3 bg-white py-2 top-[68px] border z-10 rounded-b-md">
+                <ul>
+                  {
+                    gend.map(item => (
+                      <li key={item} onClick = {() => {
+                        setNokGendrop(false)
+                        setNokGender(item)
+                      }} className = 'cursor-pointer hover:bg-primary hover:text-white text-sm py-1 rounded-md pl-2 ' > {item} </li>
+                    ))
+                  }
+                </ul>
+              </div>}
           </div>
+          {done && <button className = ' hidden' ></button>  }
 
           <div className="grid">
             <label 
@@ -415,6 +472,7 @@ const PaForm1 = () => {
                 (e) => {
                   e.preventDefault();
                   setNokDob(e.target.value)
+                  setDone(true)
                 }
                }
                required
