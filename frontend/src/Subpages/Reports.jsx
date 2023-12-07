@@ -59,30 +59,30 @@ const Reports = () => {
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 1830 </h3>
-                <h4> Visited Patients </h4>
+                <h4 className = ' text-[#DBA362] ' > Visited Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 432 </h3>
-                <h4> Admitted Patients </h4>
+                <h4 className = ' text-[#845EBC] ' > Admitted Patients </h4>
               </div>
             </div>
             <hr className = ' p-0.5'  />
             <div className="flex justify-around items-center "> 
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 439 </h3>
-                <h4> Tests done </h4>
+                <h4 className = ' text-[#2B5ABC] ' > Tests done </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 1490 </h3>
-                <h4> Treated Patients </h4>
+                <h4 className = ' text-[#27AE60] ' > Treated Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 1432 </h3>
-                <h4> Prescribed Drugs </h4>
+                <h4 className = ' text-[#C616AA] ' > Prescribed Drugs </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
                 <h3> 0 </h3>
-                <h4> Death </h4>
+                <h4 className = ' text-[#DA1212] ' > Death </h4>
               </div>
             </div>
           </div>

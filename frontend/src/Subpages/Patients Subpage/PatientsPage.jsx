@@ -11,6 +11,7 @@ import edit from '../../assets/edit.svg'
 import { useUser } from '../../context/UserContext'
 import { deletePatient, searchFunction } from '../../helpers/helpers'
 import EditPatient from '../../modal/EditPatient'
+import DeletePatient from '../../modal/DeletePatient'
 
 const PatientsPage = () => {
 
@@ -20,6 +21,7 @@ const PatientsPage = () => {
   const [ searchActive, setSearchActive ] = useState(false);
 
   const [editModalOpen, setEditModalOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [selectedPatient, setSelectedPatient] = useState(null);
 
   // Function to open the edit modal
@@ -28,11 +30,21 @@ const PatientsPage = () => {
     setEditModalOpen(true);
   };
 
+  const openDeleteModal = (patient) => {
+    setSelectedPatient(patient);
+    setDeleteModalOpen(true);
+  };
+
   // Function to close the edit modal
   const closeEditModal = () => {
     setSelectedPatient(null);
     setEditModalOpen(false);
   };
+  const closeDeleteModal = () => {
+    setSelectedPatient(null);
+    setDeleteModalOpen(false);
+  };
+
 
   const toggleOptions = (patientId) => {
     setPatientOptions((prevOptions) => ({
@@ -87,7 +99,7 @@ const PatientsPage = () => {
                         <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                         Edit
                       </button>
-                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick ={ () => openEditModal(p.id) }
+                      <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick ={ () => openDeleteModal(p) }
                       >
                         <img src = { del } alt="" className = 'text-black filter grayscale' />
                         Delete
@@ -145,7 +157,7 @@ const PatientsPage = () => {
                       <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                       Edit
                     </button>
-                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " >
+                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 "  onClick ={ () => openDeleteModal(p) }>
                       <img src = { del } alt="" className = 'text-black filter grayscale' />
                       Delete
                     </button>
@@ -222,6 +234,11 @@ const PatientsPage = () => {
       <EditPatient
         isOpen={editModalOpen}
         onClose={closeEditModal}
+        patient={selectedPatient}
+      />
+      <DeletePatient 
+        isOpen={deleteModalOpen}
+        onClose={closeDeleteModal}
         patient={selectedPatient}
       />
     </React.Fragment>
