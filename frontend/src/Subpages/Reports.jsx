@@ -140,6 +140,7 @@ const Reports = () => {
           </div>
         </div>
         <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm ' >
+          <header className = 'flex w-full items-center relative py-3' > <h1 className = ' text-xl font-semibold pl-6 absolute top-4 '> History </h1> </header>
           <div className = 'scale-95 -ml-4 ' >
             <PatientsTable patients = { patient.slice(0,7) } />
           </div>
