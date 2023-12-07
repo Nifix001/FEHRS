@@ -5,6 +5,7 @@ import search from '../assets/akar-icons_search.svg'
 import { CloseCircle, Notification, User } from 'iconsax-react'
 import { useUser } from '../context/UserContext'
 import { deleteNotification } from '../helpers/helpers'
+import { Link } from 'react-router-dom'
 
 
 const Nav = () => {
@@ -47,13 +48,13 @@ const Nav = () => {
                 </div>
             </div>
 
-            <div className = 'flex items-center justify-center gap-4'>
+            <Link to="/user/settings/personal" className = 'flex items-center justify-center gap-4'>
                 <div className = 'w-12 h-12 rounded-full bg-gray-200 text-white flex items-center justify-center' ><User size={32} /></div>
                 <div>
                     <p className = 'font-bold text-base text-black'> { user.name } </p>
                     <p className = 'font-normal text-xs text-black'> { roles[user.role_id - 1] } </p>
                 </div>
-            </div>
+            </Link>
             <div className = 'flex pr-4 relative '>
                 <Notification 
                     size="32" 
