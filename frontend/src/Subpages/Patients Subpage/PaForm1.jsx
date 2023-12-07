@@ -375,7 +375,7 @@ const PaForm1 = () => {
             >
               Relationship
             </label>
-            <button className = {` border border-primary h-11 rounded-lg text-sm ${other ? 'hidden' : 'flex'} items-center justify-between px-4 text-primary `} onClick = { () => setRelationDrop(!relationDrop) } > 
+            <button className = {` border border-primary h-11 rounded-lg text-sm ${other ? 'hidden' : 'flex'} items-center justify-between px-4 text-gray-700 `} onClick = { () => setRelationDrop(!relationDrop) } > 
               <span>{ nokRelationship } </span>
               <ArrowDown2 size={20} />
             </button>
@@ -425,7 +425,7 @@ const PaForm1 = () => {
             >
               Gender
             </label>
-            <button className = {` border border-primary h-11 rounded-lg text-sm ${other ? 'hidden' : 'flex'} items-center justify-between px-4 text-primary `} onClick = { () => setNokGendrop(!nokGendrop) } > 
+            <button className = {` border border-primary h-11 rounded-lg text-sm ${other ? 'hidden' : 'flex'} items-center justify-between px-4 text-gray-700 `} onClick = { () => setNokGendrop(!nokGendrop) } > 
               <span>{ nokGender } </span>
               <ArrowDown2 size={20} />
             </button>
