@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { useUser } from '../context/UserContext';
-import { editPatient } from '../helpers/helpers';
+import { addNotification, editPatient } from '../helpers/helpers';
 
 const EditPatient = ({ isOpen, onClose, patient }) => {
   if (!isOpen) return null;
 
-  const { setPatients } = useUser();
+  const { setPatients, setNotifications } = useUser();
 
   const [ firstname, setFirstname ] = useState(patient.firstname);
   const [ lastname, setLastname ] = useState(patient.lastname);  
@@ -29,9 +29,12 @@ const EditPatient = ({ isOpen, onClose, patient }) => {
     'prescriptions': prescriptions
 }
 
+const message = `${patient.firstname + " " + patient.lastname} has been edited on the Patients database `
+
 const handleClick = (e) => {
   e.preventDefault();
   editPatient(setPatients, editedPatient);
+  addNotification(setNotifications, message)
   onClose();
 }
 
