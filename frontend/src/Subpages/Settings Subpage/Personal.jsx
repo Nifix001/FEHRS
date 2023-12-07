@@ -1,4 +1,4 @@
-import { ArrowDown2 } from 'iconsax-react'
+import { ArrowDown2, User } from 'iconsax-react'
 import React, { useState } from 'react'
 
 const Personal = () => {
@@ -17,7 +17,7 @@ const Personal = () => {
       <form action="">
         <h1 className = ' font-bold mb-6 '> Personal Info </h1>
         <div className = ' flex gap-6 items-center mb-2 ' >
-             <div className = 'w-20 h-20 rounded-full bg-gray-200' ></div>
+             <div className = 'w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-white' > <User size={50} /> </div>
              <div className = "flex flex-col gap-2 items-start ">
                 <button className = ' bg-primary text-white px-3 py-[5px] text-sm rounded-md ' > Upload photo  </button>
                 <button className = 'text-sm text-red-400 px-4' > Remove </button>
