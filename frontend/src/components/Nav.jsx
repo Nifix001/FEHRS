@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import logo from '../assets/futa logo.png'
 import search from '../assets/akar-icons_search.svg'
-import { CloseCircle, Notification } from 'iconsax-react'
+import { CloseCircle, Notification, User } from 'iconsax-react'
 import { useUser } from '../context/UserContext'
 import { deleteNotification } from '../helpers/helpers'
 
@@ -47,9 +47,12 @@ const Nav = () => {
                 </div>
             </div>
 
-            <div>
-                <p className = 'font-bold text-base text-black'> { user.name } </p>
-                <p className = 'font-normal text-xs text-black'> { roles[user.role_id - 1] } </p>
+            <div className = 'flex items-center justify-center gap-4'>
+                <div className = 'w-12 h-12 rounded-full bg-gray-200 text-white flex items-center justify-center' ><User size={32} /></div>
+                <div>
+                    <p className = 'font-bold text-base text-black'> { user.name } </p>
+                    <p className = 'font-normal text-xs text-black'> { roles[user.role_id - 1] } </p>
+                </div>
             </div>
             <div className = 'flex pr-4 relative '>
                 <Notification 
