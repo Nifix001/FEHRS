@@ -1,6 +1,17 @@
-import React from 'react'
+import { ArrowDown2 } from 'iconsax-react'
+import React, { useState } from 'react'
 
 const Personal = () => {
+
+  const [ portDropdown, setPortDropdown ] = useState(false);
+  const [ genderDropdown, setGenderDropdown ] = useState(false);
+  const [ gender, setGender ] = useState("Male");
+  const [  portOptions, setPortOptions ] = useState( " Doctor " );
+  
+  const port = ["Doctor", "Admin", "Pharmacist"]
+  const gen = ["Male", "Female"]
+
+
   return (
     <div className = '  h-[83.2vh] w-[60vw] bg-white rounded-xl p-9 '>
       <form action="">
@@ -12,9 +23,33 @@ const Personal = () => {
                 <button className = 'text-sm text-red-400 px-4' > Remove </button>
              </div>
         </div>
-        <div className = 'mb-4' >
+        <div className = 'mb-4 relative ' >
           <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-3 left-2 ' > Portfolio </label>
-          <button className = 'block border py-3 pl-3 rounded-lg text-sm pr-56' > Doctor </button>
+          <button className = 'border py-3 w-[240px] px-3 rounded-lg text-sm flex justify-between items-center' onClick={(e) => {
+            e.preventDefault();
+            setPortDropdown(!portDropdown)
+          } } > 
+                <span> { portOptions } </span>
+                <ArrowDown2 size="20" />
+           </button>
+           {
+            portDropdown && <div className = "absolute w-[240px] bg-white p-2 border z-10 rounded-b-md ">
+              <ul>
+                {
+                  port.map(
+                    item => (
+                      <li key = { item } onClick = { () => {
+                                                            setPortOptions(item)
+                                                            setPortDropdown(false)
+                                                          } 
+                                                        }
+                      className = 'cursor-pointer hover:bg-primary hover:text-white text-sm py-1 rounded-md pl-2 '  > { item }  </li>     
+                    )
+                  )
+                }
+              </ul>
+            </div>
+           }
         </div>
         <div className="grid grid-cols-2 grid-rows-3 ">
           <div className = 'flex flex-col' >
@@ -25,9 +60,29 @@ const Personal = () => {
              <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Last Name </label>
             <input type="text" placeholder = 'Olumuyiwa' className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '  />
           </div>
-          <div className = 'flex flex-col ' >
+          <div className = 'flex flex-col relative ' >
              <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Gender </label>
-            <input type="text" placeholder = 'Male' className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '  />
+            <button className = 'border outline-none py-3 pl-3 rounded-lg text-sm pr-4 w-72 flex items-center justify-between ' onClick = { (e) => {
+              e.preventDefault();
+              setGenderDropdown(!genderDropdown)
+            } } >
+              <span> { gender } </span>
+              <ArrowDown2 size={20} /> 
+            </button>
+            {
+              genderDropdown && <div className = "absolute pr-4 w-72 pl-3 bg-white py-2 border z-10 top-20 rounded-b-md">
+                <ul>
+                  {
+                    gen.map(item => (
+                      <li key = { item } onClick = { () => {
+                        setGender(item)
+                        setGenderDropdown(false)
+                      } } className = 'cursor-pointer hover:bg-primary hover:text-white text-sm py-1 rounded-md pl-2 ' > { item } </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            }
           </div>
           <div className = 'flex flex-col ' >
              <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Date of Birth </label>
