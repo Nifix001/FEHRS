@@ -155,7 +155,7 @@ const PatientsPage = () => {
                     <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                       Edit
                     </button>
-                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 "  onClick ={ () => openDeleteModal(p) }>
+                    <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 "  onClick = { () => openDeleteModal(p) }>
                       <img src = { del } alt="" className = 'text-black filter grayscale' />
                       Delete
                     </button>
@@ -178,7 +178,7 @@ const PatientsPage = () => {
           <Link 
             to = "new/personal" 
             className=' font-span text-base font-normal py-2 px-5 text-white  bg-primary border border-primary rounded-md'
-            onClick={()=> {
+            onClick = { () => {
               localStorage.setItem('new-patients', null);
             }}
           >
@@ -230,14 +230,14 @@ const PatientsPage = () => {
       </div>
       <PatientsTable  patients = { searchActive ? searchPatient : patient } />
       <EditPatient
-        isOpen={editModalOpen}
-        onClose={closeEditModal}
-        patient={selectedPatient}
+        isOpen = { editModalOpen }
+        onClose = { closeEditModal }
+        patient = { selectedPatient }
       />
       <DeletePatient 
-        isOpen={deleteModalOpen}
-        onClose={closeDeleteModal}
-        patient={selectedPatient}
+        isOpen = { deleteModalOpen }
+        onClose = { closeDeleteModal }
+        patient = { selectedPatient }
       />
     </React.Fragment>
   )
