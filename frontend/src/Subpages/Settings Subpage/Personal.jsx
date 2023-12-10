@@ -14,10 +14,10 @@ const Personal = () => {
     inputRef.current.click();
   }
 
-  const imageChange = () => {
+  const imageChange = (event) => {
     const file = event.target.files[0];
     console.log(file);
-    setImage('');
+    setImage(event.target.files[0]);
   }
   
   const port = ["Doctor", "Admin", "Pharmacist"]
@@ -29,7 +29,7 @@ const Personal = () => {
       <form action="">
         <h1 className = ' font-bold mb-6 '> Personal Info </h1>
         <div className = ' flex gap-6 items-center mb-2 ' >
-             <div className = 'w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-white' onClick={handleImage} > <User size={50} /> </div>
+             <div className = 'w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-white' onClick={handleImage} > {image ? <img src={URL.createObjectURL(image)} alt="" className='rounded-full'/> : <User size={50} />} </div>
              <input type="file" ref={inputRef} style={{display: "none"}} onChange={imageChange} />
              <div className = "flex flex-col gap-2 items-start ">
                 <button className = ' bg-primary text-white px-3 py-[5px] text-sm rounded-md ' > Upload photo  </button>
