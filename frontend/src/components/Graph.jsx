@@ -37,11 +37,6 @@ const Graph = () => {
                         </thead>
                         
                         <tbody className = "font-span text-base font-normal">     
-                            {/* <tr>
-                                <td> 1. </td>
-                                <td> Mary Joseph </td>
-                                <td> MEE/10/6554 </td>
-                            </tr> */}
                             {
                                patients && patients.slice(0, 6).map(p => {
                                     return (
@@ -55,42 +50,6 @@ const Graph = () => {
                                     )
                                 } )
                             }
-                           
-                            {/* <tr>
-                                <td> 2. </td>
-                                <td> Amala Jones </td>
-                                <td> STS/10/4325 </td>
-                            </tr>
-                           
-                            <tr>
-                                <td> 3. </td>
-                                <td> Damilola Oyin </td>
-                                <td> ICT/09/5622 </td>
-                            </tr>
-                           
-                            <tr>
-                                <td> 4. </td>
-                                <td> Selim Jubril </td>
-                                <td> MST/12/8924 </td>
-                            </tr>
-                           
-                            <tr>
-                                <td> 5. </td>
-                                <td> Paul Shola </td>
-                                <td> CVE/11/7652 </td>
-                            </tr>
-                           
-                            <tr>
-                                <td> 6. </td>
-                                <td> Adekunle Ishola </td>
-                                <td> CPE/17/6520 </td>
-                            </tr>
-
-                            <tr>
-                                <td> 7. </td>
-                                <td> David Olawale </td>
-                                <td> CPE/19/6520 </td>
-                            </tr> */}
                         </tbody>
                     </table>
                 </div>    
