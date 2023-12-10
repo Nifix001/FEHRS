@@ -17,74 +17,74 @@ import DeletePatient from '../../modal/DeletePatient'
 
 const PatientsPage = () => {
 
-  const { patients, setPatients, token } = useUser();
-  const [patientOptions, setPatientOptions] = useState({});
+  const { patients, setPatients, token } = useUser( );
+  const [ patientOptions, setPatientOptions ] = useState( {} );
   const [ query, setQuery ] = useState();
-  const [ searchActive, setSearchActive ] = useState(false);
+  const [ searchActive, setSearchActive ] = useState( false );
 
-  const [editModalOpen, setEditModalOpen] = useState(false);
-  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
-  const [selectedPatient, setSelectedPatient] = useState(null);
+  const [ editModalOpen, setEditModalOpen ] = useState( false );
+  const [ deleteModalOpen, setDeleteModalOpen ] = useState( false );
+  const [ selectedPatient, setSelectedPatient ] = useState( null );
 
-  const [data, setData] = useState([]);
+  const [ data, setData ] = useState( [] );
 
   // Function to open the edit modal
-  const openEditModal = (patient) => {
-    setSelectedPatient(patient);
-    setEditModalOpen(true);
+  const openEditModal = ( patient ) => {
+    setSelectedPatient( patient );
+    setEditModalOpen( true );
   };
 
-  const openDeleteModal = (patient) => {
-    setSelectedPatient(patient);
-    setDeleteModalOpen(true);
+  const openDeleteModal = ( patient ) => {
+    setSelectedPatient( patient );
+    setDeleteModalOpen( true );
   };
 
   // Function to close the edit modal
   const closeEditModal = () => {
-    setSelectedPatient(null);
-    setEditModalOpen(false);
+    setSelectedPatient( null );
+    setEditModalOpen( false );
   };
   const closeDeleteModal = () => {
-    setSelectedPatient(null);
-    setDeleteModalOpen(false);
+    setSelectedPatient( null );
+    setDeleteModalOpen( false );
   };
 
 
-  const toggleOptions = (patientId) => {
-    setPatientOptions((prevOptions) => ({
+  const toggleOptions = ( patientId ) => {
+    setPatientOptions( ( prevOptions ) => ({
       ...prevOptions,
       [patientId]: !prevOptions[patientId],
     }));
   };
 
 
-  const handleFile = (e) => {
+  const handleFile = ( e ) => {
     e.preventDefault();
-    const input = document.getElementById('file');
+    const input = document.getElementById( 'file' );
     input.click();
   }
 
-  const keys = ["firstname", "lastname", "matric_no", "email" ];
+  const keys = [ "firstname", "lastname", "matric_no", "email" ];
 
 
-    const searchPatient = searchFunction(patients, keys, query).sort((a, b) => a.id - b.id).map( p  =>  {
-    
+  const searchPatient = searchFunction( patients, keys, query ).sort( (a, b) => a.id - b.id ).map( p  =>  {
         return(
-    
             <tr key = { p.id } >
               <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
               <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
               <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
               <td className = 'text-left text-base'> { p.email } </td>
               <td className = 'text-left pl-3 text-base'> 
-                {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
-                </td>
+                {
+                  p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis
+                }
+              </td>
               <td className = 'pl-8'>
                 <div className = 'flex items-center justify-start pl-1 '> 
                   <Link>
                     <button 
                       className = "flex-shrink-0"
-                      onClick = {() => toggleOptions(p.id)}
+                      onClick = { () => toggleOptions(p.id) }
                     >
                       <img 
                       src = { dot }  
@@ -92,8 +92,8 @@ const PatientsPage = () => {
                       />
                     </button>
                     <div 
-                      className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
-                      onMouseLeave={() => toggleOptions(p.id)}
+                      className = { `${ patientOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] ` }
+                      onMouseLeave = { () => toggleOptions(p.id) }
                     >
                       {/* <!-- Options for Item 1 --> */}
                       <button 
