@@ -7,9 +7,7 @@ const Graph = () => {
     const { patients } = useUser();
 
      return (
-      
-      <React.Fragment>
-       
+      <React.Fragment>      
         <div className = 'flex pt-6 pl-6'>
             <img 
                 className = 'scale-y-70 scale-x-90 -mt-16 -ml-5' 
@@ -21,9 +19,11 @@ const Graph = () => {
                 
                 <div className = 'flex justify-between items-center mb-3'>
                     <h5 className = 'font-welcome text-xl font-medium'> Recent Patients </h5>
-                    { patients.length > 6 && <p className = 'font-span text-base font-normal hover:text-primary '>
-                        <Link to="/user/patients"> See more </Link>
-                    </p>}
+                    { 
+                        patients.length > 6 && <p className = 'font-span text-base font-normal hover:text-primary '>
+                          <Link to="/user/patients"> See more </Link>
+                        </p>
+                    }
                 </div>
 
                 <div>
@@ -38,7 +38,7 @@ const Graph = () => {
                         
                         <tbody className = "font-span text-base font-normal">     
                             {
-                               patients && patients.slice(0, 6).map(p => {
+                               patients && patients.slice( 0, 6 ).map(p => {
                                     return (
                                         <React.Fragment key = { p.id } >
                                             <tr>
