@@ -12,7 +12,7 @@ const Nav = () => {
 
     const [ openNotification, setOpenNotification ] = useState(false);
     const [ searchActive, setSearchActive ] = useState( false );
-    const { user, notifications, setNotifications } = useUser();
+    const { user, notifications, setNotifications, image } = useUser();
     const roles = ["Unverified", "Admin", "Pharmacy", "Doctor"]
 
   return (
@@ -49,7 +49,11 @@ const Nav = () => {
             </div>
 
             <Link to="/user/settings/personal" className = 'flex items-center justify-center gap-4'>
-                <div className = 'w-12 h-12 rounded-full bg-gray-200 text-white flex items-center justify-center' ><User size={32} /></div>
+                <div className = 'w-12 h-12 rounded-full bg-gray-200 text-white flex items-center justify-center' >
+                    {
+                       image ? <img src = { URL.createObjectURL(image) } alt="" className='rounded-full object-fill h-full w-full'/> : <User size={32} />
+                    }
+                </div>
                 <div>
                     <p className = 'font-bold text-base text-black'> { user.name } </p>
                     <p className = 'font-normal text-xs text-black'> { roles[user.role_id - 1] } </p>

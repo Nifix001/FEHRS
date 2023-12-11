@@ -18,6 +18,7 @@ function UserProvider({children}){
     const [ token , setToken]  = useState('');
 
     const [ notifications, setNotifications ] = useLocalStorage('notifications', []);
+    const [ image, setImage ] = useLocalStorage('image', "")
 
 
 
@@ -35,7 +36,9 @@ function UserProvider({children}){
             prescriptions,
             setPrescriptions,
             notifications,
-            setNotifications
+            setNotifications,
+            image,
+            setImage
         }} >
             { children }
         </UserContext.Provider>
