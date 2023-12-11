@@ -29,6 +29,7 @@ import UserProvider from "./context/UserContext"
 import Personal from "./Subpages/Settings Subpage/Personal"
 import Admin from "./Subpages/Settings Subpage/Admin"
 import Password from "./Subpages/Settings Subpage/Password"
+import SettingsRedirect from "./Subpages/Settings Subpage/SettingsRedirect"
 // import { useState } from "react"
 
 library.add(fas, fab, far);
@@ -126,6 +127,10 @@ const router = createBrowserRouter(
               <Route 
                 path = "settings" 
                 element = { <Settings /> }>
+                  <Route
+                    index
+                    element = { <SettingsRedirect /> } 
+                  />
                   <Route
                     path = "personal"
                     element = { <Personal /> }
