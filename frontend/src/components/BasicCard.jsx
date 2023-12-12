@@ -21,7 +21,7 @@ export default function BasicCard( { signUp } ) {
 
 
   const handleLogin = (e) => {
-    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, setError)
+    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError)
   };
   
 
@@ -54,7 +54,7 @@ export default function BasicCard( { signUp } ) {
             <h3 className = 'text-gray-750 my-2'> Welcome back, please login with the required information </h3>
 
             {
-              error && <h3 className = ' text-red-600 mt-2 ' > { error } </h3>
+              error && <h3 className = ' text-red-600 mt-2 font-bold text-lg ' > { error } </h3>
             }
             <input 
               type = "text" 
@@ -72,7 +72,11 @@ export default function BasicCard( { signUp } ) {
               name = 'password' 
               placeholder = 'Password' 
               value = { password } 
-              onChange = { (e) => setPassword( e.target.value ) } 
+              onChange = { (e) => {
+                                    setPassword( e.target.value );
+                                    setError('');
+                                  } 
+                        } 
               className = {` bg-secondary2 border ${ error ? 'border-red-600' : 'border-primary' } rounded w-90 h-10 text-primary indent-3.5 outline-0  ${ loading ? 'cursor-not-allowed' : '' } `} 
               required 
               disabled = { loading }

@@ -5,7 +5,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
 
-export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, setError ) {
+export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError ) {
     e.preventDefault();
     setTimeout(() => {
         setLoading(true);
@@ -35,7 +35,7 @@ export default async function processLogin(email, password, setLoading, setToken
             }
             );
             // console.log(loginResponse);
-            !user && setUser(loginResponse.data);
+            !user && !error && setUser(loginResponse.data);
             if(loginResponse.data.role_id === 2  ){
                 getPatients( csrfToken, setPatients);
                 getPrescriptions( csrfToken, setPrescriptions  );
@@ -54,19 +54,25 @@ export default async function processLogin(email, password, setLoading, setToken
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
-        
-    } catch (error) {
-        console.error(error);
-        setError( "Incorrect username or password" );
-        setLoading(false);
-    } finally {
-        if ( user ) {
+
+        if (user) {
             setTimeout(() => {
                 setLoading(false);
                 history('/user');
             }, 5000);
+        } else {
+            console.error(error);
+            throw Error('incorrect details')
         }
-    }
+        
+    } catch (error) {
+        console.error(error);
+        setError( "Incorrect username or password. Please fill correct details" );
+        setLoading(false);
+    } 
+    // finally {
+
+    // }
 }
 
 export async function getPatients( csrfToken, setPatients) {
