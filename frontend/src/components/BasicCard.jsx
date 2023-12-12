@@ -13,6 +13,7 @@ export default function BasicCard( { signUp } ) {
   const [password, setPassword] = React.useState('');
   
   const [loading, setLoading] = React.useState(false);
+  const [ error, setError] = React.useState('');
 
 
   const history = useNavigate();
@@ -20,7 +21,7 @@ export default function BasicCard( { signUp } ) {
 
 
   const handleLogin = (e) => {
-    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions)
+    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, setError)
   };
   
 
@@ -51,13 +52,17 @@ export default function BasicCard( { signUp } ) {
             </header>
 
             <h3 className = 'text-gray-750 my-2'> Welcome back, please login with the required information </h3>
+
+            {
+              error && <h3 className = ' text-red-600 mt-2 ' > { error } </h3>
+            }
             <input 
               type = "text" 
               name = 'Email' 
               placeholder = 'Email' 
               value = { email }  
               onChange = { (e) => setEmail( e.target.value ) } 
-              className = {`bg-secondary2 border border-primary rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ${loading ? 'cursor-not-allowed': ''}  `} 
+              className = {`bg-secondary2 border ${ error ? 'border-red-600' : 'border-primary' } rounded w-90 h-10 text-primary mt-3 mb-8 indent-3.5 outline-0 ${loading ? 'cursor-not-allowed': ''}  `} 
               autoComplete='true'
               required
               disabled = { loading }
@@ -68,7 +73,7 @@ export default function BasicCard( { signUp } ) {
               placeholder = 'Password' 
               value = { password } 
               onChange = { (e) => setPassword( e.target.value ) } 
-              className = {` bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0  ${ loading ? 'cursor-not-allowed' : '' } `} 
+              className = {` bg-secondary2 border ${ error ? 'border-red-600' : 'border-primary' } rounded w-90 h-10 text-primary indent-3.5 outline-0  ${ loading ? 'cursor-not-allowed' : '' } `} 
               required 
               disabled = { loading }
               autoComplete = 'false'

@@ -5,7 +5,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
 
-export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions ) {
+export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, setError ) {
     e.preventDefault();
     setTimeout(() => {
         setLoading(true);
@@ -57,11 +57,15 @@ export default async function processLogin(email, password, setLoading, setToken
         
     } catch (error) {
         console.error(error);
+        setError( "Incorrect username or password" );
+        setLoading(false);
     } finally {
-        setTimeout(() => {
-            setLoading(false);
-            history('/user');
-        }, 5000);
+        if ( user ) {
+            setTimeout(() => {
+                setLoading(false);
+                history('/user');
+            }, 5000);
+        }
     }
 }
 
