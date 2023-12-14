@@ -174,6 +174,31 @@ export async function editPatient(setPatients, data){
     }
 }
 
+export async function editDrug(setDrugs, data){
+    try{
+        const list = JSON.parse(localStorage.getItem('drugs'));
+        const filteredList = list.filter(item => item.id !== data.id);
+        const editedDrug = {
+            'id': data.id,
+            'drug_name': data.drug_name,
+            'drug_quantity': data.drug_quantity,
+            'manufacturing_date': data.manufacturing_date,
+            'expiration_date': data.expiration_date
+        }
+        setDrugs([...filteredList, editedDrug]);
+        await axios.put(`http://localhost:8000/api/drug/${data.id}`, editedDrug, {
+            headers: {
+                Accept: 'application/json',
+                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                // 'Referer': '127.0.0.1:8000'
+            }
+        })   
+
+    } catch(error){
+        console.error(error);
+    }
+}
+
 export function searchFunction(data, keys, query){
     return data.filter(
         (item) => keys.some(key => item[key].toLowerCase().includes(query))

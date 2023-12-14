@@ -34,7 +34,8 @@ export default {
     "./src/Tables/PrescriptionTable.jsx",
     "./src/Tables/HistoryTable.jsx",
     "./src/modal/EditPatient.jsx",
-    "./src/modal/DeletePatient.jsx"
+    "./src/modal/DeletePatient.jsx",
+    "./src/modal/EditDrug.jsx",
   ],
   theme: {
     extend: {
