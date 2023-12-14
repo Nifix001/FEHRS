@@ -15,6 +15,31 @@ const Prescriptions = () => {
   const { patients, prescriptions, setPrescriptions } = useUser();
   const [prescriptionOptions, setPrescriptionOptions] = useState({});
 
+  
+  const [ editModalOpen, setEditModalOpen ] = useState( false );
+  const [ deleteModalOpen, setDeleteModalOpen ] = useState( false );
+
+   // Function to open the edit modal
+   const openEditModal = ( patient ) => {
+    setSelectedPatient( patient );
+    setEditModalOpen( true );
+  };
+
+  const openDeleteModal = ( patient ) => {
+    setSelectedPatient( patient );
+    setDeleteModalOpen( true );
+  };
+
+  // Function to close the edit modal
+  const closeEditModal = () => {
+    setSelectedPatient( null );
+    setEditModalOpen( false );
+  };
+  const closeDeleteModal = () => {
+    setSelectedPatient( null );
+    setDeleteModalOpen( false );
+  };
+
   const toggleOptions = (prescriptionId) => {
     setPrescriptionOptions((prevOptions) => ({
       ...prevOptions,

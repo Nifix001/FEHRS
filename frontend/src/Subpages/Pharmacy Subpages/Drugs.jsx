@@ -27,7 +27,7 @@ const Drugs = () => {
     setEditModalOpen( false );
   };
 
-  const drug = drugs.map( dd  => {
+  const drug = drugs.sort((a, b) => a.id - b.id).map( dd  => {
     return (
         <tr key = { dd.id } >
           <td className = 'py-4 text-base'> { dd.id } </td>
