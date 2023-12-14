@@ -27,7 +27,7 @@ const message = `${drug.drug_name} has been edited on the Drugs database `
 
 const handleClick = ( e ) => {
   e.preventDefault();
-  editPatient( setDrugs, editedDrug );
+  editDrug( setDrugs, editedDrug );
   addNotification( setNotifications, message )
   onClose();
 }
