@@ -37,11 +37,10 @@ const Drugs = () => {
           <td className = 'text-left pl-6 text-base'> { dd.expiration_date } </td>
           <td className = 'pl-8'>
             <div className ='flex gap-2 items-center justify-start pl-8'> 
-              <Link>
+              <Link onClick = { () => openEditModal(dd) }>
                 <img 
                   src = { edit } 
                   alt = "edit" 
-                  onClick = { () => openEditModal(p) }
                 />
               </Link>
 
