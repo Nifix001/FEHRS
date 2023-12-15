@@ -9,6 +9,7 @@ import dot from '../../assets/carbon_overflow-menu-horizontal.svg'
 
 import { useUser } from '../../context/UserContext.jsx'
 import { deletePrescription } from '../../helpers/helpers.js'
+import EditPrescription from '../../modal/EditPrescription'
 
 const Prescriptions = () => {
 
@@ -18,25 +19,26 @@ const Prescriptions = () => {
   
   const [ editModalOpen, setEditModalOpen ] = useState( false );
   const [ deleteModalOpen, setDeleteModalOpen ] = useState( false );
+  const [ selectedPrescription, setSelectedPrescription ] = useState( null );
 
    // Function to open the edit modal
-   const openEditModal = ( patient ) => {
-    setSelectedPatient( patient );
+   const openEditModal = ( prescription ) => {
+    setSelectedPrescription( prescription );
     setEditModalOpen( true );
   };
 
-  const openDeleteModal = ( patient ) => {
-    setSelectedPatient( patient );
+  const openDeleteModal = ( prescription ) => {
+    setSelectedPrescription( prescription );
     setDeleteModalOpen( true );
   };
 
   // Function to close the edit modal
   const closeEditModal = () => {
-    setSelectedPatient( null );
+    setSelectedPrescription( null );
     setEditModalOpen( false );
   };
   const closeDeleteModal = () => {
-    setSelectedPatient( null );
+    setSelectedPrescription( null );
     setDeleteModalOpen( false );
   };
 
@@ -47,7 +49,7 @@ const Prescriptions = () => {
     }));
   };
 
-  const prescription = prescriptions.map( p  =>  {
+  const prescription = prescriptions.sort((a, b) => a.id -b.id).map( p  =>  {
      
     const patient = patients.find(patient => patient.matric_no === p.patient.matric_no);
     // console.log(patient);
@@ -81,7 +83,9 @@ const Prescriptions = () => {
                   onMouseLeave={() => toggleOptions(p.id)}
                 >
                   {/* <!-- Options for Item 1 --> */}
-                  <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
+                  <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " 
+                  onClick = { () => openEditModal(p) }
+                  >
                     <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                     Edit
                   </button>
@@ -101,6 +105,11 @@ const Prescriptions = () => {
   return (
     <React.Fragment>
       <PrescriptionTable  prescriptions = { prescription } />
+      <EditPrescription 
+      isOpen = { editModalOpen }
+      onClose = { closeEditModal }
+      prescription = { selectedPrescription }
+      />
     </React.Fragment>
   )
 }
