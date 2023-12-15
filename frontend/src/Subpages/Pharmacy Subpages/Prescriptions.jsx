@@ -50,7 +50,7 @@ const Prescriptions = () => {
     }));
   };
 
-  const prescription = prescriptions.sort((a, b) => a.id -b.id).map( p  =>  {
+  const prescription = prescriptions.sort((a, b) => a.id - b.id).map( p  =>  {
      
     const patient = patients.find(patient => patient.matric_no === p.patient.matric_no);
     // console.log(patient);
