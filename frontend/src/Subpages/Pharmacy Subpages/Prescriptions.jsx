@@ -10,6 +10,7 @@ import dot from '../../assets/carbon_overflow-menu-horizontal.svg'
 import { useUser } from '../../context/UserContext.jsx'
 import { deletePrescription } from '../../helpers/helpers.js'
 import EditPrescription from '../../modal/EditPrescription'
+import DeletePrescription from '../../modal/DeletePrescription'
 
 const Prescriptions = () => {
 
@@ -89,7 +90,7 @@ const Prescriptions = () => {
                     <img src = { edit } alt="" className = 'text-black filter grayscale'  />
                     Edit
                   </button>
-                  <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePrescription(setPrescriptions, p.id)}>
+                  <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 "  onClick = { () => openDeleteModal(p) }>
                     <img src = { del } alt="" className = 'text-black filter grayscale' />
                     Delete
                   </button>
@@ -108,6 +109,11 @@ const Prescriptions = () => {
       <EditPrescription 
       isOpen = { editModalOpen }
       onClose = { closeEditModal }
+      prescription = { selectedPrescription }
+      />
+      <DeletePrescription 
+      isOpen = { deleteModalOpen }
+      onClose = { closeDeleteModal }
       prescription = { selectedPrescription }
       />
     </React.Fragment>

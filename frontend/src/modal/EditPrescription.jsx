@@ -22,7 +22,7 @@ const EditPrescription = ( { isOpen, onClose, prescription } ) => {
     'drug_quantity': drug_quantity
 }
 
-const message = `${prescription.name} has been edited on the Patients database `
+const message = `${prescription.name} has been edited on the Prescriptions database `
 
 const handleClick = ( e ) => {
   e.preventDefault();

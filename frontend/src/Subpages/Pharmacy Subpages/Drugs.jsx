@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom'
 import { useUser } from '../../context/UserContext.jsx'
 import { deleteDrugs } from '../../helpers/helpers.js'
 import EditDrug from '../../modal/EditDrug.jsx'
+import DeleteDrug from '../../modal/DeleteDrug.jsx'
 
 
 const Drugs = () => {
   const { drugs, setDrugs } = useUser();
 
   const [ editModalOpen, setEditModalOpen ] = useState( false );
+  const [ deleteModalOpen, setDeleteModalOpen ] = useState( false );
   const [ selectedDrug, setSelectedDrug ] = useState( null );
 
    // Function to open the edit modal
@@ -21,10 +23,20 @@ const Drugs = () => {
     setEditModalOpen( true );
   };
 
+  const openDeleteModal = ( drug ) => {
+    setSelectedDrug( drug );
+    setDeleteModalOpen( true );
+  };
+
    // Function to close the edit modal
    const closeEditModal = () => {
     setSelectedDrug( null );
     setEditModalOpen( false );
+  };
+
+  const closeDeleteModal = () => {
+    setSelectedDrug( null );
+    setDeleteModalOpen( false );
   };
 
   const drug = drugs.sort((a, b) => a.id - b.id).map( dd  => {
@@ -37,23 +49,21 @@ const Drugs = () => {
           <td className = 'text-left pl-6 text-base'> { dd.expiration_date } </td>
           <td className = 'pl-8'>
             <div className ='flex gap-2 items-center justify-start pl-8'> 
-              <Link onClick = { () => openEditModal(dd) }>
+              <Link 
+              onClick = { () => openEditModal(dd) }
+              >
                 <img 
                   src = { edit } 
                   alt = "edit" 
                 />
               </Link>
 
-              <Link>
+              <Link 
+              onClick = { () => openDeleteModal(dd) }
+              >
                 <img 
                   src = { del }  
                   alt = "delete" 
-                  onClick = {
-                    (e) => {
-                      e.preventDefault();
-                      deleteDrugs(setDrugs, dd.id)
-                    }
-                  }
                 />
               </Link>
             </div>
@@ -70,6 +80,11 @@ const Drugs = () => {
       isOpen = { editModalOpen }
       onClose = { closeEditModal }
       drug = { selectedDrug }
+      />
+      <DeleteDrug 
+        isOpen = { deleteModalOpen }
+        onClose = { closeDeleteModal }
+        drug = { selectedDrug }
       />
     </React.Fragment>
   )
