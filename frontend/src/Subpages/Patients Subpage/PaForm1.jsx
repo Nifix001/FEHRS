@@ -73,6 +73,7 @@ const PaForm1 = () => {
     location("/user/patients/new/info")
   }
 
+  console.log(gender);
 
 
   return (
@@ -237,7 +238,7 @@ const PaForm1 = () => {
                   //                     setGender('male')
                   //                   }
                   //           }
-                  onSelect={
+                  onFocus={
                     (e) => {
                               e.preventDefault();
                               setGender('male')
@@ -260,7 +261,13 @@ const PaForm1 = () => {
                   //                     setGender('female')
                   //                   }
                   //           } 
-                  onSelect={
+                  // onClick={
+                  //   (e) => {
+                  //           e.preventDefault();
+                  //           setGender('female')
+                  //         }
+                  // }
+                  onFocus={
                     (e) => {
                             e.preventDefault();
                             setGender('female')

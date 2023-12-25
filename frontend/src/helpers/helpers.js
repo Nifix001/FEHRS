@@ -133,7 +133,7 @@ export async function addPatient(setPatients, data){
             'firstname': data.firstname,
             'middlename': data.middlename,
             'lastname': data.lastname,
-            'email': 'boom@gmail.com',
+            'email': 'new@gmail.com',
             'matric_no': data.matric_no,
             'phone_no': data.phone_no,
             'prescriptions': []
