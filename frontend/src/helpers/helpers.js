@@ -256,11 +256,11 @@ export async function deletePatient(setPatients ,id, token){
         const filteredList = list.filter(item => item.id !== id);
     
         setPatients(filteredList);
-        await axios.delete(`http://127.0.0.1:8000/api/patient/${id}`,{
+        await axios.delete(`http://localhost:8000/api/patient/${id}`,{
             headers: {
                 Accept: 'application/json',
-                'X-XSRF-TOKEN': decodeURIComponent(token),
-                Referer: '127.0.0.1:8000'
+                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                // Referer: '127.0.0.1:8000'
             }})
     }
     catch(error){
