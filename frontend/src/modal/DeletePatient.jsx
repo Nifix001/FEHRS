@@ -7,14 +7,14 @@ import { addNotification, deletePatient } from '../helpers/helpers';
 const DeletePatient = ({ isOpen, onClose, patient}) => {
   if (!isOpen) return null;
 
-  const { setPatients, setNotifications } = useUser();
+  const { setPatients, setNotifications, token } = useUser();
 
   const message = `${patient.firstname + " " + patient.lastname} has been deleted from the Patients database `
 
 const handleClick = (e) => {
   e.preventDefault();
   addNotification(setNotifications, message)
-  deletePatient(setPatients, patient.id);
+  deletePatient(setPatients, patient.id, token);
   onClose();
 }
 

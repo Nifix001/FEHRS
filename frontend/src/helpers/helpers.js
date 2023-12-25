@@ -146,7 +146,7 @@ export async function addPatient(setPatients, data){
     }
 }
 
-export async function editPatient(setPatients, data){
+export async function editPatient(setPatients, data, token){
     try{
         const list = JSON.parse(localStorage.getItem('patients'));
         const filteredList = list.filter(item => item.id !== data.id);
@@ -158,13 +158,33 @@ export async function editPatient(setPatients, data){
             'email': data.email,
             'matric_no': data.matric_no,
             'phone_no': data.phone_no,
+            'prescriptions': data.prescriptions,
+            'dob': data.dob,
+            'gender': data.gender,
+            'home_address': data.address,
+            'nok_firstname': data.nokFirstName ,
+            'nok_lastname': data.nokLastName ,
+            'nok_middlename': data.nokMiddleName ,
+            'nok_dob': data.nokDob ,
+            'nok_relationship': data.nokRelationship ,
+            'nok_gender': data.nokGender ,
+            'nok_phone': data.nokPhone
+        }
+        const newPatient = {
+            'id': data.id,
+            'firstname': data.firstname,
+            'middlename': data.middlename,
+            'lastname': data.lastname,
+            'email': data.email,
+            'matric_no': data.matric_no,
+            'phone_no': data.phone_no,
             'prescriptions': data.prescriptions
         }
-        setPatients([...filteredList, editedPatient]);
+        setPatients([...filteredList, newPatient]);
         await axios.put(`http://localhost:8000/api/patient/${data.id}`, editedPatient, {
             headers: {
                 Accept: 'application/json',
-                // 'X-XSRF-TOKEN': decodeURIComponent(token),
+                'X-XSRF-TOKEN': decodeURIComponent(token),
                 // 'Referer': '127.0.0.1:8000'
             }
         })   
@@ -230,17 +250,17 @@ export function searchFunction(data, keys, query){
         (item) => keys.some(key => item[key].toLowerCase().includes(query))
     )
 }
-export async function deletePatient(setPatients ,id){
+export async function deletePatient(setPatients ,id, token){
     try{
         const list = JSON.parse(localStorage.getItem('patients'));
         const filteredList = list.filter(item => item.id !== id);
     
         setPatients(filteredList);
-        await axios.delete(`http://localhost:8000/api/patient/${id}`,{
+        await axios.delete(`http://127.0.0.1:8000/api/patient/${id}`,{
             headers: {
                 Accept: 'application/json',
-                // 'X-XSRF-TOKEN': decodeURIComponent(token),
-                // 'Referer': '127.0.0.1:8000'
+                'X-XSRF-TOKEN': decodeURIComponent(token),
+                Referer: '127.0.0.1:8000'
             }})
     }
     catch(error){
