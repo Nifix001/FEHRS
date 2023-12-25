@@ -19,6 +19,7 @@ const PaForm1 = () => {
   const [phone, setPhone] = useState();
   const [ gender, setGender ] = useState();
   const [ address, setAddress ] = useState();
+  const [ email, setEmail ] = useState();
 
   const [ nokFirstName, setNokFirstName ] = useState();
   const [ nokMiddleName, setNokMiddleName ] = useState(); 
@@ -48,12 +49,12 @@ const PaForm1 = () => {
       "gender": gender,
       "phone_no": phone,
       "home_address": address,
-      "email":"boomed56@gmail.com",
+      "email": email,
       "nok_firstname": nokFirstName,
       "nok_middlename": nokMiddleName,
       "nok_lastname": nokLastName,
       "nok_relationship": nokRelationship,
-      // "nok_dob": nokDob,
+      "nok_dob": nokDob,
       "nok_gender": nokGender,
       "nok_phone_no": nokPhone 
     } 
@@ -73,7 +74,7 @@ const PaForm1 = () => {
     location("/user/patients/new/info")
   }
 
-  console.log(gender);
+  console.log(nokDob);
 
 
   return (
@@ -256,17 +257,6 @@ const PaForm1 = () => {
                   id = ""  
                   className = '-mt-2'
                   // checked={gender === 'female'}
-                  // onClick = {(e) => {
-                  //                     e.preventDefault();
-                  //                     setGender('female')
-                  //                   }
-                  //           } 
-                  // onClick={
-                  //   (e) => {
-                  //           e.preventDefault();
-                  //           setGender('female')
-                  //         }
-                  // }
                   onFocus={
                     (e) => {
                             e.preventDefault();
@@ -290,12 +280,34 @@ const PaForm1 = () => {
             <input 
               type = "text" 
               placeholder = 'Enter Text Here' 
-              className = 'w-182 h-12' 
+              className = 'w-[528px] h-12' 
               name = ' address ' 
               value = { address } 
               onChange = { (e) => {
                                     e.preventDefault();
                                     setAddress(e.target.value);
+                                  } 
+                          }  
+              required
+            />
+          </div>
+
+          <div className = "grid">
+            <label 
+              htmlFor = " address "  
+              className = 'w-24'
+            >
+              Email Address
+            </label>
+            <input 
+              type = "email" 
+              placeholder = 'boom@gmail.com' 
+              className = 'w-[300px] h-12' 
+              name = ' address ' 
+              value = { email } 
+              onChange = { (e) => {
+                                    e.preventDefault();
+                                    setEmail(e.target.value);
                                   } 
                           }  
               required
@@ -479,12 +491,34 @@ const PaForm1 = () => {
                 (e) => {
                   e.preventDefault();
                   setNokDob(e.target.value)
-                  setDone(true)
                 }
                }
                required
             />
           </div>
+        </div>
+
+        <div className="grid">
+            <label 
+              htmlFor = "" 
+              className = 'w-[90px]'
+            >
+              Phone Number
+            </label>
+            <input 
+              type = "number" 
+              placeholder = '08011223344' 
+              className='w-[360px]'
+              value = { nokPhone }
+              onChange = {
+                (e) => {
+                  e.preventDefault();
+                  setNokPhone(e.target.value);
+                  setDone(true)
+                }
+               }
+               required
+            />
         </div>
 
         <div className = "flex absolute bottom-0 ml-56 mr-auto gap-12">
