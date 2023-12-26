@@ -13,9 +13,9 @@ const EditPatient = ( { isOpen, onClose, patient } ) => {
   const [ matric_no, setMatric_no ] = useState( patient.matric_no );
   const [ phone_no, setPhone_no ] = useState( patient.phone_no );
   const [ email, setEmail ] = useState( patient.email );
-  const [ dob, setDob ] = useState();
-  const [ gender, setGender ] = useState("");
-  const [ address, setAddress ] = useState();
+  const [ dob, setDob ] = useState( patient.dob );
+  const [ gender, setGender ] = useState( patient.gender );
+  const [ address, setAddress ] = useState( patient.home_address );
   const [ nokFirstName, setNokFirstName ] = useState();
   const [ nokMiddleName, setNokMiddleName ] = useState();
   const [ nokLastName, setNokLastName ] = useState();
