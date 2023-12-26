@@ -162,7 +162,7 @@ export async function editPatient(setPatients, data, token){
             'dob': data.dob,
             'gender': data.gender,
             'home_address': data.address,
-            'nok_firstname': data.nokFirstName ,
+            'nok_firstname': data.nok_FirstName ,
             'nok_lastname': data.nokLastName ,
             'nok_middlename': data.nokMiddleName ,
             'nok_dob': data.nokDob ,
@@ -185,7 +185,7 @@ export async function editPatient(setPatients, data, token){
             headers: {
                 Accept: 'application/json',
                 'X-XSRF-TOKEN': decodeURIComponent(token),
-                // 'Referer': '127.0.0.1:8000'
+                
             }
         })   
 

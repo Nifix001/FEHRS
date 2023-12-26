@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use App\Models\Drug;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Models\Drug_in;
@@ -180,7 +181,7 @@ class drugController extends Controller
             'batch_no'=>['string','required'],
             'manufacturing_date'=>['string','required'],
             'expiring_date'=>['string','required'],
-            'nafdac_number'=>['string','required','unique:drugs'],
+            'nafdac_number'=>['string','required',Rule::unique('drugs')->ignore($id),],
             'dosage_form'=>['string','required'],
             'concentration'=>['string','required'],
             'drug_description'=>['string','required'],
@@ -228,12 +229,15 @@ class drugController extends Controller
             $drug->drug_description= $request->drug_description;    
             $save=$drug->update();
             if($save){
-                return response()->json(['message'=>$id]);
+                return response()->json(['status'=>"success",
+                                        'message'=> "Drug updated sussessfully"
+                ]);
             }else{
                 echo 'i';
             };
         } catch (ModelNotFoundException $exception) {
-            return response("Drug with id {$id} not found");
+            return response(["Status"=>"Error",
+            "Message"=>"Drug with id {$id} not found"]);
         }
 
 
