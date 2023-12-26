@@ -178,6 +178,7 @@ export async function editPatient(setPatients, data, token){
             'email': data.email,
             'matric_no': data.matric_no,
             'phone_no': data.phone_no,
+            'home_address': data.address,
             'prescriptions': data.prescriptions
         }
         setPatients([...filteredList, newPatient]);

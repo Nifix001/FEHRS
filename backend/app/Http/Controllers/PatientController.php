@@ -115,7 +115,7 @@ class PatientController extends Controller
 
     }
     public function show(){
-        $patient = Patient::with('prescriptions')->get(['id','firstname','middlename','lastname','phone_no','matric_no','email']);
+        $patient = Patient::with('prescriptions')->get();
         // $patients = Patient_next_of_kin::all();
         // $pat=$patient->patient_next_of_kin;
         // $pat_nok=$patient->patient_next_of_kin;
