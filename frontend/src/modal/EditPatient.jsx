@@ -104,6 +104,8 @@ const handleClick = ( e ) => {
                                       } 
                     />
                 </div>
+            </div>
+            <div className = "flex gap-4">
                 <div className = "flex flex-col ">
                         <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Matric Number </label>
                         <input type = "text" value = { matric_no } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
@@ -124,8 +126,6 @@ const handleClick = ( e ) => {
                                             } 
                         />
                 </div>
-            </div>
-            <div className = "flex gap-4">
               <div className = "flex flex-col ">
                   <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Email Address </label>
                   <input type = "text" value = { email } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
@@ -136,6 +136,8 @@ const handleClick = ( e ) => {
                                               } 
                     />
               </div>
+            </div>
+            <div className="flex gap-4 ">
               <div className = "flex flex-col ">
                   <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Dob </label>
                   <input type = "date" value = { dob } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
@@ -166,6 +168,7 @@ const handleClick = ( e ) => {
                                               } 
                     />
               </div>
+
             </div>
             {/* <div className = "flex gap-4">
               <div className = "flex flex-col ">
