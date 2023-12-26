@@ -43,7 +43,7 @@ Route::middleware('auth:sanctum')->get('/patients',[PatientController::class, 't
 Route::middleware('auth:sanctum','doc')->get('/patient',[PatientController::class, 'show']);
 Route::middleware('auth:sanctum')->post('/patient',[PatientController::class, 'store']);
 Route::middleware('auth:sanctum')->put('/patient/{id}',[PatientController::class, 'update']);
-Route::middleware('auth:sanctum')->delete('patient/{id}', [PatientController::class, 'show']);
+Route::middleware('auth:sanctum')->delete('patient/{id}', [PatientController::class, 'delete']);
 
 Route::middleware('auth:sanctum','pharm')->get('/drugs',[DrugController::class, 'show']);
 Route::middleware('auth:sanctum','pharm')->post('/drugs',[DrugController::class, 'store']);

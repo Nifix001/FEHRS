@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Patient;
 use App\Models\Patient_next_of_kin;
@@ -135,32 +136,32 @@ class PatientController extends Controller
             'phone_no',
             'home_address',
             'email',
-            "nok_firstname",
-            "nok_middlename",
-            "nok_lastname",
-            "nok_relationship",
-            "nok_dob",
-            "nok_gender",
-            "nok_phone_no"
+            // "nok_firstname",
+            // "nok_middlename",
+            // "nok_lastname",
+            // "nok_relationship",
+            // "nok_dob",
+            // "nok_gender",
+            // "nok_phone_no"
         ]);
 
         $rule=[
-            'firstname'=>['string','required'],
-            'middlename'=>['string','required'],
-            'lastname'=>['string','required'],
-            'matric_no'=>['string','required','unique:patients'],
-            'dob'=>['required'],
-            'gender'=>['string','required'],
-            'phone_no'=>['string','required','unique:patients'],
-            'home_address'=>['string','required'],
-            'email'=> ['string','required','unique:patients','email'],
-            "nok_firstname"=> ['string','required'],
-            "nok_middlename"=> ['string','required'],
-            "nok_lastname"=> ['string','required'],
-            "nok_relationship"=> ['string','required'],
-            "nok_dob"=> ['required'],
-            "nok_gender"=> ['string','required'],
-            "nok_phone_no"=> ['string','required','unique:patient_next_of_kins']
+            'firstname'=>'string|required',
+            'middlename'=>'string|required',
+            'lastname'=>'string|required',
+            'matric_no'=>["required", Rule::unique('patients')->ignore($id)],
+            'dob'=>'required',
+            'gender'=>'string|required',
+            'phone_no'=>["required", Rule::unique("patients")->ignore($id)],
+            'home_address'=>'string|required',
+            'email'=> ['string','required', Rule::unique('patients')->ignore($id)],
+            // "nok_firstname"=> ['string','required'],
+            // "nok_middlename"=> ['string','required'],
+            // "nok_lastname"=> ['string','required'],
+            // "nok_relationship"=> ['string','required'],
+            // "nok_dob"=> ['required'],
+            // "nok_gender"=> ['string','required'],
+            // "nok_phone_no"=> ['string','required','unique:patient_next_of_kins']
         ];
 
         $message=[
@@ -180,7 +181,7 @@ class PatientController extends Controller
             // 'matric_no'=>'matric number already used'
             'nok_phone_no'=>"The next of kin number has been taken",
         ];
-        $validator = validator::make($validate,$rule,$custom,$custom);
+        $validator = validator::make($validate,$rule,$custom);
         // $validator->errors();
         // dd($validator->errors());
         // $validator->validated();
@@ -197,7 +198,9 @@ class PatientController extends Controller
                 $patient->update($input);
                 $save=$patient->update($input);
                 if($save){
-                    return response()->json(['message'=>$id]);
+                    return response()->json(['status'=>"success",
+                                             'message'=> "patient updated sussessfully"
+                ]);
                 }else{
                     echo 'i';
                 };
