@@ -162,13 +162,13 @@ export async function editPatient(setPatients, data, token){
             'dob': data.dob,
             'gender': data.gender,
             'home_address': data.address,
-            'nok_firstname': data.nok_FirstName ,
-            'nok_lastname': data.nokLastName ,
-            'nok_middlename': data.nokMiddleName ,
-            'nok_dob': data.nokDob ,
-            'nok_relationship': data.nokRelationship ,
-            'nok_gender': data.nokGender ,
-            'nok_phone': data.nokPhone
+            // 'nok_firstname': data.nok_FirstName ,
+            // 'nok_lastname': data.nokLastName ,
+            // 'nok_middlename': data.nokMiddleName ,
+            // 'nok_dob': data.nokDob ,
+            // 'nok_relationship': data.nokRelationship ,
+            // 'nok_gender': data.nokGender ,
+            // 'nok_phone': data.nokPhone
         }
         const newPatient = {
             'id': data.id,

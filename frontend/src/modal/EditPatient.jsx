@@ -156,7 +156,7 @@ const handleClick = ( e ) => {
                     />
               </div>
             </div>
-            <div className = "flex gap-4">
+            {/* <div className = "flex gap-4">
               <div className = "flex flex-col ">
                   <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Next of Kin First Name </label>
                   <input type = "text" value = { nokFirstName } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
@@ -228,8 +228,8 @@ const handleClick = ( e ) => {
                                                       } 
                                               } 
                     />
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
             <div className = "flex w-full items-center justify-center mt-20">
                <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md' onClick = { handleClick }  > Update </button>                                                                     
             </div>
