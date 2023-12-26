@@ -10,6 +10,7 @@ const EditPatient = ( { isOpen, onClose, patient } ) => {
 
   const [ firstname, setFirstname ] = useState( patient.firstname );
   const [ lastname, setLastname ] = useState( patient.lastname );  
+  const [ middlename, setMiddlename ] = useState( patient.middlename);
   const [ matric_no, setMatric_no ] = useState( patient.matric_no );
   const [ phone_no, setPhone_no ] = useState( patient.phone_no );
   const [ email, setEmail ] = useState( patient.email );
@@ -27,7 +28,7 @@ const EditPatient = ( { isOpen, onClose, patient } ) => {
 
   const prescriptions = patient.prescriptions;
   const id = patient.id;
-  const middlename = patient.middlename;
+  // const middlename = patient.middlename;
 
   const editedPatient = {
     'id': id,
@@ -89,6 +90,16 @@ const handleClick = ( e ) => {
                           onChange = { (e) => {
                                                 e.preventDefault();        
                                                 setLastname( e.target.value )
+                                              } 
+                                      } 
+                    />
+                </div>
+                <div className = "flex flex-col ">
+                    <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Middle Name </label>
+                    <input type = "text" value = { middlename } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
+                          onChange = { (e) => {
+                                                e.preventDefault();        
+                                                setMiddlename( e.target.value )
                                               } 
                                       } 
                     />

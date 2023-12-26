@@ -161,7 +161,7 @@ export async function editPatient(setPatients, data, token){
             'prescriptions': data.prescriptions,
             'dob': data.dob,
             'gender': data.gender,
-            'home_address': data.address,
+            'home_address': data.home_address,
             // 'nok_firstname': data.nok_FirstName ,
             // 'nok_lastname': data.nokLastName ,
             // 'nok_middlename': data.nokMiddleName ,
