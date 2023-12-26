@@ -27,6 +27,7 @@ class patient extends Model
     protected $hidden = [
         'updated_at',
         'created_at',
+        'email_verified_at'
     ];
 
 
