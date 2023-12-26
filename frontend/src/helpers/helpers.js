@@ -232,7 +232,7 @@ export async function editDrug(setDrugs, data){
             'expiration_date': data.expiration_date
         }
         setDrugs([...filteredList, editedDrug]);
-        await axios.put(`http://localhost:8000/api/drug/${data.id}`, editedDrug, {
+        await axios.put(`http://127.0.0.1:8000/api/drug/${data.id}`, editedDrug, {
             headers: {
                 Accept: 'application/json',
                 // 'X-XSRF-TOKEN': decodeURIComponent(token),
