@@ -203,3 +203,8 @@
     color: #fff;
     background-color: #7F00AC;    
 }
+
+.settings a.active{
+    background-color: #7F00AC;
+    color: #fff;
+}
