@@ -58,7 +58,7 @@ const Pharmacy = () => {
           to = "addnew" 
           className=' font-span text-base font-normal py-2 px-5 text-white  bg-primary border border-primary rounded-md'
         >
-          Add New
+          Add Drugs
         </Link>
         
         <NavLink 
