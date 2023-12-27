@@ -165,7 +165,7 @@ export async function addDrugs(setDrugs, data, token){
             "drug_description": data.drug_description
         }
         setDrugs([...list, newDrugs])
-        await axios.post('http://127.0.0.1:8000/api/drugs', data, {
+        await axios.post('http://localhost:8000/api/drugs', data, {
             headers: {
                 Accept: 'application/json',
                 'X-XSRF-TOKEN': decodeURIComponent(token),   
