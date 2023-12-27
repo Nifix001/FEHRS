@@ -257,13 +257,21 @@ export async function editDrug(setDrugs, data){
         const filteredList = list.filter(item => item.id !== data.id);
         const editedDrug = {
             'id': data.id,
-            'drug_name': data.drug_name,
-            'drug_quantity': data.drug_quantity,
-            'manufacturing_date': data.manufacturing_date,
-            'expiration_date': data.expiration_date
+            "drug_name": data.drug_name ,
+            "drug_quantity":  data.drug_quantity ,
+            "brand_name": data.brand_name ,
+            "package_size": data.package_size ,
+            "manufacturer": data.manufacturer ,
+            "batch_no": data.batch_no ,
+            "manufacturing_date": data.manufacturing_date ,
+            "expiring_date": data.expiring_date ,
+            "nafdac_number": data.nafdac_number ,
+            "dosage_form": data.dosage_form ,
+            "concentration": data.concentration ,
+            "drug_description": data.drug_description
         }
         setDrugs([...filteredList, editedDrug]);
-        await axios.put(`http://localhost:8000/api/drug/${data.id}`, editedDrug, {
+        await axios.put(`http://localhost:8000/api/drugs/${data.id}`, editedDrug, {
             headers: {
                 Accept: 'application/json',
                 // 'X-XSRF-TOKEN': decodeURIComponent(token),

@@ -25,10 +25,18 @@ const EditDrug = ( { isOpen, onClose, drug } ) => {
 
   const editedDrug = {
     'id': id,
-    'drug_name': drug_name,
-    'drug_quantity': drug_quantity,
-    'manufacturing_date': manufacturing_date,
-    'expiration_date': expiration_date
+    "drug_name" : drug_name,
+    "drug_quantity" : drug_quantity,
+    "brand_name" : brand ,
+    "package_size" : size ,
+    "manufacturer" : supplier ,
+    "batch_no" : batch ,
+    "manufacturing_date" : manufacturing_date,
+    "expiring_date" : expiration_date ,
+    "nafdac_number" : nafdac ,
+    "dosage_form" : dosage ,
+    "concentration" : concentration ,
+    "drug_description" : description
 }
 
 const message = `${drug.drug_name} has been edited on the Drugs database `
