@@ -42,12 +42,13 @@ const AddNew = () => {
   //   "manufacturing_date" : manufacture,
   //   "expiration_date" : expiration 
   //  }
+  console.log(dosage);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // localStorage.setItem('new-drugs', newData);
     addDrugs( setDrugs, rawData, token );
-    navigate('/user/pharmacy/drugs')
+    navigate('/user/pharmacy/drugs');
   }
 
 
@@ -236,10 +237,18 @@ const AddNew = () => {
                   Dosage Form
                 </label>
                 <div className = ' grid grid-cols-2 grid-rows-2 gap-x-8 '>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Tablet</h6>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Capsules</h6>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Syrup</h6>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Injection</h6>
+                  <h6 className = ' flex gap-1 ' >
+                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Tablet" ) } /> Tablet
+                  </h6>
+                  <h6 className = ' flex gap-1 ' >
+                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Capsules" ) } /> Capsules
+                  </h6>
+                  <h6 className = ' flex gap-1 ' >
+                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Syrup" ) } /> Syrup
+                  </h6>
+                  <h6 className = ' flex gap-1 ' >
+                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Injection" ) } /> Injection
+                  </h6>
                 </div>
               </div>
 
