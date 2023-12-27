@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { Form, NavLink } from 'react-router-dom'
+import { Form, NavLink, useNavigate } from 'react-router-dom'
+import { useUser } from '../../context/UserContext';
+import { addDrugs } from '../../helpers/helpers';
 
 const AddNew = () => {
+  const { setDrugs, token } = useUser();
 
   const [ name, setName ] = useState();
   const [ quantity, setQuantity ] = useState();
@@ -16,6 +19,7 @@ const AddNew = () => {
   const [ concentration, setConcentration ] = useState();
   const [ description, setDescription ] = useState();
 
+  const navigate = useNavigate();
 
   const rawData = {
     "drug_name" : name,
@@ -32,8 +36,18 @@ const AddNew = () => {
     "drug_description" : description
   }
 
+  // const newData = {
+  //   "drug_name" : name,
+  //   "drug_quantity" : quantity,
+  //   "manufacturing_date" : manufacture,
+  //   "expiration_date" : expiration 
+  //  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // localStorage.setItem('new-drugs', newData);
+    addDrugs( setDrugs, rawData, token );
+    navigate('/user/pharmacy/drugs')
   }
 
 

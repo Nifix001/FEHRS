@@ -146,6 +146,36 @@ export async function addPatient(setPatients, data){
     }
 }
 
+export async function addDrugs(setDrugs, data, token){
+    try{
+        const list = JSON.parse(localStorage.getItem('drugs'));
+        const newDrugs = {
+            'id': list.length + 1,
+            "drug_name": data.drug_name ,
+            "drug_quantity":  data.drug_quantity ,
+            "brand_name": data.brand_name ,
+            "package_size": data.package_size ,
+            "manufacturer": data.manufacturer ,
+            "batch_no": data.batch_no ,
+            "manufacturing_date": data.manufacturing_date ,
+            "expiring_date": data.expiring_date ,
+            "nafdac_number": data.nafdac_number ,
+            "dosage_form": data.dosage_form ,
+            "concentration": data.concentration ,
+            "drug_description": data.drug_description
+        }
+        setDrugs([...list, newDrugs])
+        await axios.post('http://127.0.0.1:8000/api/drugs', data, {
+            headers: {
+                Accept: 'application/json',
+                'X-XSRF-TOKEN': decodeURIComponent(token),   
+            }})   
+
+    } catch(error){
+        console.error(error);
+    }
+}
+
 export async function editPatient(setPatients, data, token){
     try{
         const list = JSON.parse(localStorage.getItem('patients'));
