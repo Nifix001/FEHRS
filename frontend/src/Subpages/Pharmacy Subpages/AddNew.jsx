@@ -57,6 +57,7 @@ const AddNew = () => {
               type = "text" 
               placeholder = 'Acetaminophen and Codeine' 
               value = { name } 
+              onChange = { ( e ) => setName( e.target.value ) }
             />
           </div>
 
@@ -68,9 +69,10 @@ const AddNew = () => {
               Drug Quantity
             </label>
             <input 
-              type = "text" 
+              type = "number" 
               placeholder = '1' 
               value = { quantity } 
+              onChange = { (e) => setQuantity( e.target.value ) }
             />
           </div>
 
@@ -84,7 +86,8 @@ const AddNew = () => {
             <input 
               type = "text" 
               placeholder = '(Tylenol with Codeine)'
-              value = { brand } 
+              value = { brand }
+              onChange = { (e) => setBrand( e.target.value ) } 
             />
           </div>
 
@@ -99,6 +102,7 @@ const AddNew = () => {
               type = "text" 
               placeholder = '30 tablets per bottle ' 
               value = { size }
+              onChange = { (e) => setSize( e.target.value ) }
             />
           </div>
 
@@ -113,6 +117,7 @@ const AddNew = () => {
               type = "text" 
               placeholder = '' 
               value = { supplier }
+              onChange = { (e) => setSupplier( e.target.value ) }
             />
           </div>
 
@@ -124,9 +129,10 @@ const AddNew = () => {
               Bactch/Lot Number
             </label>
             <input 
-              type = "text" 
+              type = "date" 
               placeholder = '___ /__ /_____' 
               value = { batch }
+              onChange = { (e) => setBatch( e.target.value ) }
             />
           </div>
           <div className = "grid">
@@ -137,9 +143,10 @@ const AddNew = () => {
               Manufacturing Date
             </label>
             <input 
-              type = "text" 
+              type = "date" 
               placeholder = '___ /__ /_____' 
               value = { manufacture }
+              onChange = { (e) => setManufacture( e.target.value ) }
             />
           </div>
           <div className = "grid">
@@ -150,9 +157,10 @@ const AddNew = () => {
               Expiration Date
             </label>
             <input 
-              type = "text" 
+              type = "date" 
               placeholder = '___ /__ /_____' 
               value = { expiration }
+              onChange = { (e) => setExpiration( e.target.value ) }
             />
           </div>
 
@@ -167,6 +175,7 @@ const AddNew = () => {
               type = "text" 
               placeholder = '' 
               value = { nafdac }
+              onChange = { (e) => setNafdac( e.target.value ) }
             />
           </div>
 
@@ -184,6 +193,7 @@ const AddNew = () => {
                   type = "text" 
                   placeholder = '500 mg, 5mg/ml, etc.' 
                   value = { concentration }
+                  onChange = { (e) => setConcentration( e.target.value ) }
                 />
               </div>
 
@@ -201,7 +211,9 @@ const AddNew = () => {
                   cols = "30" 
                   rows = "10" 
                   placeholder = 'Enter text here' 
-                  value = { description }>  
+                  value = { description }
+                  onChange = { (e) => setDescription( e.target.value ) }
+                  >  
                 </textarea>
               </div>
             </div>
@@ -210,10 +222,10 @@ const AddNew = () => {
                   Dosage Form
                 </label>
                 <div className = ' grid grid-cols-2 grid-rows-2 gap-x-8 '>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" /> Tablet</h6>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" /> Capsules</h6>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" /> Syrup</h6>
-                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" /> Injection</h6>
+                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Tablet</h6>
+                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Capsules</h6>
+                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Syrup</h6>
+                  <h6 className = ' flex gap-1 ' ><input type="radio" name="dosage" id="" onSelect = { (e) => setDosage( e.target.value ) } /> Injection</h6>
                 </div>
               </div>
 
