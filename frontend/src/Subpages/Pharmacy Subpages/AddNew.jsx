@@ -42,7 +42,6 @@ const AddNew = () => {
   //   "manufacturing_date" : manufacture,
   //   "expiration_date" : expiration 
   //  }
-  console.log(dosage);
 
   const handleSubmit = (e) => {
     e.preventDefault();
