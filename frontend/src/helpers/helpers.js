@@ -150,7 +150,7 @@ export async function addDrugs(setDrugs, data, token){
     try{
         const list = JSON.parse(localStorage.getItem('drugs'));
         const newDrugs = {
-            'id': list.length + 1,
+            'id': list.length > 0 ? list[list.length - 1].id + 1 : 1,
             "drug_name": data.drug_name ,
             "drug_quantity":  data.drug_quantity ,
             "brand_name": data.brand_name ,
