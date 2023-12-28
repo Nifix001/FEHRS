@@ -167,86 +167,88 @@ const handleClick = ( e ) => {
                 />
               </div>
             </div>
-            <div className="flex gap-4 ">
-              <div className = "grid">
-                <label 
-                  htmlFor = "" 
-                  className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '
-                >
-                  NAFDAC Number
-                </label>
-                <input 
-                  type = "text" 
-                  placeholder = '' 
-                  value = { nafdac }
-                  onChange = { (e) => setNafdac( e.target.value ) }
-                  className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '   
-                />
-              </div>
-              <div className = "grid">
-                <label 
-                  htmlFor = "" 
-                  className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '
-                >
-                  Concentration
-                </label>
-                <input 
-                  type = "text" 
-                  placeholder = '500 mg, 5mg/ml, etc.' 
-                  value = { concentration }
-                  onChange = { (e) => setConcentration( e.target.value ) }
-                  className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '   
-                />
-              </div>
-
-
-                <div className = "grid mb-8">
+              <div className="flex gap-4">
+                <div className = "grid">
                   <label 
                     htmlFor = "" 
                     className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '
                   >
-                    Drug Description
+                    NAFDAC Number
                   </label>
-                  <textarea 
+                  <input 
+                    type = "text" 
+                    placeholder = '' 
+                    value = { nafdac }
+                    onChange = { (e) => setNafdac( e.target.value ) }
                     className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '   
-                    name = "" 
-                    id = "" 
-                    cols = "30" 
-                    rows = "10" 
-                    placeholder = 'Enter text here' 
-                    value = { description }
-                    onChange = { (e) => setDescription( e.target.value ) }
-                    >  
-                  </textarea>
+                  />
                 </div>
-          <div className="flex gap-4 ">
-            <div className="grid">
-            </div>
+                <div className = "grid">
+                  <label 
+                    htmlFor = "" 
+                    className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '
+                  >
+                    Concentration
+                  </label>
+                  <input 
+                    type = "text" 
+                    placeholder = '500 mg, 5mg/ml, etc.' 
+                    value = { concentration }
+                    onChange = { (e) => setConcentration( e.target.value ) }
+                    className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '   
+                  />
+                </div>
               </div>
 
-              <div className='flex flex-col gap-4 '>
-                <label className=' bg-white p-2 text-xs relative top-4 left-2 w-fit '>
-                  Dosage Form
-                </label>
-                <div className = ' grid grid-cols-2 grid-rows-2 gap-x-8 '>
-                  <h6 className = ' flex gap-1 ' >
-                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Tablet" ) } /> Tablet
-                  </h6>
-                  <h6 className = ' flex gap-1 ' >
-                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Capsules" ) } /> Capsules
-                  </h6>
-                  <h6 className = ' flex gap-1 ' >
-                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Syrup" ) } /> Syrup
-                  </h6>
-                  <h6 className = ' flex gap-1 ' >
-                    <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Injection" ) } /> Injection
-                  </h6>
+              <div className="flex gap-4">
+                    <div className = "grid mb-8">
+                      <label 
+                        htmlFor = "" 
+                        className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '
+                      >
+                        Drug Description
+                      </label>
+                      <textarea 
+                        className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 '   
+                        name = "" 
+                        id = "" 
+                        cols = "30" 
+                        rows = "5 " 
+                        placeholder = 'Enter text here' 
+                        value = { description }
+                        onChange = { (e) => setDescription( e.target.value ) }
+                        >  
+                      </textarea>
+                    </div>
+              <div className="flex gap-4 ">
+                <div className="grid">
                 </div>
-            </div>
-            </div>
+                  </div>
+
+                  <div className='flex flex-col gap-4 '>
+                    <label className=' bg-white p-2 text-xs relative top-4 left-2 w-fit '>
+                      Dosage Form
+                    </label>
+                    <div className = ' grid grid-cols-2 grid-rows-2 gap-x-8 '>
+                      <h6 className = ' flex gap-1 ' >
+                        <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Tablet" ) } /> Tablet
+                      </h6>
+                      <h6 className = ' flex gap-1 ' >
+                        <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Capsules" ) } /> Capsules
+                      </h6>
+                      <h6 className = ' flex gap-1 ' >
+                        <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Syrup" ) } /> Syrup
+                      </h6>
+                      <h6 className = ' flex gap-1 ' >
+                        <input type="radio" name="dosage" id="" onFocus = { (e) => setDosage( "Injection" ) } /> Injection
+                      </h6>
+                    </div>
+                </div>
+              </div>
+
 
             <div className = "flex w-full items-center justify-center mt-20">
-               <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md' onClick = { handleClick }  > Update </button>                                                                     
+               <button className = ' bg-primary text-white px-4 py-[6px] text-sm  rounded-md absolute bottom-6' onClick = { handleClick }  > Update </button>                                                                     
             </div>
         </div>
       </div>
