@@ -58,7 +58,7 @@ const Doctor = () => {
     return(
       <li key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer flex p-2 items-center relative '  >
         <span className = 'w-[300px]' > {`${ p.lastname }     ${ p.firstname }`} </span>
-        <span className = 'absolute right-0' > { p.matric_no } </span>
+        <span className = 'absolute right-2' > { p.matric_no } </span>
       </li>
     )})
 
