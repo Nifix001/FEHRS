@@ -39,7 +39,7 @@ export default {
     "./src/modal/EditPrescription.jsx",
     "./src/modal/DeletePrescription.jsx",
     "./src/modal/DeleteDrug.jsx",
-
+    "./src/modal/PrescribeDrug.jsx",
   ],
   theme: {
     extend: {

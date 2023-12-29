@@ -9,14 +9,19 @@ import edit from '../assets/edit.svg'
 import { searchFunction } from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
 import SearchPatient from '../Tables/SearchPatient'
+import PrescribeDrug from '../modal/PrescribeDrug'
 
 const Doctor = () => {
 
   const { patients } = useUser();
   const [ searchActive, setSearchActive ] = useState( false );
   const [patientOptions, setPatientOptions] = useState({});
+  const [ options, setOptions ] = useState(false);
   const [ query, setQuery ] = useState();
   const keys = ["firstname", "lastname", "matric_no", "email" ];
+
+  const [ prescribeModal, setPrescribeModal ] = useState(true);
+  const [ disabled, setDisabled ] = useState(true);
 
   const toggleOptions = (patientId) => {
     setPatientOptions((prevOptions) => ({
@@ -24,74 +29,53 @@ const Doctor = () => {
       [patientId]: !prevOptions[patientId],
     }));
   };
+  const closePrescribeModal = () => {
+    // setSelectedPatient( null );
+    // setEditModalOpen( false );
+    setPrescribeModal(false);
+  };
 
   const handleChange = (e) => {
     e.preventDefault();
     const trimmedQuery = String(e.target.value).trim();
-  
+    
     if (trimmedQuery === '') {
       setSearchActive(false);
+      setOptions(false);
+      setDisabled(true);
     } else {
-      setQuery(trimmedQuery);
+      setQuery(trimmedQuery); 
+      setOptions(true);
+      setDisabled(false);
     }
   };
   
+  const onClose = () => {
+    setSearchActive(false);
+  }
 
-
-
-  const searchPatient = searchFunction(patients, keys, query).map( p  =>  {
-    
+  const search1 = searchFunction(patients, keys, query).map( p  =>  { 
     return(
+      <li key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer flex p-2 items-center relative '  >
+        <span className = 'w-[300px]' > {`${ p.lastname }     ${ p.firstname }`} </span>
+        <span className = 'absolute right-0' > { p.matric_no } </span>
+      </li>
+    )})
 
-        <tr key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer ' >
-          <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
-          <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
-          <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
-          <td className = 'text-left text-base'> { p.email } </td>
-          <td className = 'text-left pl-3 text-base'> 
-          {/* { p.prescriptions.map(d => {
-            return (
-              <span key = { d.id } > { d.diagnosis } </span>
-              )
-            }) } */}
-            {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
-            </td>
-          {/* <td className = 'text-left pl-3 text-base'> { p.drug } </td> */}
-          <td className = 'pl-8'>
-            <div className = 'flex items-center justify-start pl-1 '> 
-                {/*  */}
-                {/* ... */}
-                <button 
-                  className = "flex-shrink-0"
-                  onClick = {() => toggleOptions(p.id)}
-                  // onMouseEnter={() => toggleOptions(p.id)}
-                  // onMouseLeave={() => toggleOptions(p.id)}
-                >
-                  <img 
-                  src = { dot }  
-                  alt ="dot" 
-                  />
-                </button>
-                <div 
-                  className = {`${ patientOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
-                  onMouseLeave={() => toggleOptions(p.id)}
-                >
-                  {/* <!-- Options for Item 1 --> */}
-                  <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 ">
-                    <img src = { edit } alt="" className = 'text-black filter grayscale'  />
-                    Edit
-                  </button>
-                  <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " onClick={() => deletePatient(setPatients, p.id, token)}>
-                    <img src = { del } alt="" className = 'text-black filter grayscale' />
-                    Delete
-                  </button>
-                </div>
-            </div>
-          </td>
-        </tr>
-      )
-    }
-  )
+  // const searchPatient = searchFunction(patients, keys, query).map( p  =>  { 
+  //   return(
+  //       <tr key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer ' >
+  //         <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
+  //         <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
+  //         <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
+  //         <td className = 'text-left text-base'> { p.email } </td>
+  //         <td className = 'text-left pl-3 text-base'> 
+  //           {p.prescriptions.length > 0 && p.prescriptions[p.prescriptions.length - 1].diagnosis}
+  //         </td>
+  //       </tr>
+  //     )
+  //   }
+  // )
 
 
   return (
@@ -116,15 +100,19 @@ const Doctor = () => {
                         alt = "search" 
                     />
                 </div>
+                { options && <div className = 'absolute top-12 bg-white w-full h-fit shadow-md border p-2 z-50 ' >
+                  { search1 }
+                  </div>}
             </div>
 
             <button 
-              className = 'h-10 text-xs text-white bg-primary px-6 rounded-md '
+              className = {` h-10 text-xs text-white bg-primary px-6 rounded-md ${disabled ? 'opacity-50 cursor-not-allowed' : ''}  `}
               onClick={(e) => {
                                 e.preventDefault();
                                 setSearchActive(true);
                               }
                             }
+              disabled = { disabled }
             >
                  Search 
             </button>
@@ -139,7 +127,14 @@ const Doctor = () => {
         <div 
             className = ' bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm block '
         >
-            <SearchPatient patients = { searchPatient }  />
+            {/* <SearchPatient patients = { searchPatient }  /> */}
+            Hello there!
+          <button
+          className = "absolute top-8 right-5 p-2 cursor-pointer text-xs text-red-400"
+          onClick = { onClose } 
+         >
+          Close
+        </button>
         </div>
          : 
          <div className = 'bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm flex items-center justify-center text-5xl opacity-70'>
@@ -147,6 +142,9 @@ const Doctor = () => {
         </div> }
 
       </div>
+     { prescribeModal && <PrescribeDrug
+        onClose = { closePrescribeModal } 
+      />}
     </React.Fragment>
   )
 }
