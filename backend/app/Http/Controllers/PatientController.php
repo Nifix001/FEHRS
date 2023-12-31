@@ -115,7 +115,8 @@ class PatientController extends Controller
 
     }
     public function show(){
-        $patient = Patient::with('prescriptions')->get();
+        // status 0 = active and status 1 = not active(deleted) 
+        $patient = Patient::where('status',0)->with('prescriptions')->get();
         // $patients = Patient_next_of_kin::all();
         // $pat=$patient->patient_next_of_kin;
         // $pat_nok=$patient->patient_next_of_kin;
@@ -217,8 +218,10 @@ class PatientController extends Controller
         
 
         try{
+        // status 0 = active and status 1 = not active(deleted) 
         $patient = Patient::findOrFail($id);
-        $patient->delete();
+        $patient->status = 1;
+        $patient->update();
        return response()->json("Delete successful");
         }catch (ModelNotFoundException $exception) {
             return response("patient with id {$id} not found");
@@ -253,7 +256,7 @@ class PatientController extends Controller
 
         try {
 
-            $patient= Patient::where('matric_no',$matric_no)->get();
+            $patient= Patient::where('matric_no',$matric_no)->with('prescriptions')->get();
         
         } catch (ModelNotFoundException $exception) {
             return response("patient matric no not found");

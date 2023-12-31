@@ -39,10 +39,10 @@ class drugController extends Controller
             'batch_no.required'=>'batch_no is required',
             'manufacturing_date.required'=>'manufacturing_date is required',
             'expiring_date.required'=>'expiring_date is required',
-            'nafadc_number.required'=>'quantity is required',
-            'dosage_form.required'=>'quantity is required',
-            'concentration.required'=>'quantity is required',
-            'drug_description.required'=>'quantity is required',
+            'nafadc_number.required'=>'nafdac number is required',
+            'dosage_form.required'=>'dosage is required',
+            'concentration.required'=>'conc is required',
+            'drug_description.required'=>'prescription is required',
         ];
         $custom=[
             'matric_no'=>'matric number already used'
@@ -72,7 +72,7 @@ class drugController extends Controller
         if($save){
             $drug_in= new drug_in;
             $drug_in->drug_id= $drug->id;
-            $drug_in->quantity = $request->drug_quantity;
+            $drug_in->drug_quantity = $request->drug_quantity;
             $drug_in->save();
             return response()->json(array('success'=>true,'id'=>$drug),200);
         }else{
@@ -162,7 +162,8 @@ class drugController extends Controller
 
     }
     public function show(){
-        $drug= Drug::get(['id','drug_name','drug_quantity','manufacturing_date','expiration_date']);
+        // status 0 = active and status 1 = not active(deleted) 
+        $drug= Drug::where('status',0)->get(['id','drug_name','drug_quantity','manufacturing_date','expiration_date']);
         return response()->json(array( 'details'=>$drug));
 
     }
@@ -197,10 +198,10 @@ class drugController extends Controller
             'batch_no.required'=>'batch_no is required',
             'manufacturing_date.required'=>'manufacturing_date is required',
             'expiring_date.required'=>'expiring_date is required',
-            'nafadc_number.required'=>'quantity is required',
-            'dosage_form.required'=>'quantity is required',
-            'concentration.required'=>'quantity is required',
-            'drug_description.required'=>'quantity is required',
+            'nafadc_number.required'=>'nafdac number is required',
+            'dosage_form.required'=>'dosage is required',
+            'concentration.required'=>'conc is required',
+            'drug_description.required'=>'prescription is required',
         ];
         $custom=[
             'matric_no'=>'matric number already used'
@@ -246,9 +247,11 @@ class drugController extends Controller
     public function delete(Request $request,$id){
 
         try{
+            // status 0 = active and status 1 = not active(deleted) 
         $Drug = Drug::findOrFail($id);
-        $Drug->delete();
-       return response()->json("Delete successful");
+        $Drug->status=1;
+        $drug->update();
+       return response()->json(['status'=>"success"]);
         }catch (ModelNotFoundException $exception) {
             return response("Drug with id {$id} not found");
         }

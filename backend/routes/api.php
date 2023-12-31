@@ -55,9 +55,10 @@ Route::middleware('auth:sanctum')->get('/prescription/patients/',[PrescriptionCo
 Route::middleware('auth:sanctum','doc')->get('/prescription',[PrescriptionController::class, 'show']);
 Route::middleware('auth:sanctum','doc')->post('/prescription',[prescriptionController::class, 'store']);
 Route::middleware('auth:sanctum')->put('/prescription/{id}',[PrescriptionController::class, 'update']);
+Route::middleware('auth:sanctum')->get('/prescription/history',[PrescriptionController::class, 'history']);
 
 // doctor endpoint
-Route::middleware('auth:sanctum','doc')->get('/patients/search/',[PatientController::class, 'search']);
+Route::middleware('auth:sanctum','doc')->get('/patients/history',[PatientController::class, 'search']);
 
 Route::get('/boom/{name}', function(\Illuminate\Http\Request $request,$name){
     if(!$request->hasValidSignature()){

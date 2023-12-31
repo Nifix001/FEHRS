@@ -105,6 +105,12 @@ class prescriptionController extends Controller
         return response()->json(["records"=>$prescription]);
 
     }
+    public function history(){
+        $prescription = Prescription::where('status',1)->latest()->with(['drugs:id,drug_name','patient:id,matric_no','user:id,name'])->get();
+        
+        return response()->json(["records"=>$prescription]);
+
+    }
 
     public function total(){
         $total= Prescription::all()->count();
