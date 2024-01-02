@@ -57,6 +57,7 @@ const Doctor = () => {
   
   const onClose = () => {
     setSearchActive(false);
+    setPatient([]);
   }
 
   const search1 = searchFunction(patients, keys, query).map( p  =>  { 
