@@ -22,9 +22,9 @@ const Doctor = () => {
 
   const [ patient, setPatient ] = useState([]);
 
-  console.log(patient);
+  // console.log(patient);
 
-  const [ prescribeModal, setPrescribeModal ] = useState(true);
+  const [ prescribeModal, setPrescribeModal ] = useState(false);
   const [ disabled, setDisabled ] = useState(true);
 
   const toggleOptions = (patientId) => {
@@ -135,12 +135,32 @@ const Doctor = () => {
 
         { searchActive ? 
         <div 
-            className = ' bg-white w-[1014px] h-[510px] p-2 absolute z-10 mt-6 rounded-xl shadow-sm block '
+            className = ' bg-white w-[1014px] h-[510px] p-5 absolute z-10 mt-6 rounded-xl shadow-sm block '
         >
             {/* <SearchPatient patients = { searchPatient }  /> */}
-            Hello there!
-          <button
-          className = "absolute top-8 right-5 p-2 cursor-pointer text-xs text-red-400"
+            <h2> Personal details about { patient.lastname } { patient.firstname } </h2>
+            <h3> <span> Matric Number: </span> { patient.matric_no } </h3>
+            <h3> <span> Surname: </span> { patient.lastname } </h3>
+            <h3> <span> First Name: </span> { patient.firstname }  </h3>
+            <h3> <span> Middle Name: </span> { patient.middlename } </h3>
+            <h3> <span> Gender: </span> { patient.gender } </h3>
+            <h3> <span> Email Address: </span> { patient.email }  </h3>
+            <h3> <span> Phone Number: </span> 0{ patient.phone_no }  </h3>
+            <h3> <span> Date of Birth: </span> { patient.dob }  </h3>
+            <h3> <span> Home Address: </span> { patient.home_address } </h3>
+            <h3> Previous Diagnosis </h3>
+              <p className='flex gap-1' >
+                {
+                  patient.prescriptions.length > 0 ? patient.prescriptions.map(p => (
+                    <h3 key = { p.id } > { p.diagnosis } </h3>
+                    )) : 
+                    <h3> No previous diagnosis </h3>
+                }
+              </p>
+            <button onClick = { () => setPrescribeModal(true) } className = 'h-10 text-base text-white bg-primary px-6 rounded-md' > Prscribe drug </button>
+ 
+        <button
+          className = "absolute top-4 right-5 p-2 cursor-pointer text-xs text-red-400"
           onClick = { onClose } 
          >
           Close
