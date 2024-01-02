@@ -20,6 +20,10 @@ const Doctor = () => {
   const [ query, setQuery ] = useState();
   const keys = ["firstname", "lastname", "matric_no", "email" ];
 
+  const [ patient, setPatient ] = useState([]);
+
+  console.log(patient);
+
   const [ prescribeModal, setPrescribeModal ] = useState(true);
   const [ disabled, setDisabled ] = useState(true);
 
@@ -56,7 +60,12 @@ const Doctor = () => {
 
   const search1 = searchFunction(patients, keys, query).map( p  =>  { 
     return(
-      <li key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer flex p-2 items-center relative '  >
+      <li key = { p.id } className = ' hover:text-white hover:bg-primary cursor-pointer flex p-2 items-center relative '  
+          onClick = { () => {
+                              setPatient(p)
+                              setOptions(false)
+                            } }
+      >
         <span className = 'w-[300px]' > {`${ p.lastname }     ${ p.firstname }`} </span>
         <span className = 'absolute right-2' > { p.matric_no } </span>
       </li>
@@ -93,6 +102,7 @@ const Doctor = () => {
                         placeholder = 'Search for patient...' 
                         className = 'border rounded-md font-span font-normal text-base border-solid border-gray-300 w-[400px] h-10 p-2 outline-0 indent-10' 
                         onChange = { handleChange }
+                        value = { patient.matric_no }
                     />
                     <img 
                         className = 'absolute left-2 top-2 cursor-pointer opacity-50' 
@@ -114,7 +124,7 @@ const Doctor = () => {
                             }
               disabled = { disabled }
             >
-                 Search 
+                 See More
             </button>
 
           </div>
