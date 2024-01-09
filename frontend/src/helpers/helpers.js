@@ -5,75 +5,170 @@ axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
 
-export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError ) {
+// export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError ) {
+//     e.preventDefault();
+//     setTimeout(() => {
+//         setLoading(true);
+//     }, 500);
+//     console.log(password);
+//     try {
+//         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+//         console.log(response);
+
+//         if (response) {
+//                 // Get the CSRF token from the cookies
+//                 const csrfToken = document.cookie.split('; ')
+//                                     .find(row => row.startsWith('XSRF-TOKEN='))
+//                                     .split('=')[1];
+
+//             // Set the CSRF token in state or wherever you need it
+//             setToken(csrfToken);
+            
+//             try{
+//                 // Continue with your login logic using the obtained CSRF token
+//                 const loginResponse = await axios.post('http://localhost:8000/f/login', {
+//                     "email": email,
+//                     "password": password
+//                 }
+//                 , {
+//                     headers: {
+//                         Accept: 'application/json',
+//                         'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+//                     }
+//                 }
+//                 );
+//                 // console.log(loginResponse);
+//                 !user && !error && setUser(loginResponse.data);
+//                 if(loginResponse.data.role_id === 2  ){
+//                     getPatients( csrfToken, setPatients);
+//                     getPrescriptions( csrfToken, setPrescriptions  );
+//                     getDrugs( csrfToken, setDrugs  );
+//                 }else if(loginResponse.data.role_id === 4){
+//                     getPatients( csrfToken, setPatients);
+//                     getPrescriptions( csrfToken, setPrescriptions  );
+//                     setDrugs( [] );
+//                 } else if(loginResponse.data.role_id === 3){
+//                     getDrugs( csrfToken, setDrugs  );
+//                     setPatients([]);
+//                     setPrescriptions([]);
+//                 } else{
+//                     console.log("Who be this!!!");
+//                 }
+//             } catch (error) {
+//                 if (error.response && error.response.status === 422) {
+//                     setError("Incorrect username or password. Please fill in the correct details");
+//                 } else {
+//                     setError("An unexpected error occurred. Please try again later.");
+//                 }
+//                 console.error(error);
+//             }
+            
+//         } else {
+//             console.error('XSRF-TOKEN cookie not found in response headers');
+//         }
+
+//         if (user) {
+//             setTimeout(() => {
+//                 setLoading(false);
+//                 history('/user');
+//             }, 5000);
+//         } else {
+//             if (!user) {
+//                 setError("Incorrect username or password. Please fill in the correct details");
+//                 setLoading(false);
+//             } else {
+//                 setError("An unexpected error occurred. Please try again later.");
+//                 setLoading(false);
+//             }
+//             console.error(error);
+//         }
+        
+//     } catch (error) {
+//         console.error(error);
+//         setLoading(false);
+//     } 
+//     // finally {
+
+//     // }
+// }
+export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError) {
     e.preventDefault();
-    setTimeout(() => {
-        setLoading(true);
-    }, 500);
+    setLoading(true);
+
     try {
         const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
         if (response) {
-                // Get the CSRF token from the cookies
-                const csrfToken = document.cookie.split('; ')
-                                    .find(row => row.startsWith('XSRF-TOKEN='))
-                                    .split('=')[1];
+            const csrfToken = document.cookie.split('; ')
+                .find(row => row.startsWith('XSRF-TOKEN='))
+                .split('=')[1];
 
-            // Set the CSRF token in state or wherever you need it
             setToken(csrfToken);
-            
-            // Continue with your login logic using the obtained CSRF token
-            const loginResponse = await axios.post('http://localhost:8000/f/login', {
-                "email": email,
-                "password": password
-            }
-            , {
-                headers: {
-                    Accept: 'application/json',
-                    'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
-                }
-            }
-            );
-            // console.log(loginResponse);
-            !user && !error && setUser(loginResponse.data);
-            if(loginResponse.data.role_id === 2  ){
-                getPatients( csrfToken, setPatients);
-                getPrescriptions( csrfToken, setPrescriptions  );
-                getDrugs( csrfToken, setDrugs  );
-            }else if(loginResponse.data.role_id === 4){
-                getPatients( csrfToken, setPatients);
-                getPrescriptions( csrfToken, setPrescriptions  );
-                setDrugs( [] );
-            } else if(loginResponse.data.role_id === 3){
-                getDrugs( csrfToken, setDrugs  );
+
+            try {
+                const loginResponse = await axios.post('http://localhost:8000/f/login', {
+                    "email": email,
+                    "password": password
+                }, {
+                    headers: {
+                        Accept: 'application/json',
+                        'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+                    }
+                });
+
+                setUser(loginResponse.data);
                 setPatients([]);
+                setDrugs([]);
                 setPrescriptions([]);
-            } else{
-                console.log("Who be this!!!");
+
+                if (loginResponse.data.role_id === 2) {
+                    getPatients(csrfToken, setPatients);
+                    getPrescriptions(csrfToken, setPrescriptions);
+                    getDrugs(csrfToken, setDrugs);
+                } else if (loginResponse.data.role_id === 4) {
+                    getPatients(csrfToken, setPatients);
+                    getPrescriptions(csrfToken, setPrescriptions);
+                } else if (loginResponse.data.role_id === 3) {
+                    getDrugs(csrfToken, setDrugs);
+                } else {
+                    console.log("Who be this!!!");
+                }
+
+                // Reset error state on successful login
+                setError(null);
+
+            } catch (error) {
+                handleLoginError(error);
             }
+
         } else {
             console.error('XSRF-TOKEN cookie not found in response headers');
         }
 
-        if (user) {
+    } catch (error) {
+        handleLoginError(error);
+    } finally {
+        // Redirect logic here if needed
+        if(user){
             setTimeout(() => {
                 setLoading(false);
                 history('/user');
             }, 5000);
         } else {
-            console.error(error);
-            throw Error('incorrect details')
+            setLoading(false)
         }
-        
-    } catch (error) {
-        console.error(error);
-        setError( "Incorrect username or password. Please fill correct details" );
-        setLoading(false);
-    } 
-    // finally {
+    }
 
-    // }
+    function handleLoginError(error) {
+        if (error.response && error.response.status === 422) {
+            setError("Incorrect username or password. Please fill in the correct details");
+        } else {
+            setError("An unexpected error occurred. Please try again later.");
+        }
+        console.error(error);
+    }
 }
+
 
 export async function getPatients( csrfToken, setPatients) {
     try {
