@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import processLogin from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
 import  { DotLoader } from 'react-spinners'
+import processRegister from '../helpers/helpers';
 
 
 export default function BasicCard( { signUp } ) {
@@ -11,6 +12,7 @@ export default function BasicCard( { signUp } ) {
   const [ name, setName ] = React.useState('');
   const [ email, setEmail ] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [password1, setPassword1] = React.useState('');
   
   const [loading, setLoading] = React.useState(false);
   const [ error, setError] = React.useState('');
@@ -25,8 +27,8 @@ export default function BasicCard( { signUp } ) {
   };
   
 
-  const handleSignup = () => {
-
+  const handleSignup = (e) => {
+    processRegister(email, password, password1, setLoading, setToken, e, history, error, setError);
   }
 
   return (
@@ -103,7 +105,9 @@ export default function BasicCard( { signUp } ) {
 
             <h3 className = 'text-gray-750'> Please sign up with the required information </h3>
             <div className = 'flex flex-col justify-around items-center gap-6 mt-2 ' >
-
+              {
+                error && <h3 className = ' text-red-600 mt-2 font-bold text-lg ' > { error } </h3>
+              }
               <input 
                 type = "text" 
                 name = 'Name' 
@@ -129,16 +133,22 @@ export default function BasicCard( { signUp } ) {
                 name = 'password' 
                 placeholder = 'Password' 
                 value = { password } 
-                onChange = { (e) => setPassword( e.target.value ) } 
+                onChange = { (e) => {
+                                      e.preventDefault()
+                                      setPassword( e.target.value )
+                                    } } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
                 required 
               />
               <input 
                 type = "password" 
-                name = 'password' 
+                name = 'password1' 
                 placeholder = 'Confirm Password' 
-                value = { password } 
-                onChange = { (e) => setPassword( e.target.value ) } 
+                value = { password1 } 
+                onChange = { (e) => {
+                                      e.preventDefault()
+                                      setPassword1( e.target.value )
+                                    } } 
                 className = 'bg-secondary2 border border-primary rounded w-90 h-10 text-primary indent-3.5 outline-0 ' 
                 required 
               />
