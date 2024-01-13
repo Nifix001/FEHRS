@@ -76,7 +76,7 @@ export async function processRegister(name, email, password, password1, setLoadi
     }
 
     function handleRegisterError(error) {
-        if (error.response && error.response.status === 422) {
+        if (error.response.status === 422) {
             setError("User already exists!");
         } else {
             setError("An unexpected error occurred. Please try again later.");
