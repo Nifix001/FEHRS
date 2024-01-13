@@ -9,10 +9,16 @@ export async function processRegister(email, password, password1, setLoading, se
     e.preventDefault();
     setLoading(true);
 
-     if (password1 !== password) {
+     if (password !== password1) {
         setError('The passwords do not match. Please try again!');
         setLoading(false);
+     } else {
+        console.log("What are you doing fucker!!!");
      }
+
+     console.log(email);
+     console.log(password);
+     console.log(password1);
 }
 
 export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError) {

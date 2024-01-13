@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import processLogin from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
 import  { DotLoader } from 'react-spinners'
-import processRegister from '../helpers/helpers';
+import {processRegister} from '../helpers/helpers';
 
 
 export default function BasicCard( { signUp } ) {
@@ -155,7 +155,6 @@ export default function BasicCard( { signUp } ) {
               <button 
                 type = 'submit' 
                 className = 'bg-primary text-white w-90 rounded h-9  '
-                onClick = { handleSignup }
               >
                 <span className = 'ml-40' > Sign Up </span>
               </button>
