@@ -156,9 +156,15 @@ export default function BasicCard( { signUp } ) {
               />
               <button 
                 type = 'submit' 
-                className = 'bg-primary text-white w-90 rounded h-9  '
+                className = {`bg-primary text-white w-90 rounded h-9 ${loading ? 'opacity-70 cursor-not-allowed ' : ''} flex items-center gap-6 `}
               >
-                <span className = 'ml-40' > Sign Up </span>
+                {
+                  !loading ?  <span className = 'ml-40' > Sign Up </span>    : 
+                  <>
+                    <span className = 'ml-32'> Registering </span>
+                    <DotLoader color="#fff" size = { 18 }  />
+                  </>
+                }
               </button>
             </div>
             </>
