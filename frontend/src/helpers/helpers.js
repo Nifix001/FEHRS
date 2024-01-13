@@ -20,7 +20,7 @@ export async function processRegister(name, email, password, password1, setLoadi
         setLoading(false);
      } else {
         setError('')
-        console.log("What are you doing fucker!!!");
+        console.log("Welcome gee!");
      }
 
 
