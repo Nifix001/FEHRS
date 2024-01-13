@@ -46,7 +46,7 @@ export default function BasicCard( { signUp } ) {
 
         <form 
             className = 'grid justify-center'
-            onSubmit = { handleLogin }
+            onSubmit = { signUp ? handleSignup : handleLogin }
             >
             { !signUp ? <>
             <header> 
