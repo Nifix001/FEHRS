@@ -13,6 +13,7 @@ export async function processRegister(email, password, password1, setLoading, se
         setError('The passwords do not match. Please try again!');
         setLoading(false);
      } else {
+        setError('')
         console.log("What are you doing fucker!!!");
      }
 
