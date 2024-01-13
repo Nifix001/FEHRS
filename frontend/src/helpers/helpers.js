@@ -23,9 +23,6 @@ export async function processRegister(name, email, password, password1, setLoadi
         console.log("What are you doing fucker!!!");
      }
 
-     console.log(email);
-     console.log(password);
-     console.log(password1);
 
 
      try {
