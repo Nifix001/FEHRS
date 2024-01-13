@@ -67,6 +67,7 @@ export async function processRegister(name, email, password, password1, setLoadi
         // Redirect logic here if needed
         if(newUser){
             setTimeout(() => {
+                alert('User successfully created!')
                 setLoading(false);
                 history('/login');
             }, 5000);
