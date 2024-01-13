@@ -14,6 +14,8 @@ export default function BasicCard( { signUp } ) {
   const [password, setPassword] = React.useState('');
   const [password1, setPassword1] = React.useState('');
   
+
+  const [ newUser, setNewUser ] = React.useState();
   const [loading, setLoading] = React.useState(false);
   const [ error, setError] = React.useState('');
 
@@ -28,7 +30,7 @@ export default function BasicCard( { signUp } ) {
   
 
   const handleSignup = (e) => {
-    processRegister(name, email, password, password1, setLoading, setToken, e, history, error, setError);
+    processRegister(name, email, password, password1, setLoading, setToken, e, history, error, setError, newUser, setNewUser);
   }
 
   return (
@@ -106,7 +108,7 @@ export default function BasicCard( { signUp } ) {
             <h3 className = 'text-gray-750'> Please sign up with the required information </h3>
             <div className = 'flex flex-col justify-around items-center gap-6 mt-2 ' >
               {
-                error && <h3 className = ' text-red-600 mt-2 font-bold text-lg ' > { error } </h3>
+                error && <h3 className = ' text-red-600 -mt-1 -mb-4 font-bold text-lg ' > { error } </h3>
               }
               <input 
                 type = "text" 

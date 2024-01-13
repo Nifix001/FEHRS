@@ -5,9 +5,15 @@ axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
 
-export async function processRegister(name, email, password, password1, setLoading, setToken, e, history, error, setError){
+export async function processRegister(name, email, password, password1, setLoading, setToken, e, history, error, setError, newUser, setNewUser ){
     e.preventDefault();
     setLoading(true);
+
+    if(password.length < 8){
+        setError('The password must be at least 8 characters long!');
+        setLoading(false);
+        return; // Stop the registration processx
+    }
 
      if (password !== password1) {
         setError('The passwords do not match. Please try again!');
@@ -46,6 +52,7 @@ export async function processRegister(name, email, password, password1, setLoadi
                 });
 
                 console.log(registerResponse.data);
+                setNewUser(registerResponse.data);
             } catch (error) {
                 handleRegisterError(error);
             }
@@ -58,7 +65,7 @@ export async function processRegister(name, email, password, password1, setLoadi
         handleRegisterError(error);
     } finally {
         // Redirect logic here if needed
-        if(!error){
+        if(newUser){
             setTimeout(() => {
                 setLoading(false);
                 history('/login');
