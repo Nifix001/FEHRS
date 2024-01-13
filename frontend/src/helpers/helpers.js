@@ -22,15 +22,15 @@ export async function processRegister(name, email, password, password1, setLoadi
      console.log(password1);
 
 
-    //  try {
-    //     const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+     try {
+        const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
-    //     if (response) {
-    //         const csrfToken = document.cookie.split('; ')
-    //             .find(row => row.startsWith('XSRF-TOKEN='))
-    //             .split('=')[1];
+        if (response) {
+            const csrfToken = document.cookie.split('; ')
+                .find(row => row.startsWith('XSRF-TOKEN='))
+                .split('=')[1];
 
-    //         setToken(csrfToken);
+            setToken(csrfToken);
 
             try {
                 const registerResponse = await axios.post('http://localhost:8000/f/register', {
@@ -41,7 +41,7 @@ export async function processRegister(name, email, password, password1, setLoadi
                 }, {
                     headers: {
                         Accept: 'application/json',
-                        // 'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+                        'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
                     }
                 });
 
@@ -50,23 +50,23 @@ export async function processRegister(name, email, password, password1, setLoadi
                 handleRegisterError(error);
             }
 
-        // } else {
-        //     console.error('XSRF-TOKEN cookie not found in response headers');
-        // }
+        } else {
+            console.error('XSRF-TOKEN cookie not found in response headers');
+        }
 
-    // } catch (error) {
-    //     handleRegisterError(error);
-    // } finally {
-    //     // Redirect logic here if needed
-    //     if(!error){
-    //         setTimeout(() => {
-    //             setLoading(false);
-    //             history('/login');
-    //         }, 5000);
-    //     } else {
-    //         setLoading(false)
-    //     }
-    // }
+    } catch (error) {
+        handleRegisterError(error);
+    } finally {
+        // Redirect logic here if needed
+        if(!error){
+            setTimeout(() => {
+                setLoading(false);
+                history('/login');
+            }, 5000);
+        } else {
+            setLoading(false)
+        }
+    }
 
     function handleRegisterError(error) {
         if (error.response && error.response.status === 422) {
