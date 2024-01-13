@@ -5,7 +5,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
 
-export async function processRegister(email, password, password1, setLoading, setToken, e, history, error, setError){
+export async function processRegister(name, email, password, password1, setLoading, setToken, e, history, error, setError){
     e.preventDefault();
     setLoading(true);
 
@@ -20,6 +20,62 @@ export async function processRegister(email, password, password1, setLoading, se
      console.log(email);
      console.log(password);
      console.log(password1);
+
+
+     try {
+        const response = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+
+        if (response) {
+            const csrfToken = document.cookie.split('; ')
+                .find(row => row.startsWith('XSRF-TOKEN='))
+                .split('=')[1];
+
+            setToken(csrfToken);
+
+            try {
+                const registerResponse = await axios.post('http://localhost:8000/f/register', {
+                    "name": name,
+                    "email": email,
+                    "password": password,
+                    "password_confirmation": password1
+                }, {
+                    headers: {
+                        Accept: 'application/json',
+                        'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+                    }
+                });
+
+                console.log(registerResponse.data);
+            } catch (error) {
+                handleRegisterError(error);
+            }
+
+        } else {
+            console.error('XSRF-TOKEN cookie not found in response headers');
+        }
+
+    } catch (error) {
+        handleRegisterError(error);
+    } finally {
+        // Redirect logic here if needed
+        if(user !== null){
+            setTimeout(() => {
+                setLoading(false);
+                history('/user');
+            }, 5000);
+        } else {
+            setLoading(false)
+        }
+    }
+
+    function handleRegisterError(error) {
+        if (error.response && error.response.status === 422) {
+            setError("User already exists!");
+        } else {
+            setError("An unexpected error occurred. Please try again later.");
+        }
+        console.error(error);
+    }
 }
 
 export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError) {

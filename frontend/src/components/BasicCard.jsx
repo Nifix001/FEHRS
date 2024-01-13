@@ -28,7 +28,7 @@ export default function BasicCard( { signUp } ) {
   
 
   const handleSignup = (e) => {
-    processRegister(email, password, password1, setLoading, setToken, e, history, error, setError);
+    processRegister(name, email, password, password1, setLoading, setToken, e, history, error, setError);
   }
 
   return (
@@ -119,7 +119,7 @@ export default function BasicCard( { signUp } ) {
                 required
               />
               <input 
-                type = "text" 
+                type = "email" 
                 name = 'email' 
                 placeholder = 'email' 
                 value = { email }  
