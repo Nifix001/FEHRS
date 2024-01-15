@@ -16,8 +16,7 @@ const Patients = () => {
                 <Outlet /> 
           </div>  
           : 
-          // <NoAccess />
-          <></>
+          <NoAccess />
         }
     </React.Fragment>
   )
