@@ -122,7 +122,7 @@ export default async function processLogin(email, password, setLoading, setToken
                     getPrescriptions(csrfToken, setPrescriptions);
                 } else if (loginResponse.data.role_id === 3) {
                     getDrugs(csrfToken, setDrugs);
-                    getPrescriptions(csrfToken, setPrescriptions);
+                    // getPrescriptions(csrfToken, setPrescriptions);
                 } else {
                     console.log("Who be this!!!");
                 }
