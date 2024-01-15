@@ -7,7 +7,7 @@ import NoAccess from './NoAccess'
 const Dashboard = () => {
 
   const { user } = useUser();
-  const allowed = user.role_id === 1 || user.role_id === 4;
+  const allowed = user.role_id === 2;
 
   return (
     <React.Fragment>

@@ -3,9 +3,14 @@ import { Link, NavLink, Outlet, redirect, useLocation, useNavigate } from 'react
 import search from '../assets/akar-icons_search.svg'
 import filter from '../assets/cil_filter.svg'
 import { useEffect } from 'react'
+import NoAccess from './NoAccess'
+import { useUser } from '../context/UserContext'
 
 const Pharmacy = () => {
   
+  const { patients, user } = useUser();
+
+  const allowed = user.role_id === 2 || user.role_id === 3;
   
   const handleFile = (e) => {
     e.preventDefault();
@@ -17,7 +22,7 @@ const Pharmacy = () => {
   return (
 
     <React.Fragment> 
-      <div 
+    { allowed ?  <div 
         className = 'w-[1111px] h-full bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients overflow-x-hidden'
       >
         <nav className = 'flex justify-between items-center'>
@@ -103,7 +108,8 @@ const Pharmacy = () => {
       <Outlet />
 
     </div>
-
+    : <NoAccess />  
+    }
   </React.Fragment>
   )
 }

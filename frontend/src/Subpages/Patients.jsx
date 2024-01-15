@@ -7,7 +7,7 @@ const Patients = () => {
 
   const { user } = useUser();
 
-  const userAllowed = user.role_id === 1 || user.role_id === 4;
+  const userAllowed = user.role_id === 2 || user.role_id === 4;
 
   return (  
     <React.Fragment>

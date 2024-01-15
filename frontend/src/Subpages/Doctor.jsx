@@ -16,7 +16,7 @@ const Doctor = () => {
 
   const { patients, user } = useUser();
 
-  const allowed = user.role_id === 1 || user.role_id === 4;
+  const allowed = user.role_id === 2 || user.role_id === 4;
 
   const [ searchActive, setSearchActive ] = useState( false );
   const [patientOptions, setPatientOptions] = useState({});
