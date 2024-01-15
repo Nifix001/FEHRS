@@ -10,10 +10,14 @@ import { searchFunction } from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
 import SearchPatient from '../Tables/SearchPatient'
 import PrescribeDrug from '../modal/PrescribeDrug'
+import NoAccess from './NoAccess'
 
 const Doctor = () => {
 
-  const { patients } = useUser();
+  const { patients, user } = useUser();
+
+  const allowed = user.role_id === 1 || user.role_id === 4;
+
   const [ searchActive, setSearchActive ] = useState( false );
   const [patientOptions, setPatientOptions] = useState({});
   const [ options, setOptions ] = useState(false);
@@ -91,7 +95,8 @@ const Doctor = () => {
 
   return (
     <React.Fragment>
-      <div className = 'w-[1126px] h-[88.4vh] bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 doctors bg-opacity-60'>
+      { allowed ?   <div 
+          className = 'w-[1126px] h-[88.4vh] bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 doctors bg-opacity-60'>
 
         <div className = 'flex bg-white h-fit w-full py-2 px-10 justify-between rounded-md ' >
 
@@ -177,9 +182,12 @@ const Doctor = () => {
         </div> }
 
       </div>
+      : <NoAccess />
+    }
      { prescribeModal && <PrescribeDrug
         onClose = { closePrescribeModal } 
       />}
+      
     </React.Fragment>
   )
 }
