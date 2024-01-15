@@ -16,8 +16,7 @@ const Pharmacy = () => {
   
   return (
 
-    <React.Fragment>
-     
+    <React.Fragment> 
       <div 
         className = 'w-[1111px] h-full bg-white border-l  relative top-20 left-60 -ml-0.5 py-4 px-6 patients overflow-x-hidden'
       >
