@@ -15,6 +15,8 @@ export default {
     "./src/Subpages/Doctor.jsx",
     "./src/Subpages/Reports.jsx",
     "./src/Subpages/Settings.jsx",
+    "./src/Subpages/Settings.jsx",
+    "./src/Subpages/NoAccess.jsx",
     "./src/Subpages/Patients Subpage/NewPatients.jsx",
     "./src/Subpages/Patients Subpage/PatientsPage.jsx",
     "./src/Subpages/Patients Subpage/PaForm1.jsx",
