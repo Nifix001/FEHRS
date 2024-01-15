@@ -144,7 +144,15 @@ export default async function processLogin(email, password, setLoading, setToken
         if(user !== null){
             setTimeout(() => {
                 setLoading(false);
-                history('/user');
+                if(user.role_id === 2){
+                    history('/user');
+                } else if (user.role_id === 3){
+                    history('/user/pharmacy')
+                } else if ( user.role_id === 4 ){
+                    history('/user/doctor')
+                } else {
+                    history('/user/reports')
+                }
             }, 5000);
         } else {
             setLoading(false)
