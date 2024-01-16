@@ -12,7 +12,7 @@ import { useUser } from '../context/UserContext';
 
 const Reports = () => {
   
-  const { patients } = useUser();
+  const { patients, prescriptions } = useUser();
 
 
   const patient = patients.map( p  =>  {
@@ -54,7 +54,7 @@ const Reports = () => {
             <h1 className = ' text-[18px] font-semibold ' > Overview </h1>
             <div className="flex justify-around items-center "> 
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 2190 </h3>
+                <h3> { patients.length } </h3>
                 <h4> Total Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
@@ -77,7 +77,7 @@ const Reports = () => {
                 <h4 className = ' text-[#27AE60] ' > Treated Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 1432 </h3>
+                <h3> { prescriptions.length } </h3>
                 <h4 className = ' text-[#C616AA] ' > Prescribed Drugs </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
