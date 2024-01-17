@@ -8,6 +8,7 @@ import dot from '../assets/carbon_overflow-menu-horizontal.svg'
 import PatientsTable from '../Tables/PatientsTable';
 import Patientsdata from '../database/Patientsdata';
 import { useUser } from '../context/UserContext';
+import Example from '../components/Graphdata';
 
 
 const Reports = () => {
@@ -127,8 +128,10 @@ const Reports = () => {
               Monthly 
             </button>
           </div>
-          <img src = { graph } alt="" className = 'p-4'  />
-          <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
+          {/* <img src = { graph } alt="" className = 'p-4'  />
+           */}
+           <Example />
+          {/* <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
             <div className = 'flex justify-around items-center gap-1 ' >
               <div className = ' rounded-full border-2 w-[14px] h-[14px] ' > </div>
               <h3> Non-admitted </h3>
@@ -137,7 +140,7 @@ const Reports = () => {
               <div className = ' rounded-full border-2 w-[14px] h-[14px] ' > </div>
               <h3> Admitted </h3>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm flex flex-col items-center justify-center ' >
           <header className = 'flex w-full items-center relative py-3' > <h1 className = ' text-xl font-semibold pl-6 absolute top-4 '> History </h1> </header>
