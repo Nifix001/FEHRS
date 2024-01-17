@@ -27,6 +27,7 @@
     "react-inlinesvg": "^4.0.5",
     "react-router-dom": "^6.14.2",
     "react-spinners": "^0.13.8",
+    "recharts": "^2.10.4",
     "sheetjs": "^2.0.0",
     "styled-components": "^5.3.11",
     "xlsx": "^0.18.5"
