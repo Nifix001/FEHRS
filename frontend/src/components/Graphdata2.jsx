@@ -54,10 +54,10 @@ export default class Graphdata2 extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
-          width={200}
-          height={100}
+      <ResponsiveContainer width="60%" height="100%">
+       <AreaChart
+          width={500}
+          height={400}
           data={data}
           margin={{
             top: 10,

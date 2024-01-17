@@ -10,12 +10,12 @@ const Graph = () => {
      return (
       <React.Fragment>      
         <div className = 'flex pt-6 pl-6'>
-            {/* <img 
+            <img 
                 className = 'scale-y-70 scale-x-90 -mt-16 -ml-5' 
                 src = { graph } 
                 alt = "graph" 
-            /> */}
-            <Graphdata2 />
+            />
+            {/* <Graphdata2 /> */}
             <div className = 'ml-12'>
                 
                 <div className = 'flex justify-between items-center mb-3'>
