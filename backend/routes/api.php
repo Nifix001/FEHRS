@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DrugController;
 use App\Http\Controllers\PrescriptionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\WelcomeMail;
 use App\Models\User;
@@ -52,13 +53,15 @@ Route::middleware('auth:sanctum','pharm')->delete('/drugs/{id}',[DrugController:
 
 Route::middleware('auth:sanctum')->get('/prescriptions',[PrescriptionController::class, 'total']);
 Route::middleware('auth:sanctum')->get('/prescription/patients/',[PrescriptionController::class, 'get']);
-Route::middleware('auth:sanctum','doc')->get('/prescription',[PrescriptionController::class, 'show']);
+Route::middleware('auth:sanctum')->get('/prescription',[PrescriptionController::class, 'show']);
 Route::middleware('auth:sanctum','doc')->post('/prescription',[prescriptionController::class, 'store']);
-Route::middleware('auth:sanctum')->put('/prescription/{id}',[PrescriptionController::class, 'update']);
+Route::middleware('auth:sanctum','pharm')->put('/prescription/{id}',[PrescriptionController::class, 'update']);
 Route::middleware('auth:sanctum')->get('/prescription/history',[PrescriptionController::class, 'history']);
 
 // doctor endpoint
 Route::middleware('auth:sanctum','doc')->get('/patients/history',[PatientController::class, 'search']);
+Route::middleware('auth:sanctum','admin')->get('/users',[UserController::class, 'show']);
+
 
 Route::get('/boom/{name}', function(\Illuminate\Http\Request $request,$name){
     if(!$request->hasValidSignature()){

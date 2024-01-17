@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Patient;
+use App\Models\Prescription;
 use App\Models\Patient_next_of_kin;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -117,6 +118,8 @@ class PatientController extends Controller
     public function show(){
         // status 0 = active and status 1 = not active(deleted) 
         $patient = Patient::where('status',0)->with('prescriptions')->get();
+        // $patient = Patient::where('status',0)->with('prescriptions')->paginate(5);
+
         // $patients = Patient_next_of_kin::all();
         // $pat=$patient->patient_next_of_kin;
         // $pat_nok=$patient->patient_next_of_kin;
@@ -256,7 +259,12 @@ class PatientController extends Controller
 
         try {
 
-            $patient= Patient::where('matric_no',$matric_no)->with('prescriptions')->get();
+            $patient= Patient::where('matric_no',$matric_no)->get();
+            $id=$patient[0]["id"];
+            $pre=Prescription::where('patient_id',$id)->with(['drugs:id,drug_name'])->get();
+            // $idd=$pre[0]["id"];
+            // $data=$pre->drugs;
+
         
         } catch (ModelNotFoundException $exception) {
             return response("patient matric no not found");
@@ -264,7 +272,7 @@ class PatientController extends Controller
         
         if(!$patient->isEmpty()){
 
-            return response()->json(["records"=>$patient]);
+            return response()->json(["records"=>$pre]);
         }else{
             return response()->json(["records"=>0]);
         }

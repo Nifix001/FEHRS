@@ -9,7 +9,7 @@ class Drug extends Model
 {
     use HasFactory;
     public function prescription(){
-        return $this->belongsToMany(prescription::Class);
+        return $this->belongsToMany(prescription::Class)->withPivot('quantity');
     }
     public function drunIn(){
             return $this->belongsTo(Drug_in::class);

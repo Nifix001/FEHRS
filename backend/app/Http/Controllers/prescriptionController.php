@@ -54,8 +54,9 @@ class prescriptionController extends Controller
             "diagnosis"=> $request->diagnosis,
             "comment"=>$request->comment,
             "drug_quantity"=> implode(" ",$request->drug_quantity),
-
+            
         ]);
+        $quantity= $request->drug_quantity;
         // $prescription= new Prescription;
         // $prescription->patient_id= $request->patient_id;
         // $prescription->user_id= $request->user_id;
@@ -66,7 +67,16 @@ class prescriptionController extends Controller
         // $prescription->prescription= implode(" ",$request->prescription);
         $prescription->save();
         if($prescription->save()){
-            $prescription->drugs()->sync($request->drug_id);
+            $array = [];
+            $size = count($request->drug_id);
+    
+            for ($i=0; $i < $size; $i++) { 
+                
+                $array[$request->drug_id[$i]] = [ 'quantity' => $quantity[$i] ];
+                echo $array;
+            }
+            $prescription->drugs()->sync($array);
+            // $prescription->drugs()->sync($request->drug_id,['quantity'=>$quantity]);
             return response()->json(["success","details"=>$prescription]);
         }else{
             return response()->json("fail");
@@ -89,6 +99,7 @@ class prescriptionController extends Controller
             $drugUpdate = Drug::findOrFail($a['id']);
             $drugUpdate->drug_quantity -=$q[$i];
             $drugUpdate->update();
+            echo $a->pivot->quantity;
             $i++;
         }
         $prescription->status=1;

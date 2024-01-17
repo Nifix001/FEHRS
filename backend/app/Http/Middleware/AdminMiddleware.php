@@ -16,11 +16,11 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $user = $request->user();
-        // if($user->role->id === 1 ){
-            // $user = $request->user();
-            if($user->role->id === 1){
-                return response()->json(["data"=> []]);
-            }
+        // // if($user->role->id === 1 ){
+        //     // $user = $request->user();
+        //     if($user->role->id === 1){
+        //         return response()->json(["data"=> ""]);
+        //     }
             if($user->role->id === 2 ){
             return $next($request);
         }

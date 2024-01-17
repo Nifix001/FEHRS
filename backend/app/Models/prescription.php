@@ -41,6 +41,6 @@ class prescription extends Model
         return $this->belongsTo(Patient::class,'patient_id','id');
     }
     public function drugs(){
-        return $this->belongsToMany(Drug::Class)->withTimestamps();
+        return $this->belongsToMany(Drug::Class)->withPivot('quantity')->withTimestamps();
     }
 }
