@@ -61,6 +61,8 @@ Route::middleware('auth:sanctum')->get('/prescription/history',[PrescriptionCont
 // doctor endpoint
 Route::middleware('auth:sanctum','doc')->get('/patients/history',[PatientController::class, 'search']);
 Route::middleware('auth:sanctum','admin')->get('/users',[UserController::class, 'show']);
+Route::middleware('auth:sanctum','admin')->put('/user/role/{id}',[UserController::class, 'update']);
+
 
 
 Route::get('/boom/{name}', function(\Illuminate\Http\Request $request,$name){

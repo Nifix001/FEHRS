@@ -13,7 +13,7 @@ class UserController extends Controller
     }
 
 
-    public function update(){
+    public function update(Request $request, $id){
         $user = User::findOrFail($id);
         $user->role_id= $request->role_id;
         $user->update();
