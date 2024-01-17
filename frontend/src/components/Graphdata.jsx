@@ -6,43 +6,43 @@ const data = [
   {
     name: 'Sep',
     patients: 125,
-    pv: 203,
+    target: 203,
     amt: 400,
   },
   {
     name: 'Oct',
     patients: 185,
-    pv: 152,
+    target: 152,
     amt: 221,
   },
   {
     name: 'Nov',
     patients: 140,
-    pv: 170,
+    target: 170,
     amt: 229,
   },
   {
     name: 'Dec',
     patients: 278,
-    pv: 390,
+    target: 390,
     amt: 200,
   },
   {
     name: 'Jan',
     patients: 189,
-    pv: 480,
+    target: 480,
     amt: 218,
   },
   {
     name: 'Feb',
     patients: 239,
-    pv: 380,
+    target: 380,
     amt: 250,
   },
   {
     name: 'March',
     patients: 349,
-    pv: 430,
+    target: 430,
     amt: 210,
   },
 ];
@@ -71,7 +71,7 @@ export default class Example extends PureComponent {
           <YAxis />
           <Tooltip />
           <Area type="monotone" dataKey="patients" stroke="#8884d8" fill="#7F00AC" fillOpacity={0.3} />
-          <Area type={cardinal} dataKey="pv" stroke="#82ca9d" fill="#7F00AC" fillOpacity={0.3} />
+          <Area type={cardinal} dataKey="target" stroke="#82ca9d" fill="#7F00AC" fillOpacity={0.3} />
         </AreaChart>
       </ResponsiveContainer>
     );
