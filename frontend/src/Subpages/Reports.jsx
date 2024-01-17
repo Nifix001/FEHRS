@@ -89,7 +89,7 @@ const Reports = () => {
           <div className = ' bg-white h-52 w-[36vw] rounded-md  grid px-2 py-8 shadow-sm ' >
             <div className = " flex justify-between px-2 " >
               <h1 className = ' text-[18px] font-semibold '> Doctors on Duty </h1>
-              <Link to = "/user" className = ' text-[14px] '  > See All </Link>
+              <Link to = "/user/doctor" className = ' text-[14px] '  > See All </Link>
             </div>
             <table className = ' text-[14px]' >
               <thead className = ' border-b'>
