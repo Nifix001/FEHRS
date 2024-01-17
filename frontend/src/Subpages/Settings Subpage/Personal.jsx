@@ -10,7 +10,7 @@ const Personal = () => {
   const [  portOptions, setPortOptions ] = useState( " Doctor " );
   const inputRef = useRef(null);
   // const [image, setImage] = useState("");
-  const { image, setImage } = useUser();
+  const { image, setImage, user } = useUser();
 
   const handleImage = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Personal = () => {
     setImage(event.target.files[0]);
   }
   
-  const port = ["Doctor", "Admin", "Pharmacist"]
+  const port = [ "Admin", "Pharmacist", "Doctor"]
   const gen = ["Male", "Female"]
 
 
@@ -47,7 +47,7 @@ const Personal = () => {
         </div>
         <div className = 'mb-4 relative ' >
           <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-3 left-2 ' > Portfolio </label>
-          <button className = 'border py-3 w-[240px] px-3 rounded-lg text-sm flex justify-between items-center' onClick={(e) => {
+          {/* <button className = 'border py-3 w-[240px] px-3 rounded-lg text-sm flex justify-between items-center' onClick={(e) => {
             e.preventDefault();
             setPortDropdown(!portDropdown)
           } } > 
@@ -71,7 +71,8 @@ const Personal = () => {
                 }
               </ul>
             </div>
-           }
+           } */}
+            <input type="text" placeholder = 'Kanayo' className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' value={`${port[user.role_id - 2]}`} disabled />
         </div>
         <div className="grid grid-cols-2 grid-rows-3 ">
           <div className = 'flex flex-col' >

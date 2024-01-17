@@ -144,7 +144,7 @@ export default async function processLogin(email, password, setLoading, setToken
         // Redirect logic here if needed
         if(user !== null){
             setTimeout(() => {
-                setLoading(false);
+                // setLoading(false);
                 if(user.role_id === 2){
                     history('/user');
                 } else if (user.role_id === 3){

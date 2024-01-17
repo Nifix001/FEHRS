@@ -20,6 +20,7 @@
     "@mui/material": "^5.14.3",
     "@mui/styled-engine-sc": "^5.12.0",
     "axios": "^1.6.2",
+    "d3-shape": "^3.2.0",
     "dotenv": "^16.3.1",
     "iconsax-react": "^0.0.8",
     "react": "^18.2.0",
@@ -27,6 +28,7 @@
     "react-inlinesvg": "^4.0.5",
     "react-router-dom": "^6.14.2",
     "react-spinners": "^0.13.8",
+    "recharts": "^2.10.4",
     "sheetjs": "^2.0.0",
     "styled-components": "^5.3.11",
     "xlsx": "^0.18.5"

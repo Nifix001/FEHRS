@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import graph from '../assets/Dashboard/Frame 486.svg'
 import { useUser } from '../context/UserContext'
+import Graphdata2 from './Graphdata2'
 
 const Graph = () => {
     const { patients } = useUser();
@@ -14,7 +15,7 @@ const Graph = () => {
                 src = { graph } 
                 alt = "graph" 
             />
-            
+            {/* <Graphdata2 /> */}
             <div className = 'ml-12'>
                 
                 <div className = 'flex justify-between items-center mb-3'>
@@ -27,12 +28,12 @@ const Graph = () => {
                 </div>
 
                 <div>
-                    <table className = "w-94 h-80 bg-white rounded-md table-auto  text-center">                 
+                    <table className = "w-[386px] h-80 bg-white rounded-md table-auto  text-center">                 
                         <thead className = 'border-b text-primary text-sm'>
                             <tr className = 'p-4'>
-                                <th> SN </th>
+                                <th className='pl-4'> SN </th>
                                 <th> Name </th>
-                                <th> Matric Number </th>
+                                <th className='pr-4'> Matric Number </th>
                             </tr>
                         </thead>
                         
@@ -42,9 +43,9 @@ const Graph = () => {
                                     return (
                                         <React.Fragment key = { p.id } >
                                             <tr>
-                                                <td> { p.id }. </td>
+                                                <td className='pl-2'> { p.id }. </td>
                                                 <td className = ' text-left pl-11 '> { p.lastname } { p.firstname } </td>
-                                                <td className = ' text-left ' > { p.matric_no } </td>
+                                                <td className = ' text-left pr-4 ' > { p.matric_no } </td>
                                             </tr>      
                                         </React.Fragment>
                                     )

@@ -8,11 +8,12 @@ import dot from '../assets/carbon_overflow-menu-horizontal.svg'
 import PatientsTable from '../Tables/PatientsTable';
 import Patientsdata from '../database/Patientsdata';
 import { useUser } from '../context/UserContext';
+import Example from '../components/Graphdata';
 
 
 const Reports = () => {
   
-  const { patients } = useUser();
+  const { patients, prescriptions } = useUser();
 
 
   const patient = patients.map( p  =>  {
@@ -54,30 +55,30 @@ const Reports = () => {
             <h1 className = ' text-[18px] font-semibold ' > Overview </h1>
             <div className="flex justify-around items-center "> 
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 2190 </h3>
+                <h3> { patients.length } </h3>
                 <h4> Total Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 1830 </h3>
+                <h3> 6 </h3>
                 <h4 className = ' text-[#DBA362] ' > Visited Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 432 </h3>
+                <h3> 6 </h3>
                 <h4 className = ' text-[#845EBC] ' > Admitted Patients </h4>
               </div>
             </div>
             <hr className = ' p-0.5'  />
             <div className="flex justify-around items-center "> 
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 439 </h3>
+                <h3> 4 </h3>
                 <h4 className = ' text-[#2B5ABC] ' > Tests done </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 1490 </h3>
+                <h3> 3 </h3>
                 <h4 className = ' text-[#27AE60] ' > Treated Patients </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
-                <h3> 1432 </h3>
+                <h3> { prescriptions.length } </h3>
                 <h4 className = ' text-[#C616AA] ' > Prescribed Drugs </h4>
               </div>
               <div className="flex flex-col gap-2 items-center justify-center text-[14px]">
@@ -89,7 +90,7 @@ const Reports = () => {
           <div className = ' bg-white h-52 w-[36vw] rounded-md  grid px-2 py-8 shadow-sm ' >
             <div className = " flex justify-between px-2 " >
               <h1 className = ' text-[18px] font-semibold '> Doctors on Duty </h1>
-              <Link to = "/user" className = ' text-[14px] '  > See All </Link>
+              <Link to = "/user/doctor" className = ' text-[14px] '  > See All </Link>
             </div>
             <table className = ' text-[14px]' >
               <thead className = ' border-b'>
@@ -127,8 +128,10 @@ const Reports = () => {
               Monthly 
             </button>
           </div>
-          <img src = { graph } alt="" className = 'p-4'  />
-          <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
+          {/* <img src = { graph } alt="" className = 'p-4'  />
+           */}
+           <Example />
+          {/* <div className = ' flex items-center justify-around ml-auto mr-auto gap-4 ' >
             <div className = 'flex justify-around items-center gap-1 ' >
               <div className = ' rounded-full border-2 w-[14px] h-[14px] ' > </div>
               <h3> Non-admitted </h3>
@@ -137,11 +140,11 @@ const Reports = () => {
               <div className = ' rounded-full border-2 w-[14px] h-[14px] ' > </div>
               <h3> Admitted </h3>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm ' >
+        <div className = ' bg-white h-fit w-[74vw] rounded-md shadow-sm flex flex-col items-center justify-center ' >
           <header className = 'flex w-full items-center relative py-3' > <h1 className = ' text-xl font-semibold pl-6 absolute top-4 '> History </h1> </header>
-          <div className = 'scale-95 -ml-4 ' >
+          <div className = 'scale-90 ' >
             <PatientsTable patients = { patient.slice(0,7) } />
           </div>
         </div>

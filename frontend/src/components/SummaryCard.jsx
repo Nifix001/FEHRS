@@ -46,7 +46,7 @@ const SummaryCard = () => {
                     </Link> */}
                 </div>
                 <div className = 'flex pt-8'>
-                    <p className = 'font-welcome text-3xl text-white font-bold '> 30 </p>
+                    <p className = 'font-welcome text-3xl text-white font-bold '> 3 </p>
                     <div className = 'bg-tertiary-2  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-44'>
                         <img 
                             src = { comm } 
@@ -68,7 +68,7 @@ const SummaryCard = () => {
                     </Link> */}
                 </div>
                 <div className = 'flex pt-8'>
-                    <p className = 'font-welcome text-3xl text-white font-bold'> 456 </p>
+                    <p className = 'font-welcome text-3xl text-white font-bold'> 9 </p>
                     <div className = 'bg-tertiary-3  p-2 w-21.5 h-21.5 rounded-full flex items-center justify-center -mt-6 ml-36'>
                         <img 
                             src = { dept } 

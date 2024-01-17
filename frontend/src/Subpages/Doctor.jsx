@@ -70,6 +70,7 @@ const Doctor = () => {
           onClick = { () => {
                               setPatient(p)
                               setOptions(false)
+                              setSearchActive(true);x
                             } }
       >
         <span className = 'w-[300px]' > {`${ p.lastname }     ${ p.firstname }`} </span>
@@ -117,9 +118,11 @@ const Doctor = () => {
                         alt = "search" 
                     />
                 </div>
-                { options && <div className = 'absolute top-12 bg-white w-full h-fit shadow-md border p-2 z-50 ' >
-                  { search1 }
-                  </div>}
+                { options && 
+                  <div className = 'absolute top-12 bg-white w-full h-fit shadow-md border p-2 z-50 ' >
+                    { search1 }
+                  </div>
+                }
             </div>
 
             <button 
