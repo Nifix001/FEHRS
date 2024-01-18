@@ -18,7 +18,7 @@ const Graph = () => {
                 alt = "graph" 
             /> */}
             {/* <Graphdata2 /> */}
-            <div className='w-[1200px] h-[500px] flex justify-center items-center border mt-4'>
+            <div className='w-[1200px] h-[500px] flex justify-end items-center mt-4 z-10'>
                 <Pie1 className="scale-150" />
             </div>
             <div className = 'ml-12'>
