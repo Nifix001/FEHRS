@@ -31,6 +31,7 @@ export default {
     "./src/Subpages/Settings Subpage/Password.jsx",
     "./src/components/SummaryCard.jsx",
     "./src/components/Graph.jsx",
+    "./src/components/PieGraph.jsx",
     "./src/Tables/PatientsTable.jsx",
     "./src/Tables/DrugTable.jsx",
     "./src/Tables/PrescriptionTable.jsx",
