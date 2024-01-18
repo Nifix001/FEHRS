@@ -124,7 +124,7 @@ export default async function processLogin(email, password, setLoading, setToken
                     getDrugs(csrfToken, setDrugs);
                     // getPrescriptions(csrfToken, setPrescriptions);
                 } else {
-                    console.log("Who be this!!!");
+                    console.log("Who is this!!!");
                 }
 
                 // Reset error state on successful login
@@ -144,7 +144,6 @@ export default async function processLogin(email, password, setLoading, setToken
         // Redirect logic here if needed
         if(user !== null){
             setTimeout(() => {
-                // setLoading(false);
                 if(user.role_id === 2){
                     history('/user');
                 } else if (user.role_id === 3){
