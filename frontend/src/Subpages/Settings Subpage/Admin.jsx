@@ -29,9 +29,9 @@ const Admin = () => {
                   <div className = ' flex w-full justify-between items-center mb-10 relative '> 
                     <h2> {user.name} </h2>
                     <div className='flex absolute left-[200px] -mt-1 gap-3 ' >
-                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px]'> Doctor </button>
-                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px]'> Pharmacist </button>
-                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px]'> Admin </button>
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary ' > Doctor </button>
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Pharmacist </button>
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Admin </button>
                     </div>
                     <button>
                       ...
