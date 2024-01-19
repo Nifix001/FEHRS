@@ -4,7 +4,7 @@ import direct from '../assets/ic_baseline-log-out.svg'
 
 import { NavLink } from 'react-router-dom';
 
-import { Building3, Chart1, Element, Hospital, Profile2User, Setting2 } from 'iconsax-react'
+import { Building3, Chart1, Element, Hospital, Logout, Profile2User, Setting2 } from 'iconsax-react'
 
 
 
@@ -108,13 +108,14 @@ const SideBar = () => {
                 <div className = 'grid absolute bottom-20'>
                     <hr className = 'w-48 my-4' />
                     <button
-                        className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5'
+                        className = 'flex hover:bg-primary hover:text-white p-1.5 -ml-1.5 rounded-md w-[210px]'
                         onClick = { handleLogout }
                     >
-                        <img
-                            src = { direct }
-                            alt = "log out"
-                            className = 'w-5 h-5 mr-2' />
+                     {/* <img
+                    //         src = { direct }
+                    //         alt = "log out"
+                    //         className = 'w-5 h-5 mr-2' /> */}
+                    <Logout size="20"/>
                         <h3 className = ' ml-2'> Logout </h3>
 
                     </button>
