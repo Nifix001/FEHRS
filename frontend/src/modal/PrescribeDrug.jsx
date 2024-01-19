@@ -1,6 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const PrescribeDrug = ( { onClose } ) => {
+
+  const [inputSets, setInputSets] = useState([{ id: 1, value: '' }]);
+
+  const handleInputChange = (id, value) => {
+    const updatedInputSets = inputSets.map(set =>
+      set.id === id ? { ...set, value } : set
+    );
+    setInputSets(updatedInputSets);
+  };
+
+  const handleAddInputSet = () => {
+    setInputSets(prevInputSets => [
+      ...prevInputSets,
+      { id: prevInputSets.length + 1, value: '' },
+    ]);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    // Process the form data as needed
+    console.log(inputSets);
+  };
 
 
   return (
@@ -21,10 +43,37 @@ const PrescribeDrug = ( { onClose } ) => {
         </button>
           <div className="flex">
               {/* <p>Are you sure you want to prescribe the following drugs?</p> */}
+              <div>
+                {inputSets.map(inputSet => (
+                  <div key={inputSet.id} className="input-group flex gap-4">
+                    <label htmlFor=""> Drug Quantity </label>
+                    <input type="text"
+                    className='border'  />
+                    <label htmlFor={`input${inputSet.id}`}>{`Input ${inputSet.id}:`}</label>
+                    <input
+                      type="text"
+                      className='border'
+                      id={`input${inputSet.id}`}
+                      name={`input${inputSet.id}`}
+                      value={inputSet.value}
+                      onChange={e => handleInputChange(inputSet.id, e.target.value)}
+                    />
+                  </div>
+                ))}
+                <button type="button" onClick={handleAddInputSet}>
+                  {/* Add */}
+                  +
+                </button>
+              </div>
                                       
               </div>
               <div className = "flex w-full items-center justify-center mt-8 gap-6">
-                 <button className = ' bg-primary text-white px-12 py-[12px] text-sm  rounded-md'  > Prescribe </button>                                                       
+                 <button className = ' bg-primary text-white px-12 py-[12px] text-sm  rounded-md'  > Prescribe </button>       
+                 <button 
+                    className = ' bg-primary text-white px-12 py-[12px] text-sm  rounded-md' 
+                    onClick = { onClose }
+                >   Cancel 
+                </button>                                                    
           </div>
         </div>
       </div>
