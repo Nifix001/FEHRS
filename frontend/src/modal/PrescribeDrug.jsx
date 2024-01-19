@@ -20,7 +20,7 @@ const PrescribeDrug = ( { onClose } ) => {
           Close
         </button>
           <div className="flex">
-              <p>Are you sure you want to prescribe the following drugs?</p>
+              {/* <p>Are you sure you want to prescribe the following drugs?</p> */}
                                       
               </div>
               <div className = "flex w-full items-center justify-center mt-8 gap-6">

@@ -149,7 +149,7 @@ const Doctor = () => {
             className = ' w-[1014px] h-[510px] p-5 absolute z-10 mt-6 rounded-xl shadow-sm flex gap-16 '
         >
             <div className = ' flex flex-col gap-5 items-center w-1/5 ' >
-              <div className = 'w-[140px] h-[140px] rounded-full bg-gray-200 flex items-center justify-center text-white cursor-pointer' > {image ? <img src = { URL.createObjectURL(image) } alt="" className='rounded-full object-fill h-full w-full'/> : <User size = {100} />} </div>
+              <div className = 'w-[140px] h-[140px] rounded-full bg-gray-200 flex items-center justify-center text-white cursor-pointer' >  <User size = {100} /> </div>
               <span className = ' text-xl font-bold ' > { patient.firstname } { patient.lastname } </span>
               <div className='flex justify-between w-full px-3 text-gray-700'> Age <span className='font-bold'> 2 </span> </div>
               <div className="flex items-center justify-center">
@@ -158,7 +158,7 @@ const Doctor = () => {
             </div>
             <div className="grid">
               
-              <div className="grid grid-cols-4 row-span-2 gap-4 bg-white py-6 pl-5 pr-10">
+              <div className="grid grid-cols-4 row-span-2 gap-4 bg-white py-6 pl-5 pr-10 rounded-lg opacity-90 ">
                 <h3 className='flex flex-col gap-1'>  First Name <span className='font-bold'>  { patient.firstname } </span> </h3>
                 <h3 className='flex flex-col gap-1'>  Middle Name <span className='font-bold'>  { patient.middlename } </span> </h3>
                 <h3 className='flex flex-col gap-1'>  Last Name <span className='font-bold'>  { patient.lastname } </span> </h3>
@@ -169,12 +169,12 @@ const Doctor = () => {
                 <h3 className='flex flex-col gap-1'>  Date of <span className='font-bold'> Birth  { patient.dob } </span>  </h3>
                 <h3 className='flex flex-col gap-1'>  Home Address <span className='font-bold'>  { patient.home_address } </span> </h3>
               </div>
-              <div className='grid bg-white h-fit mt-10 py-6 pl-5 ' >
+              <div className='grid bg-white h-fit mt-10 py-6 pl-5 rounded-lg ' >
                 <h3 className='font-bold'> Previous Diagnosis </h3>
-                  <p className='flex gap-1' >
+                  <p className='flex flex-col gap-2' >
                     {
                       patient.prescriptions.length > 0 ? patient.prescriptions.map(p => (
-                        <h3 key = { p.id } > { p.diagnosis } </h3>
+                        <h3 className='block'  key = { p.id } > { p.diagnosis } </h3>
                         )) : 
                         <h3 className=' italic text-gray-400 opacity-50' > No previous diagnosis </h3>
                     }
