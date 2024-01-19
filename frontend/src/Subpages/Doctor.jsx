@@ -97,7 +97,7 @@ const Doctor = () => {
   return (
     <React.Fragment>
       { allowed ?   <div 
-          className = 'w-[1126px] h-[88.4vh] bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 doctors bg-opacity-60'>
+          className = 'w-[1126px] h-[100vh] bg-[#f9f9f9] border-l  relative top-20 left-60 -ml-0.5 py-6 px-14 doctors bg-opacity-60'>
 
         <div className = 'flex bg-white h-fit w-full py-2 px-10 justify-between rounded-md ' >
 
@@ -145,38 +145,44 @@ const Doctor = () => {
 
         { searchActive ? 
         <div 
-            className = ' bg-white w-[1014px] h-[510px] p-5 absolute z-10 mt-6 rounded-xl shadow-sm block '
+            className = ' w-[1014px] h-[510px] p-5 absolute z-10 mt-6 rounded-xl shadow-sm flex gap-10 '
         >
-            {/* <SearchPatient patients = { searchPatient }  /> */}
-            <h2 className = ' text-2xl font-bold mb-8 '> Personal details about { patient.lastname } { patient.firstname } </h2>
-            <div className="grid grid-cols-3 row-span-2 gap-4">
-              <h3> <span className='font-bold'> Matric Number: </span> { patient.matric_no } </h3>
-              <h3> <span className='font-bold'> Surname: </span> { patient.lastname } </h3>
-              <h3> <span className='font-bold'> First Name: </span> { patient.firstname }  </h3>
-              <h3> <span className='font-bold'> Middle Name: </span> { patient.middlename } </h3>
-              <h3> <span className='font-bold'> Gender: </span> { patient.gender } </h3>
-              <h3> <span className='font-bold'> Email Address: </span> { patient.email }  </h3>
-              <h3> <span className='font-bold'> Phone Number: </span> 0{ patient.phone_no }  </h3>
-              <h3> <span className='font-bold'> Date of Birth: </span> { patient.dob }  </h3>
-              <h3> <span className='font-bold'> Home Address: </span> { patient.home_address } </h3>
+            <div>
+              <div className="flex items-center justify-center">
+                <button onClick = { () => setPrescribeModal(true) } className = 'h-10 text-xs text-white bg-primary px-6 rounded-md mt-6' > Prscribe drug </button>
+              </div>
             </div>
-            <h3 className='font-bold mt-10'> Previous Diagnosis </h3>
-              <p className='flex gap-1 mb-6' >
-                {
-                  patient.prescriptions.length > 0 ? patient.prescriptions.map(p => (
-                    <h3 key = { p.id } > { p.diagnosis } </h3>
-                    )) : 
-                    <h3 className=' italic text-gray-400 opacity-50' > No previous diagnosis </h3>
-                }
-              </p>
-            <div className="flex items-center justify-center">
-              <button onClick = { () => setPrescribeModal(true) } className = 'h-10 text-base text-white bg-primary px-6 rounded-md mt-6' > Prscribe drug </button>
+            <div className="grid">
+              
+              <div className="grid grid-cols-4 row-span-2 gap-4 bg-white py-6 pl-5">
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> First Name </span> { patient.firstname }  </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Middle Name </span> { patient.middlename } </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Last Name </span> { patient.lastname } </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Matric Number </span> { patient.matric_no } </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Gender </span> { patient.gender } </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Email Address </span> { patient.email }  </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Phone Number </span> 0{ patient.phone_no }  </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Date of Birth </span> { patient.dob }  </h3>
+                <h3 className='flex flex-col gap-1'> <span className='font-bold'> Home Address </span> { patient.home_address } </h3>
+              </div>
+              <div className='grid bg-white h-fit mt-10 py-6 pl-5 ' >
+                <h3 className='font-bold'> Previous Diagnosis </h3>
+                  <p className='flex gap-1' >
+                    {
+                      patient.prescriptions.length > 0 ? patient.prescriptions.map(p => (
+                        <h3 key = { p.id } > { p.diagnosis } </h3>
+                        )) : 
+                        <h3 className=' italic text-gray-400 opacity-50' > No previous diagnosis </h3>
+                    }
+                  </p>
+              </div>
             </div>
+
         <button
-          className = "absolute top-4 right-5 p-2 cursor-pointer text-xs text-red-400"
+          className = "absolute top-1 right-5 p-2 cursor-pointer text-xl text-red-400"
           onClick = { onClose } 
          >
-          Close
+          &times;
         </button>
         </div>
          : 
