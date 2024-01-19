@@ -6,7 +6,7 @@ import { useUser } from '../../context/UserContext';
 const Admin = () => {
 
   const location = useNavigate();
-  const  { user } = useUser();
+  const  { user, users } = useUser();
 
   return (
     <div className = '  h-[83.2vh] w-[60vw] flex flex-col gap-4 ' >
@@ -24,36 +24,21 @@ const Admin = () => {
             <h3 className = 'text-xs' >Admin Mangement</h3>
           </div>
           <div className = ' w-full h-full rounded-xl bg-white p-9 ' >
-            <form action="">
-              <h1 className = 'text-2xl my-10' >Assign a Role</h1>
-              <div className='flex flex-col gap-10 mb-24 '>
-                <div className='flex items-center gap-6 '>
-                  <input type="radio" name="role" id="" className = ' w-7 h-7 accent-black ' />
-                  <div className='flex flex-col'>
-                    <label htmlFor="" className = 'font-bold text-base' >Doctor</label>
-                    <p className = 'text-sm text-gray-400' >Assign as Doctor</p>
+              {
+                users.map(user => (
+                  <div className = ' flex w-full justify-between items-center mb-10 relative '> 
+                    <h2> {user.name} </h2>
+                    <div className='flex absolute left-[200px] -mt-1 gap-3 ' >
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary ' > Doctor </button>
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Pharmacist </button>
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Admin </button>
+                    </div>
+                    <button>
+                      ...
+                    </button>
                   </div>
-                </div>
-                <div className='flex items-center gap-6 '>
-                  <input type="radio" name="role" id="" className = ' w-7 h-7 accent-black ' />
-                  <div className='flex flex-col'>
-                    <label htmlFor="" className = 'font-bold text-base' >Phamarcist</label>
-                    <p className = 'text-sm text-gray-400' >Assign as Phamarcist</p>
-                  </div>
-                </div>
-                <div className='flex items-center gap-6 '>
-                  <input type="radio" name="role" id="" className = ' w-7 h-7 accent-black ' />
-                  <div className='flex flex-col'>
-                    <label htmlFor="" className = 'font-bold text-base' >Chief Host</label>
-                    <p className = 'text-sm text-gray-400' >Assign as Chief Host</p>
-                  </div>
-                </div>
-              </div>
-              <div className='flex justify-center gap-4'>
-                <button className = 'border px-6 py-2 rounded-md bg-primary text-white '>Assign Role</button>
-                <button className = 'border px-6 py-2 rounded-md border-primary text-primary '>Cancel</button>
-              </div>
-            </form>
+                ))
+              }
           </div> 
      </>
       : <div className='w-full h-full rounded-xl bg-white p-9 flex items-center justify-center'>

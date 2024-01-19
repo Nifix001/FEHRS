@@ -70,6 +70,7 @@ const PatientsPage = () => {
   const searchPatient = searchFunction( patients, keys, query ).sort( (a, b) => a.id - b.id ).map( p  =>  {
         return(
             <tr key = { p.id } >
+              <td> { p.id } </td>
               <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
               <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
               <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
@@ -122,6 +123,7 @@ const PatientsPage = () => {
     const patient = patients.sort((a, b) => a.id - b.id).map( p  =>  {
       return(
           <tr key = { p.id } >
+            <td> { p.id } </td>
             <td className = 'py-4 text-left pl-6 text-base w-64'> {`${ p.lastname } ${ p.firstname }`} </td>
             <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
             <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>

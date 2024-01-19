@@ -6,6 +6,7 @@ const PatientsTable = ( { patients } ) => {
       <table className = " w-260 bg-white rounded-md  text-center mt-6 table-auto">
             <thead className = 'border-b '>
                 <tr className = 'table-row'>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6 py-2'> S/N </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6 py-2'> Name </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal  text-left pl-6'> Matric Number </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-10'> Phone </td>

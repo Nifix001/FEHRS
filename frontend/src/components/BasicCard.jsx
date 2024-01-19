@@ -21,11 +21,11 @@ export default function BasicCard( { signUp } ) {
 
 
   const history = useNavigate();
-  const { user, setUser, setToken, setPatients, setDrugs, setPrescriptions } = useUser();
+  const { user, setUser, setToken, setUsers, setPatients, setDrugs, setPrescriptions } = useUser();
 
 
   const handleLogin = (e) => {
-    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError)
+    processLogin(email, password, setLoading, setToken, e, history, user, setUser, setUsers, setPatients, setDrugs, setPrescriptions, error, setError)
   };
   
 

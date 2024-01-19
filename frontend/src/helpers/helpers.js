@@ -83,7 +83,7 @@ export async function processRegister(name, email, password, password1, setLoadi
     }
 }
 
-export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setPatients, setDrugs, setPrescriptions, error, setError) {
+export default async function processLogin(email, password, setLoading, setToken, e, history, user, setUser, setUsers, setPatients, setDrugs, setPrescriptions, error, setError) {
     e.preventDefault();
     setLoading(true);
 
@@ -112,11 +112,13 @@ export default async function processLogin(email, password, setLoading, setToken
                 setPatients([]);
                 setDrugs([]);
                 setPrescriptions([]);
+                setUsers([]);
 
                 if (loginResponse.data.role_id === 2) {
                     getPatients(csrfToken, setPatients);
                     getPrescriptions(csrfToken, setPrescriptions);
                     getDrugs(csrfToken, setDrugs);
+                    getUsers(csrfToken, setUsers);
                 } else if (loginResponse.data.role_id === 4) {
                     getPatients(csrfToken, setPatients);
                     getPrescriptions(csrfToken, setPrescriptions);
@@ -124,7 +126,7 @@ export default async function processLogin(email, password, setLoading, setToken
                     getDrugs(csrfToken, setDrugs);
                     // getPrescriptions(csrfToken, setPrescriptions);
                 } else {
-                    console.log("Who be this!!!");
+                    console.log("Who is this!!!");
                 }
 
                 // Reset error state on successful login
@@ -144,7 +146,6 @@ export default async function processLogin(email, password, setLoading, setToken
         // Redirect logic here if needed
         if(user !== null){
             setTimeout(() => {
-                // setLoading(false);
                 if(user.role_id === 2){
                     history('/user');
                 } else if (user.role_id === 3){
@@ -170,6 +171,22 @@ export default async function processLogin(email, password, setLoading, setToken
     }
 }
 
+
+export async function getUsers( csrfToken, setUsers) {
+    try {
+        const response = await axios.get('http://localhost:8000/api/users', {
+            headers: {
+                Accept: 'application/json',
+                'X-XSRF-TOKEN': decodeURIComponent(csrfToken),
+                // 'Referer': '127.0.0.1:8000'
+            }
+        })
+        const users = response.data.data;
+        setUsers(users);
+    } catch( error ){
+        console.error( error );
+    }
+}
 
 export async function getPatients( csrfToken, setPatients) {
     try {
