@@ -49,13 +49,13 @@ const PrescribeDrug = ( { onClose } ) => {
                     <div className="flex flex-col relative">
                       <label htmlFor="" className='text-xs' > Drug </label>
                       <input type="text"
-                      className='border p-2 border-primary '  />
+                      className='border p-2 border-primary rounded-md '  />
                     </div>
                     <div className="flex flex-col relative">
                       <label htmlFor={`input${inputSet.id}`} className='text-xs' >{`Quantity ${inputSet.id}:`}</label>
                       <input
                         type="text"
-                        className='border p-2 border-primary '
+                        className='border p-2 border-primary rounded-md '
                         id={`input${inputSet.id}`}
                         name={`input${inputSet.id}`}
                         value={inputSet.value}
