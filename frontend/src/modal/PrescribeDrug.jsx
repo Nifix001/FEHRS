@@ -3,27 +3,28 @@ import React, { useState } from 'react'
 const PrescribeDrug = ( { onClose } ) => {
 
   const [inputSets, setInputSets] = useState([{ id: 1, value: '' }]);
+  const [hideButtons, setHideButtons] = useState([false]);
 
-  const handleInputChange = (id, value) => {
-    const updatedInputSets = inputSets.map(set =>
-      set.id === id ? { ...set, value } : set
+  const handleInputChange = (id, field, value) => {
+    const updatedInputSets = inputSets.map((set) =>
+      set.id === id ? { ...set, [field]: value } : set
     );
     setInputSets(updatedInputSets);
   };
 
-  const handleAddInputSet = () => {
-    setInputSets(prevInputSets => [
+  const handleAddInputSet = (id) => {
+    setInputSets((prevInputSets) => [
       ...prevInputSets,
-      { id: prevInputSets.length + 1, value: '' },
+      { id: prevInputSets.length + 1, drug: '', quantity: '' },
     ]);
+    setHideButtons((prevHideButtons) => [...prevHideButtons, false]);
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    // Process the form data as needed
-    console.log(inputSets);
+  const handleHideButtonClick = (index) => {
+    setHideButtons((prevHideButtons) =>
+      prevHideButtons.map((hide, i) => (i === index ? !hide : hide))
+    );
   };
-
 
   return (
     <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
@@ -44,8 +45,9 @@ const PrescribeDrug = ( { onClose } ) => {
           <div className="flex">
               {/* <p>Are you sure you want to prescribe the following drugs?</p> */}
               <div>
-                {inputSets.map(inputSet => (
-                  <div key={inputSet.id} className="input-group flex gap-6">
+                {inputSets.map((inputSet, index) => (
+                  <>
+                  <div key={inputSet.id} className="input-group flex gap-6 mb-4">
                     <div className="flex flex-col relative">
                       <label htmlFor="" className='text-xs' > Drug </label>
                       <input type="text"
@@ -62,12 +64,21 @@ const PrescribeDrug = ( { onClose } ) => {
                         onChange={e => handleInputChange(inputSet.id, e.target.value)}
                       />
                     </div>
+                    {!hideButtons[index] && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleAddInputSet(inputSet.id);
+                      handleHideButtonClick(index);
+                    }}
+                    className="bg-primary text-white px-5 py-5 rounded-lg text-lg"
+                  >
+                    +
+                  </button>
+                )}
                   </div>
+                  </>
                 ))}
-                <button type="button" onClick={handleAddInputSet} className=" bg-primary text-white px-5 py-5 rounded-lg text-lg " >
-                  {/* Add */}
-                  +
-                </button>
               </div>
                                       
               </div>
