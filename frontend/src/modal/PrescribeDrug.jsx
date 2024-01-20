@@ -1,11 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const PrescribeDrug = ( { onClose } ) => {
 
+  const [inputSets, setInputSets] = useState([{ id: 1, value: '' }]);
+  const [hideButtons, setHideButtons] = useState([false]);
+
+  const handleInputChange = (id, field, value) => {
+    const updatedInputSets = inputSets.map((set) =>
+      set.id === id ? { ...set, [field]: value } : set
+    );
+    setInputSets(updatedInputSets);
+  };
+
+  const handleAddInputSet = (id) => {
+    setInputSets((prevInputSets) => [
+      ...prevInputSets,
+      { id: prevInputSets.length + 1, drug: '', quantity: '' },
+    ]);
+    setHideButtons((prevHideButtons) => [...prevHideButtons, false]);
+  };
+
+  const handleHideButtonClick = (index) => {
+    setHideButtons((prevHideButtons) =>
+      prevHideButtons.map((hide, i) => (i === index ? !hide : hide))
+    );
+  };
 
   return (
     <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="relative p-8 bg-white w-fit mx-auto my-12 rounded-2xl shadow-lg">
+        <div className="relative p-8 bg-white w-fit mx-auto my-12 rounded-2xl shadow-lg px-16">
           {/* <button
             className="absolute top-8 right-5 p-2 cursor-pointer text-xs text-red-400"
             onClick={onClose}
@@ -20,11 +43,52 @@ const PrescribeDrug = ( { onClose } ) => {
           Close
         </button>
           <div className="flex">
-              <p>Are you sure you want to prescribe the following drugs?</p>
+              {/* <p>Are you sure you want to prescribe the following drugs?</p> */}
+              <div>
+                {inputSets.map((inputSet, index) => (
+                  <>
+                  <div key={inputSet.id} className="input-group flex gap-6 mb-4">
+                    <div className="flex flex-col relative">
+                      <label htmlFor="" className='text-xs' > Drug </label>
+                      <input type="text"
+                      className='border p-2 border-primary rounded-md '  />
+                    </div>
+                    <div className="flex flex-col relative">
+                      <label htmlFor={`input${inputSet.id}`} className='text-xs' >{`Quantity ${inputSet.id}:`}</label>
+                      <input
+                        type="text"
+                        className='border p-2 border-primary rounded-md '
+                        id={`input${inputSet.id}`}
+                        name={`input${inputSet.id}`}
+                        value={inputSet.value}
+                        onChange={e => handleInputChange(inputSet.id, e.target.value)}
+                      />
+                    </div>
+                    {!hideButtons[index] && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      handleAddInputSet(inputSet.id);
+                      handleHideButtonClick(index);
+                    }}
+                    className="bg-primary text-white px-5 py-5 rounded-lg text-lg"
+                  >
+                    +
+                  </button>
+                )}
+                  </div>
+                  </>
+                ))}
+              </div>
                                       
               </div>
               <div className = "flex w-full items-center justify-center mt-8 gap-6">
-                 <button className = ' bg-primary text-white px-12 py-[12px] text-sm  rounded-md'  > Prescribe </button>                                                       
+                 <button className = ' bg-primary text-white px-12 py-[12px] text-sm  rounded-md'  > Prescribe </button>       
+                 <button 
+                    className = ' bg-primary text-white px-12 py-[12px] text-sm  rounded-md' 
+                    onClick = { onClose }
+                >   Cancel 
+                </button>                                                    
           </div>
         </div>
       </div>
