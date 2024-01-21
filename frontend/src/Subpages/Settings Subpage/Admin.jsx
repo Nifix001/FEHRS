@@ -7,15 +7,36 @@ const Admin = () => {
 
   const location = useNavigate();
   const  { user, users } = useUser();
-  const roles = [ "Doctor", "Pharmacist", "Admin" ];
-  const [selectedRoles, setSelectedRoles] = useState({});
+  const roles = [ "Doctor", "Pharmacy", "Admin" ];
+  // const [selectedRoles, setSelectedRoles] = useState({});
+
+  // Assuming users have a property `roles` that contains an array of role names
+  const initialSelectedRoles = {};
+  users.map(user => {
+    if (user.role !== null) {
+      console.log(user.role.name);
+      initialSelectedRoles[user.id] = user.role.name; // Assuming a user can have only one role
+    }
+  });
+  
+  const [selectedRoles, setSelectedRoles] = useState(initialSelectedRoles);
+  
+
+  // const existingRole = ;
 
   const handleRoleButtonClick = (userId, role) => {
-    setSelectedRoles((prevSelectedRoles) => ({
-      ...prevSelectedRoles,
-      [userId]: role,
-    }));
+    setSelectedRoles((prevSelectedRoles) => {
+      // Clear the selected role if the same role is clicked again
+      const newSelectedRoles = { ...prevSelectedRoles };
+      if (newSelectedRoles[userId] === role) {
+        delete newSelectedRoles[userId];
+      } else {
+        newSelectedRoles[userId] = role;
+      }
+      return newSelectedRoles;
+    });
   };
+  
 
 
 
@@ -38,6 +59,7 @@ const Admin = () => {
           <div className = ' w-full h-full rounded-xl bg-white p-9 ' >
               {
                 users.map(user => (
+                  
                   <div key={user.id} className = ' flex w-full justify-between items-center mb-10 relative '> 
                     <h2> {user.name} </h2>
                     <div className='flex absolute left-[200px] -mt-1 gap-3 ' >
@@ -46,17 +68,18 @@ const Admin = () => {
                           <button 
                             key={index}
                             className={`px-4 py-1 border ${
-                              selectedRoles[user.id] === role
+                              selectedRoles[user.id] === role 
                                 ? 'bg-primary text-white' // Apply selected style
                                 : 'border-gray-500 text-gray-500' // Apply default style
-                            } rounded-[4px] focus:bg-primary focus:text-white active:bg-primary`}
-                            onClick={() => handleRoleButtonClick(user.id, role)}
-                          >
+                              } rounded-[4px] focus:bg-primary focus:text-white active:bg-primary`}
+                              onClick={() => handleRoleButtonClick(user.id, role)}
+                              >
                             {role}
                           </button>
                         ) )
                       }
                       {/* <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Admin </button>
+                            console.log(user.role);
                       <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Pharmacist </button> */}
                     </div>
                     <button>
