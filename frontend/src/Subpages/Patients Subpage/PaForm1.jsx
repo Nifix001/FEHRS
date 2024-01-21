@@ -525,7 +525,7 @@ const PaForm1 = () => {
               <NavLink 
                 type = 'submit' 
                 className = 'bg-primary text-white py-3 px-20 rounded-md'
-                to = "/user/patients/new/info"
+                to = "/user/patients"
                 onClick = { handleSave }
               >
                   Save and Continue
