@@ -9,8 +9,8 @@ const PrescriptionTable = ( { prescriptions } ) => {
                   <td className = 'text-tertiary-5 font-span text-sm font-normal ' > S/N </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6 py-2'> Name </td>
                   <td className = 'text-tertiary-5 font-span text-sm font-normal  text-left pl-6'> Matric Number </td>
-                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-20'> Drug </td>
-                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6'> Qty </td>
+                  <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-20'> Drugs </td>
+                  {/* <td className = 'text-tertiary-5 font-span text-sm font-normal text-left pl-6'> Qty </td> */}
                   <td className = 'text-tertiary-5 font-span text-sm font-normal'> Options </td>
                 </tr>
             </thead>

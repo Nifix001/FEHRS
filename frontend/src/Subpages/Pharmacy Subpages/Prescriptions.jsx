@@ -65,14 +65,13 @@ const Prescriptions = () => {
           <td className = 'text-left pl-6 text-base'> { p.patient.matric_no } </td>
           <td className = 'text-left pl-16 text-base my-16 '> {
               p.drugs.map(d => (
-                <span key = { d.id } className = 'block mb-2' > { d.drug_name } </span>
+                <span key = { d.id } className = 'block mb-2' > {`${ d.drug_name }(${d.pivot.quantity}) `} </span>
               ))
             } </td>
-          <td className = 'text-left pl-4 text-base mt- 10 '> { p.drug_quantity } </td>
+          {/* <td className = 'text-left pl-4 text-base mt- 10 '> { p.drug_quantity } </td> */}
           <td className = 'pl-8'>
-          <div className = 'flex items-center justify-start pl-6 '> 
-            {            
-              <button
+          <div className = 'flex items-center justify-start pl-6 '>            
+              {/* <button
                     className = "flex-shrink-0"
                     onClick = {() => toggleOptions(p.id)}
                 >
@@ -80,12 +79,11 @@ const Prescriptions = () => {
                   src = { dot }  
                   alt ="dot" 
                 />
-              </button> }
+              </button> 
               <div 
                   className = {`${ prescriptionOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
                   onMouseLeave={() => toggleOptions(p.id)}
                 >
-                  {/* <!-- Options for Item 1 --> */}
                   <button className = " px-4 py-1 text-black hover:bg-[#cecdcd] w-full text-left flex  items-center gap-2 " 
                   onClick = { () => openEditModal(p) }
                   >
@@ -96,6 +94,10 @@ const Prescriptions = () => {
                     <img src = { del } alt="" className = 'text-black filter grayscale' />
                     Delete
                   </button>
+                </div> */}
+                <div className='flex gap-3 items-center justify-center pl-6' >
+                  <button className='px-6 py-2 rounded-lg text-white text-sm bg-secondary4 hover:scale-105 hover:transition-all' > Accept </button>
+                  <button className='px-6 py-2 rounded-lg text-white text-sm bg-red-600 hover:scale-105 hover:transition-all' > Decline </button>
                 </div>
             </div>
           </td>
