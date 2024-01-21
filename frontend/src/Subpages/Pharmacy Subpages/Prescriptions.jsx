@@ -70,7 +70,8 @@ const Prescriptions = () => {
             } </td>
           <td className = 'text-left pl-4 text-base mt- 10 '> { p.drug_quantity } </td>
           <td className = 'pl-8'>
-            <div className = 'flex items-center justify-start pl-6 '> 
+          <div className = 'flex items-center justify-start pl-6 '> 
+            {            
               <button
                     className = "flex-shrink-0"
                     onClick = {() => toggleOptions(p.id)}
@@ -79,7 +80,7 @@ const Prescriptions = () => {
                   src = { dot }  
                   alt ="dot" 
                 />
-              </button>
+              </button> }
               <div 
                   className = {`${ prescriptionOptions[p.id] ? '' : 'hidden' } absolute right-3 -mt-3 bg-[#f9f9f9]  border border-gray-300 shadow-md rounded-md text-[12px] `}
                   onMouseLeave={() => toggleOptions(p.id)}

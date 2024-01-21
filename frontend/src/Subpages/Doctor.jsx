@@ -6,7 +6,7 @@ import search from '../assets/akar-icons_search.svg'
 import del from '../assets/delete.svg'
 import edit from '../assets/edit.svg'
 
-import { searchFunction } from '../helpers/helpers';
+import { calculateAge, searchFunction } from '../helpers/helpers';
 import { useUser } from '../context/UserContext';
 import SearchPatient from '../Tables/SearchPatient'
 import PrescribeDrug from '../modal/PrescribeDrug'
@@ -151,9 +151,9 @@ const Doctor = () => {
             <div className = ' flex flex-col gap-5 items-center w-1/5 ' >
               <div className = 'w-[140px] h-[140px] rounded-full bg-gray-200 flex items-center justify-center text-white cursor-pointer' >  <User size = {100} /> </div>
               <span className = ' text-xl font-bold ' > { patient.firstname } { patient.lastname } </span>
-              <div className='flex justify-between w-full px-3 text-gray-700'> Age <span className='font-bold'> 2 </span> </div>
+              <div className='flex justify-between w-full px-3 text-gray-700'> Age <span className='font-bold'> {calculateAge(patient.dob)} </span> </div>
               <div className="flex items-center justify-center">
-                <button onClick = { () => setPrescribeModal(true) } className = 'h-10 text-xs text-white bg-primary px-6 rounded-md mt-6' > Prscribe drug </button>
+                <button onClick = { () => setPrescribeModal(true) } className = 'h-10 text-xs text-white bg-primary px-6 rounded-md mt-6' > Prescribe drug </button>
               </div>
             </div>
             <div className="grid">
@@ -166,7 +166,7 @@ const Doctor = () => {
                 <h3 className='flex flex-col gap-1'>  Gender  <span className='font-bold'> { patient.gender } </span>  </h3>
                 <h3 className='flex flex-col gap-1'>  Email Address <span className='font-bold'>  { patient.email } </span>  </h3>
                 <h3 className='flex flex-col gap-1'>  Phone Number <span className='font-bold'>  0{ patient.phone_no } </span>   </h3>
-                <h3 className='flex flex-col gap-1'>  Date of <span className='font-bold'> Birth  { patient.dob } </span>  </h3>
+                <h3 className='flex flex-col gap-1'>  Date of Birth<span className='font-bold'>  { patient.dob } </span>  </h3>
                 <h3 className='flex flex-col gap-1'>  Home Address <span className='font-bold'>  { patient.home_address } </span> </h3>
               </div>
               <div className='grid bg-white h-fit mt-10 py-6 pl-5 rounded-lg ' >

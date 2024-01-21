@@ -320,6 +320,8 @@ export async function editPatient(setPatients, data, token){
             'lastname': data.lastname,
             'email': data.email,
             'matric_no': data.matric_no,
+            'dob': data.dob,
+            'gender': data.gender,
             'phone_no': data.phone_no,
             'home_address': data.address,
             'prescriptions': data.prescriptions
@@ -328,8 +330,7 @@ export async function editPatient(setPatients, data, token){
         await axios.put(`http://localhost:8000/api/patient/${data.id}`, editedPatient, {
             headers: {
                 Accept: 'application/json',
-                'X-XSRF-TOKEN': decodeURIComponent(token),
-                
+                'X-XSRF-TOKEN': decodeURIComponent(token),  
             }
         })   
 
@@ -489,4 +490,14 @@ export function deleteNotification(setNotifications ,id){
     catch(error){
         console.error(error);
     }
+}
+
+export function calculateAge(dOb){
+        const dob = new Date(dOb)
+        // const dob = new Date(`${dOb}`)
+    var month_diff = Date.now() - dob.getTime();
+    var age_dt = new Date(month_diff);
+    var year = age_dt.getUTCFullYear();
+    var age = Math.abs(year -1970);
+    return age
 }

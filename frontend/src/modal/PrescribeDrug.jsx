@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useUser } from '../context/UserContext';
 
 const PrescribeDrug = ( { onClose } ) => {
 
+  const { drugs} = useUser();
   const [inputSets, setInputSets] = useState([{ id: 1, value: '' }]);
   const [hideButtons, setHideButtons] = useState([false]);
 
@@ -50,8 +52,18 @@ const PrescribeDrug = ( { onClose } ) => {
                   <div key={inputSet.id} className="input-group flex gap-6 mb-4">
                     <div className="flex flex-col relative">
                       <label htmlFor="" className='text-xs' > Drug </label>
-                      <input type="text"
-                      className='border p-2 border-primary rounded-md '  />
+                      {/* <input list='drugs' name='drugs' id='drugs'
+                      className='border p-2 border-primary rounded-md '  /> */}
+                        <select id='drugs' className='border px-4 py-[10px] border-primary rounded-md '  >
+                          {
+                            drugs.map(d => (
+                              <>
+                                <option value = {d.drug_name}> {d.drug_name} </option>
+                              </>
+                            ))
+                          }
+                        </select>
+                      
                     </div>
                     <div className="flex flex-col relative">
                       <label htmlFor={`input${inputSet.id}`} className='text-xs' >{`Quantity ${inputSet.id}:`}</label>

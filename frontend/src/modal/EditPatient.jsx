@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useUser } from '../context/UserContext';
 import { addNotification, editPatient } from '../helpers/helpers';
+import { ArrowDown2 } from 'iconsax-react';
 
 const EditPatient = ( { isOpen, onClose, patient } ) => {
   if ( !isOpen ) return null;
@@ -24,6 +25,8 @@ const EditPatient = ( { isOpen, onClose, patient } ) => {
   const [ nokDob, setNokDob ] = useState();
   const [ nokGender, setNokGender ] = useState();
   const [ nokPhone, setNokPhone ] = useState();
+  const gen = ["Male", "Female" ];
+  const [ genderDropdown, setGenderDropdown ] = useState(false);
 
 
   const prescriptions = patient.prescriptions;
@@ -140,23 +143,39 @@ const handleClick = ( e ) => {
             <div className="flex gap-4 ">
               <div className = "flex flex-col ">
                   <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Dob </label>
-                  <input type = "date" value = { dob } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
+                  <input type = "date" value = { dob } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 cursor-pointer' 
                                   onChange = { (e) => {
-                                                        e.preventDefault();        
-                                                        setDob( e.target.value )
+                                                        // e.preventDefault();        
+                                                        setDob( e.target.value );
+                                                        console.log(e);
                                                       } 
                                               } 
                     />
               </div>
-              <div className = "flex flex-col ">
-                  <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Gender </label>
-                  <input type = "text" value = { gender } className = 'border outline-none block py-3 pl-3 rounded-lg text-sm pr-4 w-72 ' 
-                                  onChange = { (e) => {
-                                                        e.preventDefault();        
-                                                        setGender( e.target.value )
-                                                      } 
-                                              } 
-                    />
+
+              <div className = 'flex flex-col relative ' >
+                <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Gender </label>
+                <button className = 'border outline-none py-3 pl-3 rounded-lg text-sm pr-4 w-72 flex items-center justify-between ' onClick = { (e) => {
+                  e.preventDefault();
+                  setGenderDropdown(!genderDropdown)
+                } } >
+                  <span> { gender } </span>
+                  <ArrowDown2 size={20} /> 
+                </button>
+                {
+                  genderDropdown && <div className = "absolute pr-4 w-72 pl-3 bg-white py-2 border z-10 top-20 rounded-b-md">
+                    <ul>
+                      {
+                        gen.map(item => (
+                          <li key = { item } onClick = { () => {
+                            setGender(item)
+                            setGenderDropdown(false)
+                          } } className = 'cursor-pointer hover:bg-primary hover:text-white text-sm py-1 rounded-md pl-2 ' > { item } </li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                }
               </div>
               <div className = "flex flex-col ">
                   <label htmlFor = "" className = ' bg-white p-2 text-xs relative top-4 left-2 w-fit '> Home Address </label>
