@@ -80,8 +80,8 @@ export default class Pie1 extends PureComponent {
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={120}
-            outerRadius={180}
+            innerRadius={90}
+            outerRadius={150}
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={this.onPieEnter}

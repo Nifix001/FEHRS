@@ -50,7 +50,7 @@ const Prescriptions = () => {
     }));
   };
 
-  const prescription = prescriptions.sort((a, b) => a.id - b.id).map( p  =>  {
+  const prescription = prescriptions.sort((a, b) => a.id - b.id).map( ( p, index )  =>  {
      
     const patient = patients.find(patient => patient.matric_no === p.patient.matric_no);
     // console.log(patient);
@@ -60,6 +60,7 @@ const Prescriptions = () => {
     return(
 
         <tr key = { p.id } className = 'mb-16 pb-16 border-b' >
+          <td className = ' text-base ' > { index + 1 } </td>
           <td className = 'py-4 text-left pl-6 text-base w-64 '> { name } </td>
           <td className = 'text-left pl-6 text-base'> { p.patient.matric_no } </td>
           <td className = 'text-left pl-16 text-base my-16 '> {
