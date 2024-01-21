@@ -19,7 +19,7 @@ const Graph = () => {
             /> */}
             {/* <Graphdata2 /> */}
             <div className='w-[1200px] h-[500px] bg-white rounded-lg flex flex-col justify-end items-center mt-16 py-4 z-10 gap-2'>
-                <h1 className='font-bold text-lg text-gray-600' > Analysis of Each Students by Department </h1>
+                <h1 className='font-bold text-lg text-gray-600' > Analysis of Students by Each Department </h1>
                 <Pie1 className="scale-150" />
             </div>
             <div className = 'ml-12'>
