@@ -41,12 +41,12 @@ Route::middleware('auth:sanctum','admin')->post('/mail', function (Request $requ
      //     return ['token' => $token->plainTextToken];
      });
 Route::middleware('auth:sanctum')->get('/patients',[PatientController::class, 'total']);
-Route::middleware('auth:sanctum','doc')->get('/patient',[PatientController::class, 'show']);
-Route::middleware('auth:sanctum')->post('/patient',[PatientController::class, 'store']);
-Route::middleware('auth:sanctum')->put('/patient/{id}',[PatientController::class, 'update']);
-Route::middleware('auth:sanctum')->delete('patient/{id}', [PatientController::class, 'delete']);
+Route::middleware('auth:sanctum')->get('/patient',[PatientController::class, 'show']);
+Route::middleware('auth:sanctum','admin')->post('/patient',[PatientController::class, 'store']);
+Route::middleware('auth:sanctum','admin')->put('/patient/{id}',[PatientController::class, 'update']);
+Route::middleware('auth:sanctum','admin')->delete('patient/{id}', [PatientController::class, 'delete']);
 
-Route::middleware('auth:sanctum','pharm')->get('/drugs',[DrugController::class, 'show']);
+Route::middleware('auth:sanctum')->get('/drugs',[DrugController::class, 'show']);
 Route::middleware('auth:sanctum','pharm')->post('/drugs',[DrugController::class, 'store']);
 Route::middleware('auth:sanctum','pharm')->put('/drugs/{id}',[DrugController::class, 'update']);
 Route::middleware('auth:sanctum','pharm')->delete('/drugs/{id}',[DrugController::class, 'delete']);
