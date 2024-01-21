@@ -1,5 +1,5 @@
 import { ArrowLeft3 } from 'iconsax-react';
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext';
 
@@ -7,6 +7,18 @@ const Admin = () => {
 
   const location = useNavigate();
   const  { user, users } = useUser();
+  const roles = [ "Doctor", "Pharmacist", "Admin" ];
+  const [selectedRoles, setSelectedRoles] = useState({});
+
+  const handleRoleButtonClick = (userId, role) => {
+    setSelectedRoles((prevSelectedRoles) => ({
+      ...prevSelectedRoles,
+      [userId]: role,
+    }));
+  };
+
+
+
 
   return (
     <div className = '  h-[83.2vh] w-[60vw] flex flex-col gap-4 ' >
@@ -26,12 +38,26 @@ const Admin = () => {
           <div className = ' w-full h-full rounded-xl bg-white p-9 ' >
               {
                 users.map(user => (
-                  <div className = ' flex w-full justify-between items-center mb-10 relative '> 
+                  <div key={user.id} className = ' flex w-full justify-between items-center mb-10 relative '> 
                     <h2> {user.name} </h2>
                     <div className='flex absolute left-[200px] -mt-1 gap-3 ' >
-                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary ' > Doctor </button>
-                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Pharmacist </button>
-                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Admin </button>
+                      {
+                        roles.map((role, index) => (
+                          <button 
+                            key={index}
+                            className={`px-4 py-1 border ${
+                              selectedRoles[user.id] === role
+                                ? 'bg-primary text-white' // Apply selected style
+                                : 'border-gray-500 text-gray-500' // Apply default style
+                            } rounded-[4px] focus:bg-primary focus:text-white active:bg-primary`}
+                            onClick={() => handleRoleButtonClick(user.id, role)}
+                          >
+                            {role}
+                          </button>
+                        ) )
+                      }
+                      {/* <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Admin </button>
+                      <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Pharmacist </button> */}
                     </div>
                     <button>
                       ...
