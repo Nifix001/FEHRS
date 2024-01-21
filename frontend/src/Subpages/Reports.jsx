@@ -16,11 +16,12 @@ const Reports = () => {
   const { patients, prescriptions } = useUser();
 
 
-  const patient = patients.map( p  =>  {
+  const patient = patients.map( (p, index)  =>  {
     
     return(
 
         <tr key = { p.id } >
+          <td className='pl-6'> { index + 1 } </td>
           <td className = 'py-4 text-left pl-6 text-base'> {`${p.firstname} ${p.lastname}`} </td>
           <td className = 'text-left pl-6 text-base'> { p.matric_no } </td>
           <td className = 'text-left pl-6 text-base'> 0{ p.phone_no } </td>
@@ -32,7 +33,7 @@ const Reports = () => {
                       )
                     }) }
           </td>
-          <td className = 'pl-8'>
+          {/* <td className = 'pl-8'>
             <div className = 'flex items-center justify-start pl-1 '> 
               <Link>
                 <img 
@@ -41,7 +42,7 @@ const Reports = () => {
                 />
               </Link>
             </div>
-          </td>
+          </td> */}
         </tr>
       )
     }
