@@ -2,13 +2,14 @@ import React, { PureComponent } from 'react';
 import { PieChart, Pie, Cell, Sector, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Admitted Patients', value: 6 },
-  { name: 'Treated Patients', value: 3 },
-  { name: 'Visited Patients', value: 6 },
-  { name: 'Death', value: 0 },
+  { name: 'SEET', value: 3500 },
+  { name: 'SAAT', value: 1500 },
+  { name: 'SET', value: 2000 },
+  { name: 'SEMS', value: 1200 },
+  { name: 'SCOM', value: 1000 },
 ];
 
-const COLORS = ['#845EBC', '#27AE60', '#DBA362', '#FF8042'];
+const COLORS = ['#845EBC', '#27AE60', '#DBA362', '#FF8042', '#CBA000'];
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
