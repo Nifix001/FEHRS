@@ -7,6 +7,33 @@ const PrescribeDrug = ( { onClose } ) => {
   const [inputSets, setInputSets] = useState([{ id: 1, value: '' }]);
   const [hideButtons, setHideButtons] = useState([false]);
 
+  
+  const data = {  
+                  "id":1,
+                  "comment" :  "1",
+                  "diagnosis" : "malaria",
+                  'drug_quantity' : "1 1 1",
+                  "drugs": [],
+                  "drug_name":"pansharp",
+                  "id":3,
+                  "pivot":{
+                            "created_at":null,
+                            "drug_id":3,
+                            "prescription_id":1,
+                            "quantity":0,
+                            "updated_at":null
+                          },
+                  "patient":{
+                            "id":1,
+                            "matric_no": "ipe/39/7090",
+                            "patient_id":1
+                            },
+                  "user": {
+                            "id":1,
+                            "name":"Gem",
+                            "user_id":1
+                          }
+}
   const handleInputChange = (id, field, value) => {
     const updatedInputSets = inputSets.map((set) =>
       set.id === id ? { ...set, [field]: value } : set
