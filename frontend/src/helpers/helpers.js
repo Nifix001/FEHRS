@@ -518,6 +518,6 @@ export async function changePassword(setError, data, token){
         })
     } catch(error){
         console.error(error);
-        // setError(error);
+        setError(error.response.data.message);
     }
 }

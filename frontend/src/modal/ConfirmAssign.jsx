@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ConfirmAssign = ({ setConfirm, role, user, setSelectedRoles }) => {
+const ConfirmAssign = ({ setConfirm, role, user, setSelectedRoles, active }) => {
 
     const handleRoleButtonClick = (userId, assignedRole) => {
         console.log(user);
@@ -14,7 +14,8 @@ const ConfirmAssign = ({ setConfirm, role, user, setSelectedRoles }) => {
           } else {
             newSelectedRoles[userId] = assignedRole;
           }
-          return newSelectedRoles;
+          console.log(newSelectedRoles[active]);
+          return newSelectedRoles[active];
         });
       };
       

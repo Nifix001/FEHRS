@@ -101,8 +101,9 @@ const Admin = () => {
                                                 }))
                                               }
                                               user={current_user}
-                                              role = {selectedRoles[current_user.id]}
-                                              setSelectedRoles = {setSelectedRoles}
+                                              role={selectedRoles[current_user.id]}
+                                              setSelectedRoles={setSelectedRoles}
+                                              active={index}
                                               /> 
                             }
                           </>
