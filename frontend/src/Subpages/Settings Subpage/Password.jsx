@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { changePassword } from '../../helpers/helpers';
 import { useUser } from '../../context/UserContext';
+import ConfirmChange from '../../modal/ConfirmChange';
 
 
 
@@ -14,6 +15,7 @@ const Password = () => {
   const [password2, setPassword2] = useState('');
   const [password3, setPassword3] = useState('');
   const [error, setError] = useState('');
+  const [confirm , setConfirm] = useState(false);
 
   
   
@@ -89,7 +91,10 @@ const Password = () => {
           <div className="flex justify-center gap-4">
             <button
               className="border px-6 py-2 rounded-md bg-primary text-white"
-              onClick={(e) => handleConfirm(e)}
+              onClick={(e) => {
+                                e.preventDefault();
+                                setConfirm(true)
+                              }}
             >
               Change Password
             </button>
@@ -97,6 +102,7 @@ const Password = () => {
               Cancel
             </button>
           </div>
+          { confirm && <ConfirmChange handleConfirm={handleConfirm} setConfirm={setConfirm} /> }
         </form>
       </div>
     </div>
