@@ -501,3 +501,23 @@ export function calculateAge(dOb){
     var age = Math.abs(year -1970);
     return age
 }
+
+export async function changePassword(setError, data, token){
+    try{
+        const editedData = {
+            'current_password': data.current_password,
+            'password': data.password,
+            'password_confirmation': data.password_confirmation,
+        }
+        await axios.put(`http://localhost:8000/f/user/password`, editedData, { 
+            headers: {
+                Accept: 'application/json',
+                'X-XSRF-TOKEN': decodeURIComponent(token),
+                // 'Referer': 'localhost:8000'
+            },    
+        })
+    } catch(error){
+        console.error(error);
+        // setError(error);
+    }
+}
