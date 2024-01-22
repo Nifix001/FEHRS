@@ -2,40 +2,49 @@ import { ArrowLeft3 } from 'iconsax-react';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext';
+import ConfirmAssign from '../../modal/ConfirmAssign';
 
 const Admin = () => {
 
   const location = useNavigate();
   const  { user, users } = useUser();
   const roles = [ "Doctor", "Pharmacy", "Admin" ];
+  const [confirm, setConfirm] = useState(false);
   // const [selectedRoles, setSelectedRoles] = useState({});
 
   // Assuming users have a property `roles` that contains an array of role names
   const initialSelectedRoles = {};
   users.map(user => {
     if (user.role !== null) {
-      console.log(user.role.name);
+      // console.log(user.role.name);
       initialSelectedRoles[user.id] = user.role.name; // Assuming a user can have only one role
     }
   });
+
+  const [confirmStates, setConfirmStates] = useState(
+    users.reduce((acc, currentUser) => {
+      acc[currentUser.id] = false;
+      return acc;
+    }, {})
+  );
   
   const [selectedRoles, setSelectedRoles] = useState(initialSelectedRoles);
   
 
   // const existingRole = ;
 
-  const handleRoleButtonClick = (userId, role) => {
-    setSelectedRoles((prevSelectedRoles) => {
-      // Clear the selected role if the same role is clicked again
-      const newSelectedRoles = { ...prevSelectedRoles };
-      if (newSelectedRoles[userId] === role) {
-        delete newSelectedRoles[userId];
-      } else {
-        newSelectedRoles[userId] = role;
-      }
-      return newSelectedRoles;
-    });
-  };
+  // const handleRoleButtonClick = (userId, role) => {
+  //   setSelectedRoles((prevSelectedRoles) => {
+  //     // Clear the selected role if the same role is clicked again
+  //     const newSelectedRoles = { ...prevSelectedRoles };
+  //     if (newSelectedRoles[userId] === role) {
+  //       delete newSelectedRoles[userId];
+  //     } else {
+  //       newSelectedRoles[userId] = role;
+  //     }
+  //     return newSelectedRoles;
+  //   });
+  // };
   
 
 
@@ -58,24 +67,45 @@ const Admin = () => {
           </div>
           <div className = ' w-full h-full rounded-xl bg-white p-9 ' >
               {
-                users.map(user => (
+                users.map(current_user => (
                   
-                  <div key={user.id} className = ' flex w-full justify-between items-center mb-10 relative '> 
-                    <h2> {user.name} </h2>
+                  <div key={current_user.id} className = ' flex w-full justify-between items-center mb-10 relative '> 
+                    <h2> {current_user.name} </h2>
                     <div className='flex absolute left-[200px] -mt-1 gap-3 ' >
                       {
                         roles.map((role, index) => (
-                          <button 
-                            key={index}
-                            className={`px-4 py-1 border ${
-                              selectedRoles[user.id] === role 
+                          <>
+                            <button 
+                              key={index}
+                              className={`px-4 py-1 border ${
+                                selectedRoles[current_user.id] === role 
                                 ? 'bg-primary text-white' // Apply selected style
                                 : 'border-gray-500 text-gray-500' // Apply default style
                               } rounded-[4px] focus:bg-primary focus:text-white active:bg-primary`}
-                              onClick={() => handleRoleButtonClick(user.id, role)}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setConfirmStates((prevStates) => ({
+                                  ...prevStates,
+                                  [current_user.id]: true,
+                                }));
+                              }}
                               >
-                            {role}
-                          </button>
+                              {role}
+                            </button>
+                            { confirmStates[current_user.id] && <ConfirmAssign 
+                                              // handleRoleButtonClick={handleRoleButtonClick} 
+                                              setConfirm={(value) =>
+                                                setConfirmStates((prevStates) => ({
+                                                  ...prevStates,
+                                                  [current_user.id]: value,
+                                                }))
+                                              }
+                                              user={current_user}
+                                              role = {selectedRoles[current_user.id]}
+                                              setSelectedRoles = {setSelectedRoles}
+                                              /> 
+                            }
+                          </>
                         ) )
                       }
                       {/* <button className='px-4 py-1 border border-gray-500 text-gray-500 rounded-[4px] focus:bg-primary focus:text-white active:bg-primary'> Admin </button>

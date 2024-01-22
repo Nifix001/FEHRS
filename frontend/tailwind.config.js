@@ -43,6 +43,8 @@ export default {
     "./src/modal/DeletePrescription.jsx",
     "./src/modal/DeleteDrug.jsx",
     "./src/modal/PrescribeDrug.jsx",
+    "./src/modal/ConfirmChange.jsx",
+    "./src/modal/ConfirmAssign.jsx",
   ],
   theme: {
     extend: {
