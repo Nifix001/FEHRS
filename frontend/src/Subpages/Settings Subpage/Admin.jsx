@@ -11,15 +11,19 @@ const Admin = () => {
   const { user, users } = useUser();
   const roles = ["Doctor", "Pharmacy", "Admin"];
   const [confirm, setConfirm] = useState(false);
-  const [confirmStates, setConfirmStates] = useState({});
+  const [selected, setSelected] = useState()
+  const [confirmStates, setConfirmStates] = useState({
+    id: false
+  });
   const [selectedRoles, setSelectedRoles] = useState({});
 
-  const handleRoleButtonClick = (userId, role, e) => {
+  const handleRoleButtonClick = (userId, role, e, index) => {
     // Check if a role is selected
     if (!role) {
       console.error("Please select a role");
       return;
     }
+    console.log(userId);
 
     setConfirmStates((prevStates) => ({
       ...prevStates,
@@ -27,12 +31,13 @@ const Admin = () => {
     }));
     setSelectedRoles((prevSelectedRoles) => ({
       ...prevSelectedRoles,
-      [userId]: role,
+      [userId]: e.target.value,
     }));
-    console.log("Selected Roles:", selectedRoles);
+    // console.log("Selected Roles:", selectedRoles);
     setConfirm(true); // Move this line to ensure the confirm modal is opened
-    console.log(confirmStates);
-    console.log(e.target.value);
+    // console.log(confirmStates);
+    // console.log(e.target.value);
+    setSelected(e.target.value)
   };
 
   return (
@@ -50,7 +55,7 @@ const Admin = () => {
             <h3 className="text-xs">Admin Management</h3>
           </div>
           <div className="w-full h-full rounded-xl bg-white p-9">
-            {users.map((current_user) => (
+            {users.map((current_user, userIndex) => (
               <div key={current_user.id} className="flex w-full justify-between items-center mb-10 relative">
                 <h2>{current_user.name}</h2>
                 <div className="flex absolute left-[200px] -mt-1 gap-3">
@@ -64,12 +69,7 @@ const Admin = () => {
                         } rounded-[4px] focus:bg-primary focus:text-white active:bg-primary`}
                         value={ roles[index] }
                         onClick={(e) => {
-                          handleRoleButtonClick(current_user.id, role, e); // Call handleRoleButtonClick with the userId and role
-                          // setConfirmStates((prevStates) => ({
-                          //   ...prevStates,
-                          //   [current_user.id]: true,
-                          // }));
-                          // setConfirm(true);
+                          handleRoleButtonClick(current_user.id, role, e, userIndex); // Call handleRoleButtonClick with the userId and role
                         }}
                       >
                         {role}
@@ -78,24 +78,20 @@ const Admin = () => {
                           <ConfirmAssign
                             setConfirm={(value) => setConfirm(value)}
                             user={current_user}
-                            role={selectedRoles[current_user.id]}
-                            setSelectedRoles={(assignedRole) => {
+                            role={selected}
+                            setSelectedRoles={(assignedRole, index) => {
                               // Handle the role assignment confirmation here
-                              console.log(`Role assigned: ${assignedRole}`);
-                              // Set the confirmation state for the user to false
-                              setConfirmStates((prevStates) => ({
-                                ...prevStates,
-                                [current_user.id]: false,
-                              }));
-                              // Update selectedRoles with the assigned role
+                              // console.log(`Role assigned: ${selected}`);
                               setSelectedRoles((prevSelectedRoles) => ({
                                 ...prevSelectedRoles,
-                                [current_user.id]: assignedRole,
+                                [index]: assignedRole,
                               }));
+                              console.log(selectedRoles);
                             }}
                             onRoleAssigned={(assignedRole) => {
                               // You can handle the role assigned event here if needed
-                              console.log(`Role assigned: ${assignedRole}`);
+                              console.log(`Role assigned: ${ selected}`);
+                              console.log(selected);
                             }}
                           />
                       )}
