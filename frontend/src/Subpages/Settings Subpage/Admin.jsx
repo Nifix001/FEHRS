@@ -8,14 +8,14 @@ import ConfirmAssign from '../../modal/ConfirmAssign';
 
 const Admin = () => {
   const location = useNavigate();
-  const { user, users } = useUser();
+  const { user, users, userRoles } = useUser();
   const roles = ["Doctor", "Pharmacy", "Admin"];
   const [confirm, setConfirm] = useState(false);
   const [selected, setSelected] = useState()
   const [confirmStates, setConfirmStates] = useState({
     id: false
   });
-  const [selectedRoles, setSelectedRoles] = useState({});
+  const [selectedRoles, setSelectedRoles] = useState(userRoles);
 
   const handleRoleButtonClick = (userId, role, e, index) => {
     // Check if a role is selected
