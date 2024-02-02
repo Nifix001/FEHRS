@@ -8,7 +8,7 @@ import ConfirmAssign from '../../modal/ConfirmAssign';
 
 const Admin = () => {
   const location = useNavigate();
-  const { user, users, userRoles } = useUser();
+  const { user, users, userRoles, setUserRoles } = useUser();
   const roles = ["Doctor", "Pharmacy", "Admin"];
   const [confirm, setConfirm] = useState(false);
   const [selected, setSelected] = useState()
@@ -87,6 +87,7 @@ const Admin = () => {
                                 [index]: assignedRole,
                               }));
                               console.log(selectedRoles);
+                              setUserRoles(selectedRoles);
                             }}
                             onRoleAssigned={(assignedRole) => {
                               // You can handle the role assigned event here if needed

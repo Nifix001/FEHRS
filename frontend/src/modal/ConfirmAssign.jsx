@@ -1,8 +1,10 @@
 // ConfirmAssign.jsx
 
 import React from 'react';
+import { useUser } from '../context/UserContext';
 
 const ConfirmAssign = ({ setConfirm, role, user, setSelectedRoles, onRoleAssigned }) => {
+  const { setUserRoles } = useUser();
   const handleConfirm = (e, assignedRole) => {
     e.preventDefault();
     console.log(role);
@@ -15,6 +17,7 @@ const ConfirmAssign = ({ setConfirm, role, user, setSelectedRoles, onRoleAssigne
 
     setConfirm(false);
     setSelectedRoles(assignedRole);
+    // setUserRoles(assignedRole);
 
     // Call the onRoleAssigned callback if it's a function
     if (typeof onRoleAssigned === 'function') {
