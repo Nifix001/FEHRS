@@ -14,7 +14,7 @@ const Admin = () => {
   const [confirmStates, setConfirmStates] = useState({});
   const [selectedRoles, setSelectedRoles] = useState({});
 
-  const handleRoleButtonClick = (userId, role) => {
+  const handleRoleButtonClick = (userId, role, e) => {
     // Check if a role is selected
     if (!role) {
       console.error("Please select a role");
@@ -31,6 +31,8 @@ const Admin = () => {
     }));
     console.log("Selected Roles:", selectedRoles);
     setConfirm(true); // Move this line to ensure the confirm modal is opened
+    console.log(confirmStates);
+    console.log(e.target.value);
   };
 
   return (
@@ -60,13 +62,14 @@ const Admin = () => {
                             ? 'bg-primary text-white' // Apply selected style
                             : 'border-gray-500 text-gray-500' // Apply default style
                         } rounded-[4px] focus:bg-primary focus:text-white active:bg-primary`}
+                        value={ roles[index] }
                         onClick={(e) => {
-                          handleRoleButtonClick(current_user.id, role); // Call handleRoleButtonClick with the userId and role
-                          setConfirmStates((prevStates) => ({
-                            ...prevStates,
-                            [current_user.id]: true,
-                          }));
-                          setConfirm(true);
+                          handleRoleButtonClick(current_user.id, role, e); // Call handleRoleButtonClick with the userId and role
+                          // setConfirmStates((prevStates) => ({
+                          //   ...prevStates,
+                          //   [current_user.id]: true,
+                          // }));
+                          // setConfirm(true);
                         }}
                       >
                         {role}

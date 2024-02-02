@@ -5,11 +5,12 @@ import React from 'react';
 const ConfirmAssign = ({ setConfirm, role, user, setSelectedRoles, onRoleAssigned }) => {
   const handleConfirm = (e, assignedRole) => {
     e.preventDefault();
+    console.log(role);
 
     // Check if a role is selected
     if (!assignedRole) {
-      console.error("Please select a role");
-      return;
+      // console.error("Please select a role");
+      console.log(assignedRole);;
     }
 
     setConfirm(false);
