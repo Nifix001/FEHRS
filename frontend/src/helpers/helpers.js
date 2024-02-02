@@ -521,3 +521,17 @@ export async function changePassword(setError, data, token){
         setError(error.response.data.message);
     }
 }
+
+export function getRoles(users, setUserRoles){
+    try{
+        const roles = users.map((user) => {
+            return (
+                     `${user.id} : ${user.role === null ? null : user.role.name }`
+                   )
+           })
+             console.log(roles);
+             setUserRoles(roles);
+    } catch(err){
+        console.error(err);
+    }
+}

@@ -13,6 +13,7 @@ function UserProvider({children}){
     
     const [ user, setUser] = useLocalStorage('user', null);
     const [ users, setUsers] = useLocalStorage('users', null);
+    const [ userRoles, setUserRoles ] = useLocalStorage('roles', null);
     const [ patients, setPatients ] = useLocalStorage('patients', null);
     const [ drugs, setDrugs ] = useLocalStorage('drugs', null);
     const [ prescriptions, setPrescriptions ] = useLocalStorage('prescriptions', null);
@@ -30,6 +31,8 @@ function UserProvider({children}){
             setUser,
             users,
             setUsers,
+            userRoles,
+            setUserRoles,
             token,
             setToken,
             patients,
