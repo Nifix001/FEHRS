@@ -524,13 +524,21 @@ export async function changePassword(setError, data, token){
 
 export function getRoles(users, setUserRoles){
     try{
-        const roles = users.map((user) => {
-            return (
-                     `${user.id} : ${user.role === null ? null : user.role.name }`
-                   )
-           })
-             console.log(roles);
-             setUserRoles(roles);
+        // const roles = users.map((user) => {
+        //     return (
+        //              `${parseInt(user.id)} : ${user.role === null ? null : user.role.name }`
+        //            )
+        //    })
+        // const role = {}
+        // for (let i=0; i < roles.length; i++){
+        //     role[i] = roles[i];
+        // }
+        const role = users.reduce((acc, user) => {
+            acc[user.id] = user.role === null ? null : user.role.name;
+            return acc;
+        }, {});
+             console.log(role);
+             setUserRoles(role);
     } catch(err){
         console.error(err);
     }
