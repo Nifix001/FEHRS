@@ -96,8 +96,8 @@ const Prescriptions = () => {
                   </button>
                 </div> */}
                 <div className='flex gap-3 items-center justify-center pl-6' >
-                  <button className='px-6 py-2 rounded-lg text-white text-sm bg-secondary4 hover:opacity-70' > Accept </button>
-                  <button className='px-6 py-2 rounded-lg text-white text-sm bg-red-600 hover:opacity-70' > Decline </button>
+                  <button className='px-6 py-2 rounded-lg text-white text-sm bg-secondary4 hover:bg-opacity-80 hover:scale-105 ' > Accept </button>
+                  <button className='px-6 py-2 rounded-lg text-white text-sm bg-red-600 hover:bg-opacity-80 hover:scale-105 ' > Decline </button>
                 </div>
             </div>
           </td>
